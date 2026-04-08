@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Added Variants to import
 import {
   ArrowRight,
   Zap,
@@ -19,7 +19,8 @@ import Footer from "@/sections/Footer";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-const sectionVariants = {
+// Fixed: Explicitly typed as Variants to resolve the 'ease' property error
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: { 
     opacity: 1, 
@@ -28,7 +29,8 @@ const sectionVariants = {
   }
 };
 
-const fadeUp = {
+// Fixed: Explicitly typed as Variants
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
