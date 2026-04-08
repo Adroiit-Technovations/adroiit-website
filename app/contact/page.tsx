@@ -15,9 +15,12 @@ const uniqueCities = [...new Set(indianCities)];
 
 export default function ContactPage() {
   const [state, formAction, isPending] = useActionState(sendContactForm, null);
-  const [selectedCity, setSelectedCity] = useState("");
-  const [selectedState, setSelectedState] = useState("");
-  const [selectedService, setSelectedService] = useState("");
+  
+  // Fix: Added null to types to satisfy Headless UI Combobox requirements
+  const [selectedCity, setSelectedCity] = useState<string | null>("");
+  const [selectedState, setSelectedState] = useState<string | null>("");
+  const [selectedService, setSelectedService] = useState<string | null>("");
+  
   const [cityQuery, setCityQuery] = useState("");
   const [stateQuery, setStateQuery] = useState("");
   const [serviceQuery, setServiceQuery] = useState("");

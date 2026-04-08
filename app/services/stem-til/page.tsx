@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Added Variants to import
 import {
   ArrowRight,
   Lightbulb,
@@ -40,8 +40,8 @@ import Footer from "@/sections/Footer";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-// Animation Variants
-const titleVariants = {
+// Animation Variants - Explicitly typed to resolve "ease: string" error
+const titleVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
@@ -50,7 +50,7 @@ const titleVariants = {
   }
 };
 
-const descVariants = {
+const descVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -59,7 +59,7 @@ const descVariants = {
   }
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -72,7 +72,7 @@ const fadeUp = {
   }),
 };
 
-const slideInRight = {
+const slideInRight: Variants = {
   hidden: { opacity: 0, x: 100 },
   visible: {
     opacity: 1,

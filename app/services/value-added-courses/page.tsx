@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Added Variants
 import {
   ArrowRight,
   BookOpen,
@@ -19,7 +19,8 @@ import Footer from "@/sections/Footer";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-const sectionVariants = {
+// Fixed: Explicitly typed as Variants to resolve ease string error
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: { 
     opacity: 1, 
@@ -28,7 +29,8 @@ const sectionVariants = {
   }
 };
 
-const fadeUp = {
+// Fixed: Explicitly typed as Variants
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -45,43 +47,43 @@ export default function ValueAddedCoursesPage() {
   const courseList = [
     { 
       image: "/vac/3d-cad.jfif", 
-      title: "3D Design & Modelling", 
+      title: "3D design & modelling", 
       desc: "Develop skills in creating precise digital models using industry-standard design tools." 
     },
     { 
       image: "/vac/3d-printing.jfif", 
-      title: "Additive Manufacturing & 3D Printing", 
+      title: "Additive manufacturing & 3D printing", 
       desc: "Learn modern manufacturing techniques to transform digital designs into functional prototypes." 
     },
     { 
       image: "/vac/embedded.jfif", 
-      title: "Embedded Systems & IoT", 
+      title: "Embedded systems & IoT", 
       desc: "Understand the integration of hardware and software to develop smart, connected systems." 
     },
     { 
       image: "/vac/pcb.jfif", 
-      title: "PCB Design & Prototyping", 
+      title: "PCB design & prototyping", 
       desc: "Learn to design, develop and prototype professional Printed Circuit Boards (PCBs) for electronic applications." 
     },
     { 
       image: "/vac/drone.jfif", 
-      title: "Drone Technology", 
+      title: "Drone technology", 
       desc: "Gain practical knowledge of UAV systems, including design, flight control and real-world applications." 
     },
     { 
       image: "/vac/ai.jfif", 
-      title: "Artificial Intelligence", 
+      title: "Artificial intelligence", 
       desc: "Explore machine learning and data-driven technologies to build intelligent applications." 
     },
   ];
 
   const highlights = [
-    { title: "Curriculum-Integrated Learning", icon: <BookOpen size={24} /> },
-    { title: "Standardized Certification", icon: <Award size={24} /> },
-    { title: "Project-Based Assessments", icon: <BarChart size={24} /> },
-    { title: "Industry Mentorship Program", icon: <GraduationCap size={24} /> },
-    { title: "Placement Assistance Modules", icon: <CheckCircle2 size={24} /> },
-    { title: "Comprehensive Course Material", icon: <FileText size={24} /> },
+    { title: "Curriculum-integrated learning", icon: <BookOpen size={24} /> },
+    { title: "Standardized certification", icon: <Award size={24} /> },
+    { title: "Project-based assessments", icon: <BarChart size={24} /> },
+    { title: "Industry mentorship program", icon: <GraduationCap size={24} /> },
+    { title: "Placement assistance modules", icon: <CheckCircle2 size={24} /> },
+    { title: "Comprehensive course material", icon: <FileText size={24} /> },
   ];
 
   return (
@@ -96,7 +98,7 @@ export default function ValueAddedCoursesPage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-2 w-full">
             <div className="flex flex-col items-start text-left w-full md:w-1/2 md:max-w-2xl md:pr-2">
               <motion.h1 custom={0} variants={fadeUp} className="text-3xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">
-                Academic Excellence via <span className="text-purple-600">Value Added Courses</span>
+                Academic excellence via <span className="text-purple-600">value added courses</span>
               </motion.h1>
 
               <motion.div 
@@ -107,7 +109,7 @@ export default function ValueAddedCoursesPage() {
               />
 
               <motion.p custom={1} variants={fadeUp} className="text-gray-800 text-lg md:text-lg font-medium mb-4 text-justify leading-relaxed">
-                We partner with educational institutions to provide credit-based Value Added Courses that enhance student employability.
+                We partner with educational institutions to provide credit-based value added courses that enhance student employability.
               </motion.p>
               
               <motion.p custom={2} variants={fadeUp} className="text-gray-600 text-base md:text-lg mb-6 text-justify leading-relaxed">
@@ -116,7 +118,7 @@ export default function ValueAddedCoursesPage() {
 
               <motion.div custom={3} variants={fadeUp}>
                 <Link href="/contact" className="w-fit bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
-                   Partner with Us <ArrowRight size={18} />
+                   Partner with us <ArrowRight size={18} />
                 </Link>
               </motion.div>
             </div>
@@ -144,7 +146,7 @@ export default function ValueAddedCoursesPage() {
           className="max-w-5xl mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-500 mb-2">Featured Courses</h2>
+            <h2 className="text-2xl font-bold text-purple-500 mb-2">Featured courses</h2>
             {/* Updated Section Description Font Size to text-lg */}
             <p className="text-gray-300 text-lg max-w-xl mx-auto">
               In-depth certification programs for future-ready engineers.
@@ -171,7 +173,6 @@ export default function ValueAddedCoursesPage() {
                   />
                 </div>
                 <h3 className="text-base font-bold mb-2 text-purple-500 text-center leading-tight">{course.title}</h3>
-                {/* Kept Card Description color white */}
                 <p className="text-white text-sm leading-relaxed text-center px-1">
                   {course.desc}
                 </p>
@@ -188,7 +189,7 @@ export default function ValueAddedCoursesPage() {
           className="max-w-7xl mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-600 mb-2">Why Choose Our VAC?</h2>
+            <h2 className="text-2xl font-bold text-purple-600 mb-2">Why choose our VAC?</h2>
             <p className="text-gray-700 text-base max-w-xl mx-auto">
               Bridging the gap between university degrees and professional careers.
             </p>
@@ -223,12 +224,12 @@ export default function ValueAddedCoursesPage() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-purple-600">Elevate Your Institutional Standards</h2>
+          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-purple-600">Elevate your institutional standards</h2>
           <p className="text-black text-sm mb-4 max-w-3xl mx-auto">
-            Contact Adroiit Technovations to integrate industry-aligned Value Added Courses into your academic calendar.
+            Contact Adroiit Technovations to integrate industry-aligned value added courses into your academic calendar.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-all text-base shadow-lg shadow-purple-500/20">
-            <CalendarCheck size={18} /> Request Course Details
+            <CalendarCheck size={18} /> Request course details
           </Link>
         </motion.div>
       </section>
