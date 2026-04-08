@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Added Variants to import
 import {
   ArrowRight,
   Globe,
@@ -19,7 +19,8 @@ import Footer from "@/sections/Footer";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-const sectionVariants = {
+// Fixed: Explicitly typed as Variants to resolve ease string error
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: { 
     opacity: 1, 
@@ -28,7 +29,8 @@ const sectionVariants = {
   }
 };
 
-const fadeUp = {
+// Fixed: Explicitly typed as Variants
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -96,12 +98,12 @@ export default function TechnicalWorkshopsPage() {
   ];
 
   const highlights = [
-    { title: "Industry-Relevant Hands-on Training", icon: <Wrench size={24} /> },
-    { title: "Expert Trainers & Mentorship", icon: <Users size={24} /> },
-    { title: "Structured & Outcome-based Modules", icon: <Briefcase size={24} /> },
-    { title: "Certification & Skill Validation", icon: <ShieldCheck size={24} /> },
-    { title: "Engaging & Interactive Session", icon: <Zap size={24} /> },
-    { title: "Latest Tools & Technologies Exposure", icon: <Lightbulb size={24} /> },
+    { title: "Industry-relevant hands-on training", icon: <Wrench size={24} /> },
+    { title: "Expert trainers & mentorship", icon: <Users size={24} /> },
+    { title: "Structured & outcome-based modules", icon: <Briefcase size={24} /> },
+    { title: "Certification & skill validation", icon: <ShieldCheck size={24} /> },
+    { title: "Engaging & interactive session", icon: <Zap size={24} /> },
+    { title: "Latest tools & technologies exposure", icon: <Lightbulb size={24} /> },
   ];
 
   return (
@@ -116,7 +118,7 @@ export default function TechnicalWorkshopsPage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-2 w-full">
             <div className="flex flex-col items-start text-left w-full md:w-1/2 md:max-w-2xl md:pr-2">
               <motion.h1 custom={0} variants={fadeUp} className="text-3xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">
-                Industry-Focused <span className="text-purple-600">Technical Workshops</span>
+                Industry-focused <span className="text-purple-600">technical workshops</span>
               </motion.h1>
 
               <motion.div 
@@ -127,7 +129,7 @@ export default function TechnicalWorkshopsPage() {
               />
 
               <motion.p custom={1} variants={fadeUp} className="text-gray-800 text-lg md:text-lg font-medium mb-4 text-justify leading-relaxed">
-                Adroiit Technovations’ Technical Workshops are short-term, intensive, and hands-on learning experiences designed specifically for college students.
+                Adroiit Technovations’ technical workshops are short-term, intensive, and hands-on learning experiences designed specifically for college students.
               </motion.p>
               
               <motion.p custom={2} variants={fadeUp} className="text-gray-600 text-base md:text-lg mb-6 text-justify leading-relaxed">
@@ -136,7 +138,7 @@ export default function TechnicalWorkshopsPage() {
 
               <motion.div custom={3} variants={fadeUp}>
                 <Link href="/contact" className="w-fit bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
-                   Host a Workshop <ArrowRight size={18} />
+                   Host a workshop <ArrowRight size={18} />
                 </Link>
               </motion.div>
             </div>
@@ -164,7 +166,7 @@ export default function TechnicalWorkshopsPage() {
           className="max-w-[1440px] mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-500 mb-2">Our Workshops</h2>
+            <h2 className="text-2xl font-bold text-purple-500 mb-2">Our workshops</h2>
             <p className="text-gray-200 text-base max-w-xl mx-auto">
               Specialized technical tracks designed for future engineers and innovators.
             </p>
@@ -206,7 +208,7 @@ export default function TechnicalWorkshopsPage() {
           className="max-w-7xl mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-600 mb-2">Workshop Highlights</h2>
+            <h2 className="text-2xl font-bold text-purple-600 mb-2">Workshop highlights</h2>
             <p className="text-gray-700 text-base max-w-xl mx-auto">
               What sets our technical training apart.
             </p>
@@ -241,12 +243,12 @@ export default function TechnicalWorkshopsPage() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-purple-600">Empower Your Students with Future-Ready Skills</h2>
+          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-purple-600">Empower your students with future-ready skills</h2>
           <p className="text-black text-sm mb-8 max-w-2xl mx-auto">
             Partner with Adroiit Technovations to conduct high-impact technical workshops at your institution.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-all text-base shadow-lg shadow-purple-500/20">
-            <CalendarCheck size={18} /> Host a Workshop
+            <CalendarCheck size={18} /> Host a workshop
           </Link>
         </motion.div>
       </section>
