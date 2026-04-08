@@ -1,6 +1,5 @@
 "use client";
-
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
   ArrowRight,
   CheckCircle,
@@ -31,7 +30,6 @@ const fadeUp = {
     transition: {
       delay: i * 0.1,
       duration: 0.5,
-      ease: [0.25, 0.1, 0.25, 1],
     },
   }),
 };
