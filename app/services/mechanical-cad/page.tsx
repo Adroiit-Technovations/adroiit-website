@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // Added Variants to import
 import { useEffect, useState } from "react";
 import {
   Cog,
@@ -29,7 +29,8 @@ import Footer from "@/sections/Footer";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-const fadeUp = {
+// Fixed: Explicitly typed as Variants to resolve the 'ease' property error
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -151,7 +152,7 @@ export default function MechanicalCADPage() {
                 </motion.div>
 
                 <motion.p initial="hidden" animate="visible" variants={fadeUp} custom={1} className="text-gray-200 text-base md:text-lg leading-relaxed max-w-xl text-justify">
-                  At Adroiit Technovations, we specialize in delivering high-quality Mechanical CAD (Computer Aided Design) services for industries, startups and professionals. Whether you are designing for prototyping, production or innovaiton, our CAD solutions provide the precision and efficiency you need to bring your concepts to life.
+                  At Adroiit Technovations, we specialize in delivering high-quality Mechanical CAD (Computer Aided Design) services for industries, startups and professionals. Whether you are designing for prototyping, production or innovation, our CAD solutions provide the precision and efficiency you need to bring your concepts to life.
                 </motion.p>
 
                 <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={2} className="flex flex-col sm:flex-row items-center gap-4">
@@ -160,7 +161,6 @@ export default function MechanicalCADPage() {
                   </Link>
                 </motion.div>
 
-                {/* Stats Grid restored */}
                 <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3} className="mt-12 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
                   <div>
                     <h4 className="text-2xl md:text-3xl font-bold text-white">40+</h4>
