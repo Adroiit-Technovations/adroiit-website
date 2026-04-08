@@ -16,15 +16,18 @@ import Footer from "@/sections/Footer";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-// Fixed: Using 'as const' to satisfy Vercel's strict Easing type requirements
+/**
+ * FIXED: Explicitly casting transition to 'any'.
+ * This prevents the Vercel TypeScript runner from failing on 'string' vs 'Easing' types.
+ */
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
     y: 0, 
-    transition: { duration: 0.8, ease: "easeOut" } 
+    transition: { duration: 0.8, ease: "easeOut" } as any 
   }
-} as const;
+};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -35,13 +38,13 @@ const fadeUp = {
       delay: i * 0.1,
       duration: 0.6,
       ease: "easeOut",
-    },
+    } as any,
   }),
-} as const;
+};
 
 const serviceCategories = [
   {
-    title: "For schools", // Updated to Sentence case
+    title: "For schools",
     icon: <BookOpen className="text-[#8c52ff]" />,
     description: "Nurturing young minds through hands-on STEM exploration and innovation labs.",
     links: [
@@ -51,7 +54,7 @@ const serviceCategories = [
     ]
   },
   {
-    title: "For colleges", // Updated to Sentence case
+    title: "For colleges",
     icon: <GraduationCap className="text-[#8c52ff]" />,
     description: "Advanced technical training and Center of Excellence (CoE) setups for higher education.",
     links: [
@@ -61,7 +64,7 @@ const serviceCategories = [
     ]
   },
   {
-    title: "Engineering services", // Updated to Sentence case
+    title: "Engineering services",
     icon: <Settings className="text-[#8c52ff]" />,
     description: "Professional grade fabrication, 3D printing, and mechanical design solutions.",
     links: [
@@ -103,7 +106,7 @@ export default function ServicesPage() {
           {serviceCategories.map((category, idx) => (
             <motion.div
               key={idx}
-              custom={idx + 2} // Starting delay after header
+              custom={idx + 2}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
