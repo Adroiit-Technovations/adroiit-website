@@ -100,7 +100,7 @@ export default function ValueAddedCoursesPage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-2 w-full">
             <div className="flex flex-col items-start text-left w-full md:w-1/2 md:max-w-2xl md:pr-2">
               <motion.h1 custom={0} variants={fadeUp} className="text-3xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">
-                Academic excellence via <span className="text-purple-600">value added courses</span>
+                Academic Excellence via <span className="text-purple-600">Value Added Courses</span>
               </motion.h1>
 
               <motion.div 

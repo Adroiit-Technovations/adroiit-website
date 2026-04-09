@@ -16,7 +16,6 @@ const uniqueCities = [...new Set(indianCities)];
 export default function ContactPage() {
   const [state, formAction, isPending] = useActionState(sendContactForm, null);
   
-  // Fix: Added null to types to satisfy Headless UI Combobox requirements
   const [selectedCity, setSelectedCity] = useState<string | null>("");
   const [selectedState, setSelectedState] = useState<string | null>("");
   const [selectedService, setSelectedService] = useState<string | null>("");
@@ -36,9 +35,11 @@ export default function ContactPage() {
   }, [state]);
 
   return (
-    <section key="contact-page" className={`${bricolage.className} min-h-screen py-28 px-6 bg-black text-white`}>
+    <section key="contact-page" className={`${bricolage.className} min-h-screen py-20 md:py-28 px-4 md:px-6 bg-black text-white`}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-[1fr_auto] gap-20 items-stretch">
+        {/* Changed grid-cols to stack on mobile (default) and split on md */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 md:gap-20 items-stretch">
+          
           <div className="flex flex-col min-h-full">
             <div>
               <h2 className="text-2xl font-bold text-[#8c52ff]">Contact Us</h2>
@@ -123,13 +124,25 @@ export default function ContactPage() {
           <div className="flex flex-col min-h-full">
             <h3 className="text-2xl font-semibold text-[#8c52ff]">Get in Touch</h3>
             <div className="mt-6 space-y-5 text-gray-300">
-              <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#8c52ff]" /><p>+91 8870002908</p></div>
-              <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-[#8c52ff]" /><p>info@adroiittechnovations.in</p></div>
-              <div className="flex items-center gap-3 whitespace-nowrap"><MapPin className="w-5 h-5 text-[#8c52ff]" /><p>15A, Pavendhar Street, Thamizh Thai Nagar, Uppalam, Puducherry - 605004</p></div>
-              <div className="flex items-center gap-3"><Clock className="w-5 h-5 text-[#8c52ff]" /><p>Mon - Sat: 10:00 AM - 6:00 PM</p></div>
+              <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#8c52ff]" /><p className="text-sm md:text-base">+91 8870002908</p></div>
+              <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-[#8c52ff]" /><p className="text-sm md:text-base break-all">info@adroiittechnovations.in</p></div>
+              {/* Removed whitespace-nowrap to allow wrapping on mobile */}
+              <div className="flex items-start gap-3"><MapPin className="w-5 h-5 text-[#8c52ff] mt-1 shrink-0" /><p className="text-sm md:text-base leading-relaxed">15A, Pavendhar Street, Thamizh Thai Nagar, Uppalam, Puducherry - 605004</p></div>
+              <div className="flex items-center gap-3"><Clock className="w-5 h-5 text-[#8c52ff]" /><p className="text-sm md:text-base">Mon - Sat: 10:00 AM - 6:00 PM</p></div>
             </div>
-            <div className="mt-auto pt-6">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.655866164287!2d79.8248!3d11.9338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDU2JzAxLjciTiA3OcKwNDknMjkuMyJF!5e0!3m2!1sen!2sin!4v1647432000000!5m2!1sen!2sin" className="w-full h-[290px] rounded-xl border border-gray-800" loading="lazy"></iframe>
+            <div className="mt-8 md:mt-auto pt-6">
+              {/* Updated map source with full responsive container */}
+              <div className="w-full overflow-hidden rounded-xl border border-gray-800">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.7686421645653!2d79.81572427483617!3d11.921973788305209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5361f82ca8d2db%3A0x4cec9aaf4e89f084!2sADROIIT%20TECHNOVATIONS!5e1!3m2!1sen!2sin!4v1775739111207!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="290" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
