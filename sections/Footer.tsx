@@ -23,123 +23,122 @@ const XIcon = ({ size = 18 }) => (
   </svg>
 );
 
-export default function DarkFooterOnWhite() {
+export default function PremiumFooter() {
   const socialLinks = [
-    { Icon: Instagram, href: "#" },
-    { Icon: LinkedInIcon, href: "#" },
-    { Icon: Youtube, href: "#" },
-    { Icon: XIcon, href: "#" },
+    { Icon: Instagram, href: "https://www.instagram.com/adroiit.technovations" },
+    { Icon: LinkedInIcon, href: "https://www.linkedin.com/company/adroiit-technovations" },
+    { Icon: Youtube, href: "https://www.youtube.com/@AdroiitTechnovations" },
+    { Icon: XIcon, href: "https://x.com/adroiittech" },
   ];
 
   return (
-    /* This outer div provides the white background so the curves are visible */
-    <div className="w-full bg-white pt-1">
-      <footer 
-        className={`${bricolage.className} relative bg-[#050505] text-white px-8 md:px-16 pt-12 pb-12 overflow-hidden 
-        rounded-t-[32px] md:rounded-t-[48px] shadow-[0_-15px_30px_rgba(0,0,0,0.1)]`}
-      >
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Strict 3-column grid for mathematically equal gaps */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24 mb-20 items-start w-full">
-            
-            {/* COLUMN 1: BRAND */}
-            <div className="flex flex-col space-y-6">
-              <Image
-                src="/logo2.png"
-                alt="Adroiit Technovations"
-                width={150}
-                height={55}
-                className="brightness-125 grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              <p className="text-gray-400 text-sm font-light leading-relaxed max-w-xs">
-                Empowering the Next-Gen through <span className="text-purple-500 font-medium">Education</span> and <span className="text-purple-500 font-medium">Innovation</span>.
-              </p>
-            </div>
+    <footer className={`${bricolage.className} relative bg-[#050505] text-white px-8 pt-11 pb-12 border-t border-white/10 overflow-hidden rounded-t-[40px] md:rounded-t-[80px]`}>
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* FIX: grid-cols-3 forces three equal columns. 
+            w-full ensures the container spans the entire max-width.
+        */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-50 mb-20 items-start w-full">
+          
+          {/* COLUMN 1: BRAND */}
+          <div className="flex flex-col space-y-3">
+            <Image
+              src="/logo2.png"
+              alt="Adroiit Technovations"
+              width={150}
+              height={55}
+              className="brightness-125 grayscale hover:grayscale-0 transition-all duration-700"
+            />
+            <p className="text-gray-200 text-sm font-light leading-relaxed max-w-xs">
+              Empowering the Next-Gen through <span className="text-purple-500 font-medium">Education </span> and <span className="text-purple-500 font-medium"> Innovation.</span>
+            </p>
+          </div>
 
-            {/* COLUMN 2: CONNECT */}
-            <div className="flex flex-col space-y-5">
-              <h4 className="premium-label">Connect with Us</h4>
-              <div className="flex flex-wrap gap-3">
-                {socialLinks.map((item, i) => (
-                  <Link
-                    key={i}
-                    href={item.href}
-                    className="group flex items-center justify-center w-11 h-11 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500"
-                  >
-                    <span className="text-gray-200 group-hover:text-white transition-colors duration-300">
-                      <item.Icon size={18} />
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* COLUMN 3: NEWSLETTER */}
-            <div className="flex flex-col space-y-8">
-              <h4 className="premium-label">Newsletter</h4>
-              <div className="space-y-5">
-                <p className="text-gray-400 text-sm font-light">
-                  Insights on technology and innovation.
-                </p>
-                <div className="relative group max-w-sm">
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="premium-input-dark"
-                  />
-                  <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-white text-black rounded-xl hover:bg-purple-500 hover:text-white transition-all duration-500">
-                    <Send size={16} />
-                  </button>
-                </div>
-              </div>
+          {/* COLUMN 2: CONNECT */}
+          <div className="flex flex-col space-y-6">
+            <h4 className="premium-label">Connect with Us</h4>
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center w-11 h-11 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500"
+                >
+                  <span className="text-white group-hover:text-white transition-colors duration-300">
+                    <item.Icon size={18} />
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* BOTTOM BAR */}
-          <div className="pt-1 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/50" />
-              <p className="text-gray-500 text-[10px] tracking-[0.3em] uppercase font-bold">
-                © 2026 Adroiit Technovations
+          {/* COLUMN 3: NEWSLETTER */}
+          <div className="flex flex-col space-y-6">
+            <h4 className="premium-label">Newsletter</h4>
+            <div className="space-y-4">
+              <p className="text-gray-00 text-sm font-light">
+                Insights on mechatronics and automation.
               </p>
-            </div>
-
-            <div className="flex gap-10 text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">
-              <Link href="/privacy" className="hover:text-purple-500 transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-purple-500 transition-colors">Terms and Conditions</Link>
+              <div className="relative group max-w-sm">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="premium-input"
+                />
+                <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-white text-black rounded-xl hover:bg-purple-500 hover:text-white transition-all duration-500">
+                  <Send size={16} />
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <style jsx>{`
-          .premium-label {
-            font-size: 10px;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            color: #4b5563;
-            font-weight: 900;
-            display: block;
-            padding-top: 8px; 
-          }
+        {/* BOTTOM BAR */}
+        <div className="pt-1 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-purple-500/50" />
+            <p className="text-gray-500 text-[10px] tracking-[0.3em] uppercase font-bold">
+              © 2026 Adroiit Technovations
+            </p>
+          </div>
 
-          .premium-input-dark {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 14px 50px 14px 20px;
-            font-size: 13px;
-            color: white;
-            transition: all 0.3s;
-          }
+          <div className="flex gap-10 text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">
+            <Link href="/privacy" className="hover:text-purple-500 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-purple-500 transition-colors">Terms and Conditions</Link>
+          </div>
+        </div>
+      </div>
 
-          .premium-input-dark:focus {
-            outline: none;
-            border-color: rgba(140, 82, 255, 0.5);
-            background: rgba(255, 255, 255, 0.04);
-          }
-        `}</style>
-      </footer>
-    </div>
+      <style jsx>{`
+        .premium-label {
+          font-size: 10px;
+          letter-spacing: 0.4em;
+          text-transform: uppercase;
+          color: #4b5563;
+          font-weight: 900;
+          display: block;
+          padding-top: 8px; 
+        }
+
+        .premium-input {
+          width: 100%;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 16px;
+          padding: 14px 50px 14px 20px;
+          font-size: 13px;
+          color: white;
+          transition: all 0.3s;
+        }
+
+        .premium-input:focus {
+          outline: none;
+          border-color: rgba(140, 82, 255, 0.5);
+          background: rgba(255, 255, 255, 0.04);
+        }
+      `}</style>
+    </footer>
   );
 }
