@@ -14,17 +14,17 @@ const LOGO_HEIGHT = 120;
 
 export default function Hero() {
   return (
-    /* Mobile: h-auto, pt-8, pb-4 
-       Desktop (md): min-h-screen, pt-24, pb-12 
+    /* Mobile: Increased pt-20 and pb-12 for more breathing room.
+       Desktop (md): Reverts to your original pt-24 and pb-12.
     */
-    <section className="h-auto md:min-h-screen flex flex-col justify-center items-center text-center px-6 pt-8 md:pt-24 pb-4 md:pb-12 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
+    <section className="h-auto md:min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 md:pt-24 pb-12 md:pb-12 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
 
       {/* Logo Wrapper */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="w-full flex justify-center mb-4 md:mb-6"
+        className="w-full flex justify-center mb-8 md:mb-6" // Increased mb-8 for mobile
       >
         <Image
           src="/logo2.png"
@@ -36,10 +36,7 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Heading 
-          Mobile: text-2xl
-          Desktop (md): text-5xl (Original size)
-      */}
+      {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -58,7 +55,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className={`${bricolage.className} mt-3 md:mt-4 text-base md:text-lg text-gray-300 max-w-2xl`}
+        className={`${bricolage.className} mt-5 md:mt-4 text-base md:text-lg text-gray-300 max-w-2xl`} // mt-5 for mobile
       >
         Adroiit Technovations is redefining STEM and technical skill education by bridging classroom theory with real-world innovation.
       </motion.p>
@@ -68,7 +65,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="mt-6 flex flex-col sm:flex-row gap-4"
+        className="mt-10 md:mt-6 flex flex-col sm:flex-row gap-4" // mt-10 for mobile
       >
         <Link
           href="/services"
@@ -86,15 +83,12 @@ export default function Hero() {
         </Link>
       </motion.div>
 
-      {/* Impact Section 
-          Mobile: mt-6
-          Desktop (md): mt-12 (Original)
-      */}
+      {/* Impact Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9 }}
-        className="mt-6 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-5xl"
+        className="mt-14 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl" // mt-14 for mobile
       >
         {[
           { value: "5+", label: "Sessions" },
@@ -104,7 +98,7 @@ export default function Hero() {
         ].map((item, i) => (
           <div
             key={i}
-            className="p-4 md:p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:scale-105 transition"
+            className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:scale-105 transition"
           >
             <h3 className={`${bricolage.className} text-xl md:text-3xl font-bold text-[#8c52ff]`}>
               {item.value}
