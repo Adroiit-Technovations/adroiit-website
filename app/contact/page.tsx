@@ -55,8 +55,8 @@ export default function ContactPage() {
           {/* Form Side */}
           <div className="flex flex-col min-h-full">
             <div>
-              <h2 className="text-2xl font-bold text-[#8c52ff]">Contact Us</h2>
-              <p className="mt-2 text-gray-400">Have questions or want to collaborate?</p>
+              <h2 className="text-2xl font-bold text-purple-600">Contact Us</h2>
+              <p className="mt-2 text-gray-200">Have questions or want to collaborate?</p>
             </div>
 
             <form action={formAction} className="mt-6 space-y-3.5 flex flex-col flex-grow">
