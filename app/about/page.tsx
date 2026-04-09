@@ -100,7 +100,7 @@ export default function About() {
               className="relative h-[400px] w-full rounded-[2.5rem] overflow-hidden shadow-xl"
             >
               <Image 
-                src="/main2.jfif" // Replace with your actual image path
+                src="/about-hero.jpg" // Replace with your actual image path
                 alt="Innovation and Learning"
                 fill
                 className="object-cover"
