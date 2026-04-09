@@ -86,14 +86,14 @@ export default function STEMLabPage() {
   ];
 
   const domains = [
-    { image: "/domains/electronics.jpg", title: "Electronics & Circuits", desc: "Builds a strong foundation in understanding electrical components, circuit design and real-world electronic systems." },
-    { image: "/domains/3d-modelling.jfif", title: "3D Design & Modelling", desc: "Encourages creativity and design thinking through the creation of precise digital 3D models using modern tools." },
-    { image: "/domains/3d-printing.jpg", title: "3D Printing", desc: "Facilitates rapid prototyping, allowing ideas to be transformed into tangible models and functional parts." },
-    { image: "/domains/embedded-systems.jpg", title: "Embedded Systems", desc: "Focuses on integrating hardware and software to develop smart, intelligent devices usign microcontrollers." },
-    { image: "/domains/robotics.jpg", title: "Robotics", desc: "Promotes engineering and problem-solving through the design, construction and programming of interactive robotic systems." },
-    { image: "/domains/iot.jpg", title: "Internet of Things", desc: "Encourages innovation by enabling the development of connected systems with real-world applications." },
-    { image: "/domains/drones.jfif", title: "Drone Technology", desc: "Introduces aerial systems, covering design, functionality and real-world industry applications." },
-    { image: "/domains/ai.jfif", title: "Artificial Intelligence", desc: "Introduces future-ready concepts in intelligent systems, automation and data-driven decison making." },
+    { image: "/stem-til/electronics.jpg", title: "Electronics & Circuits", desc: "Builds a strong foundation in understanding electrical components, circuit design and real-world electronic systems." },
+    { image: "/stem-til/3d-modelling.jpg", title: "3D Design & Modelling", desc: "Encourages creativity and design thinking through the creation of precise digital 3D models using modern tools." },
+    { image: "/stem-til/3d-printing.jpg", title: "3D Printing", desc: "Facilitates rapid prototyping, allowing ideas to be transformed into tangible models and functional parts." },
+    { image: "/stem-til/embedded-systems.jpg", title: "Embedded Systems", desc: "Focuses on integrating hardware and software to develop smart, intelligent devices usign microcontrollers." },
+    { image: "/stem-til/robotics.jpg", title: "Robotics", desc: "Promotes engineering and problem-solving through the design, construction and programming of interactive robotic systems." },
+    { image: "/stem-til/iot.jpg", title: "Internet of Things", desc: "Encourages innovation by enabling the development of connected systems with real-world applications." },
+    { image: "/stem-til/drone.jpg", title: "Drone Technology", desc: "Introduces aerial systems, covering design, functionality and real-world industry applications." },
+    { image: "/stem-til/ai.jpg", title: "Artificial Intelligence", desc: "Introduces future-ready concepts in intelligent systems, automation and data-driven decison making." },
   ];
 
   const objectives = [
