@@ -2,247 +2,144 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
-  Linkedin,
   Instagram,
   Youtube,
-  Mail,
-  ArrowUp,
-  ArrowRight,
+  Send,
 } from "lucide-react";
 import { Bricolage_Grotesque } from "next/font/google";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-export default function PremiumFooter() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+const LinkedInIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+  </svg>
+);
 
+const XIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" />
+  </svg>
+);
+
+export default function DarkFooterOnWhite() {
   const socialLinks = [
     { Icon: Instagram, href: "#" },
-    { Icon: Linkedin, href: "#" },
+    { Icon: LinkedInIcon, href: "#" },
     { Icon: Youtube, href: "#" },
-    { Icon: Mail, href: "mailto:info@adroiittechnovations.in" },
+    { Icon: XIcon, href: "#" },
   ];
 
   return (
-    <footer
-      className={`${bricolage.className} relative bg-black text-white px-6 pt-16 pb-10 border-t border-white/5 overflow-hidden`}
-    >
-      {/* Top Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-40 bg-[#8c52ff]/10 blur-3xl rounded-full" />
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* MAIN GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
-          {/* BRAND */}
-          <div className="space-y-5">
-            <Image
-              src="/logo2.png"
-              alt="Adroiit Technovations"
-              width={150}
-              height={60}
-              className="brightness-110"
-            />
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Pioneering the future of autonomous robotics through innovation
-              and education.
-            </p>
-
-            {/* Recognition */}
-            <div className="flex items-center gap-3 pt-2">
-              <span className="text-[10px] uppercase tracking-widest text-gray-500">
-                Recognized by
-              </span>
+    /* This outer div provides the white background so the curves are visible */
+    <div className="w-full bg-white pt-1">
+      <footer 
+        className={`${bricolage.className} relative bg-[#050505] text-white px-8 md:px-16 pt-12 pb-12 overflow-hidden 
+        rounded-t-[32px] md:rounded-t-[48px] shadow-[0_-15px_30px_rgba(0,0,0,0.1)]`}
+      >
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Strict 3-column grid for mathematically equal gaps */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24 mb-20 items-start w-full">
+            
+            {/* COLUMN 1: BRAND */}
+            <div className="flex flex-col space-y-6">
               <Image
-                src="/msme.png" // <-- add MSME logo here
-                alt="MSME"
-                width={60}
-                height={30}
-                className="opacity-80 hover:opacity-100 transition"
+                src="/logo2.png"
+                alt="Adroiit Technovations"
+                width={150}
+                height={55}
+                className="brightness-125 grayscale hover:grayscale-0 transition-all duration-700"
               />
+              <p className="text-gray-400 text-sm font-light leading-relaxed max-w-xs">
+                Empowering the Next-Gen through <span className="text-purple-500 font-medium">Education</span> and <span className="text-purple-500 font-medium">Innovation</span>.
+              </p>
             </div>
-          </div>
 
-          {/* NAVIGATION */}
-          <div>
-            <h4 className="footer-heading">Navigation</h4>
-            <ul className="footer-links">
-              {["Home", "About Us", "Services", "Contact"].map((link) => (
-                <li key={link}>
-                  <Link href={`/${link.toLowerCase().replace(" ", "")}`}>
-                    {link}
+            {/* COLUMN 2: CONNECT */}
+            <div className="flex flex-col space-y-5">
+              <h4 className="premium-label">Connect with Us</h4>
+              <div className="flex flex-wrap gap-3">
+                {socialLinks.map((item, i) => (
+                  <Link
+                    key={i}
+                    href={item.href}
+                    className="group flex items-center justify-center w-11 h-11 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500"
+                  >
+                    <span className="text-gray-200 group-hover:text-white transition-colors duration-300">
+                      <item.Icon size={18} />
+                    </span>
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* SOCIAL */}
-          <div>
-            <h4 className="footer-heading">Connect</h4>
-            <div className="flex gap-3">
-              {socialLinks.map((item, i) => (
-                <Link
-                  key={i}
-                  href={item.href}
-                  className="social-icon group"
-                >
-                  <item.Icon size={16} />
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* NEWSLETTER */}
-          <div>
-            <h4 className="footer-heading">Newsletter</h4>
-
-            <div className="flex flex-col gap-3">
-              <div className="relative">
-                <Mail
-                  size={16}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600"
-                />
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="input-premium"
-                />
+                ))}
               </div>
+            </div>
 
-              <button className="btn-premium group">
-                Subscribe
-                <ArrowRight
-                  size={14}
-                  className="group-hover:translate-x-1 transition"
-                />
-              </button>
+            {/* COLUMN 3: NEWSLETTER */}
+            <div className="flex flex-col space-y-8">
+              <h4 className="premium-label">Newsletter</h4>
+              <div className="space-y-5">
+                <p className="text-gray-400 text-sm font-light">
+                  Insights on technology and innovation.
+                </p>
+                <div className="relative group max-w-sm">
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="premium-input-dark"
+                  />
+                  <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-white text-black rounded-xl hover:bg-purple-500 hover:text-white transition-all duration-500">
+                    <Send size={16} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* BOTTOM BAR */}
+          <div className="pt-1 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-purple-500/50" />
+              <p className="text-gray-500 text-[10px] tracking-[0.3em] uppercase font-bold">
+                © 2026 Adroiit Technovations
+              </p>
+            </div>
+
+            <div className="flex gap-10 text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">
+              <Link href="/privacy" className="hover:text-purple-500 transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-purple-500 transition-colors">Terms and Conditions</Link>
             </div>
           </div>
         </div>
 
-        {/* DIVIDER */}
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6" />
+        <style jsx>{`
+          .premium-label {
+            font-size: 10px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: #4b5563;
+            font-weight: 900;
+            display: block;
+            padding-top: 8px; 
+          }
 
-        {/* BOTTOM */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-600 text-[11px] uppercase tracking-wider">
-            © {new Date().getFullYear()} Adroiit Technovations
-          </p>
+          .premium-input-dark {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 14px 50px 14px 20px;
+            font-size: 13px;
+            color: white;
+            transition: all 0.3s;
+          }
 
-          <div className="flex items-center gap-8">
-            <div className="flex gap-6 text-[11px] text-gray-500 uppercase tracking-wider">
-              <Link href="/privacy">Privacy</Link>
-              <Link href="/terms">Terms</Link>
-            </div>
-
-            <button onClick={scrollToTop} className="scroll-top">
-              <ArrowUp size={16} />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* STYLES */}
-      <style jsx>{`
-        .footer-heading {
-          font-size: 11px;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: #6b7280;
-          margin-bottom: 18px;
-          font-weight: 700;
-        }
-
-        .footer-links li {
-          margin-bottom: 10px;
-        }
-
-        .footer-links a {
-          font-size: 14px;
-          color: #9ca3af;
-          transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-          color: #8c52ff;
-        }
-
-        .social-icon {
-          width: 38px;
-          height: 38px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 12px;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.02);
-          color: #6b7280;
-          transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-          color: white;
-          border-color: rgba(140, 82, 255, 0.4);
-          box-shadow: 0 0 20px rgba(140, 82, 255, 0.15);
-        }
-
-        .input-premium {
-          width: 100%;
-          background: #0d0d0d;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          border-radius: 14px;
-          padding: 12px 14px 12px 42px;
-          font-size: 13px;
-          transition: 0.3s;
-        }
-
-        .input-premium:focus {
-          outline: none;
-          border-color: rgba(140, 82, 255, 0.5);
-          box-shadow: 0 0 0 2px rgba(140, 82, 255, 0.1);
-        }
-
-        .btn-premium {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          background: #8c52ff;
-          padding: 12px;
-          border-radius: 14px;
-          font-size: 11px;
-          font-weight: 800;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          transition: all 0.4s;
-        }
-
-        .btn-premium:hover {
-          background: white;
-          color: black;
-        }
-
-        .scroll-top {
-          width: 38px;
-          height: 38px;
-          border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #6b7280;
-          transition: 0.3s;
-        }
-
-        .scroll-top:hover {
-          color: #8c52ff;
-          border-color: rgba(140, 82, 255, 0.4);
-        }
-      `}</style>
-    </footer>
+          .premium-input-dark:focus {
+            outline: none;
+            border-color: rgba(140, 82, 255, 0.5);
+            background: rgba(255, 255, 255, 0.04);
+          }
+        `}</style>
+      </footer>
+    </div>
   );
 }
