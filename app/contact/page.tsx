@@ -3,7 +3,7 @@
 import React, { useActionState, useState, Fragment, useEffect } from "react";
 import { Phone, Mail, MapPin, Clock, ChevronDown, Check } from "lucide-react";
 import { Combobox, Transition } from "@headlessui/react";
-import { sendContactForm } from "@/app/actions";
+import { sendContactForm } from "@/app/action";
 import { Bricolage_Grotesque } from "next/font/google";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
