@@ -14,15 +14,17 @@ const LOGO_HEIGHT = 120;
 
 export default function Hero() {
   return (
-    /* Changed pt-24 to pt-12 (mobile) and added md:pt-32 (desktop) */
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-12 md:pt-32 pb-12 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
+    /* Reduced min-height for better fit on small screens
+       Reduced padding: pt-8 pb-8 on mobile, md:pt-32 md:pb-16 on desktop
+    */
+    <section className="min-h-[85vh] md:min-h-screen flex flex-col justify-center items-center text-center px-6 pt-8 md:pt-32 pb-8 md:pb-16 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
 
       {/* Logo Wrapper */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="w-full flex justify-center mb-6"
+        className="w-full flex justify-center mb-4 md:mb-6" // Slightly reduced margin-bottom on mobile
       >
         <Image
           src="/logo2.png"
@@ -53,7 +55,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className={`${bricolage.className} mt-4 text-base md:text-lg text-gray-300 max-w-2xl`}
+        className={`${bricolage.className} mt-3 md:mt-4 text-base md:text-lg text-gray-300 max-w-2xl`}
       >
         Adroiit Technovations is redefining STEM and technical skill education by bridging classroom theory with real-world innovation.
       </motion.p>
@@ -86,7 +88,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9 }}
-        className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl"
+        className="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-5xl" // Reduced mt and gap for mobile
       >
         {[
           { value: "5+", label: "Sessions" },
@@ -96,12 +98,12 @@ export default function Hero() {
         ].map((item, i) => (
           <div
             key={i}
-            className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:scale-105 transition"
+            className="p-4 md:p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:scale-105 transition"
           >
-            <h3 className={`${bricolage.className} text-2xl md:text-3xl font-bold text-[#8c52ff]`}>
+            <h3 className={`${bricolage.className} text-xl md:text-3xl font-bold text-[#8c52ff]`}>
               {item.value}
             </h3>
-            <p className={`${bricolage.className} text-gray-400 text-sm mt-1`}>
+            <p className={`${bricolage.className} text-gray-400 text-[10px] md:text-sm mt-1`}>
               {item.label}
             </p>
           </div>
