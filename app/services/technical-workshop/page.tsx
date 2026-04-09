@@ -46,52 +46,52 @@ const fadeUp: Variants = {
 export default function TechnicalWorkshopsPage() {
   const workshopList = [
     { 
-      image: "/workshop/cad.jfif", 
+      image: "/technical-workshop/cad.jpg", 
       title: "3D Design & Modelling", 
       desc: "Develops industry-relevant design skills using advanced 3D modelling tools for product development and prototyping." 
     },
     { 
-      image: "/workshop/3d-printing.jfif", 
+      image: "/technical-workshop/3d-printing.jpg", 
       title: "3D Printing", 
       desc: "Covers additive manufacturing techniques to convert digital designs into functional prototypes." 
     },
     { 
-      image: "/workshop/embedded.jfif", 
+      image: "/technical-workshop/embedded.jpg", 
       title: "Embedded Systems", 
       desc: "Focuses on microcontroller-based system design, integrating hardware and software for real-world applications." 
     },
     { 
-      image: "/workshop/iot.jfif", 
+      image: "/technical-workshop/iot.jpg", 
       title: "Internet of Things (IoT)", 
       desc: "Explores connected systems, enabling data-driven applications through sensors, cloud and communication technologies." 
     },
     { 
-      image: "/workshop/robotics.jpeg", 
+      image: "/technical-workshop/robotics.jpeg", 
       title: "Robotics", 
       desc: "Builds expertise in designing and programming robotic systems for automation and intelligent control." 
     },
     { 
-      image: "/workshop/drones.jpg", 
+      image: "/technical-workshop/drones.jpg", 
       title: "Drone Technology", 
       desc: "Provides in-depth knowledge of UAV systems, including design, flight control and practical applications." 
     },
     { 
-      image: "/workshop/matlab.jfif", 
+      image: "/technical-workshop/matlab.jpg", 
       title: "MATLAB", 
       desc: "Introduces simulation, data analysis and algorithm development using industry-standard MATLAB tools." 
     },
     { 
-      image: "/workshop/plc.jfif", 
+      image: "/technical-workshop/plc.jpg", 
       title: "PLC Automation", 
       desc: "Covers industrial automation concepts using PLC programming for real-time control systems." 
     },
     { 
-      image: "/workshop/pcb.jfif", 
+      image: "/technical-workshop/pcb.jpg", 
       title: "PCB Designing", 
       desc: "Teaches schematic design and layout development for creating professional printed circuit boards." 
     },
     { 
-      image: "/workshop/ai.jfif", 
+      image: "/technical-workshop/ai.jpg", 
       title: "Artificial Intelligence", 
       desc: "Focuses on machine learning concepts, data analysis and building intelligent, real-world applications." 
     },

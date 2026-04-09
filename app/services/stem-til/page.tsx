@@ -234,7 +234,7 @@ export default function STEMLabPage() {
             <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-purple-500">
               Why STEM Tinkering and Innovation Lab?
             </motion.h2>
-            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-300 mt-2 text-base max-w-4xl mx-auto">
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-300 mt-2 text-base italic max-w-4xl mx-auto">
               These insights highlight why hands-on STEM education is essential for preparing future-ready learners.
             </motion.p>
           </div>
@@ -259,7 +259,7 @@ export default function STEMLabPage() {
             <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-purple-600">
               Objectives of STEM Tinkering and Innovation Lab (TIL)
             </motion.h2>
-            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-700 mt-2 text-base max-w-3xl mx-auto">
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-700 mt-2 text-base italic max-w-3xl mx-auto">
               The objectives highlight its role in implementing experiential learning and foster an innovation-driven environment within the institution.
             </motion.p>
           </div>
@@ -291,7 +291,7 @@ export default function STEMLabPage() {
             <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-purple-500">
               Domains Students Will Explore
             </motion.h2>
-            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-300 mt-3 text-base max-w-3xl mx-auto">
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-300 mt-3 text-base italic max-w-3xl mx-auto">
               Students will explore a diverse range of future-focused STEM fields designed for progressive learning thereby building stronger foundations and fostering innovation. 
             </motion.p>
           </div>
@@ -332,7 +332,7 @@ export default function STEMLabPage() {
             <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-purple-600">
               Why Choose Adroiit Technovations?
             </motion.h2>
-            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-700 mt-3 text-base max-w-4xl mx-auto">
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-700 mt-3 text-base italic max-w-4xl mx-auto">
               Adroiit Technovations stands as your trusted partner in delivering future-ready STEM learning solutions for your institution.
             </motion.p>
           </div>

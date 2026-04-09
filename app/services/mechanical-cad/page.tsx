@@ -163,12 +163,12 @@ export default function MechanicalCADPage() {
 
                 <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3} className="mt-12 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
                   <div>
-                    <h4 className="text-2xl md:text-3xl font-bold text-white">40+</h4>
-                    <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest mt-1 font-semibold">Designs Delivered</p>
+                    <h4 className="text-2xl md:text-3xl font-bold text-white">15+</h4>
+                    <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest mt-1 font-semibold">Clients</p>
                   </div>
                   <div>
-                    <h4 className="text-2xl md:text-3xl font-bold text-white">24h</h4>
-                    <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest mt-1 font-semibold">Draft Delivery</p>
+                    <h4 className="text-2xl md:text-3xl font-bold text-white">20+</h4>
+                    <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest mt-1 font-semibold">Designs Delivered</p>
                   </div>
                   <div>
                     <h4 className="text-2xl md:text-3xl font-bold text-white">99%</h4>
@@ -181,7 +181,7 @@ export default function MechanicalCADPage() {
                 <div className="relative w-full max-w-[480px]">
                   <div className="absolute -inset-1 bg-purple-600/20 rounded-3xl blur-xl transition duration-1000 group-hover:opacity-100 opacity-50"></div>
                   <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[16/10] shadow-2xl bg-neutral-900">
-                    <Image src="/services/cad-hero.jfif" alt="Mechanical CAD" fill className="object-cover" priority />
+                    <Image src="/mechanical-cad/cad-hero.jpg" alt="Mechanical CAD" fill className="object-cover" priority />
                   </div>
                 </div>
               </motion.div>
@@ -266,42 +266,10 @@ export default function MechanicalCADPage() {
         </div>
       </section>
 
-      {/* --- Testimonials --- */}
-      <section className="py-8 bg-black text-purple-600 overflow-hidden">
-        <div className="text-center mb-6 px-4">
-          <h2 className="text-3xl md:text-2xl font-bold">What People Say</h2>
-          <p className="text-gray-200 mt-2 italic text-sm md:text-base">Real feedback from students, parents and schools</p>
-        </div>
-        <div className="relative w-full overflow-hidden" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-          <motion.div className="flex" animate={{ x: `-${testIndex * 100}%` }} transition={{ duration: 0.7, ease: "easeInOut" }}>
-            {slides.map((group, i) => (
-              <div key={i} className="w-full flex-shrink-0 px-4 md:px-5">
-                <div className="max-w-7xl mx-auto">
-                  <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-                    {group.map((t, j) => (
-                      <div key={j} className="p-6 md:p-8 rounded-2xl bg-black border border-[#8c52ff]/30 shadow-lg">
-                        <p className="text-gray-300 text-sm md:text-base">“{t.text}”</p>
-                        <div className="mt-6">
-                          <h3 className="font-semibold text-purple-500">{t.name}</h3>
-                          <p className="text-sm text-gray-400">{t.role}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-        <div className="flex justify-center mt-8 gap-3">
-          {slides.map((_, i) => (
-            <button key={i} onClick={() => setTestIndex(i)} className={`h-3 w-3 rounded-full transition ${testIndex === i ? "bg-[#8c52ff]" : "bg-gray-600"}`} />
-          ))}
-        </div>
-      </section>
+      
 
       {/* --- Final CTA --- */}
-      <section className="relative py-8 px-6 bg-white">
+      <section className="relative py-8 px-6 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-2xl font-extrabold text-purple-600">Have a design idea? <span className="text-gray-900">Let's transform!</span></h2>
           <p className="mt-3 text-lg text-gray-700 mb-6 font-medium">Turn your mechanical design idea into a precise, manufacturable reality.</p>

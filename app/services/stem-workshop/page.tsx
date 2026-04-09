@@ -44,13 +44,13 @@ const fadeUp: Variants = {
 
 export default function STEMWorkshopPage() {
   const workshopModules = [
-    { image: "/services/science.jfif", title: "Experimenting Science", desc: "Encourages hands-on exploration of scientific concepts through fun and interactive experiments." },
-    { image: "/services/electronics.jpg", title: "Electronics and Circuits", desc: "Builds understanding of electronic components and circuit design through practical learning." },
-    { image: "/services/3d-printing.png", title: "3D Modelling & Printing", desc: "Introduces digital design and rapid prototyping usinng 3D modelling and 3D printing technologies." },
-    { image: "/services/embedded-systems.jpg", title: "Embedded Systems", desc: "Focuses on creating smart devices by combining programming with electronic hardware." },
-    { image: "/services/robotics.jfif", title: "Robotics", desc: "Enables the design and programming of robots to perform real-world tasks." },
-    { image: "/services/drone.jfif", title: "Drone Technology", desc: "Provides exposure to drone design, operations and real-world applications." },
-    { image: "/services/ai.jfif", title: "Artificial Intelligence", desc: "Introduces intelligent systems and basic AI concepts for building smart applications." },
+    { image: "/stem-workshop/science.jpg", title: "Experimenting Science", desc: "Encourages hands-on exploration of scientific concepts through fun and interactive experiments." },
+    { image: "/stem-workshop/electronics.jpg", title: "Electronics and Circuits", desc: "Builds understanding of electronic components and circuit design through practical learning." },
+    { image: "/stem-workshop/3d-printing.png", title: "3D Modelling & Printing", desc: "Introduces digital design and rapid prototyping usinng 3D modelling and 3D printing technologies." },
+    { image: "/stem-workshop/embedded-systems.jpg", title: "Embedded Systems", desc: "Focuses on creating smart devices by combining programming with electronic hardware." },
+    { image: "/stem-workshop/robotics.jpg", title: "Robotics", desc: "Enables the design and programming of robots to perform real-world tasks." },
+    { image: "/stem-workshop/drone.jpg", title: "Drone Technology", desc: "Provides exposure to drone design, operations and real-world applications." },
+    { image: "/stem-workshop/ai.jpg", title: "Artificial Intelligence", desc: "Introduces intelligent systems and basic AI concepts for building smart applications." },
   ];
 
   const highlights = [

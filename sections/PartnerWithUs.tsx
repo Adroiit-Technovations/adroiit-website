@@ -23,9 +23,9 @@ export default function PartnerWithUs() {
         </motion.h2>
 
         {/* Description */}
-        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
           We collaborate with schools, colleges, and organizations to deliver
-          high-quality STEM, robotics, and technology education through
+          high-quality STEM, robotics and technology education through
           hands-on learning and real-world applications.
         </p>
 

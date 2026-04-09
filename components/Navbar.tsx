@@ -106,7 +106,7 @@ export default function Navbar() {
               <div>
                 <p className="text-[10px] text-[#a855f7] uppercase tracking-widest mb-2 font-bold">Engineering</p>
                 <ul className="space-y-1 text-sm text-gray-300">
-                  <li><Link href="/services/custom-machinery-fabrication" className="hover:text-[#a855f7] transition-colors block py-0.5">Custom Machinery Fabrication</Link></li>
+                  <li><Link href="/services/custom-machinery-fabrication" className="hover:text-[#a855f7] transition-colors block py-0.5">Custom Machinery & Product Fabrication</Link></li>
                   <li><Link href="/services/3d-printing" className="hover:text-[#a855f7] font-medium transition-colors block py-0.5">3D Printing Service</Link></li>
                   <li><Link href="/services/mechanical-cad" className="hover:text-[#a855f7] transition-colors block py-0.5">Mechanical CAD</Link></li>
                 </ul>

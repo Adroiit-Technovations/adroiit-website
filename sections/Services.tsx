@@ -81,7 +81,7 @@ export default function Services() {
     <section className={`${bricolage.className} bg-gray-50 text-gray-900 py-8 px-6 overflow-hidden`}>
       <div className="text-center mb-10">
         <h2 className="text-4xl md:text-2xl font-bold text-purple-600">Our Services</h2>
-        <p className="text-gray-700 mt-2 max-w-2xl mx-auto">
+        <p className="text-gray-700 italic mt-2 max-w-2xl mx-auto">
           Explore what we offer across Schools, Colleges and Industry
         </p>
       </div>

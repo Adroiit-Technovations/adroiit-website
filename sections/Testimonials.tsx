@@ -13,14 +13,14 @@ const testimonials = [
     text: "I am very satisfied with the teaching. The individual care and attention given to my daughter made a big difference.",
   },
   {
-    name: "Sri Sanjana",
-    role: "Research and Development Intern",
-    text: "I built my first Arduino project here. Learning is fun and practical!",
+    name: "Hariharan",
+    role: "Parent - Robotics Class",
+    text: "Good place to go on with STEM Education and Robotics Courses.",
   },
   {
     name: "Shanmugapriya M",
     role: "Research & Development Intern",
-    text: "Fadil senior is the joker of the Adroiit Technovations. He enterains everyone so much! May your soul rest in peace Senior!",
+    text: "I built my first Arduino project here. Learning is fun and practical!",
   },
   {
     name: "Rahul Sharma",
@@ -84,10 +84,10 @@ export default function Testimonials() {
 
       {/* Heading */}
       <div className="text-center mb-6 px-4">
-        <h2 className="text-3xl md:text-2xl font-bold">
+        <h2 className="text-3xl md:text-2xl text-purple-600 font-bold">
           What People Say
         </h2>
-        <p className="text-gray-400 mt-2 text-sm md:text-base">
+        <p className="text-gray-200 italic mt-2 text-sm md:text-base">
           Real feedback from students, parents and schools
         </p>
       </div>
@@ -121,7 +121,7 @@ export default function Testimonials() {
                       </p>
 
                       <div className="mt-6">
-                        <h3 className="font-semibold text-[#8c52ff]">
+                        <h3 className="font-semibold text-purple-600">
                           {t.name}
                         </h3>
                         <p className="text-sm text-gray-400">

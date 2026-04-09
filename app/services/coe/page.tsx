@@ -50,24 +50,24 @@ const fadeUp: Variants = {
 export default function CoEPage() {
   const domains = [
     { 
-      image: "/services/coe-robotics2.jfif", 
+      image: "/coe/robotics-ai.jpg", 
       title: "Robotics", 
       desc: "Hands-on learning in robot design, control systems, and real-world applications including autonomous and semi-autonomous systems." 
     },
     { 
-      image: "/services/coe-embedded.jfif", 
+      image: "/coe/embedded.jpg", 
       title: "Embedded Systems & IoT", 
       desc: "Comprehensive training on microcontrollers, sensor interfacing, communication protocols and IoT-based smart systems." 
     },
     { 
-      image: "/services/coe-plc.jfif", 
+      image: "/coe/plc.jpg", 
       title: "Industrial Automation", 
       desc: "Exposure to automation technologies used in industries, including PLCs, control systems and smart manufacturing concepts." 
     },
     { 
-      image: "/services/coe-drone.jpg", 
+      image: "/coe/drone.jpg", 
       title: "Drone Technology", 
-      desc: "Learning drone design, assembly, flight control and applications in fields like surveillance, mapping, and agriculture." 
+      desc: "Learning drone design, assembly, flight control and applications in fields like surveillance, mapping and agriculture." 
     },
   ];
 

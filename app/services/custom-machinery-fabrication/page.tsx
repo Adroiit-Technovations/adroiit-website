@@ -147,7 +147,7 @@ export default function CustomMachineryPage() {
             </motion.div>
 
             <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={2} className="relative rounded-3xl overflow-hidden border-2 border-white/10 aspect-video w-full max-w-[550px] mx-auto lg:ml-auto">
-                <Image src="/cmf.jfif" alt="Machinery Fabrication" fill className="object-cover opacity-80" priority />
+                <Image src="/cpf/cpf-hero.jpg" alt="Machinery Fabrication" fill className="object-cover opacity-80" priority />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </motion.div>
             </div>

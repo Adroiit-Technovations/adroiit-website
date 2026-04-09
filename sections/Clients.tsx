@@ -21,8 +21,8 @@ export default function Clients() {
         <h2 className="text-4xl md:text-2xl font-bold text-purple-600">
           Our Clients & Partners
         </h2>
-        <p className="text-gray-600 mt-3 max-w-3xl mx-auto">
-          Trusted by leading Educational Institutions across Puducherry
+        <p className="text-gray-600 italic mt-3 max-w-3xl mx-auto">
+          Trusted by Prominent Educational Institutions
         </p>
       </div>
 

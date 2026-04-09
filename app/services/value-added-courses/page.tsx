@@ -48,32 +48,32 @@ const fadeUp: Variants = {
 export default function ValueAddedCoursesPage() {
   const courseList = [
     { 
-      image: "/vac/3d-cad.jfif", 
+      image: "/vac/3d-cad.jpg", 
       title: "3D design & modelling", 
       desc: "Develop skills in creating precise digital models using industry-standard design tools." 
     },
     { 
-      image: "/vac/3d-printing.jfif", 
+      image: "/vac/3d-printing.jpg", 
       title: "Additive manufacturing & 3D printing", 
       desc: "Learn modern manufacturing techniques to transform digital designs into functional prototypes." 
     },
     { 
-      image: "/vac/embedded.jfif", 
+      image: "/vac/embedded.jpg", 
       title: "Embedded systems & IoT", 
       desc: "Understand the integration of hardware and software to develop smart, connected systems." 
     },
     { 
-      image: "/vac/pcb.jfif", 
+      image: "/vac/pcb.jpg", 
       title: "PCB design & prototyping", 
       desc: "Learn to design, develop and prototype professional Printed Circuit Boards (PCBs) for electronic applications." 
     },
     { 
-      image: "/vac/drone.jfif", 
+      image: "/vac/drone.jpg", 
       title: "Drone technology", 
       desc: "Gain practical knowledge of UAV systems, including design, flight control and real-world applications." 
     },
     { 
-      image: "/vac/ai.jfif", 
+      image: "/vac/ai.jpg", 
       title: "Artificial intelligence", 
       desc: "Explore machine learning and data-driven technologies to build intelligent applications." 
     },
