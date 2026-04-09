@@ -115,7 +115,7 @@ export default function Navbar() {
           </div>
 
           <Link href="/careers" className="px-4 py-1 text-sm text-gray-300 hover:text-white transition-colors rounded-full hover:bg-white/5 whitespace-nowrap">
-            Apply for Internship
+            Internship
           </Link>
         </div>
 

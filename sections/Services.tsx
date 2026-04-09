@@ -56,7 +56,7 @@ export default function Services() {
     {
       title: "3D Printing",
       description: "FDM 3D printing serivce that transforms your designs into durable, functional parts with quality, speed and precision. Ideal for rapid prototyping and low-volume production.",
-      image: "/services/3d-printing.png",
+      image: "/services/3d-printing.jpg",
       link: "/services/3d-printing",
     },
     {
