@@ -8,8 +8,9 @@ const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
 export default function Gallery() {
   const images = [
-    "/projects/1.jpg", "/projects/2.jpg", "/projects/3.jpg", 
-    "/projects/4.jpg", "/projects/5.jpg", "/projects/6.jpg", 
+    "/projects/1.jpg", "/projects/2.jpg", "/projects/3.jpeg", 
+    "/projects/4.jpg", "/projects/5.jpg", "/projects/6.jpeg", 
+    "/projects/7.jpeg", "/projects/8.jpg", 
   ];
 
   const duplicatedImages = [...images, ...images];
@@ -18,7 +19,7 @@ export default function Gallery() {
     <section className={`${bricolage.className} bg-black text-white py-5`}>
       
       <div className="text-center mb-4">
-        <h2 className="text-2xl font-bold">Our Gallery</h2>
+        <h2 className="text-2xl text-purple-500 font-bold">Our Gallery</h2>
         <p className="text-gray-400 mt-2 max-w-2xl mx-auto px-4">
           A glimpse into our hands-on learning and innovation
         </p>

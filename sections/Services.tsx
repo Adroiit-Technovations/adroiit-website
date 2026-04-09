@@ -36,10 +36,10 @@ export default function Services() {
       link: "/services/coe-advanced-lab",
     },
     {
-      title: "Advanced Labs",
+      title: "Value Added Courses",
       description: "State-of-the-art laboratory steups featuring cutting-edge equipment, enabling experimentation and technical excellence.",
       image: "/services/advanced-labs2.png",
-      link: "/services/advanced-lab",
+      link: "/services/value-added-courses",
     },
     {
       title: "Technical Workshops",
