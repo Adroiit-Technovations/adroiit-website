@@ -37,7 +37,7 @@ export default function Services() {
     },
     {
       title: "Value Added Courses",
-      description: "State-of-the-art laboratory steups featuring cutting-edge equipment, enabling experimentation and technical excellence.",
+      description: "Enhance core academic learning with industry-relevant, skill-focused courses designed to build practical knowledge and improve career readiness.",
       image: "/services/advanced-labs2.png",
       link: "/services/value-added-courses",
     },
