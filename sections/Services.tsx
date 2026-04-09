@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -87,7 +87,8 @@ export default function Services() {
       </div>
 
       <div className="max-w-[1200px] mx-auto">
-        <div className="relative flex items-center justify-center gap-6">
+        {/* DESKTOP VIEW: EXACT ORIGINAL CARD STYLE IN A SLIDER */}
+        <div className="hidden md:flex relative items-center justify-center gap-6">
           {totalSlides > 1 && (
             <button
               onClick={prevSlide}
@@ -97,43 +98,48 @@ export default function Services() {
             </button>
           )}
 
-          {visibleServices.map((service, idx) => (
-            <motion.div
-              key={startIndex + idx}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex-1 max-w-[340px] flex flex-col h-full"
-            >
-              <div className="relative w-full h-40 overflow-hidden shrink-0">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+          {/* This wrapper mimics your original flex container for cards */}
+          <div className="flex items-center justify-center gap-6 w-full">
+            <AnimatePresence mode="wait">
+              {visibleServices.map((service, idx) => (
+                <motion.div
+                  key={startIndex + idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="group overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex-1 max-w-[340px] flex flex-col h-full"
+                >
+                  <div className="relative w-full h-40 overflow-hidden shrink-0">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
 
-              <div className="p-5 flex flex-col flex-1 justify-between min-h-[220px]">
-                <div>
-                  <h3 className="text-lg font-bold text-purple-600 leading-tight">
-                    {service.title}
-                  </h3>
-                  {/* Added text-justify here */}
-                  <p className="text-sm text-black mt-2 text-justify">
-                    {service.description}
-                  </p>
-                </div>
-                
-                <Link href={service.link}>
-                  <button className="mt-4 inline-flex items-center gap-1.5 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-[#8c52ff] text-white text-sm font-semibold rounded-lg shadow-md hover:scale-105 active:scale-95 transition-all duration-300 self-start">
-                    Explore
-                    <ChevronRight size={14} className="stroke-[2.5]" />
-                  </button>
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+                  <div className="p-5 flex flex-col flex-1 justify-between min-h-[220px]">
+                    <div>
+                      <h3 className="text-lg font-bold text-purple-600 leading-tight">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-black mt-2 text-justify">
+                        {service.description}
+                      </p>
+                    </div>
+                    
+                    <Link href={service.link}>
+                      <button className="mt-4 inline-flex items-center gap-1.5 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-[#8c52ff] text-white text-sm font-semibold rounded-lg shadow-md hover:scale-105 active:scale-95 transition-all duration-300 self-start">
+                        Explore
+                        <ChevronRight size={14} className="stroke-[2.5]" />
+                      </button>
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
 
           {totalSlides > 1 && (
             <button
@@ -145,8 +151,45 @@ export default function Services() {
           )}
         </div>
 
+        {/* MOBILE VIEW: EXACT ORIGINAL CARD STYLE STACKED */}
+        <div className="flex md:hidden flex-col items-center gap-8">
+          {services.map((service, idx) => (
+            <div
+              key={idx}
+              className="group overflow-hidden rounded-2xl bg-white shadow-md border border-gray-200 w-full max-w-[340px] flex flex-col"
+            >
+              <div className="relative w-full h-40 overflow-hidden shrink-0">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="p-5 flex flex-col min-h-[220px] justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-purple-600 leading-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-black mt-2 text-justify">
+                    {service.description}
+                  </p>
+                </div>
+                <Link href={service.link}>
+                  <button className="mt-4 w-full inline-flex items-center justify-center gap-1.5 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-[#8c52ff] text-white text-sm font-semibold rounded-lg shadow-md">
+                    Explore
+                    <ChevronRight size={14} className="stroke-[2.5]" />
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* DOTS (Desktop Only) */}
         {totalSlides > 1 && (
-          <div className="flex justify-center mt-10 gap-3">
+          <div className="hidden md:flex justify-center mt-10 gap-3">
             {Array.from({ length: totalSlides }).map((_, i) => (
               <button
                 key={i}
