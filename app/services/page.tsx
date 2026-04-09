@@ -14,7 +14,14 @@ import Footer from "@/sections/Footer";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
+<<<<<<< HEAD
 // Animation variants
+=======
+/**
+ * FIXED: Explicitly casting transition to 'any'.
+ * This prevents the Vercel TypeScript runner from failing on 'string' vs 'Easing' types.
+ */
+>>>>>>> e2baf1dba26938901f368103a341818a42460a55
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
@@ -43,9 +50,15 @@ const serviceCategories = [
     icon: <BookOpen className="text-[#8c52ff]" />,
     description: "Nurturing young minds through hands-on STEM exploration and innovation labs.",
     links: [
+<<<<<<< HEAD
       { name: "STEM Tinkering & Innovation Lab (TIL)", href: "/services/stem-til" },
       { name: "STEM Workshops", href: "/services/stem-workshop" },
       { name: "STEM Bootcamps", href: "/services/stem-bootcamp" },
+=======
+      { name: "STEM tinkering labs", href: "/services/stem-labs" },
+      { name: "STEM workshops", href: "/services/workshops" },
+      { name: "STEM bootcamps", href: "/services/bootcamps" },
+>>>>>>> e2baf1dba26938901f368103a341818a42460a55
     ]
   },
   {
@@ -53,9 +66,15 @@ const serviceCategories = [
     icon: <GraduationCap className="text-[#8c52ff]" />,
     description: "Advanced technical training and Center of Excellence (CoE) setups for higher education.",
     links: [
+<<<<<<< HEAD
       { name: "Center of Excellence (CoE)", href: "/services/coe" },
       { name: "Value Added Courses", href: "/services/value-added-courses" },
       { name: "Technical Workshops", href: "/services/technical-workshop" },
+=======
+      { name: "Center of Excellence", href: "/services/coe" },
+      { name: "Advanced robotics labs", href: "/services/advanced-labs" },
+      { name: "Technical workshops", href: "/services/college-workshops" },
+>>>>>>> e2baf1dba26938901f368103a341818a42460a55
     ]
   },
   {
@@ -63,9 +82,15 @@ const serviceCategories = [
     icon: <Settings className="text-[#8c52ff]" />,
     description: "Professional grade fabrication, 3D printing, and mechanical design solutions.",
     links: [
+<<<<<<< HEAD
       { name: "Custom Product Fabrication", href: "/services/custom-machinery-fabrication"},
       { name: "3D Printing", href: "/services/3d-printing" },
       { name: "Mechanical CAD", href: "/services/mechanical-cad" },
+=======
+      { name: "3D printing & analysis", href: "/services/3d-printing", highlight: true },
+      { name: "Custom fabrication", href: "/services/fabrication" },
+      { name: "Mechanical CAD", href: "/services/consultation" },
+>>>>>>> e2baf1dba26938901f368103a341818a42460a55
     ]
   }
 ];
@@ -87,21 +112,35 @@ export default function ServicesPage() {
       <main className="pt-25 pb-10 px-6 flex-grow bg-[#050505]">
         
         {/* Header section */}
+<<<<<<< HEAD
         <section className="max-w-7xl mx-auto text-center mb-8">
+=======
+        <section className="max-w-7xl mx-auto text-center mb-20">
+>>>>>>> e2baf1dba26938901f368103a341818a42460a55
           <motion.h1 
             initial="hidden"
             animate="visible"
             variants={sectionVariants}
+<<<<<<< HEAD
             className="text-5xl md:text-2xl font-bold tracking-tighter mb-6"
           >
             <span className="text-purple-600">Our Solutions</span>
+=======
+            className="text-5xl md:text-7xl font-bold tracking-tighter mb-6"
+          >
+            Our <span className="text-[#8c52ff]">solutions</span>
+>>>>>>> e2baf1dba26938901f368103a341818a42460a55
           </motion.h1>
           <motion.p 
             custom={1}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
+<<<<<<< HEAD
             className="text-gray-300 text-lg max-w-2xl mx-auto"
+=======
+            className="text-gray-400 text-lg max-w-2xl mx-auto"
+>>>>>>> e2baf1dba26938901f368103a341818a42460a55
           >
             From classroom inspiration to industrial fabrication, we provide the tools and expertise to build the future.
           </motion.p>
@@ -144,6 +183,30 @@ export default function ServicesPage() {
             </motion.div>
           ))}
         </section>
+<<<<<<< HEAD
+=======
+
+        {/* Feature highlight strip */}
+        <section className="max-w-7xl mx-auto mt-32 border-t border-white/5 pt-20">
+          <div className="grid md:grid-cols-3 gap-12 text-center">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
+              <Cpu className="mx-auto mb-4 text-[#8c52ff]" size={32} />
+              <h3 className="font-bold mb-2">Modern hardware</h3>
+              <p className="text-sm text-gray-500">Access to industrial-grade 3D printers and CNC machinery.</p>
+            </motion.div>
+            <motion.div custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+              <Layers className="mx-auto mb-4 text-[#8c52ff]" size={32} />
+              <h3 className="font-bold mb-2">Expert guidance</h3>
+              <p className="text-sm text-gray-500">Mentorship from experienced mechanical and robotics engineers.</p>
+            </motion.div>
+            <motion.div custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+              <Microscope className="mx-auto mb-4 text-[#8c52ff]" size={32} />
+              <h3 className="font-bold mb-2">Future-ready skills</h3>
+              <p className="text-sm text-gray-500">Curriculum designed to bridge the gap between theory and industry.</p>
+            </motion.div>
+          </div>
+        </section>
+>>>>>>> e2baf1dba26938901f368103a341818a42460a55
       </main>
 
       {/* Double-check that @/sections/Footer root element doesn't 
