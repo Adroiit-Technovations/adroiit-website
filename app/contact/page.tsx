@@ -9,8 +9,21 @@ import { Bricolage_Grotesque } from "next/font/google";
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
 const indianStatesAndUTs = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Jammu and Kashmir", "Ladakh", "Lakshadweep", "Puducherry"];
+
 const indianCities = ["Mumbai", "Delhi", "Bengaluru", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Surat", "Pune", "Jaipur", "Lucknow", "Kanpur", "Nagpur", "Indore", "Thane", "Bhopal", "Visakhapatnam", "Patna", "Vadodara", "Ghaziabad", "Ludhiana", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Tiruppur", "Erode", "Vellore", "Thoothukudi", "Dindigul", "Thanjavur", "Kanchipuram", "Karur", "Namakkal", "Nagercoil", "Kanyakumari", "Kovilpatti", "Pollachi", "Rajapalayam", "Sivakasi", "Tirunelveli", "Tuticorin", "Virudhunagar", "Cuddalore", "Villupuram", "Puducherry", "Karaikal", "Yanam", "Mahe", "Ooty", "Kodaikanal", "Yercaud", "Hosur", "Krishnagiri", "Dharmapuri", "Attur", "Mettur", "Rasipuram", "Gobichettipalayam", "Sathyamangalam", "Bhavani", "Mettupalayam", "Udumalpet", "Palani", "Oddanchatram", "Nilgiris", "Kotagiri", "Coonoor", "Thiruvananthapuram", "Kochi", "Kozhikode", "Thrissur", "Kollam", "Palakkad", "Kannur", "Kottayam", "Alappuzha", "Malappuram", "Kasaragod", "Pathanamthitta", "Idukki", "Ernakulam", "Wayanad", "Aluva", "Perumbavoor", "Angamaly", "Mysuru", "Hubballi", "Mangaluru", "Belagavi", "Davanagere", "Ballari", "Shivamogga", "Vijayapura", "Tumakuru", "Raichur", "Bidar", "Hospet", "Gadag", "Udupi", "Warangal", "Nizamabad", "Karimnagar", "Khammam", "Ramagundam", "Mahbubnagar", "Jamshedpur", "Ranchi", "Dhanbad", "Bokaro", "Asansol", "Durgapur", "Siliguri", "Guwahati", "Bhubaneswar", "Cuttack", "Rourkela", "Sambalpur", "Amritsar", "Jalandhar", "Patiala", "Dehradun", "Haridwar", "Haldwani", "Rudrapur"];
-const services = ["STEM Lab Setup", "Robotics & Embedded Systems", "AI & Machine Learning", "IoT & Smart Systems", "Workshops / Bootcamps", "Custom Project / Consultation"];
+
+const services = [
+  "STEM Tinkering and Innovation Lab (TIL)",
+  "STEM Workshop",
+  "STEM Bootcamp",
+  "Center of Excellence (CoE)",
+  "Value Added Courses",
+  "Technical Workshop",
+  "Custom Product Fabrication",
+  "3D Printing",
+  "Mechanical CAD"
+];
+
 const uniqueCities = [...new Set(indianCities)];
 
 export default function ContactPage() {
@@ -37,9 +50,9 @@ export default function ContactPage() {
   return (
     <section key="contact-page" className={`${bricolage.className} min-h-screen py-20 md:py-28 px-4 md:px-6 bg-black text-white`}>
       <div className="max-w-7xl mx-auto">
-        {/* Changed grid-cols to stack on mobile (default) and split on md */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 md:gap-20 items-stretch">
           
+          {/* Form Side */}
           <div className="flex flex-col min-h-full">
             <div>
               <h2 className="text-2xl font-bold text-[#8c52ff]">Contact Us</h2>
@@ -121,22 +134,37 @@ export default function ContactPage() {
             </form>
           </div>
 
+          {/* Info Side */}
           <div className="flex flex-col min-h-full">
             <h3 className="text-2xl font-semibold text-[#8c52ff]">Get in Touch</h3>
             <div className="mt-6 space-y-5 text-gray-300">
-              <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#8c52ff]" /><p className="text-sm md:text-base">+91 8870002908</p></div>
-              <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-[#8c52ff]" /><p className="text-sm md:text-base break-all">info@adroiittechnovations.in</p></div>
-              {/* Removed whitespace-nowrap to allow wrapping on mobile */}
-              <div className="flex items-start gap-3"><MapPin className="w-5 h-5 text-[#8c52ff] mt-1 shrink-0" /><p className="text-sm md:text-base leading-relaxed">15A, Pavendhar Street, Thamizh Thai Nagar, Uppalam, Puducherry - 605004</p></div>
-              <div className="flex items-center gap-3"><Clock className="w-5 h-5 text-[#8c52ff]" /><p className="text-sm md:text-base">Mon - Sat: 10:00 AM - 6:00 PM</p></div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-[#8c52ff]" />
+                <p className="text-sm md:text-base">+91 8870002908</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-[#8c52ff]" />
+                <p className="text-sm md:text-base break-all">info@adroiittechnovations.in</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-[#8c52ff] mt-1 shrink-0" />
+                <p className="text-sm md:text-base leading-relaxed">
+                  15A, Pavendhar Street, Thamizh Thai Nagar, Uppalam, Puducherry - 605004
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-[#8c52ff]" />
+                <p className="text-sm md:text-base">Mon - Sat: 10:00 AM - 6:00 PM</p>
+              </div>
             </div>
+
+            {/* Map Container - Using Exact User Provided Iframe */}
             <div className="mt-8 md:mt-auto pt-6">
-              {/* Updated map source with full responsive container */}
               <div className="w-full overflow-hidden rounded-xl border border-gray-800">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.7686421645653!2d79.81572427483617!3d11.921973788305209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5361f82ca8d2db%3A0x4cec9aaf4e89f084!2sADROIIT%20TECHNOVATIONS!5e1!3m2!1sen!2sin!4v1775739111207!5m2!1sen!2sin" 
                   width="100%" 
-                  height="290" 
+                  height="350" 
                   style={{ border: 0 }} 
                   allowFullScreen={true} 
                   loading="lazy" 
@@ -145,6 +173,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
