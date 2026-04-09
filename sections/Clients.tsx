@@ -9,7 +9,7 @@ const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 export default function Clients() {
   const logos = [
     "/clients/client1.png",
-    "/clients/client2.jfif",
+    "/clients/client2.jpg",
     //"/clients/client3.png",
   ];
 
