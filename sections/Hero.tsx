@@ -14,7 +14,8 @@ const LOGO_HEIGHT = 120;
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-12 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
+    /* Changed pt-24 to pt-12 (mobile) and added md:pt-32 (desktop) */
+    <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-12 md:pt-32 pb-12 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
 
       {/* Logo Wrapper */}
       <motion.div
