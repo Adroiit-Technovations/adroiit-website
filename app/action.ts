@@ -18,7 +18,7 @@ export async function sendContactForm(prevState: any, formData: FormData) {
     // 1. Send the Email to yourself
     await resend.emails.send({
       from: 'Adroiit Website <onboarding@resend.dev>',
-      to: 'info@adroiittechnovations.in',
+      to: 'adroiit.technovations@gmail.com',
       subject: `New Inquiry: ${service} from ${name}`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee;">
