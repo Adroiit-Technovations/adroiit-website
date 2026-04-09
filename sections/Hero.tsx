@@ -14,17 +14,17 @@ const LOGO_HEIGHT = 120;
 
 export default function Hero() {
   return (
-    /* Reduced min-height for better fit on small screens
-       Reduced padding: pt-8 pb-8 on mobile, md:pt-32 md:pb-16 on desktop
+    /* Mobile: h-auto, pt-8, pb-4 
+       Desktop (md): min-h-screen, pt-24, pb-12 
     */
-    <section className="min-h-[85vh] md:min-h-screen flex flex-col justify-center items-center text-center px-6 pt-8 md:pt-32 pb-8 md:pb-16 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
+    <section className="h-auto md:min-h-screen flex flex-col justify-center items-center text-center px-6 pt-8 md:pt-24 pb-4 md:pb-12 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
 
       {/* Logo Wrapper */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="w-full flex justify-center mb-4 md:mb-6" // Slightly reduced margin-bottom on mobile
+        className="w-full flex justify-center mb-4 md:mb-6"
       >
         <Image
           src="/logo2.png"
@@ -36,12 +36,15 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Heading */}
+      {/* Heading 
+          Mobile: text-2xl
+          Desktop (md): text-5xl (Original size)
+      */}
       <motion.h1
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className={`${bricolage.className} text-3xl md:text-5xl font-bold leading-tight max-w-4xl`}
+        className={`${bricolage.className} text-2xl md:text-5xl font-bold leading-tight max-w-4xl`}
       >
         Empowering Next-Gen through
         <br className="hidden md:block" />
@@ -83,12 +86,15 @@ export default function Hero() {
         </Link>
       </motion.div>
 
-      {/* Impact Section */}
+      {/* Impact Section 
+          Mobile: mt-6
+          Desktop (md): mt-12 (Original)
+      */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9 }}
-        className="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-5xl" // Reduced mt and gap for mobile
+        className="mt-6 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-5xl"
       >
         {[
           { value: "5+", label: "Sessions" },
@@ -103,7 +109,7 @@ export default function Hero() {
             <h3 className={`${bricolage.className} text-xl md:text-3xl font-bold text-[#8c52ff]`}>
               {item.value}
             </h3>
-            <p className={`${bricolage.className} text-gray-400 text-[10px] md:text-sm mt-1`}>
+            <p className={`${bricolage.className} text-[10px] md:text-sm text-gray-400 mt-1`}>
               {item.label}
             </p>
           </div>
