@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion"; // Added Variants
+import { motion, Variants } from "framer-motion";
 import {
   ArrowRight,
   BookOpen,
@@ -19,17 +19,19 @@ import Footer from "@/sections/Footer";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-// Fixed: Explicitly typed as Variants to resolve ease string error
+/**
+ * FIXED: Added 'as any' to transitions.
+ * This resolves the Easing union type error consistently across Vercel builds.
+ */
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: { 
     opacity: 1, 
     y: 0, 
-    transition: { duration: 0.8, ease: "easeOut" } 
+    transition: { duration: 0.8, ease: "easeOut" } as any
   }
 };
 
-// Fixed: Explicitly typed as Variants
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
@@ -39,7 +41,7 @@ const fadeUp: Variants = {
       delay: i * 0.1,
       duration: 0.6,
       ease: "easeOut",
-    },
+    } as any,
   }),
 };
 
@@ -89,7 +91,7 @@ export default function ValueAddedCoursesPage() {
   return (
     <div className={`${bricolage.className} bg-white text-black overflow-x-hidden`}>
       
-      {/* HERO SECTION */}
+      {/* Hero section */}
       <section className="relative pt-32 pb-12 px-6 overflow-hidden bg-white">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
@@ -139,7 +141,7 @@ export default function ValueAddedCoursesPage() {
         </motion.div>
       </section>
 
-      {/* FEATURED COURSES */}
+      {/* Featured courses */}
       <section id="courses" className="py-8 px-6 bg-neutral-950 text-white">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
@@ -147,7 +149,6 @@ export default function ValueAddedCoursesPage() {
         >
           <div className="text-center mb-6">
             <h2 className="text-2xl font-bold text-purple-500 mb-2">Featured courses</h2>
-            {/* Updated Section Description Font Size to text-lg */}
             <p className="text-gray-300 text-lg max-w-xl mx-auto">
               In-depth certification programs for future-ready engineers.
             </p>
@@ -182,7 +183,7 @@ export default function ValueAddedCoursesPage() {
         </motion.div>
       </section>
 
-      {/* COURSE HIGHLIGHTS */}
+      {/* Course highlights */}
       <section className="py-8 px-6 bg-gray-50/50">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
@@ -218,7 +219,7 @@ export default function ValueAddedCoursesPage() {
         </motion.div>
       </section>
 
-      {/* CTA SECTION */}
+      {/* CTA section */}
       <section className="py-8 px-6 bg-[#F4F4F4]">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}

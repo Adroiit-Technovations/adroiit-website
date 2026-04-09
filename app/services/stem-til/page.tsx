@@ -1,25 +1,19 @@
 "use client";
 
-import { motion, Variants } from "framer-motion"; // Added Variants to import
+import { motion, Variants } from "framer-motion";
 import {
   ArrowRight,
   Lightbulb,
   Zap,
   Users,
-  Cpu,
-  Bot,
   MessageCircle,
   IndianRupee,
-  CircuitBoard,
-  BoxSelect,
-  Layers,
   BrainCircuit,
   BookOpen,
   FileText,
   BookmarkCheck,
   GraduationCap,
   Library,
-  Wifi,
   Microscope,
   Puzzle,
   Workflow,
@@ -40,7 +34,7 @@ import Footer from "@/sections/Footer";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-// Animation Variants - Explicitly typed to resolve "ease: string" error
+// Animation Variants
 const titleVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -124,7 +118,7 @@ export default function STEMLabPage() {
   return (
     <div className={`${bricolage.className} bg-white text-black overflow-x-hidden`}>
 
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION - Reordered for Mobile */}
       <section className="relative pt-32 pb-2 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
@@ -132,26 +126,41 @@ export default function STEMLabPage() {
             <div className="w-full lg:w-1/2 flex flex-col items-start">
               <motion.h1
                 custom={0} variants={fadeUp} initial="hidden" animate="visible"
-                className="text-4xl md:text-3xl font-extrabold tracking-tight text-black leading-[1.1] mb-2"
+                className="order-1 text-4xl md:text-3xl font-extrabold tracking-tight text-black leading-[1.1] mb-2"
               >
                 <span className="text-purple-600">STEM Tinkering and Innovation Lab (TIL)</span>
               </motion.h1>
 
               <motion.span
                 custom={1} variants={fadeUp} initial="hidden" animate="visible"
-                className="text-black font-bold tracking-[0.08em] uppercase text-sm mb-2"
+                className="order-2 text-black font-bold tracking-[0.08em] uppercase text-sm mb-2"
               >
                 A holistic space for experiential learning and innovation
               </motion.span>
+
+              {/* IMAGE POSITIONED 3rd ON MOBILE */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                className="order-3 lg:hidden w-full flex justify-center my-8"
+              >
+                <div className="relative aspect-[16/10] w-full max-w-[500px]">
+                  <div className="absolute -inset-4 bg-purple-100/40 rounded-[2.5rem] blur-2xl z-0" />
+                  <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-xl z-10 bg-white">
+                    <Image src="/stem-til2.png" alt="STEM Innovation Lab" fill className="object-cover" priority />
+                  </div>
+                </div>
+              </motion.div>
 
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "80px" }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-[5px] bg-purple-600 mb-10 rounded-full"
+                className="order-4 h-[5px] bg-purple-600 mb-6 lg:mb-10 rounded-full"
               />
 
-              <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible" className="space-y-6">
+              <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible" className="order-5 space-y-6">
                 <p className="text-gray-800 text-lg md:text-lg font-medium leading-relaxed text-justify">
                   STEM Tinkering and Innovation Lab (TIL) is a dynamic and collaborative learning environment designed to foster curiosity, hands-on experimentation and innovation in Science, Technology, Engineering and Mathematics (S.T.E.M).
                 </p>
@@ -160,7 +169,7 @@ export default function STEMLabPage() {
                 </p>
               </motion.div>
 
-              <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="mt-5">
+              <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="order-6 mt-5">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all shadow-lg shadow-purple-500/25 group text-base">
                   Book a Consultation
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -168,11 +177,12 @@ export default function STEMLabPage() {
               </motion.div>
             </div>
 
+            {/* DESKTOP HERO IMAGE CONTAINER */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="w-full lg:w-1/2 flex justify-center lg:justify-end"
+              className="hidden lg:flex w-full lg:w-1/2 justify-center lg:justify-end"
             >
               <div className="relative aspect-[16/10] w-full max-w-[620px]">
                 <div className="absolute -inset-4 bg-purple-100/40 rounded-[2.5rem] blur-2xl z-0" />
@@ -242,7 +252,7 @@ export default function STEMLabPage() {
         </div>
       </section>
 
-      {/* 3. OBJECTIVES - SINGLE ROW CONFIGURATION */}
+      {/* 3. OBJECTIVES */}
       <section className="py-8 px-6 bg-white text-black">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-6">
@@ -254,7 +264,6 @@ export default function STEMLabPage() {
             </motion.p>
           </div>
           
-          {/* Single Row Responsive Grid */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {objectives.map((obj, i) => (
               <motion.div 
@@ -275,7 +284,7 @@ export default function STEMLabPage() {
         </div>
       </section>
 
-      {/* 4. DOMAINS FOCUS - UPDATED CARD STYLE */}
+      {/* 4. DOMAINS FOCUS */}
       <section className="py-8 px-6 bg-neutral-950 text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
@@ -324,7 +333,7 @@ export default function STEMLabPage() {
               Why Choose Adroiit Technovations?
             </motion.h2>
             <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-700 mt-3 text-base max-w-4xl mx-auto">
-              Adroiit Technovations stands as your trusted partner in delivering future-ready STEM learning solutions for your institution. The key reasons that set us apart are highlighted as follows
+              Adroiit Technovations stands as your trusted partner in delivering future-ready STEM learning solutions for your institution.
             </motion.p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -345,7 +354,7 @@ export default function STEMLabPage() {
           <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-extrabold text-purple-600 mb-4">
             Transform Your School into a Future-Ready Innovation Hub
           </motion.h2>
-          <p className="text-gray-600 mb-8 text-sm">Let's join to empower your institution with a STEM Tinkering and Innovation Lab designed to foster creativity, hands-on learning and future-ready skills. Partner with us to build a world-class lab that prepares learners for tomorrow's technology-driven world.</p>
+          <p className="text-gray-600 mb-8 text-sm">Let's join to empower your institution with a STEM Tinkering and Innovation Lab designed to foster creativity, hands-on learning and future-ready skills.</p>
           <Link href="/contact" className="inline-flex items-center gap-3 bg-purple-600 text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-all shadow-xl shadow-purple-500/20">
             <MessageCircle size={20} /> Book a Consultation
           </Link>
