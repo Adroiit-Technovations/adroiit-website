@@ -14,17 +14,17 @@ const LOGO_HEIGHT = 120;
 
 export default function Hero() {
   return (
-    /* Mobile: Increased pt-20 and pb-12 for more breathing room.
-       Desktop (md): Reverts to your original pt-24 and pb-12.
+    /* Mobile: pt-24 (Slightly increased from pt-20)
+       Desktop (md): Reverts to your original pt-24
     */
-    <section className="h-auto md:min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 md:pt-24 pb-12 md:pb-12 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
+    <section className="h-auto md:min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 md:pt-24 pb-12 md:pb-12 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
 
       {/* Logo Wrapper */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="w-full flex justify-center mb-8 md:mb-6" // Increased mb-8 for mobile
+        className="w-full flex justify-center mb-8 md:mb-6"
       >
         <Image
           src="/logo2.png"
@@ -55,7 +55,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className={`${bricolage.className} mt-5 md:mt-4 text-base md:text-lg text-gray-300 max-w-2xl`} // mt-5 for mobile
+        className={`${bricolage.className} mt-5 md:mt-4 text-base md:text-lg text-gray-300 max-w-2xl`}
       >
         Adroiit Technovations is redefining STEM and technical skill education by bridging classroom theory with real-world innovation.
       </motion.p>
@@ -65,7 +65,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="mt-10 md:mt-6 flex flex-col sm:flex-row gap-4" // mt-10 for mobile
+        className="mt-10 md:mt-6 flex flex-col sm:flex-row gap-4"
       >
         <Link
           href="/services"
@@ -88,7 +88,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9 }}
-        className="mt-14 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl" // mt-14 for mobile
+        className="mt-14 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl"
       >
         {[
           { value: "5+", label: "Sessions" },
