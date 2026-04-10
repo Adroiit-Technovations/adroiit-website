@@ -1,35 +1,34 @@
 "use server";
 
-import { Resend } from "resend";
+import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend with your environment variable
+const resend = new Resend(process.env.RESEND_NEWSLETTER_KEY);
 
-export async function sendContactForm(prevState: any, formData: FormData) {
-  const name = formData.get("name") as string;
+export async function handleNewsletter(formData: FormData) {
   const email = formData.get("email") as string;
-  const phone = formData.get("phone") as string;
-  const city = formData.get("city") as string;
-  const state = formData.get("state") as string;
-  const service = formData.get("service") as string;
-  const message = formData.get("message") as string;
+
+  if (!email) return { success: false };
 
   try {
-    // Only use 'contact@adroiittechnovations.in' AFTER Resend shows "Verified"
-    const { error } = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>", 
-      to: "info@adroiittechnovations.in",
-      subject: `New Lead: ${name} - ${service}`,
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nLocation: ${city}, ${state}\nService: ${service}\n\nMessage: ${message}`,
+    await resend.emails.send({
+      from: 'Adroiit Newsletter <onboarding@resend.dev>', // See note below about domain verification
+      to: ['adroiit.technovations@gmail.com'], // Replace with your actual email address
+      subject: 'New Newsletter Subscriber!',
+      html: `
+        <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 12px;">
+          <h2 style="color: #8c52ff;">We have got a new subscriber!</h2>
+          <p>A new user has subscribed to the Adroiit Technovations newsletter:</p>
+          <p style="font-size: 18px; font-weight: bold; background: #f9f9f9; padding: 10px; border-radius: 8px;">${email}</p>
+          <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
+          <p style="font-size: 12px; color: #888;">This alert was sent automatically via Resend.</p>
+        </div>
+      `,
     });
 
-    if (error) throw error;
-
-    const whatsappText = encodeURIComponent(`Hello Adroiit! I'm ${name}. I'm interested in ${service}.`);
-    const whatsappURL = `https://wa.me/918870002908?text=${whatsappText}`;
-
-    return { success: true, message: "Success!", whatsappURL };
-  } catch (err: any) {
-    console.error(err);
-    return { success: false, message: "Error sending message." };
+    return { success: true };
+  } catch (error) {
+    console.error("Newsletter Error:", error);
+    return { success: false };
   }
 }
