@@ -2,16 +2,15 @@
 
 import { motion, Variants } from "framer-motion";
 import {
-  ArrowRight,
-  CheckCircle,
   Cpu,
-  Bot,
-  MessageCircle,
-  Layers,
-  BrainCircuit,
-  Star,
-  Terminal,
-  Zap
+  PenTool,
+  Microscope,
+  Briefcase,
+  Megaphone,
+  ArrowRight,
+  Zap,
+  ShieldCheck,
+  Globe,
 } from "lucide-react";
 import Image from "next/image";
 import { Bricolage_Grotesque } from "next/font/google";
@@ -20,140 +19,139 @@ import Footer from "@/sections/Footer";
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
+      delay: i * 0.1,
       duration: 0.5,
+      ease: "easeOut",
     },
-  },
+  }),
 };
 
 export default function InternshipPage() {
-  const internshipTracks = [
-    {
-      title: "Embedded Systems & IoT",
-      icon: <Cpu size={28} />,
-      skills: ["STM32/Arduino", "Sensors Integration", "MQTT Protocols", "PCB Design"],
-      color: "border-purple-500/20 bg-purple-500/5"
-    },
-    {
-      title: "Robotics & Automation",
-      icon: <Bot size={28} />,
-      skills: ["ROS (Robot OS)", "Kinematics", "Motor Control", "Computer Vision"],
-      color: "border-blue-500/20 bg-blue-500/5"
-    },
-    {
-      title: "Mechanical CAD Design",
-      icon: <Layers size={28} />,
-      skills: ["SolidWorks/Fusion 360", "GD&T", "DFM Principles", "3D Printing"],
-      color: "border-orange-500/20 bg-orange-500/5"
-    },
-    {
-      title: "AI & Machine Learning",
-      icon: <BrainCircuit size={28} />,
-      skills: ["Python", "TensorFlow", "Edge AI", "Data Analysis"],
-      color: "border-green-500/20 bg-green-500/5"
-    }
+  const googleFormLink = "https://forms.gle/your-form-id"; 
+
+  const domains = [
+    { title: "Embedded & IoT", status: "Open", desc: "Architect smart solutions using ESP32 & Arduino.", skills: ["Arduino", "PCB", "IoT"], image: "/internship/embedded.jpg", icon: <Cpu size={18} /> },
+    { title: "Mechanical Design", status: "Open", desc: "Design high-precision hardware & 3D workflows.", skills: ["SolidWorks", "CAD", "3DP"], image: "/internship/mechanical.jpg", icon: <PenTool size={18} /> },
+    { title: "R&D Innovation", status: "Open", desc: "Explore experimental STEM technologies.", skills: ["Research", "Testing", "Kits"], image: "/internship/rd.jpg", icon: <Microscope size={18} /> },
+    { title: "Founder's Office", status: "Open", desc: "Work on scaling & operational strategy.", skills: ["Strategy", "Ops", "Comm"], image: "/internship/founder.jpg", icon: <Briefcase size={18} /> },
+    { title: "Digital Marketing", status: "Closed", desc: "Technical SEO & growth marketing.", skills: ["SEO", "Content", "Ads"], image: "/internship/marketing.jpg", icon: <Megaphone size={18} /> },
   ];
 
-  const whatsappLink =
-    "https://wa.me/918870002908?text=Hi%20Adroiit%20Technovations%2C%20I'm%20interested%20in%20the%20Internship%20Program.";
-
   return (
-    <div className={`${bricolage.className} bg-[#050505] text-white min-h-screen`}>
+    <div className={`${bricolage.className} bg-white min-h-screen`}>
+      
+      {/* --- HERO SECTION --- */}
+      <section className="relative pt-32 pb-20 px-6 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
+            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tight mb-4">
+              Building the <span className="text-purple-600">Next Gen</span> of Innovators.
+            </h1>
+            <motion.div initial={{ width: 0 }} animate={{ width: "120px" }} transition={{ duration: 0.8 }} className="h-1.5 bg-purple-600 rounded-full mb-6" />
+            <p className="text-gray-600 text-lg font-medium leading-relaxed mb-8">
+              Join Adroiit Technovations for a hands-on internship experience. Solve industrial problems and grow with a team of expert engineers.
+            </p>
+          </motion.div>
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={2} className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl">
+            <Image src="/hero-internship.jpg" alt="Internship at Adroiit" fill className="object-cover" />
+          </motion.div>
+        </div>
+      </section>
 
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
-        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-600/20 blur-[120px] rounded-full"></div>
+      {/* --- DOMAINS SECTION (DARK - 3+2 Layout) --- */}
+      <section className="py-24 bg-[#0A0A0A] rounded-t-[40px] md:rounded-t-[60px] px-6 text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight">Specialized Domains</h2>
+            <p className="text-gray-400 max-w-2xl font-medium mx-auto">Explore our current openings and choose the path that aligns with your goals.</p>
+          </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="flex flex-col gap-6">
+            {/* Top Row: 3 Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {domains.slice(0, 3).map((domain, i) => (
+                <DomainCard key={i} domain={domain} link={googleFormLink} />
+              ))}
+            </div>
 
-            {/* LEFT */}
-            <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-bold mb-8">
-                <Star size={16} fill="currentColor" />
-                <span>2026 Cohort Now Open</span>
-              </div>
-
-              <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight">
-                Empower Your <span className="text-purple-500">Career</span> Through Innovation
-              </h1>
-
-              <p className="mt-8 text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl">
-                Join Adroiit Technovations for a hands-on journey. Bridge the gap between classroom theory and professional industrial expertise.
-              </p>
-
-              <div className="mt-12 flex flex-col sm:flex-row gap-5">
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  className="bg-white text-black px-10 py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-purple-500 hover:text-white transition-all"
-                >
-                  Apply for Internship <ArrowRight size={20} />
-                </a>
-              </div>
-            </motion.div>
-
-            {/* RIGHT */}
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="relative">
-              <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-neutral-900 aspect-square lg:aspect-[4/5]">
-                <Image
-                  src="/internship-hero.jpg"
-                  alt="Hands-on Learning"
-                  fill
-                  className="object-cover opacity-80"
-                  priority
-                />
-                <div className="absolute bottom-8 left-8 p-6 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 max-w-xs">
-                  <div className="flex items-center gap-3 mb-2 text-green-400">
-                    <CheckCircle size={20} />
-                    <span className="text-sm font-bold uppercase">Industry Ready</span>
-                  </div>
-                  <p className="text-sm text-gray-300">
-                    ISO Certified Certification provided upon successful completion.
-                  </p>
+            {/* Bottom Row: 2 Cards Centered */}
+            <div className="flex flex-col md:flex-row justify-center gap-6">
+              {domains.slice(3, 5).map((domain, i) => (
+                <div key={i} className="w-full md:w-[calc(33.333%-16px)]">
+                  <DomainCard domain={domain} link={googleFormLink} />
                 </div>
-              </div>
-            </motion.div>
-
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* TRACKS */}
-      <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-            Internship <span className="text-purple-500">Tracks</span>
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {internshipTracks.map((track, i) => (
-              <motion.div key={i} whileHover={{ y: -10 }} className={`p-8 rounded-[2rem] border ${track.color}`}>
-                <div className="mb-6 text-purple-500">{track.icon}</div>
-                <h3 className="text-xl font-bold mb-4">{track.title}</h3>
-
-                <ul className="space-y-3">
-                  {track.skills.map((skill, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-gray-400">
-                      <Zap size={14} className="text-purple-500" />
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+      {/* --- WHY JOIN US --- */}
+      <section className="py-24 bg-white px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl font-black text-black mb-16 uppercase">Why Join Adroiit?</h2>
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            {[
+              { t: "Live Projects", d: "Work on actual hardware products deployed in industries.", icon: <Zap className="text-orange-500" /> },
+              { t: "Certification", d: "Receive industry-recognized certificates for your career.", icon: <ShieldCheck className="text-green-500" /> },
+              { t: "Career Path", d: "High-performing interns stand a chance for Pre-Placement Offers.", icon: <Globe className="text-blue-500" /> }
+            ].map((card, i) => (
+              <div key={i} className="bg-neutral-50 p-8 rounded-[32px] border border-neutral-100 group">
+                <div className="mb-4 bg-white w-12 h-12 rounded-xl flex items-center justify-center shadow-sm">{card.icon}</div>
+                <h4 className="text-lg font-black text-black mb-2">{card.t}</h4>
+                <p className="text-gray-600 text-sm leading-relaxed font-medium">{card.d}</p>
+              </div>
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* --- CTA SECTION --- */}
+      <section className="py-16 bg-purple-600 mx-6 mb-10 rounded-[32px] text-white text-center px-6 shadow-xl">
+        <h2 className="text-3xl font-black mb-4">Ready to Innovate?</h2>
+        <p className="text-purple-100 text-base mb-8 font-medium">Limited slots available. Start your application now.</p>
+        <a href={googleFormLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white text-purple-600 px-8 py-3.5 rounded-full font-black text-base hover:scale-105 transition-all shadow-lg">
+          Start Application <ArrowRight size={20}/>
+        </a>
+      </section>
+
       <Footer />
     </div>
+  );
+}
+
+// Sub-component for clean code
+function DomainCard({ domain, link }: { domain: any, link: string }) {
+  return (
+    <motion.div whileHover={{ y: -8 }} className="bg-[#141414] border border-white/5 rounded-[24px] overflow-hidden flex flex-col h-full group">
+      <div className="relative h-40 w-full">
+        <Image src={domain.image} alt={domain.title} fill className="object-cover opacity-50 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute top-3 right-3">
+          <span className={`text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest ${domain.status === 'Open' ? 'bg-green-500/20 text-green-400 border border-green-500/30' : 'bg-red-500/20 text-red-400 border border-red-500/30'}`}>
+            {domain.status}
+          </span>
+        </div>
+      </div>
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="text-purple-500">{domain.icon}</div>
+          <h3 className="text-base font-black leading-tight">{domain.title}</h3>
+        </div>
+        <p className="text-gray-400 text-xs leading-relaxed mb-4 font-medium">{domain.desc}</p>
+        <div className="mb-6 flex flex-wrap gap-1.5">
+          {domain.skills.map((s: string, idx: number) => (
+            <span key={idx} className="text-[9px] font-bold text-white/60 bg-white/5 px-2 py-0.5 rounded border border-white/5">{s}</span>
+          ))}
+        </div>
+        <a href={link} target="_blank" className={`mt-auto flex items-center justify-center gap-2 w-full py-3 rounded-xl font-black text-[10px] transition-all uppercase tracking-wider ${domain.status === 'Open' ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-neutral-800 text-neutral-500 cursor-not-allowed'}`}>
+          {domain.status === 'Open' ? 'Apply Now' : 'Closed'} <ArrowRight size={12} />
+        </a>
+      </div>
+    </motion.div>
   );
 }

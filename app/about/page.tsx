@@ -52,7 +52,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-4xl font-bold tracking-tighter"
           >
-            <span className="text-[#8c52ff]">About Adroiit Technovations</span>
+            <span className="text-purple-600">About Adroiit Technovations</span>
           </motion.h1>
 
           <motion.p
@@ -66,7 +66,7 @@ export default function About() {
         </section>
 
         {/* 📖 OUR STORY (2 Columns: Text Left, Image Right) */}
-        <section className="w-full py-8 bg-gradient-to-b from-white to-purple-50 text-black">
+        <section className="w-full py-6 bg-gradient-to-b from-white to-purple-50 text-black">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
             
             <motion.div
@@ -75,11 +75,11 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl md:text-3xl font-bold mb-8">
-                <span className="text-[#8c52ff]">Our Story</span>
+              <h2 className="text-3xl md:text-2xl font-bold mb-6">
+                <span className="text-purple-600">Our Story</span>
               </h2>
 
-              <div className="space-y-6 text-gray-700 leading-relaxed text-justify text-base md:text-lg">
+              <div className="space-y-6 text-gray-800 leading-relaxed text-justify text-base md:text-lg">
                 <p>
                   Adroiit Technovations was founded with a vision to transform traditional education by bridging the gap between theoretical knowledge and real-world application.
                 </p>
@@ -118,9 +118,9 @@ export default function About() {
             whileHover={{ y: -5 }}
             className="bg-black border border-[#8c52ff]/30 rounded-[2.5rem] p-10 shadow-[0_0_30px_rgba(140,82,255,0.15)] hover:shadow-[0_0_40px_rgba(140,82,255,0.3)] transition-all duration-500"
           >
-            <Rocket size={24} className="text-[#8c52ff] mb-6" />
-            <h2 className="text-2xl font-bold mb-4 text-white">Our Mission</h2>
-            <p className="text-gray-400 leading-relaxed text-justify">
+            <Rocket size={24} className="text-purple-600 mb-6" />
+            <h2 className="text-2xl font-bold mb-4 text-purple-600">Our Mission</h2>
+            <p className="text-gray-200 leading-relaxed text-justify">
               To deliver transformative STEM and technical education through immersive, hands-on learning that empowers next-gen innovators, while developing cutting-edge technological solutions that create enduring global impact.
             </p>
           </motion.div>
@@ -130,9 +130,9 @@ export default function About() {
             whileHover={{ y: -5 }}
             className="bg-black border border-[#8c52ff]/30 rounded-[2.5rem] p-10 shadow-[0_0_30px_rgba(140,82,255,0.15)] hover:shadow-[0_0_40px_rgba(140,82,255,0.3)] transition-all duration-500"
           >
-            <Target size={24} className="text-[#8c52ff] mb-6" />
-            <h2 className="text-2xl font-bold mb-4 text-white">Our Vision</h2>
-            <p className="text-gray-400 leading-relaxed text-justify">
+            <Target size={24} className="text-purple-600 mb-6" />
+            <h2 className="text-2xl font-bold mb-4 text-purple-600">Our Vision</h2>
+            <p className="text-gray-200 leading-relaxed text-justify">
               To forge a new era in STEM and technical education through experiential learning that nurtures trailblazing innovators, while building technological solutions that deliver lasting global impact.
             </p>
           </motion.div>

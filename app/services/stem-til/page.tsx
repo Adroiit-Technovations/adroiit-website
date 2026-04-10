@@ -128,7 +128,7 @@ export default function STEMLabPage() {
                 custom={0} variants={fadeUp} initial="hidden" animate="visible"
                 className="order-1 text-4xl md:text-3xl font-extrabold tracking-tight text-black leading-[1.1] mb-2"
               >
-                <span className="text-purple-600">STEM Tinkering and Innovation Lab (TIL)</span>
+                <span className="text-[#8c52ff]">STEM Tinkering and Innovation Lab (TIL)</span>
               </motion.h1>
 
               <motion.span
@@ -200,7 +200,7 @@ export default function STEMLabPage() {
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-10">
               <div className="shrink-0 text-center md:text-left">
-                <p className="text-[11px] uppercase tracking-[0.1em] text-purple-600 font-black">Our Curriculum Aligns with</p>
+                <p className="text-[11px] uppercase tracking-[0.1em] text-[#8c52ff] font-black">Our Curriculum Aligns with</p>
                 <h2 className="text-xl font-bold text-black mt-1">Educational Standards</h2>
                 <p className="text-xs text-gray-700 mt-2 max-w-xs leading-relaxed">We ensure our curriculum and methodology aligns with various educational frameworks and requirements.</p>
               </div>
@@ -214,9 +214,9 @@ export default function STEMLabPage() {
                   { name: "ICSE", full: "Indian Certificate of Secondary Education", icon: <GraduationCap size={24} /> }
                 ].map((std, idx) => (
                   <div key={idx} className="flex-1 min-w-[170px] p-5 rounded-2xl bg-gray-50 border border-gray-200 hover:border-purple-500/50 hover:bg-white transition-all group">
-                    <div className="text-purple-600 mb-3 group-hover:scale-110 transition-transform">{std.icon}</div>
+                    <div className="text-[#8c52ff] mb-3 group-hover:scale-110 transition-transform">{std.icon}</div>
                     <div className="flex flex-col">
-                      <span className="text-base font-black text-purple-600 leading-tight mb-1">{std.name}</span>
+                      <span className="text-base font-black text-[#8c52ff] leading-tight mb-1">{std.name}</span>
                       <span className="text-[10px] text-black font-semibold uppercase tracking-tighter leading-tight">{std.full}</span>
                     </div>
                   </div>
@@ -231,7 +231,7 @@ export default function STEMLabPage() {
       <section className="py-8 px-6 bg-black text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-6">
-            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-purple-500">
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-[#8c52ff]">
               Why STEM Tinkering and Innovation Lab?
             </motion.h2>
             <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-300 mt-2 text-base italic max-w-4xl mx-auto">

@@ -20,7 +20,7 @@ export default function Gallery() {
       
       <div className="text-center mb-4">
         <h2 className="text-2xl text-purple-500 font-bold">Our Gallery</h2>
-        <p className="text-gray-400 italic mt-2 max-w-2xl mx-auto px-4">
+        <p className="text-gray-200 italic mt-2 max-w-2xl mx-auto px-4">
           A glimpse into our hands-on learning and innovation
         </p>
       </div>
