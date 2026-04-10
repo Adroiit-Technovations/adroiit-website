@@ -157,7 +157,7 @@ export default function STEMLabPage() {
                 initial={{ width: 0 }}
                 animate={{ width: "80px" }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="order-4 h-[5px] bg-purple-600 mb-6 lg:mb-10 rounded-full"
+                className="order-4 h-[5px] bg-[#8c52ff] mb-6 lg:mb-10 rounded-full"
               />
 
               <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible" className="order-5 space-y-6">
@@ -170,7 +170,7 @@ export default function STEMLabPage() {
               </motion.div>
 
               <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="order-6 mt-5">
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all shadow-lg shadow-purple-500/25 group text-base">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-[#8c52ff] text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all shadow-lg shadow-purple-500/25 group text-base">
                   Book a Consultation
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -241,7 +241,7 @@ export default function STEMLabPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {stats.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="p-4 rounded-2xl bg-neutral-900 border border-white/5 hover:border-purple-500/30 transition-all flex flex-col items-center text-center group">
-                <div className="p-2 rounded-lg bg-purple-600/10 text-purple-500 mb-3 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                <div className="p-2 rounded-lg bg-purple-600/10 text-[#8c52ff] mb-3 group-hover:bg-purple-600 group-hover:text-white transition-colors">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-bold text-white mb-1">{item.number}</h3>
@@ -256,7 +256,7 @@ export default function STEMLabPage() {
       <section className="py-8 px-6 bg-white text-black">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-6">
-            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-purple-600">
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-[#8c52ff]">
               Objectives of STEM Tinkering and Innovation Lab (TIL)
             </motion.h2>
             <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-700 mt-2 text-base italic max-w-3xl mx-auto">
@@ -274,7 +274,7 @@ export default function STEMLabPage() {
                 transition={{ delay: i * 0.1 }}
                 className="flex flex-col items-center justify-center text-center gap-4 p-6 bg-gray-50 border border-gray-200 rounded-[1.5rem] hover:shadow-md transition-all min-h-[160px] group"
               >
-                <div className="text-purple-600 group-hover:scale-110 transition-transform mb-1">{obj.icon}</div>
+                <div className="text-[#8c52ff] group-hover:scale-110 transition-transform mb-1">{obj.icon}</div>
                 <span className="font-bold text-black text-[13px] lg:text-sm leading-snug">
                   {obj.text}
                 </span>
@@ -288,7 +288,7 @@ export default function STEMLabPage() {
       <section className="py-8 px-6 bg-neutral-950 text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
-            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-purple-500">
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-[#8c52ff]">
               Domains Students Will Explore
             </motion.h2>
             <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-300 mt-3 text-base italic max-w-3xl mx-auto">
@@ -315,7 +315,7 @@ export default function STEMLabPage() {
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-purple-500 text-center">{domain.title}</h3>
+                <h3 className="text-lg font-bold mb-2 text-[#8c52ff] text-center">{domain.title}</h3>
                 <p className="text-white text-xs leading-relaxed text-center">
                   {domain.desc}
                 </p>
@@ -329,7 +329,7 @@ export default function STEMLabPage() {
       <section className="py-8 px-6 bg-white text-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
-            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-purple-600">
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-bold text-[#8c52ff]">
               Why Choose Adroiit Technovations?
             </motion.h2>
             <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={descVariants} className="text-gray-700 mt-3 text-base italic max-w-4xl mx-auto">
@@ -338,9 +338,9 @@ export default function STEMLabPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyChooseItems.map((item, i) => (
-              <motion.div key={i} whileHover={{ y: -8 }} className="p-8 rounded-3xl bg-gray-50 border border-gray-200 hover:border-purple-600 transition-all group flex flex-col items-center text-center">
-                <div className="text-purple-600 mb-5 group-hover:scale-110 transition-transform">{item.icon}</div>
-                <h3 className="font-bold text-purple-600 text-base mb-3">{item.title}</h3>
+              <motion.div key={i} whileHover={{ y: -8 }} className="p-8 rounded-3xl bg-gray-50 border border-gray-200 hover:border-[#8c52ff] transition-all group flex flex-col items-center text-center">
+                <div className="text-[#8c52ff] mb-5 group-hover:scale-110 transition-transform">{item.icon}</div>
+                <h3 className="font-bold text-[#8c52ff] text-base mb-3">{item.title}</h3>
                 <p className="text-black text-[13px] leading-relaxed opacity-90">{item.description}</p>
               </motion.div>
             ))}
@@ -351,11 +351,11 @@ export default function STEMLabPage() {
       {/* 6. CTA */}
       <section className="py-8 px-6 bg-neutral-100 text-center">
         <div className="max-w-4xl mx-auto">
-          <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-extrabold text-purple-600 mb-4">
+          <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={titleVariants} className="text-2xl font-extrabold text-[#8c52ff] mb-4">
             Transform Your School into a Future-Ready Innovation Hub
           </motion.h2>
           <p className="text-gray-600 mb-8 text-sm">Let's join to empower your institution with a STEM Tinkering and Innovation Lab designed to foster creativity, hands-on learning and future-ready skills.</p>
-          <Link href="/contact" className="inline-flex items-center gap-3 bg-purple-600 text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-all shadow-xl shadow-purple-500/20">
+          <Link href="/contact" className="inline-flex items-center gap-3 bg-[#8c52ff] text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-all shadow-xl shadow-purple-500/20">
             <MessageCircle size={20} /> Book a Consultation
           </Link>
         </div>
