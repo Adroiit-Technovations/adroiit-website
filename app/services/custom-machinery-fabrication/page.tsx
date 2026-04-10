@@ -123,7 +123,7 @@ export default function CustomMachineryPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0} className="flex flex-col items-start text-left">
                 <h1 className="text-3xl md:text-3xl lg:text-3xl font-black tracking-tight mb-6">
-                <span className="text-white">Custom</span> <span className="text-purple-500">Machinery & Product Fabrication</span>
+                <span className="text-white">Custom</span> <span className="text-[#8c52ff]">Machinery & Product Fabrication</span>
                 </h1>
 
                 <motion.div 
@@ -133,7 +133,7 @@ export default function CustomMachineryPage() {
                 className="h-1.5 bg-white mb-8 rounded-full"
                 />
 
-                <div className="border-l-4 border-purple-500 pl-4 mb-6">
+                <div className="border-l-4 border-[#8c52ff] pl-4 mb-6">
                 <p className="italic text-gray-400 text-base md:text-lg font-medium">"From concept to commissioning—tailored for your growth."</p>
                 </div>
 
@@ -141,7 +141,7 @@ export default function CustomMachineryPage() {
                 We design and develop custom machinery upon client requirements, bridging the gap between complex engineering and functional reality. Our team manages every phase: conceptual design, precision sourcing, high-standard production, and long-term maintenance.
                 </motion.p>
                 
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 bg-purple-600 text-white px-7 py-3 rounded-full font-bold hover:bg-purple-700 transition-all shadow-lg shadow-purple-500/20 text-sm">
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 bg-[#8c52ff] text-white px-7 py-3 rounded-full font-bold hover:bg-purple-600 transition-all shadow-lg shadow-purple-500/20 text-sm">
                 Discuss Your Project <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>
             </motion.div>
@@ -154,13 +154,13 @@ export default function CustomMachineryPage() {
 
             <div className="grid lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-3 text-center lg:text-left">
-                <p className="text-purple-400 font-bold tracking-widest uppercase text-[9px] mb-1">Explore</p>
+                <p className="text-[#8c52ff] font-bold tracking-widest uppercase text-[9px] mb-1">Explore</p>
                 <h2 className="text-2xl font-black text-white mb-2 leading-tight">Our Expertise</h2>
             </div>
             <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                 {specializedAreas.map((area, i) => (
-                <motion.div key={i} initial="hidden" animate="visible" variants={fadeUp} custom={i + 4} className="bg-neutral-900/80 border border-white/5 rounded-2xl p-5 hover:border-purple-500/50 transition-colors group">
-                    <div className="text-purple-500 mb-2 group-hover:scale-110 transition-transform">{area.icon}</div>
+                <motion.div key={i} initial="hidden" animate="visible" variants={fadeUp} custom={i + 4} className="bg-neutral-900/80 border border-white/5 rounded-2xl p-5 hover:border-[#8c52ff]/50 transition-colors group">
+                    <div className="text-[#8c52ff] mb-2 group-hover:scale-110 transition-transform">{area.icon}</div>
                     <h3 className="text-sm font-black text-white mb-0.5">{area.title}</h3>
                     <p className="text-white/80 font-bold text-[10px] uppercase mb-1">{area.subtitle}</p>
                     <p className="text-gray-500 text-[8px] font-bold tracking-tighter uppercase leading-none">{area.desc}</p>
@@ -175,7 +175,7 @@ export default function CustomMachineryPage() {
       <section className="relative z-10 py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-2xl font-black text-purple-600 tracking-tight mb-4">Our Development Lifecycle</h2>
+            <h2 className="text-3xl md:text-2xl font-black text-[#8c52ff] tracking-tight mb-4">Our Development Lifecycle</h2>
             <p className="text-gray-700 italic text-base max-w-2xl mx-auto">
               We follow a rigorous engineering workflow to ensure your custom machinery is delivered with peak performance and reliability.
             </p>
@@ -194,14 +194,14 @@ export default function CustomMachineryPage() {
                 className="relative z-10 flex flex-col items-center text-center group"
               >
                 <div className="relative">
-                  <div className="w-16 h-16 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 shadow-sm border border-purple-100">
+                  <div className="w-16 h-16 rounded-2xl bg-purple-50 text-[#8c52ff] flex items-center justify-center mb-6 group-hover:bg-[#8c52ff] group-hover:text-white transition-all duration-300 shadow-sm border border-purple-100">
                     {step.icon}
                   </div>
-                  <div className="absolute -top-2 -right-2 bg-purple-600 text-white w-7 h-7 rounded-full flex items-center justify-center font-black text-xs border-2 border-white shadow-md">
+                  <div className="absolute -top-2 -right-2 bg-[#8c52ff] text-white w-7 h-7 rounded-full flex items-center justify-center font-black text-xs border-2 border-white shadow-md">
                     {i + 1}
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-purple-600 mb-3">{step.title}</h3>
+                <h3 className="text-lg font-bold text-[#8c52ff] mb-3">{step.title}</h3>
                 <p className="text-black text-sm leading-relaxed max-w-[200px]">{step.desc}</p>
               </motion.div>
             ))}
@@ -213,7 +213,7 @@ export default function CustomMachineryPage() {
       <section className="relative z-10 py-8 bg-[#050505]">
         <div className="max-w-[1440px] mx-auto px-6">
           <div className="text-center mb-6">
-            <h2 className="text-3xl md:text-2xl font-black text-purple-600 tracking-tight mb-3">
+            <h2 className="text-3xl md:text-2xl font-black text-[#8c52ff] tracking-tight mb-3">
               Why Choose Our Fabrication Service
             </h2>
             <p className="text-gray-200 text-sm md:text-base max-w-2xl italic mx-auto font-medium">
@@ -231,11 +231,11 @@ export default function CustomMachineryPage() {
                 viewport={{ once: true }}
                 className="bg-[#111111] border border-white/5 rounded-[24px] p-6 flex flex-col items-center justify-center text-center transition-all hover:bg-[#161616] hover:border-purple-500/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] group min-h-[180px]"
               >
-                <div className="w-10 h-10 rounded-xl bg-purple-600/10 flex items-center justify-center text-purple-500 mb-3 group-hover:scale-110 transition-transform flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-purple-600/10 flex items-center justify-center text-[#8c52ff] mb-3 group-hover:scale-110 transition-transform flex-shrink-0">
                   {item.icon}
                 </div>
                 
-                <h3 className="text-purple-500 font-bold text-[13px] mb-2 leading-tight uppercase tracking-wide">
+                <h3 className="text-[#8c52ff] font-bold text-[13px] mb-2 leading-tight uppercase tracking-wide">
                   {item.title}
                 </h3>
                 
@@ -256,7 +256,7 @@ export default function CustomMachineryPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-2xl font-extrabold text-purple-600 tracking-tight leading-tight mb-2"
+            className="text-3xl md:text-2xl font-extrabold text-[#8c52ff] tracking-tight leading-tight mb-2"
           >
             Ready to Build Your Custom Product?
           </motion.h2>
@@ -282,7 +282,7 @@ export default function CustomMachineryPage() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-purple-600 text-white px-8 py-3.5 rounded-full font-bold shadow-lg shadow-purple-500/20 hover:bg-purple-700 hover:scale-105 transition-all text-base"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#8c52ff] text-white px-8 py-3.5 rounded-full font-bold shadow-lg shadow-purple-500/20 hover:bg-purple-600 hover:scale-105 transition-all text-base"
             >
               <span>Consult with Us</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

@@ -75,14 +75,14 @@ export default function STEMWorkshopPage() {
             
             <div className="flex flex-col items-start text-left w-full md:w-1/2 md:max-w-2xl md:pr-2">
               <motion.h1 custom={0} variants={fadeUp} className="text-3xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">
-                Interactive <span className="text-purple-600">STEM Workshops</span>
+                Interactive <span className="text-[#8c52ff]">STEM Workshops</span>
               </motion.h1>
 
               <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: "80px" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="h-1 bg-purple-600 mb-6 rounded-full"
+                className="h-1 bg-[#8c52ff] mb-6 rounded-full"
               />
 
               <motion.p custom={1} variants={fadeUp} className="text-gray-800 text-lg md:text-lg font-medium mb-4 text-justify leading-relaxed">
@@ -94,7 +94,7 @@ export default function STEMWorkshopPage() {
               </motion.p>
 
               <motion.div custom={3} variants={fadeUp}>
-                <Link href="/contact" className="w-fit bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
+                <Link href="/contact" className="w-fit bg-[#8c52ff] text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
                   Host a Workshop <ArrowRight size={18} />
                 </Link>
               </motion.div>
@@ -123,7 +123,7 @@ export default function STEMWorkshopPage() {
           className="max-w-7xl mx-auto"
         >
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-purple-500 mb-2">Our Workshops</h2>
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Our Workshops</h2>
             <p className="text-gray-300 text-base max-w-xl mx-auto">
               Specialized technical tracks designed to transform students into innovators.
             </p>
@@ -148,7 +148,7 @@ export default function STEMWorkshopPage() {
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-purple-500 text-center">{module.title}</h3>
+                <h3 className="text-lg font-bold mb-2 text-[#8c52ff] text-center">{module.title}</h3>
                 <p className="text-white text-sm leading-relaxed text-center">
                   {module.desc}
                 </p>
@@ -165,7 +165,7 @@ export default function STEMWorkshopPage() {
           className="max-w-[1400px] mx-auto"
         >
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-purple-600 mb-2">Workshop Highlights</h2>
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Workshop Highlights</h2>
             <p className="text-gray-700 text-base max-w-3xl mx-auto">
               Why our workshops stand out in creating a lasting impact on student learning.
             </p>
@@ -179,9 +179,9 @@ export default function STEMWorkshopPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }} 
                 viewport={{ once: true }}
-                className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-md hover:border-purple-500 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[140px] group"
+                className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-md hover:border-[#8c52ff] transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[140px] group"
               >
-                <div className="p-2 rounded-xl bg-purple-50 text-purple-600 mb-3 group-hover:bg-purple-100 transition-colors">
+                <div className="p-2 rounded-xl bg-purple-50 text-[#8c52ff] mb-3 group-hover:bg-purple-100 transition-colors">
                   {item.icon}
                 </div>
                 <h3 className="text-[13px] font-bold text-black leading-tight">{item.title}</h3>
@@ -197,11 +197,11 @@ export default function STEMWorkshopPage() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-purple-600">Ready to Transform Your School?</h2>
+          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-[#8c52ff]">Ready to Transform Your School?</h2>
           <p className="text-gray-700 text-base mb-8 max-w-2xl mx-auto">
             Bring industry-standard technology and hands-on learning to your campus. Join hundreds of schools in empowering the next generation of innovators.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-all text-base shadow-lg shadow-purple-500/20">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-[#8c52ff] text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-all text-base shadow-lg shadow-purple-500/20">
             <CalendarCheck size={20} /> Book a Workshop
           </Link>
         </motion.div>

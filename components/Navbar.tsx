@@ -86,29 +86,29 @@ export default function Navbar() {
               style={{ top: `${navHeight + 10}px` }}
             >
               <div>
-                <p className="text-[10px] text-[#a855f7] uppercase tracking-widest mb-2 font-bold">Schools</p>
+                <p className="text-[10px] text-[#8c52ff] uppercase tracking-widest mb-2 font-bold">Schools</p>
                 <ul className="space-y-1 text-sm text-gray-300">
-                  <li><Link href="/services/stem-til" className="hover:text-[#a855f7] transition-colors block py-0.5">STEM Tinkering & Innovation Lab</Link></li>
-                  <li><Link href="/services/stem-workshop" className="hover:text-[#a855f7] transition-colors block py-0.5">STEM Workshops</Link></li>
-                  <li><Link href="/services/stem-bootcamp" className="hover:text-[#a855f7] transition-colors block py-0.5">STEM Bootcamps</Link></li>
+                  <li><Link href="/services/stem-til" className="hover:text-[#8c52ff] transition-colors block py-0.5">STEM Tinkering & Innovation Lab (TIL)</Link></li>
+                  <li><Link href="/services/stem-workshop" className="hover:text-[#8c52ff] transition-colors block py-0.5">STEM Workshops</Link></li>
+                  <li><Link href="/services/stem-bootcamp" className="hover:text-[#8c52ff] transition-colors block py-0.5">STEM Bootcamps</Link></li>
                 </ul>
               </div>
               <div className="h-px bg-white/5" />
               <div>
-                <p className="text-[10px] text-[#a855f7] uppercase tracking-widest mb-2 font-bold">Colleges</p>
+                <p className="text-[10px] text-[#8c52ff] uppercase tracking-widest mb-2 font-bold">Colleges</p>
                 <ul className="space-y-1 text-sm text-gray-300">
-                  <li><Link href="/services/coe" className="hover:text-[#a855f7] transition-colors block py-0.5 whitespace-nowrap">Center of Excellence (CoE)</Link></li>
-                  <li><Link href="/services/value-added-courses" className="hover:text-[#a855f7] transition-colors block py-0.5">Value Added Courses</Link></li>
-                  <li><Link href="/services/technical-workshop" className="hover:text-[#a855f7] transition-colors block py-0.5">Technical Workshops</Link></li>
+                  <li><Link href="/services/coe" className="hover:text-[#8c52ff] transition-colors block py-0.5 whitespace-nowrap">Center of Excellence (CoE)</Link></li>
+                  <li><Link href="/services/value-added-courses" className="hover:text-[#8c52ff] transition-colors block py-0.5">Value Added Courses</Link></li>
+                  <li><Link href="/services/technical-workshop" className="hover:text-[#8c52ff] transition-colors block py-0.5">Technical Workshops</Link></li>
                 </ul>
               </div>
               <div className="h-px bg-white/5" />
               <div>
-                <p className="text-[10px] text-[#a855f7] uppercase tracking-widest mb-2 font-bold">Engineering</p>
+                <p className="text-[10px] text-[#8c52ff] uppercase tracking-widest mb-2 font-bold">Engineering</p>
                 <ul className="space-y-1 text-sm text-gray-300">
-                  <li><Link href="/services/custom-machinery-fabrication" className="hover:text-[#a855f7] transition-colors block py-0.5">Custom Machinery & Product Fabrication</Link></li>
-                  <li><Link href="/services/3d-printing" className="hover:text-[#a855f7] font-medium transition-colors block py-0.5">3D Printing Service</Link></li>
-                  <li><Link href="/services/mechanical-cad" className="hover:text-[#a855f7] transition-colors block py-0.5">Mechanical CAD</Link></li>
+                  <li><Link href="/services/custom-machinery-fabrication" className="hover:text-[#8c52ff] transition-colors block py-0.5">Custom Machinery & Product Fabrication</Link></li>
+                  <li><Link href="/services/3d-printing" className="hover:text-[#8c52ff] font-medium transition-colors block py-0.5">3D Printing Service</Link></li>
+                  <li><Link href="/services/mechanical-cad" className="hover:text-[#8c52ff] transition-colors block py-0.5">Mechanical CAD</Link></li>
                 </ul>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
-            className="hidden md:block px-4 py-1 text-sm font-semibold bg-white text-black rounded-full hover:bg-[#a855f7] hover:text-white transition-all duration-300 flex-shrink-0 whitespace-nowrap"
+            className="hidden md:block px-4 py-1 text-sm font-semibold bg-white text-black rounded-full hover:bg-[#8c52ff] hover:text-white transition-all duration-300 flex-shrink-0 whitespace-nowrap"
           >
             Contact Us
           </Link>

@@ -80,7 +80,7 @@ export default function Services() {
   return (
     <section className={`${bricolage.className} bg-gray-50 text-gray-900 py-8 px-6 overflow-hidden`}>
       <div className="text-center mb-10">
-        <h2 className="text-4xl md:text-2xl font-bold text-purple-600">Our Services</h2>
+        <h2 className="text-4xl md:text-2xl font-bold text-[#8c52ff]">Our Services</h2>
         <p className="text-gray-700 italic mt-2 max-w-2xl mx-auto">
           Explore what we offer across Schools, Colleges and Industry
         </p>
@@ -121,7 +121,7 @@ export default function Services() {
 
                   <div className="p-5 flex flex-col flex-1 justify-between min-h-[220px]">
                     <div>
-                      <h3 className="text-lg font-bold text-purple-600 leading-tight">
+                      <h3 className="text-lg font-bold text-[#8c52ff] leading-tight">
                         {service.title}
                       </h3>
                       <p className="text-sm text-black mt-2 text-justify">
@@ -169,7 +169,7 @@ export default function Services() {
 
               <div className="p-5 flex flex-col min-h-[220px] justify-between">
                 <div>
-                  <h3 className="text-lg font-bold text-purple-600 leading-tight">
+                  <h3 className="text-lg font-bold text-[#8c52ff] leading-tight">
                     {service.title}
                   </h3>
                   <p className="text-sm text-black mt-2 text-justify">
@@ -195,7 +195,7 @@ export default function Services() {
                 key={i}
                 onClick={() => setCurrentIndex(i)}
                 className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  i === currentIndex ? "bg-purple-700 scale-125" : "bg-gray-300"
+                  i === currentIndex ? "bg-[#8c52ff] scale-125" : "bg-gray-300"
                 }`}
               />
             ))}

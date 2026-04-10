@@ -101,7 +101,7 @@ export default function CoEPage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
             <div className="flex flex-col items-start text-left w-full md:w-1/2 md:max-w-2xl">
               <motion.h1 custom={0} variants={fadeUp} className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2 leading-tight">
-                Center of <span className="text-purple-600">Excellence (CoE)</span>
+                Center of <span className="text-[#8c52ff]">Excellence (CoE)</span>
               </motion.h1>
 
               <motion.span custom={1} variants={fadeUp} className="text-black font-bold tracking-widest uppercase text-xs mb-4">
@@ -112,7 +112,7 @@ export default function CoEPage() {
                 initial={{ width: 0 }}
                 whileInView={{ width: "80px" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="h-1 bg-purple-600 mb-6 rounded-full"
+                className="h-1 bg-[#8c52ff] mb-6 rounded-full"
               />
 
               <motion.p custom={2} variants={fadeUp} className="text-gray-800 text-lg font-medium mb-4 text-justify leading-relaxed">
@@ -124,7 +124,7 @@ export default function CoEPage() {
               </motion.p>
 
               <motion.div custom={4} variants={fadeUp}>
-                <Link href="/contact" className="w-fit bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
+                <Link href="/contact" className="w-fit bg-[#8c52ff] text-white px-6 py-3 rounded-full font-bold hover:bg-purple-600 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
                   Partner With Us <ArrowRight size={18} />
                 </Link>
               </motion.div>
@@ -153,7 +153,7 @@ export default function CoEPage() {
           className="max-w-7xl mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-500 mb-2">Domains We Offer</h2>
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Domains We Offer</h2>
             <p className="text-gray-300 text-base max-w-xl mx-auto">
               Specialized technology centers tailored to your institution&apos;s goals.
             </p>
@@ -177,7 +177,7 @@ export default function CoEPage() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-base font-bold mb-2 text-purple-500 text-center leading-tight">{domain.title}</h3>
+                <h3 className="text-base font-bold mb-2 text-[#8c52ff] text-center leading-tight">{domain.title}</h3>
                 <p className="text-white text-[11px] leading-relaxed text-center opacity-80">
                   {domain.desc}
                 </p>
@@ -194,7 +194,7 @@ export default function CoEPage() {
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-600 mb-2">End-to-End Implementation Support</h2>
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">End-to-End Implementation Support</h2>
             <p className="text-gray-700 text-base max-w-xl mx-auto">
               We handle the complexity of setting up and maintaining your innovation hub.
             </p>
@@ -210,10 +210,10 @@ export default function CoEPage() {
                 viewport={{ once: true }}
                 className="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm flex flex-col items-start"
               >
-                <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 mb-4">
+                <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-[#8c52ff] mb-4">
                   {service.icon}
                 </div>
-                <h3 className="text-base font-bold mb-2 text-purple-600">{service.title}</h3>
+                <h3 className="text-base font-bold mb-2 text-[#8c52ff]">{service.title}</h3>
                 <p className="text-black text-xs leading-relaxed">
                   {service.desc}
                 </p>
@@ -230,7 +230,7 @@ export default function CoEPage() {
           className="max-w-[1400px] mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-500 mb-2">CoE Highlights</h2>
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">CoE Highlights</h2>
             <p className="text-gray-300 text-base max-w-xl mx-auto">
               Delivering long-term institutional value through excellence.
             </p>
@@ -246,7 +246,7 @@ export default function CoEPage() {
                 viewport={{ once: true }}
                 className="p-6 rounded-2xl bg-neutral-900 border border-white/10 flex flex-col items-center text-center justify-center min-h-[160px]"
               >
-                <div className="w-12 h-12 bg-purple-600/10 rounded-xl flex items-center justify-center text-purple-500 mb-4">
+                <div className="w-12 h-12 bg-purple-600/10 rounded-xl flex items-center justify-center text-[#8c52ff] mb-4">
                   {item.icon}
                 </div>
                 <h3 className="text-[13px] font-bold text-white leading-snug">{item.title}</h3>
@@ -262,11 +262,11 @@ export default function CoEPage() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-purple-600">Build Your Institution’s Innovation Hub</h2>
+          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-[#8c52ff]">Build Your Institution’s Innovation Hub</h2>
           <p className="text-gray-600 text-sm mb-8 max-w-2xl mx-auto">
             Collaborate with Adroiit Technovations to establish a Center of Excellence and provide your students with the tools, knowledge and mentorship to lead in emerging technologies.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-all text-base shadow-lg shadow-purple-500/20">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-[#8c52ff] text-white px-8 py-3 rounded-full font-bold hover:bg-purple-600 transition-all text-base shadow-lg shadow-purple-500/20">
             <CalendarDays size={18} /> Book a Consultation
           </Link>
         </motion.div>

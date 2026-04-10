@@ -84,7 +84,7 @@ export default function Testimonials() {
 
       {/* Heading */}
       <div className="text-center mb-6 px-4">
-        <h2 className="text-3xl md:text-2xl text-purple-600 font-bold">
+        <h2 className="text-3xl md:text-2xl text-[#8c52ff] font-bold">
           What People Say
         </h2>
         <p className="text-gray-200 italic mt-2 text-sm md:text-base">
@@ -121,7 +121,7 @@ export default function Testimonials() {
                       </p>
 
                       <div className="mt-6">
-                        <h3 className="font-semibold text-purple-600">
+                        <h3 className="font-semibold text-[#8c52ff]">
                           {t.name}
                         </h3>
                         <p className="text-sm text-gray-400">

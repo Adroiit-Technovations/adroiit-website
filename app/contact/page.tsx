@@ -55,7 +55,7 @@ export default function ContactPage() {
           {/* Form Side */}
           <div className="flex flex-col min-h-full">
             <div>
-              <h2 className="text-2xl font-bold text-purple-600">Contact Us</h2>
+              <h2 className="text-2xl font-bold text-[#8c52ff]">Contact Us</h2>
               <p className="mt-2 text-gray-200">Have questions or want to collaborate?</p>
             </div>
 
@@ -126,7 +126,7 @@ export default function ContactPage() {
               <textarea name="message" placeholder="Message" required rows={4} disabled={isPending} className="w-full p-2.5 bg-[#111] border border-gray-700 rounded-lg text-sm focus:border-[#8c52ff] outline-none resize-none flex-grow" />
 
               <div className="mt-4">
-                <button type="submit" disabled={isPending} className="w-full py-2.5 rounded-full bg-[#5921c7] hover:bg-[#8c52ff] transition disabled:opacity-60 text-sm font-medium">
+                <button type="submit" disabled={isPending} className="w-full py-2.5 rounded-full bg-[#8c52ff] hover:bg-purple-600 transition disabled:opacity-60 text-sm font-medium">
                   {isPending ? "Sending..." : "Send Message"}
                 </button>
                 {state?.message && <p className={`mt-2 text-center text-xs ${state.success ? 'text-green-400' : 'text-red-400'}`}>{state.message}</p>}

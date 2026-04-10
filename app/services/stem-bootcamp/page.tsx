@@ -79,14 +79,14 @@ export default function STEMBootcampPage() {
             
             <div className="flex flex-col items-start text-left w-full md:w-1/2 md:max-w-2xl md:pr-2">
               <motion.h1 custom={0} variants={fadeUp} className="text-3xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">
-                Intensive <span className="text-purple-600">STEM Bootcamp</span>
+                Intensive <span className="text-[#8c52ff]">STEM Bootcamp</span>
               </motion.h1>
 
               <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: "80px" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="h-1 bg-purple-600 mb-6 rounded-full"
+                className="h-1 bg-[#8c52ff] mb-6 rounded-full"
               />
 
               <motion.p custom={1} variants={fadeUp} className="text-gray-800 text-lg md:text-lg font-medium mb-4 text-justify leading-relaxed">
@@ -98,7 +98,7 @@ export default function STEMBootcampPage() {
               </motion.p>
 
               <motion.div custom={3} variants={fadeUp}>
-                <Link href="/contact" className="w-fit bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
+                <Link href="/contact" className="w-fit bg-[#8c52ff] text-white px-6 py-3 rounded-full font-bold hover:bg-purple-600 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
                   Organize a Bootcamp <ArrowRight size={18} />
                 </Link>
               </motion.div>
@@ -127,7 +127,7 @@ export default function STEMBootcampPage() {
           className="max-w-5xl mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-500 mb-2">Our Programmes</h2>
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Our Programmes</h2>
             <p className="text-gray-300 text-base max-w-xl mx-auto">
               Comprehensive learning paths designed for different skill levels.
             </p>
@@ -151,7 +151,7 @@ export default function STEMBootcampPage() {
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-purple-500 text-center">{prog.title}</h3>
+                <h3 className="text-lg font-bold mb-3 text-[#8c52ff] text-center">{prog.title}</h3>
                 <p className="text-white text-sm leading-relaxed text-center">
                   {prog.desc}
                 </p>
@@ -168,7 +168,7 @@ export default function STEMBootcampPage() {
           className="max-w-[1400px] mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-600 mb-2">Bootcamp Highlights</h2>
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Bootcamp Highlights</h2>
             <p className="text-gray-700 text-base max-w-xl mx-auto">
               Our unique approach to long-term technical excellence.
             </p>
@@ -182,9 +182,9 @@ export default function STEMBootcampPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }} 
                 viewport={{ once: true }}
-                className="p-4 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-purple-500 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[140px]"
+                className="p-4 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-[#8c52ff] transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[140px]"
               >
-                <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 mb-4">
+                <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-[#8c52ff] mb-4">
                   {item.icon}
                 </div>
                 <h3 className="text-[13px] font-bold text-black leading-tight">{item.title}</h3>
@@ -200,11 +200,11 @@ export default function STEMBootcampPage() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-purple-600">Ready to Start Your Technical Journey Today?</h2>
+          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-[#8c52ff]">Ready to Start Your Technical Journey Today?</h2>
           <p className="text-gray-700 text-base mb-8 max-w-2xl mx-auto">
             Give your students the edge they need with our structured, mentor-led bootcamps.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-all text-base shadow-lg shadow-purple-500/20">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-[#8c52ff] text-white px-8 py-3 rounded-full font-bold hover:bg-purple-600 transition-all text-base shadow-lg shadow-purple-500/20">
             <Rocket size={18} /> Organize a Bootcamp
           </Link>
         </motion.div>

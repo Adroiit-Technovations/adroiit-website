@@ -17,16 +17,16 @@ export default function PartnerWithUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-2xl font-bold text-purple-600"
+          className="text-3xl md:text-2xl font-bold text-[#8c52ff]"
         >
           Partner With Us
         </motion.h2>
 
         {/* Description */}
-        <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
-          We collaborate with schools, colleges, and organizations to deliver
-          high-quality STEM, robotics and technology education through
-          hands-on learning and real-world applications.
+        <p className="mt-4 text-gray-950 max-w-3xl mx-auto">
+          We collaborate with schools, colleges and organizations to deliver
+          high-quality STEM, technical education and engineering services through
+          hands-on learning and innovative solutions.
         </p>
 
         {/* CTA */}
@@ -39,7 +39,7 @@ export default function PartnerWithUs() {
         >
           <Link 
             href="/contact" 
-            className="inline-block px-8 py-3 rounded-full bg-purple-600 text-white transition font-medium"
+            className="inline-block px-8 py-3 rounded-full bg-[#8c52ff] text-white transition font-medium"
           >
             Contact Us
           </Link>

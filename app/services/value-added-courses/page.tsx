@@ -49,43 +49,43 @@ export default function ValueAddedCoursesPage() {
   const courseList = [
     { 
       image: "/vac/3d-cad.jpg", 
-      title: "3D design & modelling", 
+      title: "3D Design & Modelling", 
       desc: "Develop skills in creating precise digital models using industry-standard design tools." 
     },
     { 
       image: "/vac/3d-printing.jpg", 
-      title: "Additive manufacturing & 3D printing", 
+      title: "Additive Manufacturing & 3D Printing", 
       desc: "Learn modern manufacturing techniques to transform digital designs into functional prototypes." 
     },
     { 
       image: "/vac/embedded.jpg", 
-      title: "Embedded systems & IoT", 
+      title: "Embedded Systems & IoT", 
       desc: "Understand the integration of hardware and software to develop smart, connected systems." 
     },
     { 
       image: "/vac/pcb.jpg", 
-      title: "PCB design & prototyping", 
+      title: "PCB Design & Prototyping", 
       desc: "Learn to design, develop and prototype professional Printed Circuit Boards (PCBs) for electronic applications." 
     },
     { 
       image: "/vac/drone.jpg", 
-      title: "Drone technology", 
+      title: "Drone Technology", 
       desc: "Gain practical knowledge of UAV systems, including design, flight control and real-world applications." 
     },
     { 
       image: "/vac/ai.jpg", 
-      title: "Artificial intelligence", 
+      title: "Artificial Intelligence", 
       desc: "Explore machine learning and data-driven technologies to build intelligent applications." 
     },
   ];
 
   const highlights = [
-    { title: "Curriculum-integrated learning", icon: <BookOpen size={24} /> },
-    { title: "Standardized certification", icon: <Award size={24} /> },
-    { title: "Project-based assessments", icon: <BarChart size={24} /> },
-    { title: "Industry mentorship program", icon: <GraduationCap size={24} /> },
-    { title: "Placement assistance modules", icon: <CheckCircle2 size={24} /> },
-    { title: "Comprehensive course material", icon: <FileText size={24} /> },
+    { title: "Curriculum-Integrated Learning", icon: <BookOpen size={24} /> },
+    { title: "Standardized Certification", icon: <Award size={24} /> },
+    { title: "Project-based Assessments", icon: <BarChart size={24} /> },
+    { title: "Industry Mentorship Program", icon: <GraduationCap size={24} /> },
+    { title: "Placement Assistance Modules", icon: <CheckCircle2 size={24} /> },
+    { title: "Comprehensive Course Material", icon: <FileText size={24} /> },
   ];
 
   return (
@@ -100,14 +100,14 @@ export default function ValueAddedCoursesPage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-2 w-full">
             <div className="flex flex-col items-start text-left w-full md:w-1/2 md:max-w-2xl md:pr-2">
               <motion.h1 custom={0} variants={fadeUp} className="text-3xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">
-                Academic Excellence via <span className="text-purple-600">Value Added Courses</span>
+                Academic Excellence via <span className="text-[#8c52ff]">Value Added Courses</span>
               </motion.h1>
 
               <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: "80px" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="h-1 bg-purple-600 mb-6 rounded-full"
+                className="h-1 bg-[#8c52ff] mb-6 rounded-full"
               />
 
               <motion.p custom={1} variants={fadeUp} className="text-gray-800 text-lg md:text-lg font-medium mb-4 text-justify leading-relaxed">
@@ -119,7 +119,7 @@ export default function ValueAddedCoursesPage() {
               </motion.p>
 
               <motion.div custom={3} variants={fadeUp}>
-                <Link href="/contact" className="w-fit bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
+                <Link href="/contact" className="w-fit bg-[#8c52ff] text-white px-6 py-3 rounded-full font-bold hover:bg-purple-600 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
                    Partner with us <ArrowRight size={18} />
                 </Link>
               </motion.div>
@@ -148,9 +148,9 @@ export default function ValueAddedCoursesPage() {
           className="max-w-5xl mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-500 mb-2">Featured courses</h2>
-            <p className="text-gray-300 text-lg max-w-xl mx-auto">
-              In-depth certification programs for future-ready engineers.
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Featured courses</h2>
+            <p className="text-gray-200 text-base italic max-w-xl mx-auto">
+              In-depth Certification Programs for Future-Ready Engineers.
             </p>
           </div>
           
@@ -173,7 +173,7 @@ export default function ValueAddedCoursesPage() {
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-base font-bold mb-2 text-purple-500 text-center leading-tight">{course.title}</h3>
+                <h3 className="text-base font-bold mb-2 text-[#8c52ff] text-center leading-tight">{course.title}</h3>
                 <p className="text-white text-sm leading-relaxed text-center px-1">
                   {course.desc}
                 </p>
@@ -190,8 +190,8 @@ export default function ValueAddedCoursesPage() {
           className="max-w-7xl mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-600 mb-2">Why choose our VAC?</h2>
-            <p className="text-gray-700 text-base max-w-xl mx-auto">
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Why choose our VAC?</h2>
+            <p className="text-gray-800 text-base italic max-w-xl mx-auto">
               Bridging the gap between university degrees and professional careers.
             </p>
           </div>
@@ -207,7 +207,7 @@ export default function ValueAddedCoursesPage() {
                 whileHover={{ borderColor: "#9333ea" }}
                 className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center justify-center min-h-[140px]"
               >
-                <div className="text-purple-600 mb-3">
+                <div className="text-[#8c52ff] mb-3">
                   {item.icon}
                 </div>
                 <h3 className="text-[13px] font-bold text-black leading-snug">
@@ -225,12 +225,12 @@ export default function ValueAddedCoursesPage() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-purple-600">Elevate your institutional standards</h2>
-          <p className="text-black text-sm mb-4 max-w-3xl mx-auto">
-            Contact Adroiit Technovations to integrate industry-aligned value added courses into your academic calendar.
+          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-[#8c52ff]">Elevate your Institutional Standards</h2>
+          <p className="text-gray-800 text-base max-w-xl mx-auto">
+            Contact Adroiit Technovations to integrate industry-aligned Value Added Courses into your Academic Curriculum.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-all text-base shadow-lg shadow-purple-500/20">
-            <CalendarCheck size={18} /> Request course details
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-[#8c52ff] text-white px-6 py-3 rounded-full font-bold hover:bg-purple-600 transition-all text-base shadow-lg shadow-purple-500/20">
+            <CalendarCheck size={18} /> Request Course Details
           </Link>
         </motion.div>
       </section>

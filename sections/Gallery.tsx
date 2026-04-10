@@ -19,7 +19,7 @@ export default function Gallery() {
     <section className={`${bricolage.className} bg-black text-white py-5`}>
       
       <div className="text-center mb-4">
-        <h2 className="text-2xl text-purple-500 font-bold">Our Gallery</h2>
+        <h2 className="text-2xl text-[#8c52ff] font-bold">Our Gallery</h2>
         <p className="text-gray-200 italic mt-2 max-w-2xl mx-auto px-4">
           A glimpse into our hands-on learning and innovation
         </p>

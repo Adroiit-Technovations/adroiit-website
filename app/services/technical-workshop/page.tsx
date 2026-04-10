@@ -98,12 +98,12 @@ export default function TechnicalWorkshopsPage() {
   ];
 
   const highlights = [
-    { title: "Industry-relevant hands-on training", icon: <Wrench size={24} /> },
-    { title: "Expert trainers & mentorship", icon: <Users size={24} /> },
-    { title: "Structured & outcome-based modules", icon: <Briefcase size={24} /> },
-    { title: "Certification & skill validation", icon: <ShieldCheck size={24} /> },
-    { title: "Engaging & interactive session", icon: <Zap size={24} /> },
-    { title: "Latest tools & technologies exposure", icon: <Lightbulb size={24} /> },
+    { title: "Industry-relevant Hands-on Training", icon: <Wrench size={24} /> },
+    { title: "Expert Trainers & Mentorship", icon: <Users size={24} /> },
+    { title: "Structured & Outcome-based Modules", icon: <Briefcase size={24} /> },
+    { title: "Certification & Skill Validation", icon: <ShieldCheck size={24} /> },
+    { title: "Engaging & Interactive Session", icon: <Zap size={24} /> },
+    { title: "Latest Tools & Technologies Exposure", icon: <Lightbulb size={24} /> },
   ];
 
   return (
@@ -118,26 +118,26 @@ export default function TechnicalWorkshopsPage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-2 w-full">
             <div className="flex flex-col items-start text-left w-full md:w-1/2 md:max-w-2xl md:pr-2">
               <motion.h1 custom={0} variants={fadeUp} className="text-3xl md:text-3xl font-extrabold tracking-tight mb-4 leading-tight">
-                Industry-focused <span className="text-purple-600">technical workshops</span>
+                Industry-focused <span className="text-[#8c52ff]">Technical Workshops</span>
               </motion.h1>
 
               <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: "80px" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="h-1 bg-purple-600 mb-6 rounded-full"
+                className="h-1 bg-[#8c52ff] mb-6 rounded-full"
               />
 
               <motion.p custom={1} variants={fadeUp} className="text-gray-800 text-lg md:text-lg font-medium mb-4 text-justify leading-relaxed">
-                Adroiit Technovations’ technical workshops are short-term, intensive, and hands-on learning experiences designed specifically for college students.
+                Adroiit Technovations aims to bridge the gap between academic knowledge and industrial requirements by providing practical exposure to cutting-edge technologies through workshops.
               </motion.p>
               
               <motion.p custom={2} variants={fadeUp} className="text-gray-600 text-base md:text-lg mb-6 text-justify leading-relaxed">
-                These workshops bridge the gap between academic knowledge and industry requirements by providing practical exposure to cutting-edge technologies.
+                The workshops are specifically designed for college students to gain hands-on experience in emerging technological domains thereby helping them to upskill through these impactful workshops.
               </motion.p>
 
               <motion.div custom={3} variants={fadeUp}>
-                <Link href="/contact" className="w-fit bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
+                <Link href="/contact" className="w-fit bg-[#8c52ff] text-white px-6 py-3 rounded-full font-bold hover:bg-purple-600 transition-all flex items-center gap-2 shadow-md shadow-purple-500/20 text-base">
                    Host a workshop <ArrowRight size={18} />
                 </Link>
               </motion.div>
@@ -166,8 +166,8 @@ export default function TechnicalWorkshopsPage() {
           className="max-w-[1440px] mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-500 mb-2">Our workshops</h2>
-            <p className="text-gray-200 text-base max-w-xl mx-auto">
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Our Workshops</h2>
+            <p className="text-gray-200 text-base italic max-w-xl mx-auto">
               Specialized technical tracks designed for future engineers and innovators.
             </p>
           </div>
@@ -191,7 +191,7 @@ export default function TechnicalWorkshopsPage() {
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
-                <h3 className="text-sm font-bold mb-2 text-purple-500 text-center leading-tight">{workshop.title}</h3>
+                <h3 className="text-sm font-bold mb-2 text-[#8c52ff] text-center leading-tight">{workshop.title}</h3>
                 <p className="text-white text-[13px] leading-relaxed text-center opacity-80">
                   {workshop.desc}
                 </p>
@@ -208,8 +208,8 @@ export default function TechnicalWorkshopsPage() {
           className="max-w-7xl mx-auto"
         >
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-purple-600 mb-2">Workshop highlights</h2>
-            <p className="text-gray-700 text-base max-w-xl mx-auto">
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Workshop Highlights</h2>
+            <p className="text-gray-800 text-base italic max-w-xl mx-auto">
               What sets our technical training apart.
             </p>
           </div>
@@ -225,7 +225,7 @@ export default function TechnicalWorkshopsPage() {
                 whileHover={{ borderColor: "#9333ea" }}
                 className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center justify-center min-h-[140px]"
               >
-                <div className="text-purple-600 mb-3">
+                <div className="text-[#8c52ff] mb-3">
                   {item.icon}
                 </div>
                 <h3 className="text-[13px] font-bold text-black leading-snug">
@@ -243,12 +243,14 @@ export default function TechnicalWorkshopsPage() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-2xl md:text-2xl font-bold mb-4 text-purple-600">Empower your students with future-ready skills</h2>
-          <p className="text-black text-sm mb-8 max-w-2xl mx-auto">
-            Partner with Adroiit Technovations to conduct high-impact technical workshops at your institution.
-          </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-all text-base shadow-lg shadow-purple-500/20">
-            <CalendarCheck size={18} /> Host a workshop
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-bold text-[#8c52ff] mb-2">Empower your students with future-ready skills</h2>
+            <p className="text-gray-950 text-base max-w-xl mx-auto">
+              Partner with Adroiit Technovations to conduct high-impact technical workshops at your institution.
+            </p>
+          </div>
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-[#8c52ff] text-white px-8 py-3 rounded-full font-bold hover:bg-purple-600 transition-all text-base shadow-lg shadow-purple-500/20">
+            <CalendarCheck size={18} /> Host a Workshop
           </Link>
         </motion.div>
       </section>

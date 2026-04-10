@@ -52,7 +52,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-4xl font-bold tracking-tighter"
           >
-            <span className="text-purple-600">About Adroiit Technovations</span>
+            <span className="text-[#8c52ff]">About Adroiit Technovations</span>
           </motion.h1>
 
           <motion.p
@@ -76,7 +76,7 @@ export default function About() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl md:text-2xl font-bold mb-6">
-                <span className="text-purple-600">Our Story</span>
+                <span className="text-[#8c52ff]">Our Story</span>
               </h2>
 
               <div className="space-y-6 text-gray-800 leading-relaxed text-justify text-base md:text-lg">
@@ -118,8 +118,8 @@ export default function About() {
             whileHover={{ y: -5 }}
             className="bg-black border border-[#8c52ff]/30 rounded-[2.5rem] p-10 shadow-[0_0_30px_rgba(140,82,255,0.15)] hover:shadow-[0_0_40px_rgba(140,82,255,0.3)] transition-all duration-500"
           >
-            <Rocket size={24} className="text-purple-600 mb-6" />
-            <h2 className="text-2xl font-bold mb-4 text-purple-600">Our Mission</h2>
+            <Rocket size={24} className="text-[#8c52ff] mb-6" />
+            <h2 className="text-2xl font-bold mb-4 text-[#8c52ff]">Our Mission</h2>
             <p className="text-gray-200 leading-relaxed text-justify">
               To deliver transformative STEM and technical education through immersive, hands-on learning that empowers next-gen innovators, while developing cutting-edge technological solutions that create enduring global impact.
             </p>
@@ -130,8 +130,8 @@ export default function About() {
             whileHover={{ y: -5 }}
             className="bg-black border border-[#8c52ff]/30 rounded-[2.5rem] p-10 shadow-[0_0_30px_rgba(140,82,255,0.15)] hover:shadow-[0_0_40px_rgba(140,82,255,0.3)] transition-all duration-500"
           >
-            <Target size={24} className="text-purple-600 mb-6" />
-            <h2 className="text-2xl font-bold mb-4 text-purple-600">Our Vision</h2>
+            <Target size={24} className="text-[#8c52ff] mb-6" />
+            <h2 className="text-2xl font-bold mb-4 text-[#8c52ff]">Our Vision</h2>
             <p className="text-gray-200 leading-relaxed text-justify">
               To forge a new era in STEM and technical education through experiential learning that nurtures trailblazing innovators, while building technological solutions that deliver lasting global impact.
             </p>
@@ -157,8 +157,8 @@ export default function About() {
                   <div className="text-[#8c52ff] mb-4 flex justify-center">
                     {value.icon}
                   </div>
-                  <h3 className="font-bold text-lg mb-2">{value.title}</h3>
-                  <p className="text-gray-600 text-sm">{value.desc}</p>
+                  <h3 className="font-bold text-lg text-[#8c52ff] mb-2">{value.title}</h3>
+                  <p className="text-gray-800 text-sm">{value.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -173,8 +173,8 @@ export default function About() {
                   <div className="text-[#8c52ff] mb-4 flex justify-center">
                     {value.icon}
                   </div>
-                  <h3 className="font-bold text-lg mb-2">{value.title}</h3>
-                  <p className="text-gray-600 text-sm">{value.desc}</p>
+                  <h3 className="font-bold text-lg text-[#8c52ff] mb-2">{value.title}</h3>
+                  <p className="text-gray-800 text-sm">{value.desc}</p>
                 </motion.div>
               ))}
             </div>

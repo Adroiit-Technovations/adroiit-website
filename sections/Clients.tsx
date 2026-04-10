@@ -18,7 +18,7 @@ export default function Clients() {
 
       {/* Heading */}
       <div className="text-center mb-8">
-        <h2 className="text-4xl md:text-2xl font-bold text-purple-600">
+        <h2 className="text-4xl md:text-2xl font-bold text-[#8c52ff]">
           Our Clients & Partners
         </h2>
         <p className="text-gray-600 italic mt-3 max-w-3xl mx-auto">
