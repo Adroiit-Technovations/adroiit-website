@@ -146,7 +146,7 @@ export default function Navbar() {
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-300 hover:text-white">Home</Link>
             <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-300 hover:text-white">About Us</Link>
             <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-300 hover:text-white font-semibold text-[#a855f7]">Solutions</Link>
-            <Link href="/careers" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-300 hover:text-white">Apply for Internship</Link>
+            <Link href="/internship" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-300 hover:text-white">Internship</Link>
             <Link 
               href="/contact" 
               onClick={() => setMobileMenuOpen(false)}
