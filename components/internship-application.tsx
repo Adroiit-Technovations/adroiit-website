@@ -25,16 +25,23 @@ export default function InternshipApplication({ isOpen, onClose, selectedDomain 
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    
+    // If not on the last step, just advance the UI
     if (step < 4) {
       setStep(step + 1);
       return;
     }
+
+    // On final step, submit data
     setLoading(true);
     const formData = new FormData(e.currentTarget);
-    formData.append("domain", selectedDomain); // Ensure domain is sent
+    
+    // Ensure the domain chosen from the previous screen is included
+    formData.append("selectedDomain", selectedDomain);
+
     const res = await handleInternshipApplication(formData);
     if (res.success) setSubmitted(true);
-    else alert("Submission failed.");
+    else alert("Submission failed. Please check all fields.");
     setLoading(false);
   }
 
@@ -272,7 +279,7 @@ export default function InternshipApplication({ isOpen, onClose, selectedDomain 
       <style jsx>{`
         .modal-label {
           font-size: 13px;
-          color: rgba(255, 255, 255, 0.2);
+          color: rgba(255, 255, 255, 0.4);
           margin-left: 4px;
         }
         .modal-input-dark { 
