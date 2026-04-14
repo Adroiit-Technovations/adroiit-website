@@ -115,41 +115,10 @@ export default function STEMLabPage() {
     { icon: <Headphones />, title: "Friendly & Dedicated Support Team", description: "Responsive support system for smooth implementation and ongoing assistance." },
   ];
 
-  // SEO Structured Data (JSON-LD)
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "STEM Tinkering and Innovation Lab (TIL) Setup",
-    "provider": {
-      "@type": "Organization",
-      "name": "Adroiit Technovations",
-      "url": "https://www.adroiittechnovations.in"
-    },
-    "description": "Establish state-of-the-art STEM Tinkering and Innovation Labs focusing on Electronics, 3D Printing, Robotics, and IoT. Aligned with NEP 2020 and CBSE standards.",
-    "areaServed": "IN",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "STEM Services",
-      "itemListElement": domains.map((d) => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": d.title,
-          "description": d.desc
-        }
-      }))
-    }
-  };
-
   return (
     <div className={`${bricolage.className} bg-white text-black overflow-x-hidden`}>
-      {/* 🔍 SEO Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
 
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION - Reordered for Mobile */}
       <section className="relative pt-32 pb-2 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
