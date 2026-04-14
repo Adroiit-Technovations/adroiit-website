@@ -10,7 +10,7 @@ const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: [
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.adroiittechnovations.in"),
   title: {
-    default: "Adroiit Technovations | STEM Education, Robotics & Engineering Solutions",
+    default: "Adroiit Technovations | STEM Education, Robotics, Embedded Systems, IoT, 3D Printing & Engineering Solutions",
     template: "%s | Adroiit Technovations",
   },
   description: "Adroiit Technovations is an Ed-Tech and Innovation firm empowering the next generation through experiential STEM education and advanced technological innovation.",
