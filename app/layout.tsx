@@ -1,27 +1,39 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Bricolage_Grotesque } from "next/font/google";
+import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Hero from "@/sections/Hero";
-import Services from "@/sections/Services";
-import Gallery from "@/sections/Gallery";
-import Footer from "@/sections/Footer";
-import Clients from "@/sections/Clients";
-import Testimonials from "@/sections/Testimonials";
-import WhatsappButton from "@/components/WhatsappButton";
-import PartnerWithUs from "@/sections/PartnerWithUs"
 
-export default function Home() {
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Adroiit Technovations",
+  description: "Empowering Next-Gen through Education and Innovation",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <Services />
-      <Gallery />
-      <Clients />
-      <Testimonials />
-      <PartnerWithUs />
-      <Footer />
-
-      {/* 🔥 Floating WhatsApp */}
-      <WhatsappButton />
-    </>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} antialiased`}>
+        <Navbar />
+        <main>{children}</main>
+      </body>
+    </html>
   );
 }
