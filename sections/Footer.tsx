@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Youtube, Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Instagram, Youtube, Send, Loader2, CheckCircle2, Phone, Mail, MapPin } from "lucide-react";
 import { Bricolage_Grotesque } from "next/font/google";
 import { handleNewsletter } from "@/app/actions";
 import { useState } from "react";
@@ -36,7 +36,7 @@ export default function PremiumFooter() {
     const res = await handleNewsletter(formData);
     if (res.success) {
       setStatus("success");
-      setTimeout(() => setStatus("idle"), 4000); // Reset after 4 seconds
+      setTimeout(() => setStatus("idle"), 4000);
     } else {
       setStatus("idle");
       alert("Something went wrong. Please try again.");
@@ -46,39 +46,37 @@ export default function PremiumFooter() {
   return (
     <footer className={`${bricolage.className} relative bg-[#050505] text-white px-8 pt-11 pb-12 border-t border-white/10 overflow-hidden rounded-t-[40px] md:rounded-t-[80px]`}>
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-50 mb-20 items-start w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 items-start justify-items-stretch w-full">
           
-          {/* COLUMN 1: BRAND */}
-          <div className="flex flex-col space-y-3">
-            <Image src="/logo2.png" alt="Adroiit Technovations" width={150} height={55} className="brightness-125 grayscale hover:grayscale-0 transition-all duration-700" />
-            <p className="text-gray-200 text-sm font-light leading-relaxed max-w-xs">
-              Empowering the Next-Gen through <span className="text-[#8c52ff] font-medium">Education & Innovation.</span>
-            </p>
-          </div>
-
-          {/* COLUMN 2: CONNECT */}
-          <div className="flex flex-col space-y-6">
-            <h4 className="premium-label">Connect with Us</h4>
+          {/* COLUMN 1: BRAND + SOCIALS */}
+          <div className="flex flex-col space-y-6 justify-self-start">
+            <div className="flex flex-col space-y-3">
+              <Image src="/logo2.png" alt="Adroiit Technovations" width={150} height={55} className="brightness-125 grayscale hover:grayscale-0 transition-all duration-700" />
+              <p className="text-gray-200 text-sm font-light leading-relaxed max-w-xs">
+                Empowering the Next-Gen through <br className="hidden md:block" />
+                <span className="text-[#8c52ff] font-medium">Education & Innovation.</span>
+              </p>
+            </div>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((item, i) => (
-                <Link key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-11 h-11 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+                <Link key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
                   <span className="text-white group-hover:text-white transition-colors duration-300">
-                    <item.Icon size={18} />
+                    <item.Icon size={16} />
                   </span>
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* COLUMN 3: NEWSLETTER */}
-          <div className="flex flex-col space-y-6">
+          {/* COLUMN 2: NEWSLETTER */}
+          <div className="flex flex-col space-y-6 justify-self-center w-full max-w-sm">
             <h4 className="premium-label">Newsletter</h4>
             <div className="space-y-4">
               <p className="text-gray-200 text-sm font-light">
                 Insights on Technology and Innovation.
               </p>
               
-              <form action={clientAction} className="relative group max-w-sm">
+              <form action={clientAction} className="relative group w-full">
                 <input
                   name="email"
                   type="email"
@@ -96,6 +94,37 @@ export default function PremiumFooter() {
                    status === "success" ? <CheckCircle2 size={16} className="text-green-500" /> : <Send size={16} />}
                 </button>
               </form>
+            </div>
+          </div>
+
+          {/* COLUMN 3: REACH US OUT */}
+          <div className="flex flex-col space-y-6 justify-self-end w-fit">
+            <h4 className="premium-label">Reach Us Out</h4>
+            <div className="flex flex-col space-y-4">
+              
+              <div className="flex items-center gap-4 group">
+                <div className="w-11 h-11 rounded-xl bg-white/[0.03] border border-white/5 group-hover:bg-white/[0.08] group-hover:border-purple-500/30 flex items-center justify-center transition-all duration-500 flex-shrink-0">
+                  <Phone size={18} className="text-white" />
+                </div>
+                <a href="tel:+918870002908" className="text-sm text-gray-200 font-medium hover:text-white transition-colors">+91-8870002908</a>
+              </div>
+
+              <div className="flex items-center gap-4 group">
+                <div className="w-11 h-11 rounded-xl bg-white/[0.03] border border-white/5 group-hover:bg-white/[0.08] group-hover:border-purple-500/30 flex items-center justify-center transition-all duration-500 flex-shrink-0">
+                  <Mail size={18} className="text-white" />
+                </div>
+                <a href="mailto:info@adroiittechnovations.in" className="text-sm text-gray-200 font-medium hover:text-white transition-colors">info@adroiittechnovations.in</a>
+              </div>
+
+              <div className="flex items-start gap-4 group">
+                <div className="mt-0.5 w-11 h-11 rounded-xl bg-white/[0.03] border border-white/5 group-hover:bg-white/[0.08] group-hover:border-purple-500/30 flex items-center justify-center transition-all duration-500 flex-shrink-0">
+                  <MapPin size={18} className="text-white" />
+                </div>
+                <p className="text-sm text-gray-200 font-medium leading-relaxed max-w-[280px]">
+                  15A, Pavendhar Street, Thamizh Thai Nagar, Uppalam, Puducherry - 605004
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
