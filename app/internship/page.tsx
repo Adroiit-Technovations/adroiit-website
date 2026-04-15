@@ -94,7 +94,7 @@ const galleryImages = [
   "/internship/gallery3.jpeg",
   "/internship/gallery4.jpeg",
   "/internship/gallery5.jpeg",
-  "/internship/gallery6.jpeg",
+  "/internship/gallery6.jpg",
   "/internship/gallery7.jpg",
 ];
 
