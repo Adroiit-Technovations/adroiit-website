@@ -171,7 +171,7 @@ export default function STEMLabPage() {
 
               <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="order-6 mt-5">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-[#8c52ff] text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition-all shadow-lg shadow-purple-500/25 group text-base">
-                  Book a Consultation
+                  Book a Demo
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
@@ -356,7 +356,7 @@ export default function STEMLabPage() {
           </motion.h2>
           <p className="text-gray-600 mb-8 text-sm">Let's join to empower your institution with a STEM Tinkering and Innovation Lab designed to foster creativity, hands-on learning and future-ready skills.</p>
           <Link href="/contact" className="inline-flex items-center gap-3 bg-[#8c52ff] text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-all shadow-xl shadow-purple-500/20">
-            <MessageCircle size={20} /> Book a Consultation
+            <MessageCircle size={20} /> Book a Demo
           </Link>
         </div>
       </section>
