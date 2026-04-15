@@ -46,10 +46,10 @@ export default function PremiumFooter() {
   return (
     <footer className={`${bricolage.className} relative bg-[#050505] text-white px-8 pt-11 pb-12 border-t border-white/10 overflow-hidden rounded-t-[40px] md:rounded-t-[80px]`}>
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 items-start justify-items-stretch w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 items-start w-full">
           
           {/* COLUMN 1: BRAND + SOCIALS */}
-          <div className="flex flex-col space-y-6 justify-self-start">
+          <div className="flex flex-col space-y-6 md:justify-self-start items-start">
             <div className="flex flex-col space-y-3">
               <Image src="/logo2.png" alt="Adroiit Technovations" width={150} height={55} className="brightness-125 grayscale hover:grayscale-0 transition-all duration-700" />
               <p className="text-gray-200 text-sm font-light leading-relaxed max-w-xs">
@@ -69,9 +69,9 @@ export default function PremiumFooter() {
           </div>
 
           {/* COLUMN 2: NEWSLETTER */}
-          <div className="flex flex-col space-y-6 justify-self-center w-full max-w-sm">
+          <div className="flex flex-col space-y-6 md:justify-self-center w-full max-w-sm items-start">
             <h4 className="premium-label">Newsletter</h4>
-            <div className="space-y-4">
+            <div className="space-y-4 w-full">
               <p className="text-gray-200 text-sm font-light">
                 Insights on Technology and Innovation.
               </p>
@@ -98,7 +98,7 @@ export default function PremiumFooter() {
           </div>
 
           {/* COLUMN 3: REACH US OUT */}
-          <div className="flex flex-col space-y-6 justify-self-end w-fit">
+          <div className="flex flex-col space-y-6 md:justify-self-end w-full md:w-fit items-start">
             <h4 className="premium-label">Reach Us Out</h4>
             <div className="flex flex-col space-y-4">
               
