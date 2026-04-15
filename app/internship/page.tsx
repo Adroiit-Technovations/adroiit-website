@@ -90,7 +90,7 @@ const faqs = [
 
 const galleryImages = [
   "/internship/gallery1.jpg",
-  "/internship/gallery2.jpg",
+  "/internship/gallery2.jpeg",
   "/internship/gallery3.jpeg",
   "/internship/gallery4.jpeg",
   "/internship/gallery5.jpeg",
