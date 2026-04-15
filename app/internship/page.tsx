@@ -15,6 +15,10 @@ import {
   Trophy,
   Plus,
   Minus,
+  Wrench,
+  TrendingUp,
+  Settings,
+  FolderKanban,
 } from "lucide-react";
 import Image from "next/image";
 import { Bricolage_Grotesque } from "next/font/google";
@@ -304,12 +308,12 @@ export default function InternshipPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {[
-              { t: "Hands-on, Project-based Learning", d: "Work on real-world projects instead of just theoretical tasks, gaining practical exposure that truly matters.", icon: <Lightbulb size={20} /> },
-              { t: "Skill & Career-Focused Approach", d: "Develop skills that align with industry needs, improving your readiness for jobs, higher studies or startups.", icon: <Zap size={20} /> },
-              { t: "Industry-Relevant Tools & Technologies", d: "Get hands-on experience with tools and platforms that are actively used in the industry.", icon: <Target size={20} /> },
+              { t: "Hands-on, Project-based Learning", d: "Work on real-world projects instead of just theoretical tasks, gaining practical exposure that truly matters.", icon: <Wrench size={20} /> },
+              { t: "Skill & Career-Focused Approach", d: "Develop skills that align with industry needs, improving your readiness for jobs, higher studies or startups.", icon: <TrendingUp size={20} /> },
+              { t: "Industry-Relevant Tools & Technologies", d: "Get hands-on experience with tools and platforms that are actively used in the industry.", icon: <Settings size={20} /> },
               { t: "Collaborative Learning Environment", d: "Works in teams, exchange ideas and experience real project collaboration just like in a professional setup.", icon: <Users size={20} /> },
               { t: "Dedicated Mentorship Guidance", d: "Learn directly from experienced mentors who guide you through every stage of your learning journey.", icon: <Trophy size={20} /> },
-              { t: "Structured Portfolio Development", d: "Build strong, showcase-ready projects that enhance your resume and improve your career opportunities.", icon: <Cpu size={20} /> }
+              { t: "Structured Portfolio Development", d: "Build strong, showcase-ready projects that enhance your resume and improve your career opportunities.", icon: <FolderKanban size={20} /> }
             ].map((item, i) => (
               <motion.div 
                 key={i} 
@@ -451,7 +455,7 @@ export default function InternshipPage() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-3xl font-bold mb-4 text-[#8c52ff]">Ready to Transform Your Career?</h2>
+          <h2 className="text-3xl md:text-2xl font-bold mb-4 text-[#8c52ff]">Ready to Transform Your Career?</h2>
           <p className="text-gray-800 mb-8 max-w-2xl mx-auto text-lg">
             Take the first step towards a future in technology. Join a community of innovators and start building real-world solutions today.
           </p>
