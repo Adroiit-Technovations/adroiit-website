@@ -43,7 +43,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className={`${bricolage.className} text-2xl md:text-5xl font-bold leading-tight max-w-4xl`}
       >
-        Empowering Next-Gen through
+        Empowering the Next-Gen through
         <br className="hidden md:block" />
         <span className="block bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">
           Education and Innovation
