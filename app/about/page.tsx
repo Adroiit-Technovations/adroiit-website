@@ -121,7 +121,7 @@ export default function About() {
             <Rocket size={24} className="text-[#8c52ff] mb-6" />
             <h2 className="text-2xl font-bold mb-4 text-[#8c52ff]">Our Mission</h2>
             <p className="text-gray-200 leading-relaxed text-justify">
-              To deliver transformative STEM and technical education through immersive, hands-on learning that empowers next-gen innovators, while developing cutting-edge technological solutions that create enduring global impact.
+              To deliver transformative STEM education experiences through experiential learning and to build innovative products that make a meaningful difference.
             </p>
           </motion.div>
 
@@ -133,7 +133,7 @@ export default function About() {
             <Target size={24} className="text-[#8c52ff] mb-6" />
             <h2 className="text-2xl font-bold mb-4 text-[#8c52ff]">Our Vision</h2>
             <p className="text-gray-200 leading-relaxed text-justify">
-              To forge a new era in STEM and technical education through experiential learning that nurtures trailblazing innovators, while building technological solutions that deliver lasting global impact.
+              To build an ecosystem where education fuels innovation and innovation transforms the future — nurturing world-class innovators and engineering cutting-edge solutions that create lasting impact.
             </p>
           </motion.div>
 
