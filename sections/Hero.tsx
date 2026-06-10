@@ -91,8 +91,8 @@ export default function Hero() {
         className="mt-14 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl"
       >
         {[
-          { value: "5+", label: "Sessions" },
-          { value: "500+", label: "Students Empowered" },
+          { value: "20+", label: "Sessions" },
+          { value: "1200+", label: "Students Empowered" },
           { value: "10+", label: "Projects Completed" },
           { value: "5.0", label: "Google Rating" },
         ].map((item, i) => (

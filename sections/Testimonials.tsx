@@ -9,48 +9,48 @@ const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 const testimonials = [
   {
     name: "Priya R",
-    role: "Parent - 3D Printing Class",
+    role: "Parent",
     text: "I am very satisfied with the teaching. The individual care and attention given to my daughter made a big difference.",
   },
   {
-    name: "Hariharan",
-    role: "Parent - Robotics Class",
-    text: "Good place to go on with STEM Education and Robotics Courses.",
+    name: "Prakash Selvaraj",
+    role: "Assistant Professor",
+    text: "We choose Adroiit Technovations for their expertize in robotics, embedded systems, IoT and Drones. They conduct the workshop in a professional manner and with industrial trends.",
+  },
+  {
+    name: "Saran Senthilkumar",
+    role: "Client",
+    text: "The team is hardworking, skilled and does an excellent job. Collaborated for an automation project. Trustworthy!",
   },
   {
     name: "Shanmugapriya M",
     role: "Research & Development Intern",
-    text: "I built my first Arduino project here. Learning is fun and practical!",
+    text: "I built my first project here. Learning is fun and practical!",
   },
   {
-    name: "Rahul Sharma",
+    name: "Hariharan",
     role: "Parent",
-    text: "My child developed real interest in robotics. The hands-on projects are amazing!",
+    text: "Good place to go on with STEM Education and Robotics Courses.",
   },
   {
-    name: "Ananya Verma",
-    role: "Student",
-    text: "I built my first Arduino project here. Learning is fun and practical!",
+    name: "Mukundan Raman",
+    role: "Client",
+    text: "Adroiit Technovations became more than just a service provider—they became a strategic partner. Their guidance and technical support have been invaluable to our growth.",
   },
   {
-    name: "School Coordinator",
-    role: "Partner School",
-    text: "Adroiit Technovations transformed our STEM education approach completely.",
+    name: "Mohammad Suhail",
+    role: "Client",
+    text: "From planning to execution, the Adroiit Technovations team handled every aspect of our project with professionalism and commitment. We highly recommend their services.",
   },
   {
-    name: "Rahul Sharma",
+    name: "Anupriya Ramasamy",
     role: "Parent",
-    text: "My child developed real interest in robotics. The hands-on projects are amazing!",
+    text: "My child has developed a genuine interest in robotics, thanks to the instructors at Adroiit Technovations.",
   },
   {
-    name: "Ananya Verma",
-    role: "Student",
-    text: "I built my first Arduino project here. Learning is fun and practical!",
-  },
-  {
-    name: "School Coordinator",
-    role: "Partner School",
-    text: "Adroiit Technovations transformed our STEM education approach completely.",
+    name: "Kanmani",
+    role: "Parent",
+    text: "Highly recommended for parents looking to introduce their children to future technologies like robotics, drones and 3D printing",
   },
 ];
 
