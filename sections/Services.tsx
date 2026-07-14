@@ -45,7 +45,7 @@ export default function Services() {
       title: "Technical Workshops",
       description: "Industry-focused training programs that equip students with job ready skills through immersive, hands-on experience using modern tools and technologies.",
       image: "/services/technical-workshop2.png",
-      link: "/services/stem-workshop",
+      link: "/services/technical-workshop",
     },
     {
       title: "Custom Machinery Fabrication",

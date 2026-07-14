@@ -33,10 +33,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} antialiased bg-[#f5f5f5]`}
       >
         <Navbar />
-        <main>{children}</main>
+        
+        {/* Main background layout that contrasts with the black footer to show the curves */}
+        <main className="min-h-screen bg-[#f5f5f5] w-full">
+          {children}
+        </main>
         
         {/* ✅ WhatsApp button added globally */}
         <WhatsappButton />

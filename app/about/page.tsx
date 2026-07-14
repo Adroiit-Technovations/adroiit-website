@@ -42,7 +42,8 @@ export default function About() {
     <div className={`${bricolage.className} bg-black text-white min-h-screen`}>
       <Navbar />
 
-      <main className="pt-32 pb-20">
+      {/* FIXED: Removed pb-20 from here so it doesn't leave a black gap */}
+      <main className="pt-32">
 
         {/* 🔥 Heading Section */}
         <section className="max-w-5xl mx-auto text-center mb-8 px-6">
@@ -100,7 +101,7 @@ export default function About() {
               className="relative h-[400px] w-full rounded-[2.5rem] overflow-hidden shadow-xl"
             >
               <Image 
-                src="/about-hero.jpg" // Replace with your actual image path
+                src="/about-hero.jpg"
                 alt="Innovation and Learning"
                 fill
                 className="object-cover"
@@ -184,7 +185,10 @@ export default function About() {
 
       </main>
 
-      <Footer />
+      {/* Sits completely flush against the white background above it */}
+      <div className="w-full bg-white">
+        <Footer />
+      </div>
     </div>
   );
 }

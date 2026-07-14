@@ -21,7 +21,16 @@ const XIcon = ({ size = 18 }) => (
   </svg>
 );
 
-export default function PremiumFooter() {
+interface FooterColors {
+  newsletter?: string;
+  reachUsOut?: string;
+}
+
+interface PremiumFooterProps {
+  headingColors?: FooterColors;
+}
+
+export default function PremiumFooter({ headingColors }: PremiumFooterProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
   const socialLinks = [
@@ -46,32 +55,29 @@ export default function PremiumFooter() {
   return (
     <footer className={`${bricolage.className} relative bg-[#050505] text-white px-8 pt-11 pb-12 border-t border-white/10 overflow-hidden rounded-t-[40px] md:rounded-t-[80px]`}>
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 items-start w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-5 items-start w-full">
           
-          {/* COLUMN 1: BRAND + SOCIALS */}
+          {/* COLUMN 1: BRAND */}
           <div className="flex flex-col space-y-6 md:justify-self-start items-start">
             <div className="flex flex-col space-y-3">
               <Image src="/logo2.png" alt="Adroiit Technovations" width={150} height={55} className="brightness-125 grayscale hover:grayscale-0 transition-all duration-700" />
               <p className="text-gray-200 text-sm font-light leading-relaxed max-w-xs">
                 Empowering the Next-Gen through <br className="hidden md:block" />
-                <span className="text-[#8c52ff] font-medium">Education & Innovation.</span>
+                <span className="font-medium">Education & Innovation.</span>
               </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((item, i) => (
-                <Link key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
-                  <span className="text-white group-hover:text-white transition-colors duration-300">
-                    <item.Icon size={16} />
-                  </span>
-                </Link>
-              ))}
+              
+              {/* INCUBATED AT LOGO */}
+              <div className="pt-2 flex flex-col items-start space-y-1.5">
+                <span className="text-[12px] tracking-[0.1em] uppercase font-bold text-[#8c52ff]">Incubated at</span>
+                <Image src="/aic-pecf-logo.png" alt="Incubator Logo" width={220} height={100} className="rounded-2xl" />
+              </div>
             </div>
           </div>
 
-          {/* COLUMN 2: NEWSLETTER */}
+          {/* COLUMN 2: NEWSLETTER + SOCIALS */}
           <div className="flex flex-col space-y-6 md:justify-self-center w-full max-w-sm items-start">
             <h4 className="premium-label">Newsletter</h4>
-            <div className="space-y-4 w-full">
+            <div className="space-y-6 w-full">
               <p className="text-gray-200 text-sm font-light">
                 Insights on Technology and Innovation.
               </p>
@@ -94,13 +100,24 @@ export default function PremiumFooter() {
                    status === "success" ? <CheckCircle2 size={16} className="text-green-500" /> : <Send size={16} />}
                 </button>
               </form>
+
+              {/* Social Media Links relocated below signup */}
+              <div className="flex flex-wrap gap-3 pt-2">
+                {socialLinks.map((item, i) => (
+                  <Link key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] hover:border-purple-500/30 transition-all duration-500">
+                    <span className="text-white group-hover:text-white transition-colors duration-300">
+                      <item.Icon size={16} />
+                    </span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* COLUMN 3: REACH US OUT */}
           <div className="flex flex-col space-y-6 md:justify-self-end w-full md:w-fit items-start">
             <h4 className="premium-label">Reach Us Out</h4>
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-2">
               
               <div className="flex items-center gap-4 group">
                 <div className="w-11 h-11 rounded-xl bg-white/[0.03] border border-white/5 group-hover:bg-white/[0.08] group-hover:border-purple-500/30 flex items-center justify-center transition-all duration-500 flex-shrink-0">
@@ -132,10 +149,10 @@ export default function PremiumFooter() {
         {/* BOTTOM BAR */}
         <div className="pt-1 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#8c52ff]/50" />
-            <p className="text-gray-500 text-[10px] tracking-[0.3em] uppercase font-bold">© 2026 Adroiit Technovations</p>
+            {/* Purple dot successfully removed from here */}
+            <p className="text-gray-400 text-[10px] tracking-[0.1em] uppercase font-bold">© 2026 Adroiit Technovations. All Rights Reserved.</p>
           </div>
-          <div className="flex gap-10 text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">
+          <div className="flex gap-10 text-[10px] tracking-[0.1em] uppercase font-bold text-gray-400">
             <Link href="/privacy" className="hover:text-purple-500 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-purple-500 transition-colors">Terms and Conditions</Link>
           </div>
@@ -143,7 +160,7 @@ export default function PremiumFooter() {
       </div>
 
       <style jsx>{`
-        .premium-label { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #4b5563; font-weight: 900; display: block; padding-top: 8px; }
+        .premium-label { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: #8c52ff; font-weight: 900; display: block; padding-top: 8px; }
         .premium-input { width: 100%; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px 50px 14px 20px; font-size: 13px; color: white; transition: all 0.3s; }
         .premium-input:focus { outline: none; border-color: rgba(140, 82, 255, 0.5); background: rgba(255, 255, 255, 0.04); }
       `}</style>
