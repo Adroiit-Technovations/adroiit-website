@@ -33,7 +33,7 @@ export default function Services() {
       title: "Center of Excellence (CoE)",
       description: "A complete innovation ecosystem with tools, mentorship and resources - empowering students learn and turn their ideas into prototypes and breakthrough solutions.",
       image: "/services/coe2.png",
-      link: "/services/coe-advanced-lab",
+      link: "/services/coe",
     },
     {
       title: "Value Added Courses",

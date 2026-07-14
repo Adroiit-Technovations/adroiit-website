@@ -9,8 +9,8 @@ const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 export default function Gallery() {
   const images = [
     "/projects/1.jpg", "/projects/mvit-mou.jpeg", "/projects/3.jpeg", 
-    "/projects/smvec-mou.jpeg", "/projects/6.jpeg", "/projects/mvit-mou2.jpeg", "/projects/5.jpg",
-    "/projects/7.jpeg", "/projects/8.jpg", "/projects/2.jpg", "/projects/4.jpg",
+    "/projects/smvec-mou.jpeg", "/projects/6.jpeg", "/projects/mvit-mou2.jpeg", "/projects/dsc-3.jpeg", "/projects/aic-pecf-mou.jpeg", 
+    "/projects/5.jpg", "/projects/dsc-2.jpeg", "/projects/7.jpeg", "/projects/dsc-1.jpeg", "/projects/8.jpg", "/projects/dsc-7.jpeg", "/projects/2.jpg", "/projects/4.jpg", 
   ];
 
   const duplicatedImages = [...images, ...images];
