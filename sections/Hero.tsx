@@ -13,23 +13,23 @@ const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 const LOGO_WIDTH = 180;
 const LOGO_HEIGHT = 90;
 
-// Slideshow images for mobile view
+// Mobile Slideshow Array: Explicit Order -> Image 1, Image 4, Image 3
 const MOBILE_HERO_IMAGES = [
   {
-    src: "/projects/dsc-7.jpeg",
+    src: "/projects/dsc-7.jpeg", // Image 1
     alt: "Adroiit STEM Project 1",
   },
   {
-    src: "/projects/dsc-3.jpeg",
-    alt: "Adroiit STEM Project 3",
+    src: "/projects/dsc-6.jpeg", // Image 4
+    alt: "Adroiit STEM Project 4",
   },
   {
-    src: "/projects/dsc-6.jpeg",
-    alt: "Adroiit STEM Project 4",
+    src: "/projects/dsc-3.jpeg", // Image 3
+    alt: "Adroiit STEM Project 3",
   },
 ];
 
-// All 4 images for desktop grid
+// Desktop 4-Image Grid Array
 const DESKTOP_HERO_IMAGES = [
   {
     src: "/projects/dsc-7.jpeg",
@@ -52,7 +52,7 @@ const DESKTOP_HERO_IMAGES = [
 export default function ModernHero() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-play slideshow every 4 seconds for mobile single frame
+  // Auto-play slideshow every 4 seconds for mobile single frame (Cycles through Image 1 -> 4 -> 3)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % MOBILE_HERO_IMAGES.length);
@@ -106,7 +106,7 @@ export default function ModernHero() {
                 </span>
               </motion.h1>
 
-              {/* MOBILE ONLY ORDER 3: Hero Image Slideshow Frame */}
+              {/* MOBILE ONLY ORDER 3: Hero Image Slideshow Frame (Image 1 -> Image 4 -> Image 3) */}
               <div className="order-3 lg:hidden w-full my-6 relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-white/5 border border-purple-500/20 backdrop-blur-sm">
                 <AnimatePresence mode="popLayout">
                   <motion.div
@@ -140,18 +140,18 @@ export default function ModernHero() {
                 Adroiit Technovations is redefining STEM and technical skill learning. We bridge the gap between classroom theory and hands-on real-world innovation.
               </motion.p>
 
-              {/* ORDER 5 (Mobile) / CTA Buttons below subtext on Desktop */}
+              {/* DESKTOP ONLY CTA BUTTONS */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="order-5 lg:order-none mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+                className="hidden lg:flex mt-8 flex-row items-center gap-4 w-auto"
               >
                 <Link
                   href="/services"
                   className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
                 >
-                  Explore Services
+                  Explore Programs
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -159,45 +159,68 @@ export default function ModernHero() {
                   href="/contact"
                   className="border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white text-center"
                 >
-                  Contact Us
+                  Get in Touch
                 </Link>
               </motion.div>
             </div>
 
-            {/* ORDER 6 (Mobile) / Impact Metrics Bar (Left-aligned on Desktop, Center on Mobile) */}
+            {/* ORDER 5 (Mobile) / Impact Metrics Bar */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="order-6 lg:order-none mt-10 lg:mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full items-center text-center lg:text-left lg:items-start"
+              className="order-5 lg:order-none mt-10 lg:mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full items-center text-center lg:text-left lg:items-start"
             >
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>20+</h4>
                 <p className="text-xs text-gray-400 mt-0.5">Sessions Conducted</p>
               </div>
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>700+</h4>
-                <p className="text-xs text-gray-400 mt-0.5">Learners Empowered</p>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>1200+</h4>
+                <p className="text-xs text-gray-400 mt-0.5">Students Empowered</p>
               </div>
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>15+</h4>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
                 <p className="text-xs text-gray-400 mt-0.5">Projects Completed</p>
               </div>
               <div className="flex flex-col items-center lg:items-start">
                 <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
-                <p className="text-xs text-gray-400 mt-0.5">Domain Expertise</p>
+                <p className="text-xs text-gray-400 mt-0.5">Technological Domains</p>
               </div>
+            </motion.div>
+
+            {/* MOBILE ONLY ORDER 6: CTA Buttons Below Impact Metrics */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="order-6 lg:hidden mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full"
+            >
+              <Link
+                href="/services"
+                className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
+              >
+                Explore Programs
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                href="/contact"
+                className="border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white text-center"
+              >
+                Get in Touch
+              </Link>
             </motion.div>
 
           </div>
 
-          {/* DESKTOP VISUAL COLUMN (Matching your uploaded screenshot) */}
+          {/* DESKTOP VISUAL COLUMN */}
           <div className="hidden lg:flex lg:col-span-6 relative w-full flex-col justify-stretch h-full min-h-[500px]">
             
             {/* Ambient Background Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#5921c7] to-[#8c52ff] rounded-full blur-3xl opacity-25 pointer-events-none" />
 
-            {/* Asymmetric 4-Image Grid Matching Image Screenshot */}
+            {/* Asymmetric 4-Image Grid */}
             <div className="relative w-full grid grid-cols-12 gap-3.5 h-full">
               
               {/* Image 1: Top Left (Wide) */}
