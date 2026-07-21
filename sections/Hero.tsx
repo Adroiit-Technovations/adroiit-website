@@ -13,7 +13,7 @@ const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 const LOGO_WIDTH = 180;
 const LOGO_HEIGHT = 90;
 
-// Slideshow images for mobile view (Excludes the second image: /projects/6.jpeg)
+// Slideshow images for mobile view
 const MOBILE_HERO_IMAGES = [
   {
     src: "/projects/dsc-7.jpeg",
@@ -29,7 +29,7 @@ const MOBILE_HERO_IMAGES = [
   },
 ];
 
-// All 4 images for desktop 4-image grid
+// All 4 images for desktop grid
 const DESKTOP_HERO_IMAGES = [
   {
     src: "/projects/dsc-7.jpeg",
@@ -52,7 +52,7 @@ const DESKTOP_HERO_IMAGES = [
 export default function ModernHero() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-play slideshow every 4 seconds for mobile single frame (Cycles through the 3 mobile images)
+  // Auto-play slideshow every 4 seconds for mobile single frame
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % MOBILE_HERO_IMAGES.length);
@@ -68,10 +68,10 @@ export default function ModernHero() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           
           {/* LEFT CONTENT COLUMN */}
-          <div className="lg:col-span-7 text-left flex flex-col items-start justify-between">
+          <div className="lg:col-span-6 flex flex-col items-start justify-between">
             
             <div className="w-full flex flex-col items-start">
               {/* ORDER 1: Logo */}
@@ -106,18 +106,8 @@ export default function ModernHero() {
                 </span>
               </motion.h1>
 
-              {/* ORDER 3: Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className={`${bricolage.className} order-3 lg:order-none mt-6 text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed`}
-              >
-                Adroiit Technovations is redefining STEM and technical skill learning. We bridge the gap between classroom theory and hands-on real-world innovation.
-              </motion.p>
-
-              {/* MOBILE ONLY ORDER 4: Hero Image Slideshow Frame (Cycles through 3 images) */}
-              <div className="order-4 lg:hidden w-full my-8 relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-white/5 border border-purple-500/20 backdrop-blur-sm">
+              {/* MOBILE ONLY ORDER 3: Hero Image Slideshow Frame */}
+              <div className="order-3 lg:hidden w-full my-6 relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-white/5 border border-purple-500/20 backdrop-blur-sm">
                 <AnimatePresence mode="popLayout">
                   <motion.div
                     key={currentIndex}
@@ -140,43 +130,28 @@ export default function ModernHero() {
                 </AnimatePresence>
               </div>
 
-              {/* MOBILE ORDER 5 / DESKTOP BOTTOM: Impact Metrics */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="order-5 lg:order-none mt-4 lg:mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full items-center text-center"
+              {/* ORDER 4 (Mobile) / Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className={`${bricolage.className} order-4 lg:order-none mt-2 lg:mt-6 text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed`}
               >
-                <div className="flex flex-col items-center">
-                  <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>20+</h4>
-                  <p className="text-xs text-gray-400 mt-0.5">Sessions Conducted</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>1200+</h4>
-                  <p className="text-xs text-gray-400 mt-0.5">Students Empowered</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
-                  <p className="text-xs text-gray-400 mt-0.5">Projects Completed</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
-                  <p className="text-xs text-gray-400 mt-0.5">Technological Domains</p>
-                </div>
-              </motion.div>
+                Adroiit Technovations is redefining STEM and technical skill learning. We bridge the gap between classroom theory and hands-on real-world innovation.
+              </motion.p>
 
-              {/* ORDER 6: CTA Buttons */}
+              {/* ORDER 5 (Mobile) / CTA Buttons below subtext on Desktop */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="order-6 lg:order-none mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+                className="order-5 lg:order-none mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
               >
                 <Link
                   href="/services"
                   className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
                 >
-                  Explore Programs
+                  Explore Services
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -184,34 +159,56 @@ export default function ModernHero() {
                   href="/contact"
                   className="border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white text-center"
                 >
-                  Get in Touch
+                  Contact Us
                 </Link>
               </motion.div>
             </div>
 
+            {/* ORDER 6 (Mobile) / Impact Metrics Bar (Left-aligned on Desktop, Center on Mobile) */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="order-6 lg:order-none mt-10 lg:mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full items-center text-center lg:text-left lg:items-start"
+            >
+              <div className="flex flex-col items-center lg:items-start">
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
+                <p className="text-xs text-gray-400 mt-0.5">Sessions Conducted</p>
+              </div>
+              <div className="flex flex-col items-center lg:items-start">
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>700+</h4>
+                <p className="text-xs text-gray-400 mt-0.5">Learners Empowered</p>
+              </div>
+              <div className="flex flex-col items-center lg:items-start">
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>15+</h4>
+                <p className="text-xs text-gray-400 mt-0.5">Projects Completed</p>
+              </div>
+              <div className="flex flex-col items-center lg:items-start">
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
+                <p className="text-xs text-gray-400 mt-0.5">Domain Expertise</p>
+              </div>
+            </motion.div>
+
           </div>
 
-          {/* DESKTOP VISUAL COLUMN (Displays all 4 images on desktop grid) */}
-          <div className="hidden lg:flex lg:col-span-5 relative w-full flex-col justify-stretch h-full min-h-[480px]">
+          {/* DESKTOP VISUAL COLUMN (Matching your uploaded screenshot) */}
+          <div className="hidden lg:flex lg:col-span-6 relative w-full flex-col justify-stretch h-full min-h-[500px]">
             
             {/* Ambient Background Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#5921c7] to-[#8c52ff] rounded-full blur-3xl opacity-25 pointer-events-none" />
 
-            {/* DESKTOP VIEW: Asymmetric Staggered Grid */}
-            <div className="relative w-full grid grid-cols-12 gap-3.5 h-full min-h-[480px]">
+            {/* Asymmetric 4-Image Grid Matching Image Screenshot */}
+            <div className="relative w-full grid grid-cols-12 gap-3.5 h-full">
               
-              {/* Image 1: Wide Rectangle */}
+              {/* Image 1: Top Left (Wide) */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
-                animate={{
-                  opacity: 1,
-                  y: [0, -6, 0],
-                }}
+                animate={{ opacity: 1, y: [0, -6, 0] }}
                 transition={{
                   opacity: { duration: 0.6, delay: 0.2 },
                   y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0 },
                 }}
-                className="col-span-7 h-full min-h-[220px] lg:min-h-[260px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+                className="col-span-7 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
               >
                 <Image
                   src={DESKTOP_HERO_IMAGES[0].src}
@@ -224,18 +221,15 @@ export default function ModernHero() {
                 />
               </motion.div>
 
-              {/* Image 2: Narrow Rectangle */}
+              {/* Image 2: Top Right (Narrow) */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
-                animate={{
-                  opacity: 1,
-                  y: [0, -8, 0],
-                }}
+                animate={{ opacity: 1, y: [0, -8, 0] }}
                 transition={{
                   opacity: { duration: 0.6, delay: 0.3 },
                   y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
                 }}
-                className="col-span-5 h-full min-h-[220px] lg:min-h-[260px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+                className="col-span-5 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
               >
                 <Image
                   src={DESKTOP_HERO_IMAGES[1].src}
@@ -246,18 +240,15 @@ export default function ModernHero() {
                 />
               </motion.div>
 
-              {/* Image 3: Narrow Rectangle */}
+              {/* Image 3: Bottom Left (Narrow) */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
-                animate={{
-                  opacity: 1,
-                  y: [0, -7, 0],
-                }}
+                animate={{ opacity: 1, y: [0, -7, 0] }}
                 transition={{
                   opacity: { duration: 0.6, delay: 0.4 },
                   y: { duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.3 },
                 }}
-                className="col-span-5 h-full min-h-[220px] lg:min-h-[260px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+                className="col-span-5 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
               >
                 <Image
                   src={DESKTOP_HERO_IMAGES[2].src}
@@ -268,18 +259,15 @@ export default function ModernHero() {
                 />
               </motion.div>
 
-              {/* Image 4: Wide Rectangle */}
+              {/* Image 4: Bottom Right (Wide) */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
-                animate={{
-                  opacity: 1,
-                  y: [0, -5, 0],
-                }}
+                animate={{ opacity: 1, y: [0, -5, 0] }}
                 transition={{
                   opacity: { duration: 0.6, delay: 0.5 },
                   y: { duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.7 },
                 }}
-                className="col-span-7 h-full min-h-[220px] lg:min-h-[260px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+                className="col-span-7 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
               >
                 <Image
                   src={DESKTOP_HERO_IMAGES[3].src}
