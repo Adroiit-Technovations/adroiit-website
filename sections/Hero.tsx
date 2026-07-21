@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Bricolage_Grotesque } from "next/font/google";
@@ -8,108 +9,282 @@ import { ArrowRight } from "lucide-react";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-// ✅ ADJUST LOGO SIZE
-const LOGO_WIDTH = 210;
-const LOGO_HEIGHT = 120;
+// Logo dimensions
+const LOGO_WIDTH = 180;
+const LOGO_HEIGHT = 90;
 
-export default function Hero() {
+// Slideshow images
+const HERO_IMAGES = [
+  {
+    src: "/projects/dsc-7.jpeg",
+    alt: "Adroiit STEM Project 1",
+  },
+  {
+    src: "/projects/6.jpeg",
+    alt: "Adroiit STEM Project 2",
+  },
+  {
+    src: "/projects/dsc-3.jpeg",
+    alt: "Adroiit STEM Project 3",
+  },
+  {
+    src: "/projects/dsc-6.jpeg",
+    alt: "Adroiit STEM Project 4",
+  },
+];
+
+export default function ModernHero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-play slideshow every 4 seconds for mobile single frame
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    /* Mobile: pt-24 (Slightly increased from pt-20)
-       Desktop (md): Reverts to your original pt-24
-    */
-    <section className="h-auto md:min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 md:pt-24 pb-12 md:pb-12 bg-gradient-to-b from-black via-[#5921c7]/20 to-black text-white">
+    <section className="relative overflow-hidden bg-[#05030A] text-white pt-24 pb-16 md:pt-32 md:pb-24">
+      {/* Background Glows & Grid Patterns */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(89,33,199,0.25),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(140,82,255,0.15),transparent_40%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      {/* Logo Wrapper */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        className="w-full flex justify-center mb-8 md:mb-6"
-      >
-        <Image
-          src="/logo2.png"
-          alt="Adroiit Technovations"
-          width={LOGO_WIDTH}
-          height={LOGO_HEIGHT}
-          priority
-          className="block object-contain"
-        />
-      </motion.div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-stretch">
+          
+          {/* LEFT CONTENT COLUMN */}
+          <div className="lg:col-span-7 text-left flex flex-col items-start justify-between">
+            
+            <div>
+              {/* Logo */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mb-6"
+              >
+                <Image
+                  src="/logo2.png"
+                  alt="Adroiit Technovations"
+                  width={LOGO_WIDTH}
+                  height={LOGO_HEIGHT}
+                  priority
+                  loading="eager"
+                  style={{ width: "auto", height: "auto" }}
+                  className="block object-contain"
+                />
+              </motion.div>
 
-      {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className={`${bricolage.className} text-2xl md:text-5xl font-bold leading-tight max-w-4xl`}
-      >
-        Empowering the Next-Gen through
-        <br className="hidden md:block" />
-        <span className="block bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">
-          Education and Innovation
-        </span>
-      </motion.h1>
+              {/* Main Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className={`${bricolage.className} text-4xl sm:text-5xl lg:text-4xl font-extrabold leading-[1.1] tracking-tight`}
+              >
+                Empowering the Next-Gen Through <br />
+                <span className="bg-gradient-to-r from-[#8c52ff] via-[#a87ffb] to-purple-400 bg-clip-text text-transparent">
+                  Education & Innovation
+                </span>
+              </motion.h1>
 
-      {/* Subtext */}
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-        className={`${bricolage.className} mt-5 md:mt-4 text-base md:text-lg text-gray-300 max-w-2xl`}
-      >
-        Adroiit Technovations is redefining STEM and technical skill education by bridging classroom theory with real-world innovation.
-      </motion.p>
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className={`${bricolage.className} mt-6 text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed`}
+              >
+                Adroiit Technovations is redefining STEM and technical skill learning. We bridge the gap between classroom theory and hands-on real-world innovation.
+              </motion.p>
 
-      {/* CTA Buttons */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        className="mt-10 md:mt-6 flex flex-col sm:flex-row gap-4"
-      >
-        <Link
-          href="/services"
-          className="bg-[#5921c7] px-6 py-3 rounded-xl hover:bg-[#8c52ff] transition font-medium text-sm text-center flex items-center justify-center gap-2 group"
-        >
-          Explore Services
-          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-        </Link>
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+              >
+                <Link
+                  href="/services"
+                  className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
+                >
+                  Explore Programs
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
 
-        <Link
-          href="/contact"
-          className="border border-gray-500 px-6 py-3 rounded-xl hover:bg-gray-800 transition text-sm text-center"
-        >
-          Contact Us
-        </Link>
-      </motion.div>
+                <Link
+                  href="/contact"
+                  className="border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white text-center"
+                >
+                  Get in Touch
+                </Link>
+              </motion.div>
+            </div>
 
-      {/* Impact Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9 }}
-        className="mt-14 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl"
-      >
-        {[
-          { value: "20+", label: "Sessions" },
-          { value: "1200+", label: "Students Empowered" },
-          { value: "10+", label: "Projects Completed" },
-          { value: "5.0", label: "Google Rating" },
-        ].map((item, i) => (
-          <div
-            key={i}
-            className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:scale-105 transition"
-          >
-            <h3 className={`${bricolage.className} text-xl md:text-3xl font-bold text-[#8c52ff]`}>
-              {item.value}
-            </h3>
-            <p className={`${bricolage.className} text-[10px] md:text-sm text-gray-400 mt-1`}>
-              {item.label}
-            </p>
+            {/* Trust Badges Bar (Center Aligned Metrics) */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full items-center text-center"
+            >
+              <div className="flex flex-col items-center">
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>20+</h4>
+                <p className="text-xs text-gray-400 mt-0.5">Sessions Conducted</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>1200+</h4>
+                <p className="text-xs text-gray-400 mt-0.5">Students Empowered</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
+                <p className="text-xs text-gray-400 mt-0.5">Projects Completed</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
+                <p className="text-xs text-gray-400 mt-0.5">Technological Domains</p>
+              </div>
+
+            </motion.div>
+
           </div>
-        ))}
-      </motion.div>
 
+          {/* RIGHT VISUAL COLUMN */}
+          <div className="lg:col-span-5 relative w-full flex flex-col justify-stretch h-full min-h-[480px]">
+            
+            {/* Ambient Background Glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#5921c7] to-[#8c52ff] rounded-full blur-3xl opacity-25 pointer-events-none" />
+
+            {/* ------------------------------------------------------------- */}
+            {/* MOBILE VIEW: Single Frame Slideshow (mode="popLayout" fix)   */}
+            {/* ------------------------------------------------------------- */}
+            <div className="block lg:hidden relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-white/5 border border-purple-500/20 backdrop-blur-sm">
+              <AnimatePresence mode="popLayout">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full"
+                >
+                  <Image
+                    src={HERO_IMAGES[currentIndex].src}
+                    alt={HERO_IMAGES[currentIndex].alt}
+                    fill
+                    priority
+                    loading="eager"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* ------------------------------------------------------------- */}
+            {/* DESKTOP VIEW: Asymmetric Grid with fixed min-heights           */}
+            {/* ------------------------------------------------------------- */}
+            <div className="hidden lg:grid relative w-full grid-cols-12 gap-3.5 h-full min-h-[480px]">
+              
+              {/* Image 1: Wide Rectangle (Top Left - LCP Image) */}
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                animate={{
+                  opacity: 1,
+                  y: [0, -6, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.6, delay: 0.2 },
+                  y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0 },
+                }}
+                className="col-span-7 h-full min-h-[220px] lg:min-h-[260px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+              >
+                <Image
+                  src={HERO_IMAGES[0].src}
+                  alt={HERO_IMAGES[0].alt}
+                  fill
+                  priority
+                  loading="eager"
+                  sizes="(max-width: 1280px) 35vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </motion.div>
+
+              {/* Image 2: Narrow Rectangle (Top Right) */}
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                animate={{
+                  opacity: 1,
+                  y: [0, -8, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.6, delay: 0.3 },
+                  y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
+                }}
+                className="col-span-5 h-full min-h-[220px] lg:min-h-[260px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+              >
+                <Image
+                  src={HERO_IMAGES[1].src}
+                  alt={HERO_IMAGES[1].alt}
+                  fill
+                  sizes="(max-width: 1280px) 25vw, 18vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </motion.div>
+
+              {/* Image 3: Narrow Rectangle (Bottom Left) */}
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                animate={{
+                  opacity: 1,
+                  y: [0, -7, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.6, delay: 0.4 },
+                  y: { duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.3 },
+                }}
+                className="col-span-5 h-full min-h-[220px] lg:min-h-[260px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+              >
+                <Image
+                  src={HERO_IMAGES[2].src}
+                  alt={HERO_IMAGES[2].alt}
+                  fill
+                  sizes="(max-width: 1280px) 25vw, 18vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </motion.div>
+
+              {/* Image 4: Wide Rectangle (Bottom Right) */}
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                animate={{
+                  opacity: 1,
+                  y: [0, -5, 0],
+                }}
+                transition={{
+                  opacity: { duration: 0.6, delay: 0.5 },
+                  y: { duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.7 },
+                }}
+                className="col-span-7 h-full min-h-[220px] lg:min-h-[260px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+              >
+                <Image
+                  src={HERO_IMAGES[3].src}
+                  alt={HERO_IMAGES[3].alt}
+                  fill
+                  sizes="(max-width: 1280px) 35vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </motion.div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 }
