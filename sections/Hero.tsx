@@ -151,7 +151,7 @@ export default function ModernHero() {
                   href="/services"
                   className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
                 >
-                  Explore Programs
+                  Explore Services
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -159,7 +159,7 @@ export default function ModernHero() {
                   href="/contact"
                   className="border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white text-center"
                 >
-                  Get in Touch
+                  Contact Us
                 </Link>
               </motion.div>
             </div>
@@ -172,20 +172,20 @@ export default function ModernHero() {
               className="order-5 lg:order-none mt-10 lg:mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full items-center text-center lg:text-left lg:items-start"
             >
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>20+</h4>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
                 <p className="text-xs text-gray-400 mt-0.5">Sessions Conducted</p>
               </div>
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>1200+</h4>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>700+</h4>
                 <p className="text-xs text-gray-400 mt-0.5">Students Empowered</p>
               </div>
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>15+</h4>
                 <p className="text-xs text-gray-400 mt-0.5">Projects Completed</p>
               </div>
               <div className="flex flex-col items-center lg:items-start">
                 <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>10+</h4>
-                <p className="text-xs text-gray-400 mt-0.5">Technological Domains</p>
+                <p className="text-xs text-gray-400 mt-0.5">Domains Expertise</p>
               </div>
             </motion.div>
 
