@@ -13,8 +13,8 @@ const testimonials = [
     text: "I am very satisfied with the teaching. The individual care and attention given to my daughter made a big difference.",
   },
   {
-    name: "Prakash Selvaraj",
-    role: "Assistant Professor",
+    name: "Santhosh",
+    role: "Educational Client",
     text: "We choose Adroiit Technovations for their expertize in robotics, embedded systems, IoT and Drones. They conduct the workshop in a professional manner and with industrial trends.",
   },
   {
