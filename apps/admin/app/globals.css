@@ -1,0 +1,197 @@
+
+@import "tailwindcss";
+@source "../";
+
+/* Use the selected admin theme for Tailwind dark: utilities. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================================
+   BASE APPLICATION THEME
+   ========================================================= */
+
+:root {
+  --background: #f4f3f8;
+  --foreground: #17131f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+/* =========================================================
+   ADROIIT ADMIN THEME
+   All admin components should use these CSS variables.
+   ========================================================= */
+
+.admin-root {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--admin-bg);
+  color: var(--admin-text);
+  color-scheme: light;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+.admin-root[data-admin-theme="dark"] {
+  color-scheme: dark;
+}
+
+.admin-root[data-admin-theme="light"] {
+  color-scheme: light;
+}
+
+.admin-panel {
+  min-height: 100vh;
+  background-color: var(--admin-bg);
+  color: var(--admin-text);
+}
+
+.admin-panel main {
+  background-color: var(--admin-bg);
+  color: var(--admin-text);
+}
+
+/* =========================================================
+   REUSABLE ADMIN DESIGN TOKENS
+   ========================================================= */
+
+.admin-card {
+  background-color: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  color: var(--admin-text);
+  box-shadow: var(--admin-shadow-sm);
+}
+
+.admin-card-secondary {
+  background-color: var(--admin-surface-2);
+  border: 1px solid var(--admin-border);
+  color: var(--admin-text);
+}
+
+.admin-border {
+  border-color: var(--admin-border);
+}
+
+.admin-text-secondary {
+  color: var(--admin-text-secondary);
+}
+
+.admin-text-muted {
+  color: var(--admin-text-muted);
+}
+
+.admin-text-subtle {
+  color: var(--admin-text-subtle);
+}
+
+.admin-primary {
+  color: var(--admin-primary-light);
+}
+
+.admin-primary-bg {
+  background-color: var(--admin-primary);
+  color: #ffffff;
+}
+
+.admin-primary-bg:hover {
+  background-color: var(--admin-primary-hover);
+}
+
+/* =========================================================
+   FORM CONTROLS
+   ========================================================= */
+
+.admin-root input,
+.admin-root textarea,
+.admin-root select {
+  color: var(--admin-text);
+  border-color: var(--admin-border);
+}
+
+.admin-root input::placeholder,
+.admin-root textarea::placeholder {
+  color: var(--admin-text-subtle);
+  opacity: 1;
+}
+
+.admin-root input:focus,
+.admin-root textarea:focus,
+.admin-root select:focus {
+  border-color: var(--admin-primary-light);
+  outline-color: var(--admin-primary-light);
+}
+
+.admin-root option {
+  background-color: var(--admin-surface);
+  color: var(--admin-text);
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.admin-root table {
+  border-color: var(--admin-border);
+}
+
+.admin-root th {
+  color: var(--admin-text-secondary);
+  border-color: var(--admin-border);
+}
+
+.admin-root td {
+  color: var(--admin-text);
+  border-color: var(--admin-border);
+}
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+.admin-root * {
+  scrollbar-color: var(--admin-border-strong) transparent;
+  scrollbar-width: thin;
+}
+
+.admin-root ::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.admin-root ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-root ::-webkit-scrollbar-thumb {
+  background: var(--admin-border-strong);
+  border-radius: 10px;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+.admin-root ::selection {
+  background-color: var(--admin-primary);
+  color: #ffffff;
+}

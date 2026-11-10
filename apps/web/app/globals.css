@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@source "../";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   ADROIIT ADMIN PANEL THEME
+   Prevent public-site background layers from covering admin
+   ========================================================= */
+
+.admin-panel {
+  background-color: var(--admin-bg) !important;
+  color: var(--admin-text) !important;
+}
+
+.admin-panel main {
+  background-color: var(--admin-bg) !important;
+  color: var(--admin-text) !important;
+}
+
+.admin-root {
+  background-color: var(--admin-bg) !important;
+  color: var(--admin-text) !important;
+}
