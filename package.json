@@ -10,7 +10,8 @@
 
     "build:web": "next build apps/web --webpack",
     "build:admin": "next build apps/admin --webpack",
-    "build": "npm run build:web && npm run build:admin",
+    "build": "npm run build:web",
+    "build:all": "npm run build:web && npm run build:admin",
 
     "start:web": "next start apps/web",
     "start:admin": "next start apps/admin",
