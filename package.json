@@ -12,8 +12,8 @@
     "build:admin": "next build apps/admin --webpack",
     "build": "npm run build:web && npm run build:admin",
 
-    "start:web": "next start apps/web -p 3000",
-    "start:admin": "next start apps/admin -p 3001",
+    "start:web": "next start apps/web",
+    "start:admin": "next start apps/admin",
 
     "lint": "eslint"
   },

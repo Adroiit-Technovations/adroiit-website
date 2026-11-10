@@ -116,7 +116,7 @@ export default async function CertificateVerificationPage({
 
   const visitorIp = getClientIp(forwardedFor);
 
-  const hmacSecret = process.env.SUPABASE_SECRET_KEY;
+  const hmacSecret = process.env.CERTIFICATE_VISITOR_HMAC_SECRET;
 
   // Fail closed if visitor identification is unavailable.
   if (!visitorIp || !hmacSecret) {
