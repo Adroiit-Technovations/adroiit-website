@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
@@ -37,6 +38,24 @@ const formatDate = (date: string | null) => {
 };
 
 export default function CreateCertificatePage() {
+  return (
+    <Suspense
+      fallback={
+        <main
+          className="min-h-screen"
+          style={{
+            backgroundColor: "var(--admin-bg)",
+            color: "var(--admin-text)",
+          }}
+        />
+      }
+    >
+      <CreateCertificateForm />
+    </Suspense>
+  );
+}
+
+function CreateCertificateForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const supabase = useMemo(() => createClient(), []);
@@ -849,4 +868,3 @@ export default function CreateCertificatePage() {
     </main>
   );
 }
-

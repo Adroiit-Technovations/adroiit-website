@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -191,20 +192,21 @@ function normalizeTechnicalSpecifications(
       ? columns
       : initialSpecifications.columns;
 
+  // FIX: Use string[] instead of unknown[] because
+  // specification.rows is typed as string[][].
   const rows = Array.isArray(
     specification.rows
   )
     ? specification.rows
         .filter(
-          (row): row is unknown[] =>
+          (row): row is string[] =>
             Array.isArray(row)
         )
         .slice(0, MAX_SPEC_ROWS)
         .map((row) =>
           safeColumns.map(
             (_, columnIndex) =>
-              typeof row[columnIndex] ===
-              "string"
+              typeof row[columnIndex] === "string"
                 ? row[columnIndex]
                 : ""
           )

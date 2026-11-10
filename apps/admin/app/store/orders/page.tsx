@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Suspense,
   useCallback,
   useEffect,
   useMemo,
@@ -31,7 +32,6 @@ import { createClient } from "@/lib/supabase/client";
 
 import {
   ORDER_STATUSES,
-  INCOMPLETE_ORDER_STATUSES,
   type OrderStatus,
 } from "@/lib/constants/order-status";
 
@@ -332,10 +332,10 @@ function getBadgeStyle(
 function isTerminalStatus(
   status: DisplayOrderStatus
 ): boolean {
-  if (status === "RECEIVED") return false;
-
-  return INCOMPLETE_ORDER_STATUSES.includes(
-    status as OrderStatus
+  return (
+    status === "DELIVERED" ||
+    status === "CANCELLED" ||
+    status === "REFUNDED"
   );
 }
 
@@ -469,10 +469,10 @@ function StatItem({
 }
 
 // ============================================================
-// MAIN PAGE
+// MAIN PAGE CONTENT
 // ============================================================
 
-export default function OrdersPage() {
+function OrdersPageContent() {
   // ----------------------------------------------------------
   // URL PARAMETERS
   // ----------------------------------------------------------
@@ -2298,5 +2298,35 @@ export default function OrdersPage() {
         </div>
       )}
     </main>
+  );
+}
+
+// ============================================================
+// PAGE — SUSPENSE BOUNDARY FOR useSearchParams()
+// ============================================================
+
+export default function OrdersPage() {
+  return (
+    <Suspense
+      fallback={
+        <main
+          className="relative min-h-screen w-screen bg-[var(--admin-bg)] text-[var(--admin-text)]"
+          style={{
+            marginLeft: "calc(50% - 50vw)",
+            marginTop: "-55px",
+          }}
+        >
+          <div className="-mt-15 mx-auto w-full max-w-[1410px] px-4 pb-8 pt-0 sm:px-6 lg:px-8">
+            <div className="flex min-h-[300px] items-center justify-center">
+              <p className="text-sm text-[var(--admin-text-muted)]">
+                Loading orders...
+              </p>
+            </div>
+          </div>
+        </main>
+      }
+    >
+      <OrdersPageContent />
+    </Suspense>
   );
 }

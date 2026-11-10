@@ -3,21 +3,17 @@
   "name": "adroiit-website",
   "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "apps/web",
-    "apps/admin"
-  ],
   "scripts": {
     "dev:web": "next dev apps/web",
     "dev:admin": "next dev apps/admin -p 3001",
     "dev": "npm run dev:web",
 
-    "build:web": "next build --webpack apps/web",
-    "build:admin": "next build --webpack apps/admin",
+    "build:web": "next build apps/web --webpack",
+    "build:admin": "next build apps/admin --webpack",
     "build": "npm run build:web && npm run build:admin",
 
-    "start:web": "next start apps/web",
-    "start:admin": "next start apps/admin",
+    "start:web": "next start apps/web -p 3000",
+    "start:admin": "next start apps/admin -p 3001",
 
     "lint": "eslint"
   },
@@ -51,5 +47,10 @@
     "eslint-config-next": "^16.2.3",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.5"
+    }
   }
 }

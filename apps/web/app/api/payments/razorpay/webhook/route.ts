@@ -209,13 +209,10 @@ async function recordPaymentException({
 
   const { error: insertError } = await supabase
     .from("store_payment_exceptions")
-    .upsert(
-      exceptionData,
-      {
-        onConflict: "razorpay_payment_id",
-        ignoreDuplicates: true,
-      }
-    );
+    .upsert(exceptionData, {
+      onConflict: "razorpay_payment_id",
+      ignoreDuplicates: true,
+    });
 
   if (insertError) {
     throw new Error(
@@ -324,14 +321,7 @@ async function processCapturedPayment(
   } = await supabase
     .from("store_payment_sessions")
     .select(
-      [
-        "id",
-        "user_id",
-        "razorpay_order_id",
-        "razorpay_payment_id",
-        "status",
-        "total_amount",
-      ].join(",")
+      "id, user_id, razorpay_order_id, razorpay_payment_id, status, total_amount"
     )
     .eq("razorpay_order_id", razorpayOrderId)
     .maybeSingle();
@@ -342,8 +332,9 @@ async function processCapturedPayment(
     );
   }
 
-  const session =
-    paymentSession as PaymentSession | null;
+  // The literal select above allows Supabase to infer the
+  // returned row correctly. No unsafe type assertion is needed.
+  const session: PaymentSession | null = paymentSession;
 
   // ----------------------------------------------------------
   // Validate webhook payload against Razorpay API
@@ -743,12 +734,9 @@ async function processRefundEvent(
     error: refundUpsertError,
   } = await supabase
     .from("store_payment_refunds")
-    .upsert(
-      refundData,
-      {
-        onConflict: "razorpay_refund_id",
-      }
-    );
+    .upsert(refundData, {
+      onConflict: "razorpay_refund_id",
+    });
 
   if (refundUpsertError) {
     throw new Error(

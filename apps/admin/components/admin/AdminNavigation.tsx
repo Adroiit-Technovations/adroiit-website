@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
@@ -69,16 +70,6 @@ export default function AdminNavigation() {
     );
   };
 
-  /*
-   * Certifier now contains:
-   *
-   * Overview
-   * Events
-   * Certificates
-   * Verification Logs
-   *
-   * Events are intentionally placed before Certificates.
-   */
   const isCertifierActive =
     pathname === "/certifier" ||
     pathname.startsWith("/certifier/") ||
@@ -127,15 +118,12 @@ export default function AdminNavigation() {
         "
         style={{
           backgroundColor: "var(--admin-surface)",
-          borderColor:
-            "var(--admin-border-strong)",
-          boxShadow:
-            "var(--admin-shadow)",
+          borderColor: "var(--admin-border-strong)",
+          boxShadow: "var(--admin-shadow)",
         }}
       >
         {/* Desktop */}
         <div className="hidden min-h-[64px] items-center px-3 md:flex">
-
           {/* Admin Brand */}
           <Link
             href="/"
@@ -178,8 +166,7 @@ export default function AdminNavigation() {
               <div
                 className="text-sm font-semibold"
                 style={{
-                  color:
-                    "var(--admin-text)",
+                  color: "var(--admin-text)",
                 }}
               >
                 Admin Dashboard
@@ -188,8 +175,7 @@ export default function AdminNavigation() {
               <div
                 className="text-[11px]"
                 style={{
-                  color:
-                    "var(--admin-text-muted)",
+                  color: "var(--admin-text-muted)",
                 }}
               >
                 Adroiit Technovations
@@ -199,7 +185,6 @@ export default function AdminNavigation() {
 
           {/* Center Navigation */}
           <div className="ml-4 flex flex-1 items-center justify-center gap-1">
-
             {/* Certifier */}
             <div className="relative">
               <button
@@ -223,19 +208,15 @@ export default function AdminNavigation() {
                   transition
                 "
                 style={{
-                  color:
-                    isCertifierActive
-                      ? "#5921c7"
-                      : "var(--admin-text-secondary)",
-
-                  backgroundColor:
-                    isCertifierActive
-                      ? "rgba(89,33,199,0.10)"
-                      : "transparent",
+                  color: isCertifierActive
+                    ? "#5921c7"
+                    : "var(--admin-text-secondary)",
+                  backgroundColor: isCertifierActive
+                    ? "rgba(89,33,199,0.10)"
+                    : "transparent",
                 }}
               >
                 <BookOpenCheck size={17} />
-
                 <span>Certifier</span>
 
                 <ChevronDown
@@ -249,54 +230,40 @@ export default function AdminNavigation() {
               </button>
 
               {openDropdown === "certifier" && (
-                <Dropdown
-                  width="250px"
-                >
-                  {/* Overview */}
+                <Dropdown width="250px">
                   <AdminDropdownLink
                     href="/certifier"
-                    icon={ClipboardCheck}
+                    icon={<ClipboardCheck size={17} />}
                     title="Overview"
                     description="Manage certificates and events"
-                    active={
-                      pathname === "/certifier"
-                    }
+                    active={pathname === "/certifier"}
                     onClick={closeMenus}
                   />
 
-                  {/* Events - BEFORE Certificates */}
                   <AdminDropdownLink
                     href="/events"
-                    icon={CalendarDays}
+                    icon={<CalendarDays size={17} />}
                     title="Events"
                     description="Manage certificate events"
-                    active={isActive(
-                      "/events"
-                    )}
+                    active={isActive("/events")}
                     onClick={closeMenus}
                   />
 
-                  {/* Certificates */}
                   <AdminDropdownLink
                     href="/certifier/certificates"
-                    icon={FileCheck2}
+                    icon={<FileCheck2 size={17} />}
                     title="Certificates"
                     description="View and manage all certificates"
-                    active={isActive(
-                      "/certifier/certificates"
-                    )}
+                    active={isActive("/certifier/certificates")}
                     onClick={closeMenus}
                   />
 
-                  {/* Verification Logs */}
                   <AdminDropdownLink
                     href="/certifier/logs"
-                    icon={BarChart3}
+                    icon={<BarChart3 size={17} />}
                     title="Verification Logs"
                     description="View verification activity"
-                    active={isActive(
-                      "/certifier/logs"
-                    )}
+                    active={isActive("/certifier/logs")}
                     onClick={closeMenus}
                   />
                 </Dropdown>
@@ -326,19 +293,15 @@ export default function AdminNavigation() {
                   transition
                 "
                 style={{
-                  color:
-                    isStoreActive
-                      ? "#5921c7"
-                      : "var(--admin-text-secondary)",
-
-                  backgroundColor:
-                    isStoreActive
-                      ? "rgba(89,33,199,0.10)"
-                      : "transparent",
+                  color: isStoreActive
+                    ? "#5921c7"
+                    : "var(--admin-text-secondary)",
+                  backgroundColor: isStoreActive
+                    ? "rgba(89,33,199,0.10)"
+                    : "transparent",
                 }}
               >
                 <ShoppingBag size={17} />
-
                 <span>Store</span>
 
                 <ChevronDown
@@ -352,91 +315,67 @@ export default function AdminNavigation() {
               </button>
 
               {openDropdown === "store" && (
-                <Dropdown
-                  width="280px"
-                >
-                  {/* Overview */}
+                <Dropdown width="280px">
                   <AdminDropdownLink
                     href="/store"
-                    icon={LayoutDashboard}
+                    icon={<LayoutDashboard size={17} />}
                     title="Overview"
                     description="Store dashboard and analytics"
-                    active={
-                      pathname ===
-                      "/store"
-                    }
+                    active={pathname === "/store"}
                     onClick={closeMenus}
                   />
 
-                  {/* Products */}
                   <AdminDropdownLink
                     href="/store/products"
-                    icon={Package}
+                    icon={<Package size={17} />}
                     title="Products"
                     description="Manage products and pricing"
-                    active={isActive(
-                      "/store/products"
-                    )}
+                    active={isActive("/store/products")}
                     onClick={closeMenus}
                   />
 
-                  {/* Categories */}
                   <AdminDropdownLink
                     href="/store/categories"
-                    icon={Tags}
+                    icon={<Tags size={17} />}
                     title="Categories"
                     description="Manage product categories"
-                    active={isActive(
-                      "/store/categories"
-                    )}
+                    active={isActive("/store/categories")}
                     onClick={closeMenus}
                   />
 
-                  {/* Coupon Codes */}
                   <AdminDropdownLink
                     href="/store/coupons"
-                    icon={Tag}
+                    icon={<Tag size={17} />}
                     title="Coupon Codes"
                     description="Manage discount codes and offers"
-                    active={isActive(
-                      "/store/coupons"
-                    )}
+                    active={isActive("/store/coupons")}
                     onClick={closeMenus}
                   />
 
-                  {/* Inventory */}
                   <AdminDropdownLink
                     href="/store/inventory"
-                    icon={Boxes}
+                    icon={<Boxes size={17} />}
                     title="Inventory"
                     description="Manage stock and movements"
-                    active={isActive(
-                      "/store/inventory"
-                    )}
+                    active={isActive("/store/inventory")}
                     onClick={closeMenus}
                   />
 
-                  {/* Orders */}
                   <AdminDropdownLink
                     href="/store/orders"
-                    icon={ShoppingBag}
+                    icon={<ShoppingBag size={17} />}
                     title="Orders"
                     description="Manage customer orders"
-                    active={isActive(
-                      "/store/orders"
-                    )}
+                    active={isActive("/store/orders")}
                     onClick={closeMenus}
                   />
 
-                  {/* Customers */}
                   <AdminDropdownLink
                     href="/store/customers"
-                    icon={Users}
+                    icon={<Users size={17} />}
                     title="Customers"
                     description="Manage customers"
-                    active={isActive(
-                      "/store/customers"
-                    )}
+                    active={isActive("/store/customers")}
                     onClick={closeMenus}
                   />
                 </Dropdown>
@@ -446,7 +385,6 @@ export default function AdminNavigation() {
 
           {/* Right Controls */}
           <div className="flex items-center gap-1">
-
             <Link
               href="/settings"
               title="Settings"
@@ -482,8 +420,7 @@ export default function AdminNavigation() {
                 rounded-xl
               "
               style={{
-                color:
-                  "var(--admin-text-secondary)",
+                color: "var(--admin-text-secondary)",
               }}
             >
               {theme === "dark" ? (
@@ -507,8 +444,7 @@ export default function AdminNavigation() {
                 font-medium
               "
               style={{
-                color:
-                  "var(--admin-text-secondary)",
+                color: "var(--admin-text-secondary)",
               }}
             >
               <ExternalLink size={16} />
@@ -530,16 +466,13 @@ export default function AdminNavigation() {
                 font-medium
               "
               style={{
-                color:
-                  "var(--admin-danger)",
+                color: "var(--admin-danger)",
               }}
             >
               <LogOut size={16} />
 
               <span>
-                {signingOut
-                  ? "Signing out..."
-                  : "Sign Out"}
+                {signingOut ? "Signing out..." : "Sign Out"}
               </span>
             </button>
           </div>
@@ -576,8 +509,7 @@ export default function AdminNavigation() {
               <div
                 className="text-sm font-semibold"
                 style={{
-                  color:
-                    "var(--admin-text)",
+                  color: "var(--admin-text)",
                 }}
               >
                 Admin Panel
@@ -586,8 +518,7 @@ export default function AdminNavigation() {
               <div
                 className="text-[10px]"
                 style={{
-                  color:
-                    "var(--admin-text-muted)",
+                  color: "var(--admin-text-muted)",
                 }}
               >
                 Adroiit Technovations
@@ -608,8 +539,7 @@ export default function AdminNavigation() {
                 rounded-xl
               "
               style={{
-                color:
-                  "var(--admin-text-secondary)",
+                color: "var(--admin-text-secondary)",
               }}
             >
               {theme === "dark" ? (
@@ -622,9 +552,7 @@ export default function AdminNavigation() {
             <button
               type="button"
               onClick={() =>
-                setMobileOpen(
-                  (current) => !current
-                )
+                setMobileOpen((current) => !current)
               }
               className="
                 flex
@@ -635,8 +563,7 @@ export default function AdminNavigation() {
                 rounded-xl
               "
               style={{
-                color:
-                  "var(--admin-text)",
+                color: "var(--admin-text)",
               }}
             >
               {mobileOpen ? (
@@ -659,159 +586,119 @@ export default function AdminNavigation() {
               md:hidden
             "
             style={{
-              borderColor:
-                "var(--admin-border)",
+              borderColor: "var(--admin-border)",
             }}
           >
-            {/* Certifier Overview */}
             <MobileLink
               href="/certifier"
-              icon={BookOpenCheck}
+              icon={<BookOpenCheck size={17} />}
               label="Certifier"
-              active={
-                pathname === "/certifier"
-              }
+              active={pathname === "/certifier"}
               onClick={closeMenus}
             />
 
-            {/* Events - BEFORE Certificates */}
             <MobileLink
               href="/events"
-              icon={CalendarDays}
+              icon={<CalendarDays size={17} />}
               label="Events"
-              active={isActive(
-                "/events"
-              )}
+              active={isActive("/events")}
               onClick={closeMenus}
             />
 
-            {/* Certificates */}
             <MobileLink
               href="/certifier/certificates"
-              icon={ClipboardCheck}
+              icon={<ClipboardCheck size={17} />}
               label="Certificates"
-              active={isActive(
-                "/certifier/certificates"
-              )}
+              active={isActive("/certifier/certificates")}
               onClick={closeMenus}
             />
 
-            {/* Verification Logs */}
             <MobileLink
               href="/certifier/logs"
-              icon={FileCheck2}
+              icon={<FileCheck2 size={17} />}
               label="Verification Logs"
-              active={isActive(
-                "/certifier/logs"
-              )}
+              active={isActive("/certifier/logs")}
               onClick={closeMenus}
             />
 
-            {/* Store Overview */}
             <MobileLink
               href="/store"
-              icon={ShoppingBag}
+              icon={<ShoppingBag size={17} />}
               label="Store Overview"
-              active={
-                pathname === "/store"
-              }
+              active={pathname === "/store"}
               onClick={closeMenus}
             />
 
-            {/* Products */}
             <MobileLink
               href="/store/products"
-              icon={Package}
+              icon={<Package size={17} />}
               label="Products"
-              active={isActive(
-                "/store/products"
-              )}
+              active={isActive("/store/products")}
               onClick={closeMenus}
             />
 
-            {/* Categories */}
             <MobileLink
               href="/store/categories"
-              icon={Tags}
+              icon={<Tags size={17} />}
               label="Categories"
-              active={isActive(
-                "/store/categories"
-              )}
+              active={isActive("/store/categories")}
               onClick={closeMenus}
             />
 
-            {/* Coupon Codes */}
             <MobileLink
               href="/store/coupons"
-              icon={Tag}
+              icon={<Tag size={17} />}
               label="Coupon Codes"
-              active={isActive(
-                "/store/coupons"
-              )}
+              active={isActive("/store/coupons")}
               onClick={closeMenus}
             />
 
-            {/* Inventory */}
             <MobileLink
               href="/store/inventory"
-              icon={Boxes}
+              icon={<Boxes size={17} />}
               label="Inventory"
-              active={isActive(
-                "/store/inventory"
-              )}
+              active={isActive("/store/inventory")}
               onClick={closeMenus}
             />
 
-            {/* Orders */}
             <MobileLink
               href="/store/orders"
-              icon={ShoppingBag}
+              icon={<ShoppingBag size={17} />}
               label="Orders"
-              active={isActive(
-                "/store/orders"
-              )}
+              active={isActive("/store/orders")}
               onClick={closeMenus}
             />
 
-            {/* Customers */}
             <MobileLink
               href="/store/customers"
-              icon={Users}
+              icon={<Users size={17} />}
               label="Customers"
-              active={isActive(
-                "/store/customers"
-              )}
+              active={isActive("/store/customers")}
               onClick={closeMenus}
             />
 
             <div
               className="my-2 h-px w-full"
               style={{
-                backgroundColor:
-                  "var(--admin-border)",
+                backgroundColor: "var(--admin-border)",
               }}
             />
 
-            {/* Settings */}
             <MobileLink
               href="/settings"
-              icon={Settings}
+              icon={<Settings size={17} />}
               label="Settings"
-              active={isActive(
-                "/settings"
-              )}
+              active={isActive("/settings")}
               onClick={closeMenus}
             />
 
-            {/* Website */}
             <MobileLink
               href="/"
-              icon={ExternalLink}
+              icon={<ExternalLink size={17} />}
               label="View Website"
               onClick={closeMenus}
             />
 
-            {/* Sign Out */}
             <button
               type="button"
               onClick={handleSignOut}
@@ -829,15 +716,12 @@ export default function AdminNavigation() {
                 font-medium
               "
               style={{
-                color:
-                  "var(--admin-danger)",
+                color: "var(--admin-danger)",
               }}
             >
               <LogOut size={17} />
 
-              {signingOut
-                ? "Signing out..."
-                : "Sign Out"}
+              {signingOut ? "Signing out..." : "Sign Out"}
             </button>
           </div>
         )}
@@ -850,7 +734,7 @@ function Dropdown({
   children,
   width,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   width: string;
 }) {
   return (
@@ -867,12 +751,9 @@ function Dropdown({
       "
       style={{
         width,
-        backgroundColor:
-          "var(--admin-surface)",
-        borderColor:
-          "var(--admin-border-strong)",
-        boxShadow:
-          "var(--admin-shadow)",
+        backgroundColor: "var(--admin-surface)",
+        borderColor: "var(--admin-border-strong)",
+        boxShadow: "var(--admin-shadow)",
       }}
     >
       {children}
@@ -882,14 +763,14 @@ function Dropdown({
 
 function AdminDropdownLink({
   href,
-  icon: Icon,
+  icon,
   title,
   description,
   active,
   onClick,
 }: {
   href: string;
-  icon: React.ElementType;
+  icon: ReactNode;
   title: string;
   description: string;
   active?: boolean;
@@ -933,15 +814,14 @@ function AdminDropdownLink({
             : "var(--admin-text-secondary)",
         }}
       >
-        <Icon size={17} />
+        {icon}
       </div>
 
       <div className="min-w-0">
         <div
           className="text-sm font-medium"
           style={{
-            color:
-              "var(--admin-text)",
+            color: "var(--admin-text)",
           }}
         >
           {title}
@@ -950,8 +830,7 @@ function AdminDropdownLink({
         <div
           className="mt-0.5 text-[11px] leading-4"
           style={{
-            color:
-              "var(--admin-text-muted)",
+            color: "var(--admin-text-muted)",
           }}
         >
           {description}
@@ -963,13 +842,13 @@ function AdminDropdownLink({
 
 function MobileLink({
   href,
-  icon: Icon,
+  icon,
   label,
   active,
   onClick,
 }: {
   href: string;
-  icon: React.ElementType;
+  icon: ReactNode;
   label: string;
   active?: boolean;
   onClick?: () => void;
@@ -998,7 +877,7 @@ function MobileLink({
           : "transparent",
       }}
     >
-      <Icon size={17} />
+      {icon}
       <span>{label}</span>
     </Link>
   );

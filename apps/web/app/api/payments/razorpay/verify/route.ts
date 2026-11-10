@@ -33,17 +33,13 @@ function getAdminIdentity() {
 function isAdminUserId(value: unknown) {
   const admin = getAdminIdentity();
 
-  return (
-    String(value ?? "").trim().toLowerCase() === admin.userId
-  );
+  return String(value ?? "").trim().toLowerCase() === admin.userId;
 }
 
 function isAdminEmail(value: unknown) {
   const admin = getAdminIdentity();
 
-  return (
-    String(value ?? "").trim().toLowerCase() === admin.email
-  );
+  return String(value ?? "").trim().toLowerCase() === admin.email;
 }
 
 function getAdminCheckoutResponse() {
@@ -489,15 +485,7 @@ export async function POST(request: NextRequest) {
     } = await supabase
       .from("store_payment_sessions")
       .select(
-        [
-          "id",
-          "user_id",
-          "customer_email",
-          "total_amount",
-          "status",
-          "razorpay_order_id",
-          "expires_at",
-        ].join(",")
+        "id, user_id, customer_email, total_amount, status, razorpay_order_id, expires_at"
       )
       .eq("id", sessionId)
       .maybeSingle();
@@ -603,14 +591,7 @@ export async function POST(request: NextRequest) {
     } = await supabase
       .from("orders")
       .select(
-        [
-          "id",
-          "order_number",
-          "total_amount",
-          "payment_status",
-          "razorpay_order_id",
-          "razorpay_payment_id",
-        ].join(",")
+        "id, order_number, total_amount, payment_status, razorpay_order_id, razorpay_payment_id"
       )
       .eq("razorpay_payment_id", razorpayPaymentId)
       .maybeSingle();
@@ -764,16 +745,7 @@ export async function POST(request: NextRequest) {
     } = await supabase
       .from("store_payment_exceptions")
       .select(
-        [
-          "id",
-          "payment_session_id",
-          "razorpay_order_id",
-          "razorpay_payment_id",
-          "amount_paise",
-          "currency",
-          "reason",
-          "status",
-        ].join(",")
+        "id, payment_session_id, razorpay_order_id, razorpay_payment_id, amount_paise, currency, reason, status"
       )
       .eq("razorpay_payment_id", razorpayPaymentId)
       .maybeSingle();
@@ -912,7 +884,6 @@ export async function POST(request: NextRequest) {
           0
       ),
     });
-
   } catch (error) {
     console.error(
       "Razorpay verification route error:",

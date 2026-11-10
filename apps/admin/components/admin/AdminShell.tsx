@@ -1,8 +1,9 @@
+
 "use client";
 
 import { usePathname } from "next/navigation";
-import AdminNavigation from "@/components/AdminNavigation";
-import { AdminThemeProvider } from "@/components/AdminThemeProvider";
+import AdminNavigation from "./AdminNavigation";
+import { AdminThemeProvider } from "./AdminThemeProvider";
 
 export default function AdminShell({
   children,

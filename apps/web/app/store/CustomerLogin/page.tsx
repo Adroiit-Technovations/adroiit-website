@@ -1,3 +1,4 @@
+
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
@@ -268,8 +269,7 @@ export default function CustomerLoginPage() {
           full_name: name || null,
           email: email || null,
           phone: phone || null,
-          updated_at:
-            new Date().toISOString(),
+          updated_at: new Date().toISOString(),
         },
         {
           onConflict: "id",
@@ -286,7 +286,6 @@ export default function CustomerLoginPage() {
    * This runs after BOTH sign-in and sign-up.
    */
   async function syncCustomerProfile(
-    userId: string,
     fallbackName?: string
   ) {
     const supabase = getSupabaseClient();
