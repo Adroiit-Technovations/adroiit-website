@@ -397,7 +397,7 @@ export default function CoEPage() {
 
       {/* SECTION 01 — HERO | DARK */}
 
-      <section className="relative isolate overflow-hidden bg-[#090711] px-6 pb-20 pt-32 text-white md:pb-28 md:pt-40">
+      <section className="relative isolate overflow-hidden bg-[#090711] px-6 pb-20 pt-35 text-white md:pb-28 md:pt-35">
 
         <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#8c52ff]/20 blur-[120px]" />
 
@@ -423,23 +423,23 @@ export default function CoEPage() {
 
             <div className="flex flex-col items-start">
 
-              <motion.p custom={0} variants={fadeUp} className="mb-7 text-[11px] font-bold uppercase tracking-[0.18em] text-[#c4aaff]">
+              <motion.p custom={0} variants={fadeUp} className="mb-4 text-[13px] font-bold uppercase tracking-[0.18em] text-[#c4aaff]">
                 Education · Research · Innovation
               </motion.p>
 
               <motion.h1 custom={1} variants={fadeUp} className="max-w-2xl text-[32px] font-extrabold leading-[1.12] tracking-tight text-white">
 
-                Center of
+                Center of Excellence (CoE)
 
                 <span className="mt-2 block bg-gradient-to-r from-[#8c52ff] via-[#a77bff] to-[#d0baff] bg-clip-text text-transparent">
 
-                  Excellence (CoE)
+                  Space for Exploration, Research and Innovation. 
 
                 </span>
 
               </motion.h1>
 
-              <motion.div custom={2} variants={fadeUp} className="my-7 h-1.5 w-20 rounded-full bg-gradient-to-r from-[#8c52ff] to-[#b18aff]" />
+              <motion.div custom={2} variants={fadeUp} className="my-4 h-0.5 w-20 rounded-full bg-gradient-to-r from-[#8c52ff] to-[#b18aff]" />
 
               <motion.p custom={3} variants={fadeUp} className="max-w-xl text-[18px] font-semibold leading-relaxed text-[#f1edf8]">
 
@@ -463,7 +463,7 @@ export default function CoEPage() {
 
                 <Link href="/contact" className="group inline-flex items-center gap-3 rounded-full bg-[#5921c7] px-7 py-4 text-[14px] font-bold text-white shadow-xl shadow-[#5921c7]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#4516a5]">
 
-                  Partner with us
+                  Enquire Now
 
                   <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
 
@@ -511,7 +511,7 @@ export default function CoEPage() {
 
       {/* SECTION 02 — DOMAINS | LIGHT */}
 
-      <section className="relative isolate overflow-hidden bg-[#f8f7fb] px-6 py-20 text-[#17151c] md:py-28">
+      <section className="relative isolate overflow-hidden bg-[#f8f7fb] px-6 py-10 text-[#17151c] md:py-10">
 
         <div className="pointer-events-none absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/[0.07] blur-[140px]" />
 
@@ -523,15 +523,15 @@ export default function CoEPage() {
 
             <div className="max-w-2xl">
 
-              <motion.p custom={0} variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#7d55c5]">Technology domains</motion.p>
+              <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-600">Technology domains we offer</motion.p>
 
-              <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold leading-tight tracking-tight text-[#211a2c]">
+              <motion.h2 custom={1} variants={fadeUp} className="mt-3 text-[30px] font-extrabold leading-tight tracking-tight text-[#211a2c]">
 
-                Domains We <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">Offer</span>
+                <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">Our Center of Excellence (CoE)</span>
 
               </motion.h2>
 
-              <motion.p custom={2} variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#77717f] md:text-[16px]">
+              <motion.p custom={2} variants={fadeUp} className="mx-auto mt-3 max-w-2xl text-[15px] leading-7 text-gray-900 md:text-[16px]">
 
                 Specialized technology centers tailored to your institution&apos;s goals, connecting academic learning with practical technology applications.
 
@@ -583,7 +583,7 @@ export default function CoEPage() {
 
       {/* SECTION 03 — COE ECOSYSTEM | DARK */}
 
-      <section className="relative isolate overflow-hidden bg-[#100b1b] px-6 py-20 text-white md:py-28">
+      <section className="relative isolate overflow-hidden bg-[#100b1b] px-6 py-10 text-white md:py-10">
 
         <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[130px]" />
 
@@ -591,7 +591,7 @@ export default function CoEPage() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}>
 
-            <motion.p custom={0} variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#b99bff]">More than a laboratory</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#b99bff]">More than a laboratory</motion.p>
 
             <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold leading-tight tracking-tight text-white">
 
@@ -647,7 +647,7 @@ export default function CoEPage() {
 
       {/* SECTION 04 — IMPLEMENTATION SUPPORT | LIGHT */}
 
-      <section className="relative isolate overflow-hidden bg-white px-6 py-20 text-[#17151c] md:py-28">
+      <section className="relative isolate overflow-hidden bg-white px-6 py-10 text-[#17151c] md:py-10">
 
         <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/[0.07] blur-[130px]" />
 
@@ -655,7 +655,7 @@ export default function CoEPage() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="mx-auto mb-14 max-w-3xl text-center">
 
-            <motion.p custom={0} variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#7d55c5]">Complete implementation</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-600">Complete implementation</motion.p>
 
             <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold tracking-tight text-[#211a2c]">
 
@@ -703,7 +703,7 @@ export default function CoEPage() {
 
       {/* SECTION 05 — IMPLEMENTATION JOURNEY | DARK */}
 
-      <section className="relative isolate overflow-hidden bg-[#090711] px-6 py-20 text-white md:py-28">
+      <section className="relative isolate overflow-hidden bg-[#090711] px-6 py-10 text-white md:py-10">
 
         <div className="pointer-events-none absolute -left-40 top-10 h-[420px] w-[420px] rounded-full bg-[#5921c7]/20 blur-[130px]" />
 
@@ -711,7 +711,7 @@ export default function CoEPage() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="mx-auto mb-14 max-w-3xl text-center">
 
-            <motion.p custom={0} variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#b99bff]">A structured approach</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#b99bff]">A structured approach</motion.p>
 
             <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold tracking-tight text-white">
 
@@ -759,7 +759,7 @@ export default function CoEPage() {
 
       {/* SECTION 06 — OUTCOMES | LIGHT */}
 
-      <section className="relative isolate overflow-hidden bg-[#f8f7fb] px-6 py-20 text-[#17151c] md:py-28">
+      <section className="relative isolate overflow-hidden bg-[#f8f7fb] px-6 py-10 text-[#17151c] md:py-10">
 
         <div className="pointer-events-none absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/[0.06] blur-[140px]" />
 
@@ -767,7 +767,7 @@ export default function CoEPage() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}>
 
-            <motion.p custom={0} variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#7d55c5]">Institutional impact</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-600">Institutional impact</motion.p>
 
             <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold leading-tight tracking-tight text-[#211a2c]">
 
@@ -811,7 +811,7 @@ export default function CoEPage() {
 
       {/* SECTION 07 — HIGHLIGHTS | DARK */}
 
-      <section className="relative isolate overflow-hidden bg-[#100b1b] px-6 py-20 text-white md:py-28">
+      <section className="relative isolate overflow-hidden bg-[#100b1b] px-6 py-10 text-white md:py-10">
 
         <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[130px]" />
 
@@ -819,7 +819,7 @@ export default function CoEPage() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="mb-14 text-center">
 
-            <motion.p custom={0} variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#b99bff]">Why establish a CoE</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#b99bff]">Why establish a CoE</motion.p>
 
             <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold tracking-tight text-white">
 
@@ -859,14 +859,14 @@ export default function CoEPage() {
 
       {/* SECTION 08 — CTA | LIGHT */}
 
-      <section className="relative isolate overflow-hidden bg-white px-6 py-20 md:py-28">
+      <section className="relative isolate overflow-hidden bg-white px-6 py-10 md:py-10">
 
         <div className="pointer-events-none absolute -left-40 -top-32 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/[0.08] blur-[130px]" />
 
         <div className="pointer-events-none absolute -bottom-40 -right-32 h-[450px] w-[450px] rounded-full bg-[#5921c7]/[0.06] blur-[130px]" />
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="relative z-10 mx-auto max-w-[900px] text-center">
-          <motion.p variants={fadeUp} className="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7d55c5]">Let&apos;s build the future together</motion.p>
+          <motion.p variants={fadeUp} className="mb-4 text-[13px] font-bold uppercase tracking-[0.22em] text-gray-600">Let&apos;s build the future together</motion.p>
           <motion.h2 variants={fadeUp} className="mx-auto max-w-3xl text-[32px] font-extrabold leading-tight tracking-tight text-[#211a2c]">
             Build Your Institution&apos;s <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">Innovation Hub</span>
           </motion.h2>
