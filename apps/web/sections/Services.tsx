@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -112,6 +112,9 @@ const fadeUp = {
 export default function Services() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Reference to the first card in the mobile carousel
+  const mobileCarouselRef = useRef<HTMLDivElement>(null);
+
   const itemsPerSlide = 3;
   const totalSlides = Math.ceil(services.length / itemsPerSlide);
 
@@ -122,6 +125,10 @@ export default function Services() {
     startIndex + itemsPerSlide
   );
 
+  // ============================================================
+  // DESKTOP NAVIGATION
+  // ============================================================
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % totalSlides);
   };
@@ -130,9 +137,35 @@ export default function Services() {
     setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
+  // ============================================================
+  // MOBILE NAVIGATION WITH AUTO SCROLL
+  // ============================================================
+
+  const scrollToMobileCarousel = () => {
+    mobileCarouselRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const nextMobileSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalSlides);
+    scrollToMobileCarousel();
+  };
+
+  const prevMobileSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+    scrollToMobileCarousel();
+  };
+
+  const goToMobileSlide = (index: number) => {
+    setCurrentIndex(index);
+    scrollToMobileCarousel();
+  };
+
   return (
     <section
-      className={`${bricolage.className} relative isolate overflow-hidden bg-[#faf9fd] px-5 py-14 text-gray-900 sm:px-8 sm:py-16 lg:px-10 lg:py-9`}
+      className={`${bricolage.className} relative isolate overflow-hidden bg-[#faf9fd] px-5 py-8 text-gray-900 sm:px-8 sm:py-16 lg:px-10 lg:py-9`}
     >
       {/* ================================================== */}
       {/* BACKGROUND EFFECTS */}
@@ -170,22 +203,20 @@ export default function Services() {
           viewport={{ once: true, amount: 0.2 }}
           className="mx-auto mb-9 max-w-3xl text-center lg:mb-11"
         >
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#8c52ff] sm:text-sm">
-            What We Do
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-gray-700 sm:text-sm">
+            What We Offer
           </p>
 
           <h2 className="text-2xl font-extrabold leading-[1.12] tracking-tight text-[#171020] sm:text-5xl lg:text-[30px]">
-            Solutions That
-            <br />
-            <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#b18aff] bg-clip-text text-transparent">
-              Inspire Innovation
+            <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
+              Solutions That Inspire Innovation
             </span>
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-[1.85] text-gray-900 sm:text-base">
             From transforming the way students learn to bringing engineering
             ideas to life, we deliver innovative solutions across education,
-            technology, and product development.
+            technology and product development.
           </p>
         </motion.div>
 
@@ -195,7 +226,7 @@ export default function Services() {
 
         <div className="mx-auto hidden max-w-6xl items-center gap-3 md:grid md:grid-cols-[40px_minmax(0,1fr)_40px] lg:gap-4">
 
-          {/* Previous Button - Dedicated Column */}
+          {/* PREVIOUS BUTTON */}
 
           {totalSlides > 1 ? (
             <button
@@ -210,7 +241,7 @@ export default function Services() {
             <div />
           )}
 
-          {/* Service Cards */}
+          {/* SERVICE CARDS */}
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -231,7 +262,7 @@ export default function Services() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Next Button - Dedicated Column */}
+          {/* NEXT BUTTON */}
 
           {totalSlides > 1 ? (
             <button
@@ -249,25 +280,82 @@ export default function Services() {
         </div>
 
         {/* ================================================== */}
-        {/* MOBILE SERVICE GRID */}
+        {/* MOBILE SERVICE CAROUSEL */}
+        {/* THREE VERTICAL CARDS PER SLIDE */}
         {/* ================================================== */}
 
-        <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2 md:hidden">
-          {services.map((service, index) => (
+        <div className="mx-auto max-w-md md:hidden">
+
+          {/* MOBILE SERVICE CARDS */}
+
+          <AnimatePresence mode="wait">
             <motion.div
-              key={service.title}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+              key={`mobile-${currentIndex}`}
+              ref={mobileCarouselRef}
+              initial={{ opacity: 0, x: 15 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -15 }}
+              transition={{ duration: 0.3 }}
+              className="flex scroll-mt-6 flex-col gap-4"
             >
-              <ServiceCard service={service} index={index} />
+              {visibleServices.map((service, index) => (
+                <ServiceCard
+                  key={service.title}
+                  service={service}
+                  index={index}
+                />
+              ))}
             </motion.div>
-          ))}
+          </AnimatePresence>
+
+          {/* MOBILE NAVIGATION ARROWS */}
+
+          {totalSlides > 1 && (
+            <div className="mt-6 flex items-center justify-center gap-5">
+
+              <button
+                type="button"
+                onClick={prevMobileSlide}
+                aria-label="Previous services"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8c52ff]/30 bg-white text-[#5921c7] shadow-sm transition-all duration-300 hover:border-[#5921c7] hover:bg-[#5921c7] hover:text-white"
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              {/* SLIDE INDICATOR */}
+
+              <div className="flex items-center gap-2">
+                {Array.from({ length: totalSlides }).map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => goToMobileSlide(index)}
+                    aria-label={`Go to service slide ${index + 1}`}
+                    aria-current={currentIndex === index ? "true" : undefined}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      index === currentIndex
+                        ? "w-7 bg-[#8c52ff]"
+                        : "w-1.5 bg-gray-300 hover:bg-[#8c52ff]/50"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={nextMobileSlide}
+                aria-label="Next services"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8c52ff]/30 bg-white text-[#5921c7] shadow-sm transition-all duration-300 hover:border-[#5921c7] hover:bg-[#5921c7] hover:text-white"
+              >
+                <ChevronRight size={20} />
+              </button>
+
+            </div>
+          )}
         </div>
 
         {/* ================================================== */}
-        {/* CAROUSEL INDICATORS */}
+        {/* DESKTOP CAROUSEL INDICATORS */}
         {/* ================================================== */}
 
         {totalSlides > 1 && (

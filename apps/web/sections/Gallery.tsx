@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
 import { Bricolage_Grotesque } from "next/font/google";
 import { useState } from "react";
 
@@ -41,9 +41,32 @@ const duplicatedImages = [...images, ...images];
 // ============================================================
 
 export default function Gallery() {
+  const controls = useAnimationControls();
+
+  const [isPaused, setIsPaused] = useState(false);
+
+  const startScrolling = () => {
+    setIsPaused(false);
+
+    controls.start({
+      x: "-50%",
+      transition: {
+        duration: 75,
+        ease: "linear",
+        repeat: Infinity,
+        repeatType: "loop",
+      },
+    });
+  };
+
+  const stopScrolling = () => {
+    setIsPaused(true);
+    controls.stop();
+  };
+
   return (
     <section
-      className={`${bricolage.className} relative isolate overflow-hidden bg-[#08060d] py-16 text-white sm:py-20 lg:py-10`}
+      className={`${bricolage.className} relative isolate overflow-hidden bg-[#08060d] py-8 text-white sm:py-20 lg:py-10`}
     >
       {/* ================================================== */}
       {/* BACKGROUND EFFECTS */}
@@ -79,30 +102,22 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mb-12 max-w-4xl px-5 text-center sm:mb-14"
+          className="mx-auto mb-5 max-w-4xl px-5 text-center sm:mb-14"
         >
-          {/* Plain Text Label */}
-
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-[#c4a8ff] sm:text-sm">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-gray-200 sm:text-sm">
             Moments That Inspire
           </p>
 
-          {/* Heading */}
-
-          <h2 className="text-2xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-4xl">
-            Ideas Into {" "}
+          <h2 className="text-2xl font-extrabold leading-[1.1] tracking-tight text-2xl lg:text-3xl">
             
-            <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#e0ccff] bg-clip-text text-transparent">
-              Experiences.
+            <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff] bg-clip-text text-transparent">
+              Glimpses of our Journey.
             </span>
           </h2>
 
-          {/* Description */}
-
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-[1.9] text-gray-300 sm:text-base">
-            A glimpse into our journey of learning, collaboration, creativity,
-            and innovation — bringing ideas to life through meaningful
-            experiences.
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-[1.9] text-gray-200 sm:text-base">
+            A glimpse into our journey of impactful collaboration,
+            empowering young minds and driving innovation.
           </p>
         </motion.div>
 
@@ -110,28 +125,31 @@ export default function Gallery() {
         {/* SINGLE ROW GALLERY MARQUEE */}
         {/* ================================================== */}
 
-        <div className="relative overflow-hidden">
+        <div
+          className="relative overflow-hidden"
+          onMouseEnter={stopScrolling}
+          onMouseLeave={startScrolling}
+          onTouchStart={stopScrolling}
+          onTouchEnd={startScrolling}
+          onTouchCancel={startScrolling}
+        >
 
-          {/* Edge Fades */}
+          {/* EDGE FADES */}
 
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#08060d] to-transparent sm:w-24 lg:w-36" />
 
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#08060d] to-transparent sm:w-24 lg:w-36" />
 
-          {/* Scrolling Images */}
+          {/* SCROLLING IMAGES */}
 
           <motion.div
             className="flex w-max gap-4 px-2 sm:gap-5"
-            animate={{
-              x: ["0%", "-50%"],
-            }}
-            transition={{
-              duration: 75,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-            whileHover={{
-              animationPlayState: "paused",
+            initial={{ x: "0%" }}
+            animate={controls}
+            onAnimationComplete={() => {
+              if (!isPaused) {
+                startScrolling();
+              }
             }}
           >
             {duplicatedImages.map((img, index) => (
@@ -177,11 +195,11 @@ function GalleryImage({
         onError={() => setHasError(true)}
       />
 
-      {/* Image Overlay */}
+      {/* IMAGE OVERLAY */}
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
-      {/* Hover Accent */}
+      {/* HOVER ACCENT */}
 
       <div className="pointer-events-none absolute inset-0 rounded-xl border border-[#b18aff]/0 transition-all duration-500 group-hover:border-[#b18aff]/40 sm:rounded-2xl" />
     </div>

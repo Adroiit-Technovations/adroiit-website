@@ -27,7 +27,7 @@ const logos = [
 export default function Clients() {
   return (
     <section
-      className={`${bricolage.className} relative isolate overflow-hidden bg-[#f8f7fc] py-16 text-gray-900 sm:py-20 lg:py-10`}
+      className={`${bricolage.className} relative isolate overflow-hidden bg-[#f8f7fc] py-8 text-gray-900 sm:py-20 lg:py-10`}
     >
       {/* ================================================== */}
       {/* BACKGROUND EFFECTS */}
@@ -67,26 +67,25 @@ export default function Clients() {
         >
           {/* Eyebrow */}
 
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-[#8c52ff] sm:text-sm">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-gray-700 sm:text-sm">
             Trusted Relationships
           </p>
 
           {/* Heading */}
 
-          <h2 className="text-2xl font-extrabold leading-[1.1] tracking-tight text-[#171020] sm:text-5xl lg:text-4xl">
-            Our Clients & {" "}
+          <h2 className="text-2xl font-extrabold leading-[1.1] tracking-tight text-[#171020] text-2xl lg:text-3xl">
+            
            
-            <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#b18aff] bg-clip-text text-transparent">
-              Partners.
+            <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
+              Our Clients & Partners.
             </span>
           </h2>
 
           {/* Description */}
 
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-[1.7] text-gray-900 sm:text-base">
-            Trusted by prominent educational institutions, we collaborate
-            to inspire innovation, empower learners, and create meaningful
-            opportunities through education and technology.
+            Trusted by prominent educational institutions and empowering
+            the next-generations through education and technology.
           </p>
         </motion.div>
 

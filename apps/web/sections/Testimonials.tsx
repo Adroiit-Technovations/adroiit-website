@@ -8,7 +8,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Quote,
-  Star,
   ExternalLink,
 } from "lucide-react";
 
@@ -178,11 +177,9 @@ export default function Testimonials() {
 
   return (
     <section
-      className={`${bricolage.className} relative isolate overflow-hidden bg-[#08060d] py-16 text-white sm:py-20 lg:py-10`}
+      className={`${bricolage.className} relative isolate overflow-hidden bg-[#08060d] py-10 text-white sm:py-20 lg:py-10`}
     >
-      {/* ================================================== */}
       {/* BACKGROUND EFFECTS */}
-      {/* ================================================== */}
 
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-40 top-0 h-[350px] w-[350px] rounded-full bg-[#8c52ff]/[0.10] blur-[140px]" />
@@ -204,9 +201,7 @@ export default function Testimonials() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
-        {/* ================================================== */}
         {/* SECTION HEADER */}
-        {/* ================================================== */}
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -215,110 +210,77 @@ export default function Testimonials() {
           transition={{ duration: 0.7 }}
           className="mx-auto mb-6 max-w-3xl text-center sm:mb-8"
         >
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-[#a77aff] sm:text-sm">
-            Voices of Our Community
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gray-200 sm:text-sm">
+            WHAT PEOPLE SAY ABOUT US
           </p>
 
-          <h2 className="text-2xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-4xl">
-            What People {" "}
-           
-            <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#d2baff] bg-clip-text text-transparent">
-              Say About Us.
+          <h2 className="text-[24px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-[30px]">
+            <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff] bg-clip-text text-transparent">
+              Every Experience is a Story
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-[1.9] text-gray-300 sm:text-base">
-            Every experience tells a story. Discover what students, parents,
-            and our partners say about learning, creating, and innovating
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-[1.9] text-gray-300 sm:text-base">
+            Discover what students, parents
+            and our partners say about their experience 
             with Adroiit Technovations.
           </p>
         </motion.div>
 
-        {/* ================================================== */}
-        {/* GOOGLE RATING STRIP */}
-        {/* Positioned above testimonial cards */}
-        {/* ================================================== */}
+        {/* GOOGLE BUSINESS PROFILE STRIP */}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.65 }}
-          className="mx-auto mb-8 max-w-3xl sm:mb-10"
+          className="mx-auto mb-5 w-full max-w-[320px] sm:mb-5 sm:max-w-[380px] lg:max-w-[440px]"
         >
           <a
             href={GOOGLE_BUSINESS_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View Adroiit Technovations Google Business Profile"
-            className="group flex flex-col items-center justify-between gap-5 rounded-2xl border border-white/[0.09] bg-white/[0.025] px-5 py-5 transition-all duration-300 hover:border-[#8c52ff]/40 hover:bg-[#8c52ff]/[0.06] sm:flex-row sm:px-7"
+            className="group flex w-full flex-row items-center justify-center gap-3 rounded-2xl border border-white/[0.09] bg-white/[0.025] px-3 py-4 text-center transition-all duration-300 hover:border-[#8c52ff]/40 hover:bg-[#8c52ff]/[0.06] sm:gap-5 sm:px-5 sm:py-5"
           >
-            {/* Google branding and label */}
+            {/* Centered Google branding and label */}
 
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.04]">
-                <GoogleIcon />
+            <div className="flex min-w-0 items-center justify-center gap-2 sm:gap-3">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.04] sm:h-12 sm:w-12 sm:rounded-xl">
+                <div className="scale-[0.75] sm:scale-100">
+                  <GoogleIcon />
+                </div>
               </div>
 
-              <div className="text-center sm:text-left">
-                <p className="text-sm font-bold text-white">
+              <div className="min-w-0 text-left">
+                <p className="whitespace-nowrap text-[13px] font-bold text-white sm:text-sm">
                   Find us on Google
                 </p>
 
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 truncate text-[12px] text-gray-300 sm:text-xs">
                   Adroiit Technovations
                 </p>
               </div>
             </div>
 
-            {/* Divider */}
+            {/* Desktop divider */}
 
-            <div className="hidden h-10 w-px bg-white/[0.12] sm:block" />
+            <div className="hidden h-10 w-px shrink-0 bg-white/[0.12] sm:block" />
 
-            {/* Rating */}
+            {/* Centered Google profile link */}
 
-            <div className="flex flex-col items-center gap-1">
-              <div className="flex items-baseline gap-1.5">
-                <span className="text-3xl font-extrabold tracking-tight text-white">
-                  5.0
-                </span>
-
-                <span className="text-xs font-medium text-gray-500">
-                  / 5.0
-                </span>
-              </div>
-
-              <div
-                className="flex items-center gap-1"
-                aria-label="5 out of 5 stars"
-              >
-                {Array.from({ length: 5 }).map((_, starIndex) => (
-                  <Star
-                    key={starIndex}
-                    size={14}
-                    strokeWidth={1.8}
-                    className="fill-[#ffcc00] text-[#ffcc00]"
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Google profile link */}
-
-            <div className="flex items-center gap-2 rounded-full border border-[#8c52ff]/25 bg-[#8c52ff]/[0.08] px-4 py-2.5 text-xs font-semibold text-[#c4a7ff] transition-all duration-300 group-hover:border-[#8c52ff]/50 group-hover:bg-[#5921c7] group-hover:text-white">
-              View Profile
+            <div className="flex shrink-0 items-center justify-center gap-1 rounded-full border border-[#8c52ff]/25 bg-[#8c52ff]/[0.08] px-2.5 py-2 text-[11px] font-semibold text-[#c4a7ff] transition-all duration-300 group-hover:border-[#8c52ff]/50 group-hover:bg-[#5921c7] group-hover:text-white sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs">
+              <span className="whitespace-nowrap">View Profile</span>
 
               <ExternalLink
-                size={14}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                size={12}
+                className="shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:h-[14px] sm:w-[14px]"
               />
             </div>
           </a>
         </motion.div>
 
-        {/* ================================================== */}
         {/* TESTIMONIAL SLIDER */}
-        {/* ================================================== */}
 
         <div
           className="relative"
@@ -391,14 +353,10 @@ export default function Testimonials() {
             </motion.div>
           </div>
 
-          {/* ================================================== */}
           {/* SLIDER CONTROLS */}
-          {/* ================================================== */}
 
           {slides.length > 1 && (
             <div className="mt-8 flex items-center justify-center gap-5">
-              {/* Previous */}
-
               <button
                 type="button"
                 onClick={previousSlide}
@@ -407,8 +365,6 @@ export default function Testimonials() {
               >
                 <ChevronLeft size={19} />
               </button>
-
-              {/* Pagination dots */}
 
               <div className="flex items-center gap-2.5">
                 {slides.map((_, slideIndex) => (
@@ -426,8 +382,6 @@ export default function Testimonials() {
                   />
                 ))}
               </div>
-
-              {/* Next */}
 
               <button
                 type="button"
