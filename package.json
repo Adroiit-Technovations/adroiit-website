@@ -9,7 +9,7 @@
     "dev": "npm run dev:web",
 
     "build:web": "next build apps/web --webpack && node scripts/copy-web-standalone-assets.mjs",
-    "build:admin": "next build apps/admin --webpack",
+    "build:admin": "next build apps/admin --webpack && node scripts/copy-admin-standalone-assets.mjs",
     "build": "npm run build:web",
     "build:all": "npm run build:web && npm run build:admin",
 
