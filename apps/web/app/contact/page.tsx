@@ -120,7 +120,7 @@ export default function ContactPage() {
 
   return (
     <section
-      className={`${bricolage.className} relative isolate min-h-screen overflow-hidden bg-[#05030A] px-4 py-20 text-white sm:px-6 md:py-34`}
+      className={`${bricolage.className} relative isolate min-h-screen overflow-hidden bg-[#05030A] px-4 py-35 text-white sm:px-6 md:py-34`}
     >
       {/* BACKGROUND EFFECTS */}
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -142,7 +142,7 @@ export default function ContactPage() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[1240px]">
         {/* PAGE INTRODUCTION */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -150,14 +150,13 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="mb-10 max-w-3xl text-left md:mb-5"
         >
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#a87ffb] sm:text-sm">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gray-200 sm:text-sm">
             Get in Touch
           </p>
 
-          <h1 className="text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-3xl">
-            Let's Start a{" "}
+          <h1 className="text-3xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-3xl">
             <span className="bg-gradient-to-r from-[#8c52ff] via-[#a87ffb] to-purple-300 bg-clip-text text-transparent">
-              Conversation.
+              Let's Start a Conversation.
             </span>
           </h1>
 
@@ -489,7 +488,7 @@ export default function ContactPage() {
                 Contact Information
               </p>
 
-              <h2 className="mt-2 text-2xl font-bold text-white">
+              <h2 className="mt-2 text-xl font-bold text-white">
                 Let's Connect.
               </h2>
 

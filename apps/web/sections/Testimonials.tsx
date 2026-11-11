@@ -216,7 +216,7 @@ export default function Testimonials() {
 
           <h2 className="text-[24px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-[30px]">
             <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff] bg-clip-text text-transparent">
-              Every Experience is a Story
+              Every Experience Tells a Story
             </span>
           </h2>
 
