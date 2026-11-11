@@ -57,15 +57,17 @@ const indianCities = [
 ];
 
 const services = [
-  "STEM Tinkering and Innovation Lab (TIL)",
-  "STEM Workshop",
-  "STEM Bootcamp",
+  "STEAM Tinkering and Innovation Lab (TIL)",
+  "Composite Skill Lab (CSL)",
+  "STEAM Workshops & Bootcamps",
   "Center of Excellence (CoE)",
   "Value Added Courses",
   "Technical Workshop",
-  "Custom Product Fabrication",
-  "3D Printing",
+  "SPM Manufacturing",
+  "FDM 3D Printing",
   "Mechanical CAD",
+  "Internship",
+  "Others",
 ];
 
 const uniqueCities = [...new Set(indianCities)];
