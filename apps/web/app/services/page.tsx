@@ -1,152 +1,263 @@
+
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect } from "react";
-import Link from "next/link";
-import { 
-  BookOpen, 
-  GraduationCap, 
-  Settings, 
-  ArrowRight,
-  Cpu,     // Added to fix Vercel ReferenceError
-  Monitor  // Added to fix Vercel ReferenceError
+import { motion, type Variants } from "framer-motion";
+import {
+  ArrowUpRight,
+  BookOpen,
+  GraduationCap,
+  Settings,
+  type LucideIcon,
 } from "lucide-react";
+import Link from "next/link";
 import { Bricolage_Grotesque } from "next/font/google";
-import Footer from "@/sections/Footer";
+import type { ReactNode } from "react";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
-// Animation variants
-const sectionVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.8, ease: "easeOut" } as any 
-  }
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.6,
-      ease: "easeOut",
-    } as any,
-  }),
+    transition: { duration: 0.65, ease: "easeOut" },
+  },
 };
 
-const serviceCategories = [
+const stagger: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
+};
+
+type ServiceLink = {
+  name: string;
+  href: string;
+};
+
+type ServiceCategory = {
+  number: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: LucideIcon;
+  accent: string;
+  links: ServiceLink[];
+};
+
+const serviceCategories: ServiceCategory[] = [
   {
-    title: "For schools",
-    icon: <BookOpen className="text-[#8c52ff]" />,
-    description: "Nurturing young minds through hands-on STEM exploration and innovation labs.",
+    number: "01",
+    title: "For Schools",
+    subtitle: "Building tomorrow's innovators",
+    description:
+      "Nurturing young minds through experiential STEAM education, hands-on technology learning and innovation-driven programmes.",
+    icon: BookOpen,
+    accent: "from-[#5921c7] to-[#8c52ff]",
     links: [
-      { name: "STEM Tinkering & Innovation Lab (TIL)", href: "/services/stem-til" },
-      { name: "STEM Workshops", href: "/services/stem-workshop" },
-      { name: "STEM Bootcamps", href: "/services/stem-bootcamp" },
-    ]
+      {
+        name: "STEAM Tinkering & Innovation Lab (TIL)",
+        href: "/services/steam-til",
+      },
+      {
+        name: "Composite Skill Lab (CSL)",
+        href: "/services/csl",
+      },
+      {
+        name: "STEAM Workshops & Bootcamps",
+        href: "/services/steam-workshops-bootcamps",
+      },
+    ],
   },
   {
-    title: "For colleges",
-    icon: <GraduationCap className="text-[#8c52ff]" />,
-    description: "Advanced technical training and Center of Excellence (CoE) setups for higher education.",
+    number: "02",
+    title: "For Colleges",
+    subtitle: "Advancing technical capabilities",
+    description:
+      "Bridging academia with industry-relevant skills through technical training, specialised programmes and innovation infrastructure.",
+    icon: GraduationCap,
+    accent: "from-[#7440e8] to-[#a77aff]",
     links: [
-      { name: "Center of Excellence (CoE)", href: "/services/coe" },
-      { name: "Value Added Courses", href: "/services/value-added-courses" },
-      { name: "Technical Workshops", href: "/services/technical-workshop" },
-    ]
+      {
+        name: "Center of Excellence (CoE)",
+        href: "/services/coe",
+      },
+      {
+        name: "Value Added Courses (VACs)",
+        href: "/services/value-added-courses",
+      },
+      {
+        name: "Technical Workshops",
+        href: "/services/technical-workshop",
+      },
+    ],
   },
   {
-    title: "Engineering services",
-    icon: <Settings className="text-[#8c52ff]" />,
-    description: "Professional grade fabrication, 3D printing, and mechanical design solutions.",
+    number: "03",
+    title: "Engineering Services",
+    subtitle: "Turning concepts into reality",
+    description:
+      "Supporting businesses, startups and innovators with engineering design, prototyping, fabrication and product development solutions.",
+    icon: Settings,
+    accent: "from-[#5921c7] to-[#a77aff]",
     links: [
-      { name: "Custom Product Fabrication", href: "/services/custom-machinery-fabrication"},
-      { name: "3D Printing", href: "/services/3d-printing" },
-      { name: "Mechanical CAD", href: "/services/mechanical-cad" },
-    ]
-  }
+      {
+        name: "SPM Manufacturing",
+        href: "/services/custom-machinery-fabrication",
+      },
+      {
+        name: "FDM 3D Printing",
+        href: "/services/3d-printing",
+      },
+      {
+        name: "Mechanical CAD",
+        href: "/services/mechanical-cad",
+      },
+    ],
+  },
 ];
 
-export default function ServicesPage() {
-  // ✅ OVERRIDE BROWSER DEFAULTS
-  useEffect(() => {
-    document.body.style.backgroundColor = "#050505";
-    return () => {
-      document.body.style.backgroundColor = ""; 
-    };
-  }, []);
-
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  description?: string;
+}) {
   return (
-    <div className={`${bricolage.className} bg-[#050505] text-white min-h-screen flex flex-col`}>
-      {/* Main Content Area */}
-      <main className="pt-25 pb-10 px-6 flex-grow bg-[#050505]">
-        
-        {/* Header section */}
-        <section className="max-w-7xl mx-auto text-center mb-8">
-          <motion.h1 
-            initial="hidden"
-            animate="visible"
-            variants={sectionVariants}
-            className="text-5xl md:text-2xl font-bold tracking-tighter mb-6"
-          >
-            <span className="text-purple-600">Our Solutions</span>
-          </motion.h1>
-          <motion.p 
-            custom={1}
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="text-gray-300 text-lg max-w-2xl mx-auto"
-          >
-            From classroom inspiration to industrial fabrication, we provide the tools and expertise to build the future.
-          </motion.p>
-        </section>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeUp}
+      className="mx-auto mb-4 max-w-3xl text-center"
+    >
+      <p className="text-[13px] font-bold uppercase tracking-[0.22em] text-gray-700">
+        {eyebrow}
+      </p>
 
-        {/* Services grid */}
-        <section className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-          {serviceCategories.map((category, idx) => (
-            <motion.div
-              key={idx}
-              custom={idx + 2}
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              className="bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] p-8 hover:border-[#8c52ff]/50 transition-colors flex flex-col"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-[#8c52ff]/10 flex items-center justify-center mb-6">
-                {category.icon}
-              </div>
-              <h2 className="text-2xl text-purple-500 font-bold mb-4">{category.title}</h2>
-              <p className="text-gray-200 text-sm mb-8 flex-grow">
-                {category.description}
-              </p>
-              
-              <ul className="space-y-4">
-                {category.links.map((link, lIdx) => (
-                  <li key={lIdx}>
-                    <Link 
-                      href={link.href}
-                      className="flex items-center justify-between group p-4 rounded-xl bg-white/5 text-gray-300 hover:bg-white/10 transition-all"
-                    >
-                      <span className="text-sm font-bold">{link.name}</span>
-                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </section>
-      </main>
+      <h2 className="mt-4 text-[30px] font-black leading-[1.15] tracking-tight text-[#21172f]">
+        {title}
+      </h2>
 
-      <div className="bg-[#050505] w-full">
-        <Footer />
-      </div>
-    </div>
+      {description && (
+        <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-gray-900">
+          {description}
+        </p>
+      )}
+    </motion.div>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <main
+      className={`${bricolage.className} min-h-screen bg-[#f7f5fb] text-[#17121f]`}
+    >
+      <section
+        id="services"
+        className="bg-[#f7f5fb] px-6 py-35 md:py-35"
+      >
+        <div className="mx-auto max-w-[1200px]">
+          <SectionHeading
+            eyebrow="Explore Our Solutions"
+            title={
+              <>
+               
+                <span className="text-[#8c52ff]">  What can we build together?</span>
+              </>
+            }
+            description="Explore our specialised services across education, higher learning and engineering. Each solution is designed to create practical value and meaningful outcomes."
+          />
+
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.08 }}
+            className="grid gap-6 lg:grid-cols-3"
+          >
+            {serviceCategories.map((category) => {
+              const Icon = category.icon;
+
+              return (
+                <motion.article
+                  key={category.number}
+                  variants={item}
+                  whileHover={{ y: -6 }}
+                  className="group relative flex flex-col overflow-hidden rounded-[26px] border border-[#e9e3f2] bg-white p-6 shadow-[0_5px_25px_rgba(33,23,47,0.035)] transition-all duration-300 hover:border-[#cbb6ff] hover:shadow-[0_20px_55px_rgba(89,33,199,0.10)] sm:p-7"
+                >
+                  {/* Top accent */}
+                  <div
+                    className={`absolute left-0 top-0 h-1 w-full bg-gradient-to-r ${category.accent} opacity-80`}
+                  />
+
+                  {/* Category heading */}
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[18px] bg-[#5921c7]/[0.08] text-[#5921c7] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
+                      <Icon size={27} strokeWidth={1.8} />
+                    </div>
+
+                    <span className="text-[34px] font-black leading-none text-[#5921c7]/10 transition-colors group-hover:text-[#5921c7]/20">
+                      {category.number}
+                    </span>
+                  </div>
+
+                  <p className="mt-7 text-[10px] font-extrabold uppercase tracking-[0.17em] text-[#8c52ff]">
+                    {category.subtitle}
+                  </p>
+
+                  <h3 className="mt-2 text-[20px] font-semibold tracking-tight text-gray-900">
+                    {category.title}
+                  </h3>
+
+                  <p className="mt-2 min-h-[88px] text-[14px] leading-7 text-gray-800">
+                    {category.description}
+                  </p>
+
+                  {/* Service links */}
+                  <div className="mt-4 flex-1 border-t border-gray-100 pt-5">
+                    <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.16em] text-[#8c52ff]">
+                      Explore services
+                    </p>
+
+                    <div className="space-y-2">
+                      {category.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="group/link flex items-center justify-between gap-3 rounded-xl bg-[#f8f6fb] px-4 py-3.5 transition-all duration-300 hover:bg-[#5921c7] hover:text-white"
+                        >
+                          <span className="text-[12px] font-bold leading-5 text-[#342944] transition-colors group-hover/link:text-white">
+                            {link.name}
+                          </span>
+
+                          <ArrowUpRight
+                            size={16}
+                            className="shrink-0 text-gray-900 transition-all duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 group-hover/link:text-white"
+                          />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+    </main>
   );
 }

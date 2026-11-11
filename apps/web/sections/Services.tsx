@@ -22,25 +22,25 @@ const bricolage = Bricolage_Grotesque({
 
 const services = [
   {
-    title: "STEM Tinkering & Innovation Lab",
+    title: "STEAM Tinkering & Innovation Lab",
     description:
       "Comprehensive lab setups equipped with STEM kits, structured curriculum, and training — where students explore, experiment, build, and innovate.",
     image: "/services/stem-lab.png",
-    link: "/services/stem-til",
+    link: "/services/steam-til",
   },
   {
-    title: "STEM Workshops",
+    title: "Composite Skill Lab (CSL)",
     description:
       "Interactive workshops designed to ignite curiosity, creativity, and practical skills through engaging, hands-on learning experiences.",
     image: "/services/stem-workshop.png",
-    link: "/services/stem-workshop",
+    link: "/services/csl",
   },
   {
-    title: "STEM Bootcamps",
+    title: "STEAM Workshops & Bootcamps",
     description:
       "Intensive learning programs that nurture critical thinking, problem-solving, and technical skills beyond the standard academic curriculum.",
     image: "/services/stem-bootcamp.png",
-    link: "/services/stem-bootcamp",
+    link: "/services/steam-workshops-bootcamps",
   },
   {
     title: "Center of Excellence (CoE)",
@@ -50,7 +50,7 @@ const services = [
     link: "/services/coe",
   },
   {
-    title: "Value Added Courses",
+    title: "Value Added Courses (VACs)",
     description:
       "Enhance academic learning with industry-relevant, skill-focused courses designed to build practical knowledge and career readiness.",
     image: "/services/advanced-labs2.png",
@@ -64,14 +64,14 @@ const services = [
     link: "/services/technical-workshop",
   },
   {
-    title: "Custom Machinery Fabrication",
+    title: "SPM Manufacturing",
     description:
       "End-to-end machinery fabrication solutions tailored to specific requirements, from initial design to final assembly, engineered for performance and durability.",
     image: "/services/cmf.png",
     link: "/services/custom-machinery-fabrication",
   },
   {
-    title: "3D Printing",
+    title: "FDM 3D Printing",
     description:
       "FDM 3D printing services that transform your designs into durable, functional parts with quality, speed, and precision — ideal for rapid prototyping and low-volume production.",
     image: "/services/3d-printing.jpg",
@@ -340,7 +340,7 @@ function ServiceCard({
 
       <div className="flex flex-1 flex-col p-3.5 sm:p-4">
         <div className="flex-1">
-          <h3 className="text-[14px] font-bold leading-snug text-[#30106f] transition-colors duration-300 group-hover:text-[#8c52ff] sm:text-base">
+          <h3 className="text-[14px] font-bold leading-snug text-[#5921c7] transition-colors duration-300 group-hover:text-[#5921c7] sm:text-base">
             {service.title}
           </h3>
 
@@ -356,7 +356,7 @@ function ServiceCard({
             href={service.link}
             className="group/button inline-flex w-full items-center justify-between rounded-lg border border-[#8c52ff]/25 bg-[#8c52ff]/[0.045] px-3 py-2 text-[11px] font-bold text-[#5921c7] transition-all duration-300 hover:border-[#5921c7] hover:bg-[#5921c7] hover:text-white sm:text-xs"
           >
-            <span>Explore Service</span>
+            <span>Explore Solution</span>
 
             <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#5921c7]/10 transition-all duration-300 group-hover/button:translate-x-0.5 group-hover/button:bg-white/15">
               <ArrowRight
