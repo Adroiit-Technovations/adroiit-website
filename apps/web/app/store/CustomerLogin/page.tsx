@@ -584,7 +584,7 @@ export default function CustomerLoginPage() {
 
   return (
     <main
-      className={`${bricolage.variable} min-h-screen bg-[#faf9fc] px-5 py-10 text-[#17121f] sm:px-8`}
+      className={`${bricolage.variable} min-h-screen bg-[#faf9fc] px-5 py-2 text-[#17121f] sm:px-8`}
       style={{
         fontFamily: "var(--font-bricolage)",
       }}
@@ -600,7 +600,7 @@ export default function CustomerLoginPage() {
             </div>
 
             {/* Heading */}
-            <div className="mb-7 text-center">
+            <div className="mb-3 text-center">
               <h1 className="text-[28px] font-semibold tracking-[-0.035em] text-[#21182d]">
                 {mode === "signin"
                   ? "Welcome back"

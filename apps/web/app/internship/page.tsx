@@ -202,7 +202,7 @@ const domains = [
     title: "Mechatronics Intern",
     status: "Open",
     desc: "Work across mechanical systems, electronics, sensors and embedded control to develop integrated solutions.",
-    image: "/internship/mechanical-cad.jpg",
+    image: "/internship/mechatronics3",
   },
   {
     title: "Internet of Things Intern",

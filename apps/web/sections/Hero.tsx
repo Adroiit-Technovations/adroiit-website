@@ -65,12 +65,12 @@ export default function ModernHero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#05030A] text-white pt-30 pb-16 md:pt-32 md:pb-24">
+    <section className="relative overflow-hidden bg-[#05030A] text-white pt-35 pb-16 md:pt-35 md:pb-24">
       {/* Background Glows & Grid Patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(89,33,199,0.25),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(140,82,255,0.15),transparent_40%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-[1300px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* LEFT CONTENT COLUMN */}
           <div className="lg:col-span-6 flex flex-col items-start justify-between">

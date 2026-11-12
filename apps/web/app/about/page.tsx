@@ -7,7 +7,6 @@ import Footer from "@/sections/Footer";
 import { Bricolage_Grotesque } from "next/font/google";
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
   ArrowUpRight,
   Target,
   Rocket,
@@ -106,8 +105,7 @@ const domains = [
     title: "Internet of Things",
     description:
       "Connecting devices, sensors and systems to enable smart monitoring, automation, data exchange and connected experiences.",
-    image:
-      "/domains/iot.jpg",
+    image: "/domains/iot.jpg",
     category: "Connected Technologies",
   },
   {
@@ -133,8 +131,7 @@ const domains = [
     title: "3D Printing",
     description:
       "Turning digital designs into physical objects through 3D modelling, prototyping and additive manufacturing.",
-    image:
-      "/3d-printing/3d-printing-hero.jpg",
+    image: "/3d-printing/3d-printing-hero.jpg",
     category: "Digital Manufacturing",
   },
   {
@@ -291,7 +288,9 @@ export default function About() {
                 </p>
 
                 <h2 className="mt-4 text-3xl font-extrabold leading-[1.02] tracking-[-0.065em] sm:text-3xl">
-                  <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">We always thrive to be the extraordinary.</span>
+                  <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
+                    We always thrive to be the extraordinary.
+                  </span>
                 </h2>
               </div>
 
@@ -387,7 +386,9 @@ export default function About() {
               </p>
 
               <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.06em] sm:text-3xl">
-                <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff] bg-clip-text text-transparent"> Purpose meets Possibilities.</span>
+                <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff] bg-clip-text text-transparent">
+                  Purpose meets Possibilities.
+                </span>
               </h2>
 
               <p className="mx-auto mt-3 max-w-[680px] text-[15px] leading-8 text-gray-200 sm:text-base">
@@ -483,14 +484,16 @@ export default function About() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeUp}
-              className="mx-auto mb-6 max-w-[900px] text-center"
+              className="mx-auto mb-3 max-w-[900px] text-center"
             >
               <p className="text-[13px] font-bold uppercase tracking-[0.3em] text-gray-600">
                 What defines us
               </p>
 
               <h2 className="mt-3 text-3xl font-extrabold leading-[1.05] tracking-[-0.06em] sm:text-3xl">
-                <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">Values that move us forward.</span>
+                <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
+                  Values that move us forward.
+                </span>
               </h2>
 
               <p className="mx-auto mt-3 max-w-[900px] text-[16px] leading-8 text-gray-800">
@@ -501,7 +504,8 @@ export default function About() {
               </p>
             </motion.div>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {/* CORE VALUES — 3 CARDS FIRST ROW, 2 CENTERED SECOND ROW */}
+            <div className="flex flex-wrap justify-center gap-5">
               {coreValues.map((value, index) => {
                 const Icon = value.icon;
 
@@ -512,7 +516,7 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.55, delay: index * 0.08 }}
-                    className="group relative flex min-h-[235px] flex-col overflow-hidden rounded-[1.5rem] border border-[#171024]/[0.08] bg-white p-6 shadow-[0_12px_35px_rgba(48,16,111,0.045)] transition-all duration-500 hover:-translate-y-1 hover:border-[#8c52ff]/40 hover:shadow-[0_20px_45px_rgba(48,16,111,0.10)] sm:p-7"
+                    className="group relative flex min-h-[180px] w-full flex-col overflow-hidden rounded-[1.5rem] border border-[#171024]/[0.08] bg-white p-6 shadow-[0_12px_35px_rgba(48,16,111,0.045)] transition-all duration-500 hover:-translate-y-1 hover:border-[#8c52ff]/40 hover:shadow-[0_20px_45px_rgba(48,16,111,0.10)] sm:w-[calc((100%-1.25rem)/2)] sm:p-7 lg:w-[calc((100%-2.5rem)/3)]"
                   >
                     <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#8c52ff]/[0.05] blur-2xl transition-all duration-500 group-hover:bg-[#8c52ff]/15" />
 
@@ -523,15 +527,14 @@ export default function About() {
                       </div>
 
                       <div>
-
-                        <h3 className="font-bold  tracking-tight text-[#5921c7] text-[17px]">
+                        <h3 className="font-bold tracking-tight text-[#5921c7] text-[17px]">
                           {value.title}
                         </h3>
                       </div>
                     </div>
 
                     {/* DESCRIPTION BELOW ICON AND TITLE */}
-                    <p className="relative mt-5 text-sm leading-7 text-gray-800">
+                    <p className="relative mt-2 text-sm leading-7 text-gray-800">
                       {value.description}
                     </p>
                   </motion.div>
@@ -564,7 +567,9 @@ export default function About() {
               </p>
 
               <h2 className="mt-3 text-3xl font-extrabold leading-[1.05] tracking-[-0.06em] sm:text-6xl lg:text-3xl">
-                <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff] bg-clip-text text-transparent">The technologies shaping tomorrow.</span>{" "}
+                <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff] bg-clip-text text-transparent">
+                  The technologies shaping tomorrow.
+                </span>{" "}
               </h2>
 
               <p className="mx-auto mt-3 max-w-[900px] text-[15px] leading-8 text-gray-200 text-[17px]">
@@ -601,8 +606,6 @@ export default function About() {
                   </div>
 
                   <div className="relative mt-1">
-                    
-
                     <h3 className="text-xl font-bold leading-snug tracking-tight text-[#b18aff] text-[18px]">
                       {domain.title}
                     </h3>
@@ -610,10 +613,6 @@ export default function About() {
                     <p className="mt-2 text-sm leading-7 text-gray-200">
                       {domain.description}
                     </p>
-                  </div>
-
-                  <div className="absolute right-7 top-7 text-white/20 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#b99aff]">
-                    <ArrowUpRight size={19} />
                   </div>
                 </motion.div>
               ))}
@@ -639,7 +638,9 @@ export default function About() {
             </p>
 
             <h2 className="mx-auto mt-4 max-w-[950px] text-3xl font-extrabold leading-[1.02] tracking-[-0.065em] sm:text-6xl lg:text-3xl">
-              <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">Let's collaborate and build the future!</span>
+              <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
+                Let's collaborate and build the future!
+              </span>
             </h2>
 
             <p className="mx-auto mt-5 max-w-[700px] text-[16px] leading-8 text-gray-900 sm:text-lg">

@@ -139,7 +139,7 @@ export default function VerifyCertificatePage() {
         {/* Footer */}
         <footer className="mt-6 shrink-0 pb-1 text-center sm:mt-5 lg:mt-4">
           <p className="text-[13px] text-gray-300">
-            Official Certificate Verification System
+            Official Certificate Verification Portal
           </p>
 
           <p className="mt-1.5 text-[13px] text-gray-300">

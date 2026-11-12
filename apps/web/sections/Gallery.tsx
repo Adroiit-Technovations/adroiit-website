@@ -102,7 +102,7 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mb-5 max-w-4xl px-5 text-center sm:mb-14"
+          className="mx-auto mb-5 max-w-4xl px-5 text-center sm:mb-5"
         >
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-gray-200 sm:text-sm">
             Moments That Inspire
@@ -115,7 +115,7 @@ export default function Gallery() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-[1.9] text-gray-200 sm:text-base">
+          <p className="mx-auto mt-3 max-w-4xl text-sm leading-[1.9] text-gray-200 sm:text-base">
             A glimpse into our journey of impactful collaboration,
             empowering young minds and driving innovation.
           </p>
