@@ -39,6 +39,13 @@ const bricolage = Bricolage_Grotesque({
 });
 
 // ============================================================
+// CUSTOMISABLE SECTION TITLE SIZE
+// ============================================================
+
+// Change this value to modify all section heading sizes in pixels.
+const SECTION_TITLE_SIZE_PX = 30;
+
+// ============================================================
 // ANIMATIONS
 // ============================================================
 
@@ -166,7 +173,25 @@ const domains = [
     title: "Embedded Systems & IoT",
     status: "Open",
     desc: "Architect smart solutions using ESP32, Arduino, sensors and connected technologies.",
-    image: "/internship/embedded.jpg",
+    image: "/internship/embedded-system.jfif",
+  },
+  {
+    title: "Internet of Things Intern",
+    status: "Open",
+    desc: "Build connected applications using ESP32, sensors, cloud platforms, IoT dashboards and wireless communication.",
+    image: "/internship/iot4.jfif",
+  },
+  {
+    title: "Mechatronics Intern",
+    status: "Open",
+    desc: "Work across mechanical systems, electronics, sensors and embedded control to develop integrated solutions.",
+    image: "/internship/mechatronics4.jfif",
+  },
+  {
+    title: "Research & Development",
+    status: "Open",
+    desc: "Experiment with emerging technologies and develop innovative STEM solutions.",
+    image: "/internship/rnd.jpg",
   },
   {
     title: "Mechanical CAD",
@@ -181,12 +206,6 @@ const domains = [
     image: "/internship/drones.jpg",
   },
   {
-    title: "Research & Development",
-    status: "Open",
-    desc: "Experiment with emerging technologies and develop innovative STEM solutions.",
-    image: "/internship/rnd.jpg",
-  },
-  {
     title: "Founders' Office",
     status: "Open",
     desc: "Contribute to business development, strategic initiatives and operations.",
@@ -197,18 +216,6 @@ const domains = [
     status: "Open",
     desc: "Explore growth marketing, brand development, campaigns and content strategy.",
     image: "/internship/digital-marketing.jpg",
-  },
-  {
-    title: "Mechatronics Intern",
-    status: "Open",
-    desc: "Work across mechanical systems, electronics, sensors and embedded control to develop integrated solutions.",
-    image: "/internship/mechatronics3",
-  },
-  {
-    title: "Internet of Things Intern",
-    status: "Open",
-    desc: "Build connected applications using ESP32, sensors, cloud platforms, IoT dashboards and wireless communication.",
-    image: "/internship/embedded.jpg",
   },
 ];
 
@@ -296,7 +303,8 @@ function SectionHeading({
       </p>
 
       <h2
-        className={`text-2xl md:text-2xl font-bold tracking-tight ${
+        style={{ fontSize: `${SECTION_TITLE_SIZE_PX}px` }}
+        className={`font-bold tracking-tight leading-tight ${
           light ? "text-white" : "text-[#1c1530]"
         }`}
       >
@@ -432,38 +440,24 @@ export default function InternshipPage() {
       className={`${bricolage.className} bg-white text-[#1c1530] overflow-x-hidden`}
     >
       {/* ================================================== */}
-      {/* HERO SECTION */}
+      {/* HERO SECTION - DARK */}
       {/* ================================================== */}
 
-      <section className="relative pt-28 md:pt-32 pb-16 md:pb-20 px-6 overflow-hidden bg-[#faf9fd]">
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-purple-200/30 blur-[110px] pointer-events-none" />
+      <section className="relative pt-28 md:pt-32 pb-16 md:pb-20 px-6 overflow-hidden bg-[#0c0815] text-white">
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-purple-700/20 blur-[110px] pointer-events-none" />
 
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-purple-100/50 blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-purple-900/30 blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          {/* HERO EYEBROW - FIRST ON MOBILE */}
-
           <motion.p
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             custom={0}
-            className="text-[#5921c7] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-5"
+            className="text-[#a77bff] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-5"
           >
             CAREERS START WITH CURIOSITY
           </motion.p>
-
-          {/* 
-            MOBILE ORDER:
-            1. EYEBROW
-            2. HERO HEADING
-            3. IMAGE COLLAGE
-            4. HERO DESCRIPTION AND BUTTONS
-
-            DESKTOP:
-            LEFT COLUMN  = HEADING + DESCRIPTION
-            RIGHT COLUMN = IMAGE COLLAGE
-          */}
 
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-[auto_auto] gap-8 lg:gap-x-10 lg:gap-y-0 items-center">
             {/* HERO HEADING */}
@@ -477,12 +471,12 @@ export default function InternshipPage() {
               <motion.h1
                 variants={fadeUp}
                 custom={1}
-                className="text-3xl sm:text-4xl lg:text-[30px] font-extrabold leading-[1.12] tracking-tight text-[#21163b]"
+                className="text-3xl sm:text-4xl lg:text-[30px] font-extrabold leading-[1.12] tracking-tight text-white"
               >
                 Don&apos;t Just Learn. Enhance Your Skills
                 <br />
 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5921c7] to-[#a477ff]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8c52ff] to-[#c4a5ff]">
                   Build the Future.
                 </span>
               </motion.h1>
@@ -502,7 +496,7 @@ export default function InternshipPage() {
               transition={{ duration: 0.9, delay: 0.2 }}
               className="relative mx-auto w-full max-w-[600px] lg:col-start-2 lg:row-start-1 lg:row-span-2"
             >
-              <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-purple-200/70 via-purple-100/30 to-transparent blur-2xl pointer-events-none" />
+              <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-purple-700/30 via-purple-900/10 to-transparent blur-2xl pointer-events-none" />
 
               <div className="relative w-full">
                 <div className="grid grid-cols-12 grid-rows-2 gap-2.5 sm:gap-3 h-[250px] sm:h-[420px] lg:h-[480px]">
@@ -525,7 +519,7 @@ export default function InternshipPage() {
                           repeat: Infinity,
                           ease: "easeInOut",
                         }}
-                        className={`relative min-w-0 min-h-0 overflow-hidden rounded-2xl border border-purple-100 shadow-xl shadow-purple-900/10 bg-purple-50 ${positions[i]}`}
+                        className={`relative min-w-0 min-h-0 overflow-hidden rounded-2xl border border-white/10 shadow-xl shadow-black/20 bg-[#171121] ${positions[i]}`}
                       >
                         <Image
                           src={image.src}
@@ -553,7 +547,7 @@ export default function InternshipPage() {
               <motion.p
                 variants={fadeUp}
                 custom={3}
-                className="text-gray-900 text-sm md:text-base leading-relaxed"
+                className="text-gray-200 text-sm md:text-base leading-relaxed"
               >
                 Join Adroiit Technovations to gain hands-on experience in
                 cutting-edge technologies, real-world projects and
@@ -565,7 +559,7 @@ export default function InternshipPage() {
               <motion.p
                 variants={fadeUp}
                 custom={4}
-                className="mt-4 text-gray-700 text-[15px] leading-relaxed"
+                className="mt-4 text-gray-300 text-[15px] leading-relaxed"
               >
                 Whether you&apos;re passionate about engineering,
                 innovation or business strategy, we provide a platform to
@@ -582,7 +576,7 @@ export default function InternshipPage() {
                 <button
                   type="button"
                   onClick={scrollToDomains}
-                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#5921c7] text-white text-sm font-bold hover:bg-[#4515a8] transition-all shadow-lg shadow-purple-900/20"
+                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#5921c7] text-white text-sm font-bold hover:bg-[#713be0] transition-all shadow-lg shadow-purple-900/30"
                 >
                   Explore Domains
                   <ArrowRight size={16} />
@@ -590,7 +584,7 @@ export default function InternshipPage() {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-purple-200 text-[#5921c7] text-sm font-bold hover:bg-purple-50 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-white/20 text-white text-sm font-bold hover:bg-white/5 transition-all"
                 >
                   Enquire Now
                   <ArrowUpRight size={16} />
@@ -602,20 +596,20 @@ export default function InternshipPage() {
               <motion.div
                 variants={fadeUp}
                 custom={6}
-                className="hidden sm:flex flex-wrap gap-x-5 gap-y-3 mt-9 pt-7 border-t border-gray-200"
+                className="hidden sm:flex flex-wrap gap-x-5 gap-y-3 mt-9 pt-7 border-t border-white/10"
               >
-                <div className="flex items-center gap-2 text-gray-700 text-xs sm:text-sm font-medium">
-                  <CheckCircle2 size={18} className="text-[#8c52ff]" />
+                <div className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm font-medium">
+                  <CheckCircle2 size={18} className="text-[#a77bff]" />
                   Practical Learning
                 </div>
 
-                <div className="flex items-center gap-2 text-gray-700 text-xs sm:text-sm font-medium">
-                  <CheckCircle2 size={18} className="text-[#8c52ff]" />
+                <div className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm font-medium">
+                  <CheckCircle2 size={18} className="text-[#a77bff]" />
                   Real-world Projects
                 </div>
 
-                <div className="flex items-center gap-2 text-gray-700 text-xs sm:text-sm font-medium">
-                  <CheckCircle2 size={18} className="text-[#8c52ff]" />
+                <div className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm font-medium">
+                  <CheckCircle2 size={18} className="text-[#a77bff]" />
                   Expert Mentorship
                 </div>
               </motion.div>
@@ -625,168 +619,8 @@ export default function InternshipPage() {
       </section>
 
       {/* ================================================== */}
-      {/* INTERNSHIP DOMAINS */}
-      {/* ================================================== */}
-
-      <section
-        id="specialized-domains"
-        className="relative py-16 md:py-8 px-6 bg-[#0c0815] text-white scroll-mt-20 overflow-hidden"
-      >
-        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-700/10 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-700/10 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="relative z-10 max-w-[1300px] mx-auto">
-          <SectionHeading
-            eyebrow="Find Your Direction"
-            title="Explore Internship Domains"
-            description="Choose an area that matches your interests, discover new possibilities and work towards building meaningful solutions."
-            light
-          />
-
-          {/* FOUR-COLUMN DOMAIN LAYOUT */}
-
-          <div className="flex flex-wrap justify-center gap-5">
-            {sortedDomains.map((d, i) => (
-              <motion.div
-                key={d.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05, duration: 0.45 }}
-                whileHover={{ y: -4 }}
-                className="w-full max-w-[340px] sm:w-[calc(50%-10px)] sm:max-w-[290px] lg:w-[calc(25%-15px)] group"
-              >
-                <div className="h-full rounded-2xl overflow-hidden border border-white/10 bg-[#171121] hover:border-purple-500/60 transition-all duration-300 flex flex-col">
-                  {/* DOMAIN IMAGE */}
-
-                  <div className="relative h-36 sm:h-32 overflow-hidden">
-                    <Image
-                      src={d.image}
-                      alt={d.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className={`object-cover transition-transform duration-700 group-hover:scale-110 ${
-                        d.status === "Closed" ? "grayscale-[30%]" : ""
-                      }`}
-                    />
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#171121]/80 via-transparent to-black/10" />
-                  </div>
-
-                  {/* DOMAIN DETAILS */}
-
-                  <div className="p-5 sm:p-4 flex flex-col flex-grow">
-                    <h3 className="text-[15px] sm:text-[14px] font-bold text-white group-hover:text-[#b18aff] transition-colors min-h-[38px] sm:min-h-[36px]">
-                      {d.title}
-                    </h3>
-
-                    {/* OPPORTUNITY STATUS UNDER TITLE */}
-
-                    <div className="-mt-2">
-                      <span
-                        className={`inline-flex items-center px-2.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider ${
-                          d.status === "Open"
-                            ? "bg-green-500/15 text-green-300 border border-green-400/30"
-                            : "bg-red-500/15 text-red-300 border border-red-400/30"
-                        }`}
-                      >
-                        {d.status === "Open"
-                          ? "Applications Open"
-                          : "Applications Closed"}
-                      </span>
-                    </div>
-
-                    <p className="mt-3 text-[14px] sm:text-[13px] text-gray-200 leading-relaxed flex-grow">
-                      {d.desc}
-                    </p>
-
-                    <button
-                      type="button"
-                      disabled={d.status === "Closed"}
-                      onClick={() => handleApply(d.title)}
-                      className={`mt-4 w-full py-3 sm:py-2.5 rounded-lg text-[11px] sm:text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
-                        d.status === "Open"
-                          ? "bg-[#5921c7] hover:bg-[#713be0] text-white"
-                          : "bg-white/5 text-gray-500 cursor-not-allowed"
-                      }`}
-                    >
-                      {d.status === "Open"
-                        ? "Apply for Internship"
-                        : "Applications Closed"}
-
-                      {d.status === "Open" && (
-                        <ArrowUpRight size={13} />
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <p className="text-center text-gray-300 text-sm mt-9">
-            Interested in a domain not listed here? Contact our team to
-            explore potential opportunities.
-          </p>
-        </div>
-      </section>
-
-      {/* ================================================== */}
-      {/* WHY ADROIIT */}
-      {/* ================================================== */}
-
-      <section className="py-16 md:py-8 px-6 bg-[#faf9fd]">
-        <div className="max-w-5xl mx-auto">
-          <SectionHeading
-            eyebrow="The Adroiit Experience"
-            title="More Than Just an Internship"
-            description="We believe that meaningful learning happens when knowledge meets experimentation. Our approach helps you develop the confidence and capabilities to turn ideas into solutions."
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {benefits.map((item, i) => {
-              const Icon = item.icon;
-
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  whileHover={{ y: -4 }}
-                  className="relative p-6 rounded-2xl bg-white border border-gray-100 hover:border-purple-200 shadow-sm hover:shadow-xl hover:shadow-purple-900/5 transition-all duration-300"
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="w-11 h-11 rounded-xl bg-purple-50 flex items-center justify-center">
-                      <Icon
-                        size={21}
-                        className="text-[#5921c7]"
-                      />
-                    </div>
-
-                    <span className="text-2xl font-bold text-purple-100">
-                      0{i + 1}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-3 text-sm font-bold text-[#5921c7]">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-1 text-[13px] text-gray-700 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================== */}
-      {/* LEARNING JOURNEY */}
+      {/* LEARNING JOURNEY - LIGHT */}
+      {/* MOVED DIRECTLY BELOW HERO */}
       {/* ================================================== */}
 
       <section className="py-16 md:py-8 px-6 bg-[#f7f0fd]">
@@ -860,7 +694,164 @@ export default function InternshipPage() {
       </section>
 
       {/* ================================================== */}
-      {/* TESTIMONIALS */}
+      {/* INTERNSHIP DOMAINS - DARK */}
+      {/* ================================================== */}
+
+      <section
+        id="specialized-domains"
+        className="relative py-16 md:py-8 px-6 bg-[#0c0815] text-white scroll-mt-20 overflow-hidden"
+      >
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-700/10 blur-[120px] rounded-full pointer-events-none" />
+
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-700/10 blur-[120px] rounded-full pointer-events-none" />
+
+        <div className="relative z-10 max-w-[1300px] mx-auto">
+          <SectionHeading
+            eyebrow="Find Your Direction"
+            title="Explore Internship Domains"
+            description="Choose an area that matches your interests, discover new possibilities and work towards building meaningful solutions."
+            light
+          />
+
+          <div className="flex flex-wrap justify-center gap-5">
+            {sortedDomains.map((d, i) => (
+              <motion.div
+                key={d.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05, duration: 0.45 }}
+                whileHover={{ y: -4 }}
+                className="w-full max-w-[340px] sm:w-[calc(50%-10px)] sm:max-w-[290px] lg:w-[calc(25%-15px)] group"
+              >
+                <div className="h-full rounded-2xl overflow-hidden border border-white/10 bg-[#171121] hover:border-purple-500/60 transition-all duration-300 flex flex-col">
+                  {/* DOMAIN IMAGE */}
+
+                  <div className="relative h-36 sm:h-32 overflow-hidden">
+                    <Image
+                      src={d.image}
+                      alt={d.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className={`object-cover transition-transform duration-700 group-hover:scale-110 ${
+                        d.status === "Closed" ? "grayscale-[30%]" : ""
+                      }`}
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#171121]/80 via-transparent to-black/10" />
+                  </div>
+
+                  {/* DOMAIN DETAILS */}
+
+                  <div className="p-5 sm:p-4 flex flex-col flex-grow">
+                    <h3 className="text-[15px] sm:text-[14px] font-bold text-white group-hover:text-[#b18aff] transition-colors min-h-[38px] sm:min-h-[36px]">
+                      {d.title}
+                    </h3>
+
+                    <div className="-mt-2">
+                      <span
+                        className={`inline-flex items-center px-2.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider ${
+                          d.status === "Open"
+                            ? "bg-green-500/15 text-green-300 border border-green-400/30"
+                            : "bg-red-500/15 text-red-300 border border-red-400/30"
+                        }`}
+                      >
+                        {d.status === "Open"
+                          ? "Applications Open"
+                          : "Applications Closed"}
+                      </span>
+                    </div>
+
+                    <p className="mt-3 text-[14px] sm:text-[13px] text-gray-200 leading-relaxed flex-grow">
+                      {d.desc}
+                    </p>
+
+                    <button
+                      type="button"
+                      disabled={d.status === "Closed"}
+                      onClick={() => handleApply(d.title)}
+                      className={`mt-4 w-full py-3 sm:py-2.5 rounded-lg text-[11px] sm:text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
+                        d.status === "Open"
+                          ? "bg-[#5921c7] hover:bg-[#713be0] text-white"
+                          : "bg-white/5 text-gray-500 cursor-not-allowed"
+                      }`}
+                    >
+                      {d.status === "Open"
+                        ? "Apply Now"
+                        : "Applications Closed"}
+
+                      {d.status === "Open" && (
+                        <ArrowUpRight size={13} />
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="text-center text-gray-300 text-sm mt-9">
+            Interested in a domain not listed here? Contact our team to
+            explore potential opportunities.
+          </p>
+        </div>
+      </section>
+
+      {/* ================================================== */}
+      {/* WHY ADROIIT - LIGHT */}
+      {/* ================================================== */}
+
+      <section className="py-16 md:py-8 px-6 bg-[#faf9fd]">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading
+            eyebrow="The Adroiit Experience"
+            title="More Than Just an Internship"
+            description="We believe that meaningful learning happens when knowledge meets experimentation. Our approach helps you develop the confidence and capabilities to turn ideas into solutions."
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {benefits.map((item, i) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  whileHover={{ y: -4 }}
+                  className="relative p-6 rounded-2xl bg-white border border-gray-100 hover:border-purple-200 shadow-sm hover:shadow-xl hover:shadow-purple-900/5 transition-all duration-300"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="w-11 h-11 rounded-xl bg-purple-50 flex items-center justify-center">
+                      <Icon
+                        size={21}
+                        className="text-[#5921c7]"
+                      />
+                    </div>
+
+                    <span className="text-2xl font-bold text-purple-100">
+                      0{i + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-3 text-sm font-bold text-[#5921c7]">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-1 text-[13px] text-gray-700 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================== */}
+      {/* TESTIMONIALS - DARK */}
       {/* ================================================== */}
 
       <section className="py-16 md:py-8 px-6 bg-[#0c0815] text-white overflow-hidden">
@@ -955,7 +946,7 @@ export default function InternshipPage() {
       </section>
 
       {/* ================================================== */}
-      {/* LIFE AT ADROIIT */}
+      {/* LIFE AT ADROIIT - LIGHT */}
       {/* ================================================== */}
 
       <section className="py-16 md:py-8 bg-[#faf9fd] overflow-hidden">
@@ -1037,7 +1028,7 @@ export default function InternshipPage() {
       </section>
 
       {/* ================================================== */}
-      {/* FAQ */}
+      {/* FAQ - DARK */}
       {/* ================================================== */}
 
       <section className="py-16 md:py-8 px-6 bg-[#0c0815] text-white">
@@ -1074,7 +1065,7 @@ export default function InternshipPage() {
       </section>
 
       {/* ================================================== */}
-      {/* FINAL CTA - REGULAR SECTION */}
+      {/* FINAL CTA - LIGHT */}
       {/* ================================================== */}
 
       <section className="relative py-16 md:py-8 px-6 bg-[#faf9fd] overflow-hidden">

@@ -61,13 +61,13 @@ export default function Navbar() {
           flex
           items-center
           justify-between
-          bg-[#0a0a0a]
+          bg-gradient-to-r from-[#30106f] via-[#5921c7] to-[#30106f] 
           text-white
           px-3
           rounded-full
           shadow-2xl
           border
-          border-white/10
+          border-white/20
           w-full
           max-w-[1350px]
           relative
@@ -110,11 +110,11 @@ export default function Navbar() {
               px-4
               py-1
               text-sm
-              text-gray-300
+              text-white
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/5
+              hover:bg-white/15
               whitespace-nowrap
             "
           >
@@ -128,11 +128,11 @@ export default function Navbar() {
               px-4
               py-1
               text-sm
-              text-gray-300
+              text-white
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/5
+              hover:bg-white/15
               whitespace-nowrap
             "
           >
@@ -154,11 +154,11 @@ export default function Navbar() {
                 px-4
                 py-1
                 text-sm
-                text-gray-300
+                text-white
                 hover:text-white
                 transition-colors
                 rounded-full
-                hover:bg-white/5
+                hover:bg-white/15
                 whitespace-nowrap
               "
             >
@@ -177,16 +177,17 @@ export default function Navbar() {
                 absolute
                 left-1/2
                 -translate-x-1/2
-                bg-[#111111]
+                bg-gradient-to-br from-[#5921c7] via-[#42188f] to-[#30106f]
                 border
-                border-white/10
+                border-[#c5a5ff]/35
                 rounded-2xl
                 p-5
                 w-[360px]
                 space-y-4
-                shadow-2xl
+                shadow-[0_20px_55px_rgba(35,8,85,0.45)]
                 transition-all
                 duration-200
+                overflow-hidden
 
                 ${
                   open
@@ -198,163 +199,169 @@ export default function Navbar() {
                 top: `${navHeight + 10}px`,
               }}
             >
-              {/* Schools */}
-              <div>
-                <p className="text-[10px] text-[#8c52ff] uppercase tracking-widest mb-2 font-bold">
-                  Schools
-                </p>
+              {/* Dropdown Background Highlights */}
+              <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#a77aff]/25 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-[#8c52ff]/25 blur-3xl" />
 
-                <ul className="space-y-1 text-sm text-gray-300">
-                  <li>
-                    <Link
-                      href="/services/steam-til"
-                      className="
-                        hover:text-[#8c52ff]
-                        transition-colors
-                        block
-                        py-0.5
-                      "
-                    >
-                      STEAM Tinkering & Innovation Lab (TIL)
-                    </Link>
-                  </li>
+              <div className="relative z-10 space-y-4">
+                {/* Schools */}
+                <div>
+                  <p className="text-[10px] text-[#d9c8ff] uppercase tracking-widest mb-2 font-bold">
+                    Schools
+                  </p>
 
-                  <li>
-                    <Link
-                      href="/services/csl"
-                      className="
-                        hover:text-[#8c52ff]
-                        transition-colors
-                        block
-                        py-0.5
-                      "
-                    >
-                      Composite Skill Lab (CSL)
-                    </Link>
-                  </li>
+                  <ul className="space-y-1 text-sm text-purple-100/90">
+                    <li>
+                      <Link
+                        href="/services/steam-til"
+                        className="
+                          hover:text-white
+                          transition-colors
+                          block
+                          py-0.5
+                        "
+                      >
+                        STEAM Tinkering & Innovation Lab (TIL)
+                      </Link>
+                    </li>
 
-                  <li>
-                    <Link
-                      href="/services/steam-workshops-bootcamps"
-                      className="
-                        hover:text-[#8c52ff]
-                        transition-colors
-                        block
-                        py-0.5
-                      "
-                    >
-                      STEAM Workshops & Bootcamps
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                    <li>
+                      <Link
+                        href="/services/csl"
+                        className="
+                          hover:text-white
+                          transition-colors
+                          block
+                          py-0.5
+                        "
+                      >
+                        Composite Skill Lab (CSL)
+                      </Link>
+                    </li>
 
-              <div className="h-px bg-white/5" />
+                    <li>
+                      <Link
+                        href="/services/steam-workshops-bootcamps"
+                        className="
+                          hover:text-white
+                          transition-colors
+                          block
+                          py-0.5
+                        "
+                      >
+                        STEAM Workshops & Bootcamps
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Colleges */}
-              <div>
-                <p className="text-[10px] text-[#8c52ff] uppercase tracking-widest mb-2 font-bold">
-                  Colleges
-                </p>
+                <div className="h-px bg-white/15" />
 
-                <ul className="space-y-1 text-sm text-gray-300">
-                  <li>
-                    <Link
-                      href="/services/coe"
-                      className="
-                        hover:text-[#8c52ff]
-                        transition-colors
-                        block
-                        py-0.5
-                        whitespace-nowrap
-                      "
-                    >
-                      Center of Excellence (CoE)
-                    </Link>
-                  </li>
+                {/* Colleges */}
+                <div>
+                  <p className="text-[10px] text-[#d9c8ff] uppercase tracking-widest mb-2 font-bold">
+                    Colleges
+                  </p>
 
-                  <li>
-                    <Link
-                      href="/services/value-added-courses"
-                      className="
-                        hover:text-[#8c52ff]
-                        transition-colors
-                        block
-                        py-0.5
-                      "
-                    >
-                      Value Added Courses
-                    </Link>
-                  </li>
+                  <ul className="space-y-1 text-sm text-purple-100/90">
+                    <li>
+                      <Link
+                        href="/services/coe"
+                        className="
+                          hover:text-white
+                          transition-colors
+                          block
+                          py-0.5
+                          whitespace-nowrap
+                        "
+                      >
+                        Center of Excellence (CoE)
+                      </Link>
+                    </li>
 
-                  <li>
-                    <Link
-                      href="/services/technical-workshop"
-                      className="
-                        hover:text-[#8c52ff]
-                        transition-colors
-                        block
-                        py-0.5
-                      "
-                    >
-                      Technical Workshops
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                    <li>
+                      <Link
+                        href="/services/value-added-courses"
+                        className="
+                          hover:text-white
+                          transition-colors
+                          block
+                          py-0.5
+                        "
+                      >
+                        Value Added Courses
+                      </Link>
+                    </li>
 
-              <div className="h-px bg-white/5" />
+                    <li>
+                      <Link
+                        href="/services/technical-workshop"
+                        className="
+                          hover:text-white
+                          transition-colors
+                          block
+                          py-0.5
+                        "
+                      >
+                        Technical Workshops
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Engineering */}
-              <div>
-                <p className="text-[10px] text-[#8c52ff] uppercase tracking-widest mb-2 font-bold">
-                  Engineering
-                </p>
+                <div className="h-px bg-white/15" />
 
-                <ul className="space-y-1 text-sm text-gray-300">
-                  <li>
-                    <Link
-                      href="/services/custom-machinery-fabrication"
-                      className="
-                        hover:text-[#8c52ff]
-                        transition-colors
-                        block
-                        py-0.5
-                      "
-                    >
-                      SPM Manfucturing
-                    </Link>
-                  </li>
+                {/* Engineering */}
+                <div>
+                  <p className="text-[10px] text-[#d9c8ff] uppercase tracking-widest mb-2 font-bold">
+                    Engineering
+                  </p>
 
-                  <li>
-                    <Link
-                      href="/services/3d-printing"
-                      className="
-                        hover:text-[#8c52ff]
-                        font-medium
-                        transition-colors
-                        block
-                        py-0.5
-                      "
-                    >
-                      FDM 3D Printing 
-                    </Link>
-                  </li>
+                  <ul className="space-y-1 text-sm text-purple-100/90">
+                    <li>
+                      <Link
+                        href="/services/custom-machinery-fabrication"
+                        className="
+                          hover:text-white
+                          transition-colors
+                          block
+                          py-0.5
+                        "
+                      >
+                        SPM Manfucturing
+                      </Link>
+                    </li>
 
-                  <li>
-                    <Link
-                      href="/services/mechanical-cad"
-                      className="
-                        hover:text-[#8c52ff]
-                        transition-colors
-                        block
-                        py-0.5
-                      "
-                    >
-                      Mechanical CAD
-                    </Link>
-                  </li>
-                </ul>
+                    <li>
+                      <Link
+                        href="/services/3d-printing"
+                        className="
+                          hover:text-white
+                          font-medium
+                          transition-colors
+                          block
+                          py-0.5
+                        "
+                      >
+                        FDM 3D Printing
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="/services/mechanical-cad"
+                        className="
+                          hover:text-white
+                          transition-colors
+                          block
+                          py-0.5
+                        "
+                      >
+                        Mechanical CAD
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -366,11 +373,11 @@ export default function Navbar() {
               px-4
               py-1
               text-sm
-              text-gray-300
+              text-white
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/5
+              hover:bg-white/15
               whitespace-nowrap
             "
           >
@@ -384,11 +391,11 @@ export default function Navbar() {
               px-4
               py-1
               text-sm
-              text-gray-300
+              text-white
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/5
+              hover:bg-white/15
               whitespace-nowrap
             "
           >
@@ -402,11 +409,11 @@ export default function Navbar() {
               px-4
               py-1
               text-sm
-              text-gray-300
+              text-white
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/5
+              hover:bg-white/15
               whitespace-nowrap
             "
           >
@@ -427,9 +434,9 @@ export default function Navbar() {
               text-sm
               font-semibold
               bg-white
-              text-black
+              text-[#5921c7]
               rounded-full
-              hover:bg-[#8c52ff]
+              hover:bg-[#30106f]
               hover:text-white
               transition-all
               duration-300
@@ -452,7 +459,7 @@ export default function Navbar() {
             className="
               md:hidden
               p-2
-              text-gray-300
+              text-white/85
               hover:text-white
               transition-colors
             "
@@ -468,18 +475,19 @@ export default function Navbar() {
             top-[75px]
             left-0
             right-0
-            bg-[#0a0a0a]
+            bg-gradient-to-br from-[#30106f] via-[#5921c7] to-[#30106f]
             border
-            border-white/10
+            border-[#c5a5ff]/35
             rounded-3xl
             p-6
-            shadow-2xl
+            shadow-[0_20px_55px_rgba(35,8,85,0.45)]
             transition-all
             duration-300
             md:hidden
             flex
             flex-col
             gap-6
+            overflow-hidden
 
             ${
               mobileMenuOpen
@@ -488,14 +496,17 @@ export default function Navbar() {
             }
           `}
         >
-          <div className="flex flex-col gap-4 text-center">
+          <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#a77aff]/25 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 -left-10 h-36 w-36 rounded-full bg-[#8c52ff]/25 blur-3xl" />
+
+          <div className="relative z-10 flex flex-col gap-2 text-center">
             {/* Home */}
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
               className="
                 text-lg
-                text-gray-300
+                text-white
                 hover:text-white
               "
             >
@@ -508,7 +519,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="
                 text-lg
-                text-gray-300
+                text-white
                 hover:text-white
               "
             >
@@ -521,10 +532,9 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="
                 text-lg
-                text-gray-300
+                text-white
                 hover:text-white
-                font-semibold
-                text-[#a855f7]
+               
               "
             >
               Solutions
@@ -536,7 +546,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="
                 text-lg
-                text-gray-300
+                text-white
                 hover:text-white
               "
             >
@@ -549,7 +559,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="
                 text-lg
-                text-gray-300
+                text-white
                 hover:text-white
               "
             >
@@ -562,7 +572,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="
                 text-lg
-                text-gray-300
+                text-white
                 hover:text-white
               "
             >
@@ -578,10 +588,10 @@ export default function Navbar() {
                 px-6
                 py-3
                 bg-white
-                text-black
+                text-[#5921c7]
                 font-bold
                 rounded-full
-                hover:bg-[#8c52ff]
+                hover:bg-[#30106f]
                 hover:text-white
                 transition-all
                 duration-300

@@ -66,22 +66,37 @@ export default function Gallery() {
 
   return (
     <section
-      className={`${bricolage.className} relative isolate overflow-hidden bg-[#08060d] py-8 text-white sm:py-20 lg:py-10`}
+      className={`${bricolage.className} relative isolate overflow-hidden py-8 text-white sm:py-20 lg:py-10`}
+      style={{
+        backgroundImage:
+          "linear-gradient(110deg, #30106f 0%, #42158f 24%, #5921c7 50%, #42158f 76%, #30106f 100%)",
+        backgroundColor: "#30106f",
+      }}
     >
       {/* ================================================== */}
       {/* BACKGROUND EFFECTS */}
       {/* ================================================== */}
 
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-[#5921c7]/20 blur-[150px]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {/* LEFT PURPLE GLOW */}
 
-        <div className="absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/15 blur-[150px]" />
+        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#8c52ff]/12 blur-[130px]" />
+
+        {/* RIGHT DEEP PURPLE GLOW */}
+
+        <div className="absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#18063e]/30 blur-[150px]" />
+
+        {/* CENTRAL SOFT GLOW */}
+
+        <div className="absolute left-1/2 top-1/2 h-[400px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8c52ff]/10 blur-[140px]" />
+
+        {/* SUBTLE GRID TEXTURE */}
 
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
-              "linear-gradient(to right, #8c52ff 1px, transparent 1px), linear-gradient(to bottom, #8c52ff 1px, transparent 1px)",
+              "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
             backgroundSize: "65px 65px",
             maskImage:
               "radial-gradient(ellipse at center, black 10%, transparent 80%)",
@@ -92,7 +107,6 @@ export default function Gallery() {
       </div>
 
       <div className="relative z-10">
-
         {/* ================================================== */}
         {/* SECTION HEADER */}
         {/* ================================================== */}
@@ -108,9 +122,8 @@ export default function Gallery() {
             Moments That Inspire
           </p>
 
-          <h2 className="text-2xl font-extrabold leading-[1.1] tracking-tight text-2xl lg:text-3xl">
-            
-            <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff] bg-clip-text text-transparent">
+          <h2 className="text-2xl font-extrabold leading-[1.1] tracking-tight lg:text-3xl">
+            <span className="bg-gradient-to-r from-[#ffffff] via-[#ffffff] to-[#ffffff] bg-clip-text text-transparent">
               Glimpses of our Journey.
             </span>
           </h2>
@@ -133,12 +146,11 @@ export default function Gallery() {
           onTouchEnd={startScrolling}
           onTouchCancel={startScrolling}
         >
-
           {/* EDGE FADES */}
 
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#08060d] to-transparent sm:w-24 lg:w-36" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#30106f] to-transparent sm:w-24 lg:w-36" />
 
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#08060d] to-transparent sm:w-24 lg:w-36" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#30106f] to-transparent sm:w-24 lg:w-36" />
 
           {/* SCROLLING IMAGES */}
 

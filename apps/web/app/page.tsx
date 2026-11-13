@@ -5,6 +5,10 @@ import Footer from "@/sections/Footer";
 import Clients from "@/sections/Clients";
 import Testimonials from "@/sections/Testimonials";
 import PartnerWithUs from "@/sections/PartnerWithUs";
+import AICPECFIncubation from "@/sections/AICPECFIncubation";
+import Domains from "@/sections/Domains";
+import WhyAdroiit from "@/sections/WhyAdroiit"
+import WhatWeDo from "@/sections/WhatWeDo"
 
 export default function Home() {
   return (
@@ -12,6 +16,7 @@ export default function Home() {
       {/* 1. Main page sections */}
       <div className="w-full">
         <Hero />
+        <WhatWeDo />
         <Services />
         <Gallery />
         <Clients />

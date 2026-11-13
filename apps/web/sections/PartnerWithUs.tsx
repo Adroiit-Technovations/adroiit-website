@@ -94,7 +94,7 @@ export default function PartnerWithUs() {
         >
           <Link
             href="/contact"
-            className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#8c52ff] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(89,33,199,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#5921c7] hover:shadow-[0_14px_30px_rgba(89,33,199,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8c52ff] focus-visible:ring-offset-4 sm:px-7 sm:py-4 sm:text-base"
+            className="bg-gradient-to-r from-[#481f9b] to-[#5921c7] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
           >
             Let's Collaborate
 

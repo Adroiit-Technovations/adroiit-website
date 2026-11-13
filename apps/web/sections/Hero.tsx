@@ -65,39 +65,20 @@ export default function ModernHero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#05030A] text-white pt-35 pb-16 md:pt-35 md:pb-24">
-      {/* Background Glows & Grid Patterns */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(89,33,199,0.25),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(140,82,255,0.15),transparent_40%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+    <section className="relative overflow-hidden bg-[#faf9fd] text-[#21163b] pt-35 pb-16 md:pt-40 md:pb-24">
+      {/* Background Glows & Grid Patterns Removed */}
 
       <div className="max-w-[1300px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* LEFT CONTENT COLUMN */}
           <div className="lg:col-span-6 flex flex-col items-start justify-between">
             <div className="w-full flex flex-col items-start">
-              {/* Logo */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="mb-6 order-1 lg:order-none"
-              >
-                <Image
-                  src="/logo2.png"
-                  alt="Adroiit Technovations"
-                  width={180}
-                  height={90}
-                  priority
-                  className="block h-auto w-[115px] object-contain sm:w-[130px] lg:w-[180px]"
-                />
-              </motion.div>
-
               {/* Eyebrow Line */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.05 }}
-                className={`${bricolage.className} mb-3 order-2 lg:order-none text-xs text-[12px] font-semibold uppercase tracking-[0.2em] text-gray-200`}
+                className={`${bricolage.className} mb-3 order-2 lg:order-none text-xs text-[13px] font-semibold uppercase tracking-[0.2em] text-gray-700`}
               >
                 EDUCATION . ENGINEERING . INNOVATION
               </motion.p>
@@ -110,7 +91,7 @@ export default function ModernHero() {
                 className={`${bricolage.className} order-2 lg:order-none text-2xl text-3xl lg:text-4xl font-extrabold leading-[1.1] tracking-tight`}
               >
                 Elevating{" "}
-                <span className="bg-gradient-to-r from-[#8c52ff] via-[#a87ffb] to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">
                   Education.
                 </span>
               </motion.h1>
@@ -119,16 +100,16 @@ export default function ModernHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className={`${bricolage.className} order-2 lg:order-none text-2xl text-3xl lg:text-4xl font-extrabold leading-[1.1] tracking-tight bg-gradient-to-r from-[#8c52ff] via-[#a87ffb] to-purple-400 bg-clip-text text-transparent`}
+                className={`${bricolage.className} order-2 lg:order-none text-2xl text-3xl lg:text-4xl font-extrabold leading-[1.1] tracking-tight bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent`}
               >
                 Enabling{" "}
-                <span className="bg-clip-text text-white">
+                <span className="bg-clip-text text-[#21163b]">
                   Innovation.
                 </span>
               </motion.h1>
 
               {/* Mobile Hero Image Slideshow */}
-              <div className="order-3 lg:hidden w-full my-6 relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-white/5 border border-purple-500/20 backdrop-blur-sm">
+              <div className="order-3 lg:hidden w-full my-6 relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl bg-white border border-purple-200 backdrop-blur-sm">
                 <AnimatePresence mode="popLayout">
                   <motion.div
                     key={currentIndex}
@@ -156,14 +137,13 @@ export default function ModernHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className={`${bricolage.className} order-4 lg:order-none mt-2 lg:mt-4 text-base text-[16px] text-white max-w-xl leading-relaxed`}
+                className={`${bricolage.className} order-4 lg:order-none mt-2 lg:mt-6 text-base text-[18px] text-gray-900 max-w-xl leading-relaxed`}
               >
                 Adroiit Technovations is redefining STEAM and technical
                 education through experiential, hands-on learning that goes
                 beyond traditional classroom boundaries. We empower young minds
-                to explore emerging technologies, develop practical skills and 
+                to explore emerging technologies, develop practical skills and
                 transform curiosity into creativity. 
-                
               </motion.p>
 
               {/* Desktop CTA Buttons */}
@@ -175,7 +155,7 @@ export default function ModernHero() {
               >
                 <Link
                   href="/services"
-                  className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
+                  className="bg-gradient-to-r from-[#481f9b] to-[#5921c7] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
                 >
                   Explore Solutions
                   <ArrowRight
@@ -186,7 +166,7 @@ export default function ModernHero() {
 
                 <Link
                   href="/contact"
-                  className="border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white text-center"
+                  className="border border-purple-200 bg-white hover:bg-purple-50 backdrop-blur-sm transition px-7 py-3.5 rounded-xl font-semibold text-sm text-[#5921c7] text-center"
                 >
                   Contact Us
                 </Link>
@@ -198,40 +178,40 @@ export default function ModernHero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="order-5 lg:order-none mt-10 lg:mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full items-center text-center lg:text-left lg:items-start"
+              className="order-5 lg:order-none mt-4 lg:mt-6 pt-8 border-t border-purple-100 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full items-center text-center lg:text-left lg:items-start"
             >
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-[#21163b]`}>
                   10+
                 </h4>
-                <p className="text-xs text-gray-300 mt-0.5">
+                <p className="text-xs text-gray-600 mt-0.5">
                   Sessions Conducted
                 </p>
               </div>
 
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-[#21163b]`}>
                   700+
                 </h4>
-                <p className="text-xs text-gray-300 mt-0.5">
+                <p className="text-xs text-gray-600 mt-0.5">
                   Students Empowered
                 </p>
               </div>
 
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-[#21163b]`}>
                   15+
                 </h4>
-                <p className="text-xs text-gray-300 mt-0.5">
+                <p className="text-xs text-gray-600 mt-0.5">
                   Projects Completed
                 </p>
               </div>
 
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-white`}>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-[#21163b]`}>
                   10+
                 </h4>
-                <p className="text-xs text-gray-300 mt-0.5">
+                <p className="text-xs text-gray-600 mt-0.5">
                   Domains Expertise
                 </p>
               </div>
@@ -242,11 +222,11 @@ export default function ModernHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="order-6 lg:hidden mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full"
+              className="order-6 lg:hidden mt-5 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full"
             >
               <Link
                 href="/services"
-                className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
+                className="bg-gradient-to-r from-[#481f9b] to-[#5921c7] hover:opacity-90 transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
               >
                 Explore Solutions
                 <ArrowRight
@@ -257,7 +237,7 @@ export default function ModernHero() {
 
               <Link
                 href="/contact"
-                className="border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition px-7 py-3.5 rounded-xl font-semibold text-sm text-white text-center"
+                className="border border-purple-200 bg-white hover:bg-purple-50 backdrop-blur-sm transition px-7 py-3.5 rounded-xl font-semibold text-sm text-[#5921c7] text-center"
               >
                 Contact Us
               </Link>
@@ -266,8 +246,7 @@ export default function ModernHero() {
 
           {/* DESKTOP VISUAL COLUMN */}
           <div className="hidden lg:flex lg:col-span-6 relative w-full flex-col justify-stretch h-full min-h-[500px]">
-            {/* Ambient Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#5921c7] to-[#8c52ff] rounded-full blur-3xl opacity-25 pointer-events-none" />
+            {/* Ambient Background Glow Removed */}
 
             {/* Asymmetric 4-Image Grid */}
             <div className="relative w-full grid grid-cols-12 gap-3.5 h-full">
@@ -284,7 +263,7 @@ export default function ModernHero() {
                     delay: 0,
                   },
                 }}
-                className="col-span-7 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+                className="col-span-7 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-200 hover:border-purple-400 bg-white group transition-colors duration-300"
               >
                 <Image
                   src={DESKTOP_HERO_IMAGES[0].src}
@@ -310,7 +289,7 @@ export default function ModernHero() {
                     delay: 0.5,
                   },
                 }}
-                className="col-span-5 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+                className="col-span-5 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-200 hover:border-purple-400 bg-white group transition-colors duration-300"
               >
                 <Image
                   src={DESKTOP_HERO_IMAGES[1].src}
@@ -334,7 +313,7 @@ export default function ModernHero() {
                     delay: 0.3,
                   },
                 }}
-                className="col-span-5 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+                className="col-span-5 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-200 hover:border-purple-400 bg-white group transition-colors duration-300"
               >
                 <Image
                   src={DESKTOP_HERO_IMAGES[2].src}
@@ -358,7 +337,7 @@ export default function ModernHero() {
                     delay: 0.7,
                   },
                 }}
-                className="col-span-7 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-500/20 hover:border-purple-500/50 bg-white/5 group transition-colors duration-300"
+                className="col-span-7 h-full min-h-[230px] relative rounded-2xl overflow-hidden shadow-xl border border-purple-200 hover:border-purple-400 bg-white group transition-colors duration-300"
               >
                 <Image
                   src={DESKTOP_HERO_IMAGES[3].src}

@@ -13,6 +13,7 @@ import {
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
+  display: "swap",
 });
 
 // ============================================================
@@ -177,20 +178,27 @@ export default function Testimonials() {
 
   return (
     <section
-      className={`${bricolage.className} relative isolate overflow-hidden bg-[#08060d] py-10 text-white sm:py-20 lg:py-10`}
+      className={`${bricolage.className} relative isolate overflow-hidden py-10 text-white sm:py-20 lg:py-10`}
+      style={{
+        backgroundImage:
+          "linear-gradient(110deg, #30106f 0%, #42158f 24%, #5921c7 50%, #42158f 76%, #30106f 100%)",
+        backgroundColor: "#30106f",
+      }}
     >
       {/* BACKGROUND EFFECTS */}
 
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-40 top-0 h-[350px] w-[350px] rounded-full bg-[#8c52ff]/[0.10] blur-[140px]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#8c52ff]/12 blur-[130px]" />
 
-        <div className="absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[#5921c7]/[0.12] blur-[150px]" />
+        <div className="absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#18063e]/30 blur-[150px]" />
+
+        <div className="absolute left-1/2 top-1/2 h-[400px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8c52ff]/10 blur-[140px]" />
 
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
-              "linear-gradient(to right, #8c52ff 1px, transparent 1px), linear-gradient(to bottom, #8c52ff 1px, transparent 1px)",
+              "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
             backgroundSize: "65px 65px",
             maskImage:
               "radial-gradient(ellipse at center, black 10%, transparent 80%)",
@@ -210,19 +218,19 @@ export default function Testimonials() {
           transition={{ duration: 0.7 }}
           className="mx-auto mb-6 max-w-3xl text-center sm:mb-8"
         >
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gray-200 sm:text-sm">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-purple-200 sm:text-sm">
             WHAT PEOPLE SAY ABOUT US
           </p>
 
           <h2 className="text-[24px] font-extrabold leading-[1.1] tracking-tight text-white sm:text-[30px]">
-            <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-purple-100 to-[#ffffff] bg-clip-text text-transparent">
               Every Experience Tells a Story
             </span>
           </h2>
 
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-[1.9] text-gray-300 sm:text-base">
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-[1.9] text-purple-100/90 sm:text-base">
             Discover what students, parents
-            and our partners say about their experience 
+            and our partners say about their experience
             with Adroiit Technovations.
           </p>
         </motion.div>
@@ -241,12 +249,12 @@ export default function Testimonials() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View Adroiit Technovations Google Business Profile"
-            className="group flex w-full flex-row items-center justify-center gap-3 rounded-2xl border border-white/[0.09] bg-white/[0.025] px-3 py-4 text-center transition-all duration-300 hover:border-[#8c52ff]/40 hover:bg-[#8c52ff]/[0.06] sm:gap-5 sm:px-5 sm:py-5"
+            className="group flex w-full flex-row items-center justify-center gap-3 rounded-2xl border border-white/15 bg-white/[0.08] px-3 py-4 text-center transition-all duration-300 hover:border-white/40 hover:bg-white/[0.13] sm:gap-5 sm:px-5 sm:py-5"
           >
-            {/* Centered Google branding and label */}
+            {/* GOOGLE BRANDING */}
 
             <div className="flex min-w-0 items-center justify-center gap-2 sm:gap-3">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.04] sm:h-12 sm:w-12 sm:rounded-xl">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/[0.08] sm:h-12 sm:w-12 sm:rounded-xl">
                 <div className="scale-[0.75] sm:scale-100">
                   <GoogleIcon />
                 </div>
@@ -257,19 +265,19 @@ export default function Testimonials() {
                   Find us on Google
                 </p>
 
-                <p className="mt-1 truncate text-[12px] text-gray-300 sm:text-xs">
+                <p className="mt-1 truncate text-[12px] text-purple-100/80 sm:text-xs">
                   Adroiit Technovations
                 </p>
               </div>
             </div>
 
-            {/* Desktop divider */}
+            {/* DESKTOP DIVIDER */}
 
-            <div className="hidden h-10 w-px shrink-0 bg-white/[0.12] sm:block" />
+            <div className="hidden h-10 w-px shrink-0 bg-white/20 sm:block" />
 
-            {/* Centered Google profile link */}
+            {/* GOOGLE PROFILE LINK */}
 
-            <div className="flex shrink-0 items-center justify-center gap-1 rounded-full border border-[#8c52ff]/25 bg-[#8c52ff]/[0.08] px-2.5 py-2 text-[11px] font-semibold text-[#c4a7ff] transition-all duration-300 group-hover:border-[#8c52ff]/50 group-hover:bg-[#5921c7] group-hover:text-white sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs">
+            <div className="flex shrink-0 items-center justify-center gap-1 rounded-full border border-purple-200/30 bg-white/10 px-2.5 py-2 text-[11px] font-semibold text-white transition-all duration-300 group-hover:border-white/50 group-hover:bg-white group-hover:text-[#5921c7] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs">
               <span className="whitespace-nowrap">View Profile</span>
 
               <ExternalLink
@@ -289,6 +297,8 @@ export default function Testimonials() {
           onFocusCapture={() => setPaused(true)}
           onBlurCapture={() => setPaused(false)}
         >
+          {/* Clean slider viewport without an extra visible container */}
+
           <div className="overflow-hidden">
             <motion.div
               className="flex"
@@ -314,37 +324,33 @@ export default function Testimonials() {
                           duration: 0.55,
                           delay: cardIndex * 0.1,
                         }}
-                        className="group relative flex min-h-[270px] flex-col overflow-hidden rounded-3xl border border-[#8c52ff]/20 bg-gradient-to-br from-[#171020] via-[#100c18] to-[#0b0811] p-6 shadow-[0_10px_35px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-[#8c52ff]/40 hover:shadow-[0_18px_40px_rgba(89,33,199,0.16)] sm:p-7 lg:p-8"
+                        className="group relative flex min-h-[270px] flex-col overflow-hidden rounded-3xl border border-[#b99aff]/40 bg-[#4f23a7] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#d9c8ff]/75 sm:p-7 lg:p-8"
                       >
-                        {/* Decorative quote icon */}
+                        {/* DECORATIVE QUOTE ICON */}
 
                         <div className="mb-5 flex items-center">
-                          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#8c52ff]/10 text-[#a77aff]">
+                          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#d6c1ff]/35 bg-[#8c52ff]/35 text-white shadow-[0_4px_15px_rgba(140,82,255,0.2)]">
                             <Quote size={21} strokeWidth={2.2} />
                           </div>
                         </div>
 
-                        {/* Testimonial text */}
+                        {/* TESTIMONIAL TEXT */}
 
-                        <p className="flex-1 text-sm leading-[1.9] text-gray-300 sm:text-[15px]">
+                        <p className="flex-1 text-sm leading-[1.9] text-purple-50 sm:text-[15px]">
                           “{testimonial.text}”
                         </p>
 
-                        {/* Author details */}
+                        {/* AUTHOR DETAILS */}
 
-                        <div className="mt-7 border-t border-white/[0.08] pt-5">
+                        <div className="mt-7 border-t border-white/20 pt-5">
                           <h3 className="text-base font-bold text-white">
                             {testimonial.name}
                           </h3>
 
-                          <p className="mt-1 text-xs font-medium text-[#a77aff] sm:text-sm">
+                          <p className="mt-1 text-xs font-medium text-purple-200 sm:text-sm">
                             {testimonial.role}
                           </p>
                         </div>
-
-                        {/* Subtle corner accent */}
-
-                        <div className="pointer-events-none absolute -bottom-12 -right-12 h-28 w-28 rounded-full bg-[#8c52ff]/[0.06] blur-2xl transition-all duration-500 group-hover:bg-[#8c52ff]/[0.12]" />
                       </motion.div>
                     ))}
                   </div>
@@ -361,7 +367,7 @@ export default function Testimonials() {
                 type="button"
                 onClick={previousSlide}
                 aria-label="Previous testimonials"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8c52ff]/25 bg-[#171020] text-[#b18aff] shadow-sm transition-all duration-300 hover:border-[#8c52ff] hover:bg-[#5921c7] hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-[#432080] text-purple-100 shadow-sm transition-all duration-300 hover:border-white/60 hover:bg-white hover:text-[#5921c7]"
               >
                 <ChevronLeft size={19} />
               </button>
@@ -376,8 +382,8 @@ export default function Testimonials() {
                     aria-current={index === slideIndex ? "true" : undefined}
                     className={`h-2.5 rounded-full transition-all duration-300 ${
                       index === slideIndex
-                        ? "w-8 bg-[#8c52ff]"
-                        : "w-2.5 bg-gray-600 hover:bg-[#8c52ff]/60"
+                        ? "w-8 bg-white"
+                        : "w-2.5 bg-purple-200/40 hover:bg-white/80"
                     }`}
                   />
                 ))}
@@ -387,7 +393,7 @@ export default function Testimonials() {
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next testimonials"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8c52ff]/25 bg-[#171020] text-[#b18aff] shadow-sm transition-all duration-300 hover:border-[#8c52ff] hover:bg-[#5921c7] hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-[#432080] text-purple-100 shadow-sm transition-all duration-300 hover:border-white/60 hover:bg-white hover:text-[#5921c7]"
               >
                 <ChevronRight size={19} />
               </button>

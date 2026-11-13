@@ -165,19 +165,21 @@ export default function Services() {
 
   return (
     <section
-      className={`${bricolage.className} relative isolate overflow-hidden bg-[#faf9fd] px-5 py-8 text-gray-900 sm:px-8 sm:py-16 lg:px-10 lg:py-9`}
+      className={`${bricolage.className} relative isolate overflow-hidden bg-[#faf9ff] px-5 py-8 text-[#261641] sm:px-8 sm:py-16 lg:px-10 lg:py-9`}
     >
       {/* ================================================== */}
       {/* BACKGROUND EFFECTS */}
       {/* ================================================== */}
 
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-40 top-0 h-[400px] w-[400px] rounded-full bg-[#8c52ff]/[0.07] blur-[130px]" />
+        <div className="absolute -left-40 top-0 h-[400px] w-[400px] rounded-full bg-[#8c52ff]/[0.09] blur-[130px]" />
 
-        <div className="absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/[0.06] blur-[140px]" />
+        <div className="absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/[0.08] blur-[140px]" />
+
+        <div className="absolute bottom-0 left-[35%] h-[350px] w-[350px] rounded-full bg-[#d9c8ff]/[0.20] blur-[130px]" />
 
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
               "linear-gradient(to right, #5921c7 1px, transparent 1px), linear-gradient(to bottom, #5921c7 1px, transparent 1px)",
@@ -203,17 +205,17 @@ export default function Services() {
           viewport={{ once: true, amount: 0.2 }}
           className="mx-auto mb-9 max-w-3xl text-center lg:mb-11"
         >
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-gray-700 sm:text-sm">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#806e9e] sm:text-sm">
             What We Offer
           </p>
 
-          <h2 className="text-2xl font-extrabold leading-[1.12] tracking-tight text-[#171020] sm:text-5xl lg:text-[30px]">
+          <h2 className="text-2xl font-extrabold leading-[1.12] tracking-tight text-[#21133f] sm:text-5xl lg:text-[30px]">
             <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
               Solutions That Inspire Innovation
             </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-[1.85] text-gray-900 sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-[1.85] text-[#716982] sm:text-base">
             From transforming the way students learn to bringing engineering
             ideas to life, we deliver innovative solutions across education,
             technology and product development.
@@ -233,7 +235,7 @@ export default function Services() {
               type="button"
               onClick={prevSlide}
               aria-label="Previous services"
-              className="flex h-9 w-9 items-center justify-center justify-self-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm transition-all duration-300 hover:border-[#8c52ff] hover:bg-[#5921c7] hover:text-white"
+              className="flex h-9 w-9 items-center justify-center justify-self-center rounded-full border border-[#e5dcf5] bg-white text-[#7040cb] shadow-[0_3px_12px_rgba(89,33,199,0.07)] transition-all duration-300 hover:border-[#8c52ff] hover:bg-[#5921c7] hover:text-white hover:shadow-[0_5px_16px_rgba(89,33,199,0.20)]"
             >
               <ChevronLeft size={18} />
             </button>
@@ -269,7 +271,7 @@ export default function Services() {
               type="button"
               onClick={nextSlide}
               aria-label="Next services"
-              className="flex h-9 w-9 items-center justify-center justify-self-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm transition-all duration-300 hover:border-[#8c52ff] hover:bg-[#5921c7] hover:text-white"
+              className="flex h-9 w-9 items-center justify-center justify-self-center rounded-full border border-[#e5dcf5] bg-white text-[#7040cb] shadow-[0_3px_12px_rgba(89,33,199,0.07)] transition-all duration-300 hover:border-[#8c52ff] hover:bg-[#5921c7] hover:text-white hover:shadow-[0_5px_16px_rgba(89,33,199,0.20)]"
             >
               <ChevronRight size={18} />
             </button>
@@ -317,7 +319,7 @@ export default function Services() {
                 type="button"
                 onClick={prevMobileSlide}
                 aria-label="Previous services"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8c52ff]/30 bg-white text-[#5921c7] shadow-sm transition-all duration-300 hover:border-[#5921c7] hover:bg-[#5921c7] hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d9c8ff] bg-white text-[#7040cb] shadow-sm transition-all duration-300 hover:border-[#5921c7] hover:bg-[#5921c7] hover:text-white"
               >
                 <ChevronLeft size={20} />
               </button>
@@ -334,8 +336,8 @@ export default function Services() {
                     aria-current={currentIndex === index ? "true" : undefined}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       index === currentIndex
-                        ? "w-7 bg-[#8c52ff]"
-                        : "w-1.5 bg-gray-300 hover:bg-[#8c52ff]/50"
+                        ? "w-7 bg-[#5921c7]"
+                        : "w-1.5 bg-[#d8cde9] hover:bg-[#8c52ff]/60"
                     }`}
                   />
                 ))}
@@ -345,7 +347,7 @@ export default function Services() {
                 type="button"
                 onClick={nextMobileSlide}
                 aria-label="Next services"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8c52ff]/30 bg-white text-[#5921c7] shadow-sm transition-all duration-300 hover:border-[#5921c7] hover:bg-[#5921c7] hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d9c8ff] bg-white text-[#7040cb] shadow-sm transition-all duration-300 hover:border-[#5921c7] hover:bg-[#5921c7] hover:text-white"
               >
                 <ChevronRight size={20} />
               </button>
@@ -369,8 +371,8 @@ export default function Services() {
                 aria-current={currentIndex === index ? "true" : undefined}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "w-7 bg-[#8c52ff]"
-                    : "w-1.5 bg-gray-300 hover:bg-[#8c52ff]/50"
+                    ? "w-7 bg-[#5921c7]"
+                    : "w-1.5 bg-[#d8cde9] hover:bg-[#8c52ff]/60"
                 }`}
               />
             ))}
@@ -405,7 +407,7 @@ function ServiceCard({
         duration: 0.35,
         delay: index * 0.05,
       }}
-      className="group mx-auto flex h-full w-full max-w-[340px] flex-col overflow-hidden rounded-xl border border-gray-200/80 bg-white shadow-[0_3px_16px_rgba(20,10,40,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#8c52ff]/40 hover:shadow-[0_10px_24px_rgba(89,33,199,0.09)]"
+      className="group mx-auto flex h-full w-full max-w-[340px] flex-col overflow-hidden rounded-xl border border-[#e9e1f5] bg-white shadow-[0_4px_18px_rgba(42,25,75,0.045)] transition-all duration-300 hover:-translate-y-1 hover:border-[#c9b2ff] hover:shadow-[0_12px_30px_rgba(89,33,199,0.12)]"
     >
 
       {/* IMAGE */}
@@ -413,7 +415,7 @@ function ServiceCard({
       <Link
         href={service.link}
         aria-label={`Explore ${service.title}`}
-        className="relative block aspect-[16/8.5] w-full overflow-hidden bg-gray-100"
+        className="relative block aspect-[16/8.5] w-full overflow-hidden bg-[#f0eaff]"
       >
         <Image
           src={service.image}
@@ -428,28 +430,28 @@ function ServiceCard({
 
       <div className="flex flex-1 flex-col p-3.5 sm:p-4">
         <div className="flex-1">
-          <h3 className="text-[14px] font-bold leading-snug text-[#5921c7] transition-colors duration-300 group-hover:text-[#5921c7] sm:text-base">
+          <h3 className="text-[14px] font-bold leading-snug text-[#5921c7] transition-colors duration-300 group-hover:text-[#8c52ff] sm:text-base">
             {service.title}
           </h3>
 
-          <p className="mt-2 text-[11px] leading-[1.75] text-gray-600 sm:text-xs">
+          <p className="mt-2 text-[11px] leading-[1.75] text-[#716982] sm:text-xs">
             {service.description}
           </p>
         </div>
 
         {/* EXPLORE BUTTON */}
 
-        <div className="mt-4 border-t border-gray-100 pt-3">
+        <div className="mt-4 border-t border-[#eee8f6] pt-3">
           <Link
             href={service.link}
-            className="group/button inline-flex w-full items-center justify-between rounded-lg border border-[#8c52ff]/25 bg-[#8c52ff]/[0.045] px-3 py-2 text-[11px] font-bold text-[#5921c7] transition-all duration-300 hover:border-[#5921c7] hover:bg-[#5921c7] hover:text-white sm:text-xs"
+            className="group/button inline-flex w-full items-center justify-between rounded-lg border border-[#e2d5fa] bg-[#f7f3ff] px-3 py-2 text-[11px] font-bold text-[#7040cb] transition-all duration-300 hover:border-[#5921c7] hover:bg-[#5921c7] hover:text-white sm:text-xs"
           >
             <span>Explore Solution</span>
 
-            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#5921c7]/10 transition-all duration-300 group-hover/button:translate-x-0.5 group-hover/button:bg-white/15">
+            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#e9ddff] transition-all duration-300 group-hover/button:translate-x-0.5 group-hover/button:bg-white/15">
               <ArrowRight
                 size={13}
-                className="transition-transform duration-300 group-hover/button:translate-x-0.5"
+                className="transition-transform duration-300 group-hover/button:translate-x-0.5 group-hover/button:text-white"
               />
             </span>
           </Link>
