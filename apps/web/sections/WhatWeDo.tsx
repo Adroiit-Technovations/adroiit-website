@@ -54,7 +54,10 @@ const fadeUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: "easeOut" },
+    transition: {
+      duration: 0.65,
+      ease: "easeOut" as const,
+    },
   },
 };
 
@@ -160,7 +163,10 @@ export default function KeyPillars() {
                   visible: {
                     opacity: 1,
                     y: 0,
-                    transition: { duration: 0.6, ease: "easeOut" },
+                    transition: {
+                      duration: 0.6,
+                      ease: "easeOut" as const,
+                    },
                   },
                 }}
                 whileHover={{
