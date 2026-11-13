@@ -69,7 +69,7 @@ export default function Gallery() {
       className={`${bricolage.className} relative isolate overflow-hidden py-8 text-white sm:py-20 lg:py-10`}
       style={{
         backgroundImage:
-          "linear-gradient(110deg, #30106f 0%, #42158f 24%, #5921c7 50%, #42158f 76%, #30106f 100%)",
+          "linear-gradient(110deg, #30106f 0%, #30106f 100%)",
         backgroundColor: "#30106f",
       }}
     >

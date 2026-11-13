@@ -181,7 +181,7 @@ export default function Testimonials() {
       className={`${bricolage.className} relative isolate overflow-hidden py-10 text-white sm:py-20 lg:py-10`}
       style={{
         backgroundImage:
-          "linear-gradient(110deg, #30106f 0%, #42158f 24%, #5921c7 50%, #42158f 76%, #30106f 100%)",
+          "linear-gradient(110deg, #30106f 0%, #30106f 100%)",
         backgroundColor: "#30106f",
       }}
     >
@@ -324,7 +324,7 @@ export default function Testimonials() {
                           duration: 0.55,
                           delay: cardIndex * 0.1,
                         }}
-                        className="group relative flex min-h-[270px] flex-col overflow-hidden rounded-3xl border border-[#b99aff]/40 bg-[#4f23a7] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#d9c8ff]/75 sm:p-7 lg:p-8"
+                        className="group relative flex min-h-[270px] flex-col overflow-hidden rounded-3xl border border-[#b99aff]/40 bg-[#3e1b86] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#d9c8ff]/75 sm:p-7 lg:p-8"
                       >
                         {/* DECORATIVE QUOTE ICON */}
 

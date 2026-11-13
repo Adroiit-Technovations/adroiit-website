@@ -61,7 +61,7 @@ export default function Navbar() {
           flex
           items-center
           justify-between
-          bg-gradient-to-r from-[#30106f] via-[#5921c7] to-[#30106f] 
+          bg-gradient-to-r from-[#30106f] to-[#30106f] 
           text-white
           px-3
           rounded-full
@@ -177,7 +177,7 @@ export default function Navbar() {
                 absolute
                 left-1/2
                 -translate-x-1/2
-                bg-gradient-to-br from-[#5921c7] via-[#42188f] to-[#30106f]
+                bg-gradient-to-br from-[#3e1b86] to-[#30106f]
                 border
                 border-[#c5a5ff]/35
                 rounded-2xl
@@ -475,7 +475,7 @@ export default function Navbar() {
             top-[75px]
             left-0
             right-0
-            bg-gradient-to-br from-[#30106f] via-[#5921c7] to-[#30106f]
+            bg-gradient-to-br from-[#30106f] to-[#30106f]
             border
             border-[#c5a5ff]/35
             rounded-3xl

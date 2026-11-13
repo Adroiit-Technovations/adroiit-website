@@ -73,10 +73,10 @@ const services = [
 const uniqueCities = [...new Set(indianCities)];
 
 const inputClassName =
-  "w-full rounded-xl border border-white/10 bg-[#100d18] px-4 py-3 text-sm text-white placeholder:text-gray-500 outline-none transition-all duration-300 hover:border-white/20 focus:border-[#8c52ff] focus:ring-2 focus:ring-[#8c52ff]/20 disabled:cursor-not-allowed disabled:opacity-50";
+  "w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 hover:border-purple-200 focus:border-[#8c52ff] focus:ring-2 focus:ring-[#8c52ff]/15 disabled:cursor-not-allowed disabled:opacity-50";
 
 const dropdownClassName =
-  "absolute z-[100] mt-2 max-h-60 w-full overflow-auto rounded-xl border border-white/10 bg-[#171220] py-2 text-sm shadow-2xl shadow-black/50";
+  "absolute z-[100] mt-2 max-h-60 w-full overflow-auto rounded-xl border border-gray-200 bg-white py-2 text-sm shadow-xl shadow-purple-950/10";
 
 export default function ContactPage() {
   const [state, formAction, isPending] = useActionState(sendContactForm, null);
@@ -120,19 +120,19 @@ export default function ContactPage() {
 
   return (
     <section
-      className={`${bricolage.className} relative isolate min-h-screen overflow-hidden bg-[#05030A] px-4 py-35 text-white sm:px-6 md:py-34`}
+      className={`${bricolage.className} relative isolate min-h-screen overflow-hidden bg-[#faf9fd] px-4 py-35 text-gray-900 sm:px-6 md:py-34`}
     >
       {/* BACKGROUND EFFECTS */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[#5921c7]/20 blur-[150px]" />
-        <div className="absolute -right-40 top-[35%] h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[150px]" />
-        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-[#30106f]/20 blur-[130px]" />
+        <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[#8c52ff]/[0.09] blur-[150px]" />
+        <div className="absolute -right-40 top-[35%] h-[450px] w-[450px] rounded-full bg-[#5921c7]/[0.06] blur-[150px]" />
+        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-[#8c52ff]/[0.07] blur-[130px]" />
 
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
-              "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+              "linear-gradient(to right, #5921c7 1px, transparent 1px), linear-gradient(to bottom, #5921c7 1px, transparent 1px)",
             backgroundSize: "64px 64px",
             maskImage:
               "radial-gradient(ellipse at center, black 0%, transparent 75%)",
@@ -150,17 +150,17 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="mb-10 max-w-3xl text-left md:mb-5"
         >
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gray-200 sm:text-sm">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#5921c7] sm:text-sm">
             Get in Touch
           </p>
 
           <h1 className="text-3xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-3xl">
-            <span className="bg-gradient-to-r from-[#8c52ff] via-[#a87ffb] to-purple-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#b18aff] bg-clip-text text-transparent">
               Let's Start a Conversation.
             </span>
           </h1>
 
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-gray-200 sm:text-base sm:leading-8">
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
             Have a question, an idea, or a project in mind? We'd love to hear
             from you. Tell us what you're looking for, and let's explore how
             we can create something meaningful together.
@@ -174,16 +174,16 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="flex h-full min-w-0 flex-col rounded-2xl border border-white/[0.09] bg-[#0d0a14]/90 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.25)] backdrop-blur-xl sm:p-6 lg:p-7"
+            className="flex h-full min-w-0 flex-col rounded-2xl border border-purple-100 bg-white/95 p-5 shadow-[0_25px_80px_rgba(48,16,111,0.07)] backdrop-blur-xl sm:p-6 lg:p-7"
           >
             <div className="mb-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8c52ff]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5921c7]">
                 Send an Enquiry
               </p>
-              <h2 className="mt-2 text-2xl font-bold text-white sm:text-xl">
+              <h2 className="mt-2 text-2xl font-bold text-gray-900 sm:text-xl">
                 Tell us about your needs.
               </h2>
-              <p className="mt-1.5 text-sm leading-6 text-gray-400">
+              <p className="mt-1.5 text-sm leading-6 text-gray-500">
                 Fill in the details below and our team will get back to you.
               </p>
             </div>
@@ -274,7 +274,7 @@ export default function ContactPage() {
                                   `cursor-pointer px-4 py-2.5 ${
                                     active
                                       ? "bg-[#5921c7] text-white"
-                                      : "text-gray-300"
+                                      : "text-gray-700"
                                   }`
                                 }
                               >
@@ -290,7 +290,7 @@ export default function ContactPage() {
                                 `cursor-pointer px-4 py-2.5 ${
                                   active
                                     ? "bg-[#5921c7] text-white"
-                                    : "text-gray-300"
+                                    : "text-gray-700"
                                 }`
                               }
                             >
@@ -338,7 +338,7 @@ export default function ContactPage() {
                                 `cursor-pointer px-4 py-2.5 ${
                                   active
                                     ? "bg-[#5921c7] text-white"
-                                    : "text-gray-300"
+                                    : "text-gray-700"
                                 }`
                               }
                             >
@@ -379,7 +379,7 @@ export default function ContactPage() {
                       aria-label="Show services"
                       className="absolute inset-y-0 right-0 flex items-center pr-4"
                     >
-                      <ChevronDown className="h-4 w-4 text-[#a87ffb]" />
+                      <ChevronDown className="h-4 w-4 text-[#5921c7]" />
                     </Combobox.Button>
 
                     <Transition
@@ -397,7 +397,7 @@ export default function ContactPage() {
                               `relative cursor-pointer py-3 pl-10 pr-4 ${
                                 active
                                   ? "bg-[#5921c7] text-white"
-                                  : "text-gray-300"
+                                  : "text-gray-700"
                               }`
                             }
                           >
@@ -416,7 +416,7 @@ export default function ContactPage() {
                                     className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
                                       active
                                         ? "text-white"
-                                        : "text-[#a87ffb]"
+                                        : "text-[#5921c7]"
                                     }`}
                                   >
                                     <Check className="h-4 w-4" />
@@ -465,7 +465,7 @@ export default function ContactPage() {
                 {state?.message && (
                   <p
                     className={`mt-3 text-center text-sm ${
-                      state.success ? "text-green-400" : "text-red-400"
+                      state.success ? "text-green-600" : "text-red-600"
                     }`}
                   >
                     {state.message}
@@ -480,19 +480,19 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex h-full min-w-0 flex-col rounded-2xl border border-white/[0.09] bg-[#0d0a14]/90 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.25)] backdrop-blur-xl sm:p-6 lg:p-7"
+            className="flex h-full min-w-0 flex-col rounded-2xl border border-purple-100 bg-white/95 p-5 shadow-[0_25px_80px_rgba(48,16,111,0.07)] backdrop-blur-xl sm:p-6 lg:p-7"
           >
             {/* HEADING */}
             <div className="mb-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8c52ff]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5921c7]">
                 Contact Information
               </p>
 
-              <h2 className="mt-2 text-xl font-bold text-white">
+              <h2 className="mt-2 text-xl font-bold text-gray-900">
                 Let's Connect.
               </h2>
 
-              <p className="mt-1.5 text-sm leading-6 text-gray-400">
+              <p className="mt-1.5 text-sm leading-6 text-gray-500">
                 Have a question or an idea? Reach out to our team.
               </p>
             </div>
@@ -501,57 +501,58 @@ export default function ContactPage() {
             <div className="space-y-2">
               <a
                 href="tel:+918870002908"
-                className="group flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.025] p-3 transition-all duration-300 hover:border-[#8c52ff]/40 hover:bg-[#8c52ff]/[0.06]"
+                className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3 transition-all duration-300 hover:border-[#8c52ff]/40 hover:bg-purple-50"
               >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/20 text-[#a87ffb] transition-colors group-hover:bg-[#5921c7]/35">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#5921c7] transition-colors group-hover:bg-[#5921c7]/15">
                   <Phone size={17} />
                 </div>
 
-                <p className="min-w-0 flex-1 text-sm font-semibold text-white">
+                <p className="min-w-0 flex-1 text-sm font-semibold text-gray-800">
                   +91 8870002908
                 </p>
 
                 <ArrowUpRight
                   size={16}
-                  className="text-gray-600 transition-colors group-hover:text-[#a87ffb]"
+                  className="text-gray-400 transition-colors group-hover:text-[#5921c7]"
                 />
               </a>
 
               <a
                 href="mailto:info@adroiittechnovations.in"
-                className="group flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.025] p-3 transition-all duration-300 hover:border-[#8c52ff]/40 hover:bg-[#8c52ff]/[0.06]"
+                className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3 transition-all duration-300 hover:border-[#8c52ff]/40 hover:bg-purple-50"
               >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/20 text-[#a87ffb] transition-colors group-hover:bg-[#5921c7]/35">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#5921c7] transition-colors group-hover:bg-[#5921c7]/15">
                   <Mail size={17} />
                 </div>
 
-                <p className="min-w-0 flex-1 break-all text-sm font-semibold text-white">
+                <p className="min-w-0 flex-1 break-all text-sm font-semibold text-gray-800">
                   info@adroiittechnovations.in
                 </p>
 
                 <ArrowUpRight
                   size={16}
-                  className="text-gray-600 transition-colors group-hover:text-[#a87ffb]"
+                  className="text-gray-400 transition-colors group-hover:text-[#5921c7]"
                 />
               </a>
 
-              <div className="flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.025] p-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/20 text-[#a87ffb]">
+              <div className="flex items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#5921c7]">
                   <MapPin size={17} />
                 </div>
 
-                <p className="min-w-0 flex-1 text-sm font-semibold leading-5 text-white">
-                  15A, Pavendhar Street, Near Amalorpavam Primary Campus, <br></br>Thamizh Thai Nagar, Uppalam, Puducherry - 605004
+                <p className="min-w-0 flex-1 text-sm font-semibold leading-5 text-gray-800">
+                  15A, Pavendhar Street, Near Amalorpavam Primary Campus, <br />
+                  Thamizh Thai Nagar, Uppalam, Puducherry - 605004
                 </p>
               </div>
 
-              <div className="flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.025] p-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/20 text-[#a87ffb]">
+              <div className="flex items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#5921c7]">
                   <Clock size={17} />
                 </div>
 
-                <p className="min-w-0 flex-1 text-sm font-semibold text-white">
-                  Monday - Saturday: 10.00 A.M. - 6.00 P.M.                 
+                <p className="min-w-0 flex-1 text-sm font-semibold text-gray-800">
+                  Monday - Saturday: 10.00 A.M. - 6.00 P.M.
                 </p>
               </div>
             </div>
@@ -559,7 +560,7 @@ export default function ContactPage() {
             {/* MAP */}
             <div className="mt-4">
               <div className="mb-2 flex items-center justify-between gap-3">
-                <h3 className="text-sm font-bold text-white">
+                <h3 className="text-sm font-bold text-gray-900">
                   Find Our Location
                 </h3>
 
@@ -567,14 +568,14 @@ export default function ContactPage() {
                   href="https://www.google.com/maps/search/?api=1&query=ADROIIT+TECHNOVATIONS+Puducherry"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[#a87ffb] transition-colors hover:text-white"
+                  className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[#5921c7] transition-colors hover:text-[#8c52ff]"
                 >
                   Directions
                   <ArrowUpRight size={13} />
                 </a>
               </div>
 
-              <div className="overflow-hidden rounded-xl border border-white/10 bg-[#100d18]">
+              <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.7686421645653!2d79.81572427483617!3d11.921973788305209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5361f82ca8d2db%3A0x4cec9aaf4e89f084!2sADROIIT%20TECHNOVATIONS!5e1!3m2!1sen!2sin!4v1775739111207!5m2!1sen!2sin"
                   width="100%"

@@ -72,7 +72,7 @@ export default function KeyPillars() {
       className={`${bricolage.className} relative isolate scroll-mt-24 overflow-hidden px-5 py-10 text-white sm:px-8 lg:px-16 lg:py-10`}
       style={{
         backgroundImage:
-          "linear-gradient(110deg, #30106f 0%, #42158f 24%, #5921c7 50%, #42158f 76%, #30106f 100%)",
+          "linear-gradient(110deg, #30106f 0%, #30106f 100%)",
         backgroundColor: "#30106f",
       }}
     >
@@ -174,7 +174,7 @@ export default function KeyPillars() {
                   scale: 1.02,
                   transition: { duration: 0.3 },
                 }}
-                className="group relative flex min-h-[215px] flex-col items-center overflow-hidden rounded-[1.5rem] border border-[#b99aff]/40 bg-[#4f23a7] px-5 py-7 text-center shadow-[0_15px_45px_rgba(20,4,55,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-500 hover:border-[#d9c8ff]/75 hover:shadow-[0_22px_60px_rgba(20,4,55,0.5),0_0_30px_rgba(167,122,255,0.18)] sm:min-h-[225px] sm:px-5 sm:py-8"
+                className="group relative flex min-h-[215px] flex-col items-center overflow-hidden rounded-[1.5rem] border border-[#b99aff]/40 bg-[#3e1b86] px-5 py-7 text-center transition-all duration-500 hover:border-[#d9c8ff]/75 sm:min-h-[225px] sm:px-5 sm:py-8"
               >
                 {/* SOFT INNER BORDER */}
 

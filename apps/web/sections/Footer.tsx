@@ -67,7 +67,7 @@ export default function PremiumFooter({ headingColors }: PremiumFooterProps) {
       className={`${bricolage.className} relative z-10 overflow-hidden rounded-t-[40px] border-t border-white/10 px-8 pt-11 pb-12 text-white md:rounded-t-[80px]`}
       style={{
         backgroundImage:
-          "linear-gradient(110deg, #30106f 0%, #42158f 24%, #5921c7 50%, #42158f 76%, #30106f 100%)",
+          "linear-gradient(110deg, #30106f 0%, #30106f 100%)",
         backgroundColor: "#30106f",
       }}
     >
