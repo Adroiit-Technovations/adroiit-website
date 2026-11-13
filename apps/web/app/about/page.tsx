@@ -170,7 +170,7 @@ export default function About() {
 
               <motion.h1
                 variants={fadeUp}
-                className="mb-3 max-w-[950px] text-[28px] font-extrabold leading-[0.98] tracking-[-0.075em] sm:text-[68px] lg:text-[35px]"
+                className="mb-3 max-w-[950px] text-[28px] font-extrabold text-[#30106f] leading-[0.98] tracking-[-0.075em] sm:text-[68px] lg:text-[35px]"
               >
                 We ignite{" "}
                 <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">
@@ -181,7 +181,7 @@ export default function About() {
 
               <motion.h2
                 variants={fadeUp}
-                className="max-w-[950px] text-[28px] font-extrabold leading-[0.98] tracking-[-0.075em] sm:text-[68px] lg:text-[35px]"
+                className="max-w-[950px] text-[28px] font-extrabold text-[#30106f] leading-[0.98] tracking-[-0.075em] sm:text-[68px] lg:text-[35px]"
               >
                 We bring{" "}
                 <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">

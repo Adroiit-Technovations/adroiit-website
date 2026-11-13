@@ -88,7 +88,7 @@ export default function ModernHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className={`${bricolage.className} order-2 lg:order-none text-2xl text-3xl lg:text-4xl font-extrabold leading-[1.1] tracking-tight`}
+                className={`${bricolage.className} order-2 text-[#30106f] lg:order-none text-2xl text-3xl lg:text-4xl font-extrabold leading-[1.1] tracking-tight`}
               >
                 Elevating{" "}
                 <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">
@@ -100,7 +100,7 @@ export default function ModernHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className={`${bricolage.className} order-2 lg:order-none text-2xl text-3xl lg:text-4xl font-extrabold leading-[1.1] tracking-tight bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent`}
+                className={`${bricolage.className} order-2 text-[#30106f] lg:order-none text-2xl text-3xl lg:text-4xl font-extrabold leading-[1.1] tracking-tight bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent`}
               >
                 Enabling{" "}
                 <span className="bg-clip-text text-[#21163b]">
