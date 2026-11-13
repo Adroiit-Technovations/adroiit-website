@@ -254,33 +254,33 @@ export default async function CertificateVerificationPage({
 
   return (
     <main
-      className={`${bricolage.className} relative min-h-screen overflow-hidden bg-[#05030A] px-4 py-30 text-white sm:px-6 lg:px-8`}
+      className={`${bricolage.className} relative min-h-screen overflow-hidden bg-[#FAF9FC] px-4 py-30 text-[#211536] sm:px-6 lg:px-8`}
     >
       {/* Purple Ambient Background Effects */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#5921C7]/20 blur-[140px]" />
+        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#5921C7]/10 blur-[140px]" />
 
         <div className="absolute -right-40 top-[20%] h-[400px] w-[400px] rounded-full bg-[#8C52FF]/10 blur-[140px]" />
 
-        <div className="absolute bottom-[-180px] left-[35%] h-[380px] w-[380px] rounded-full bg-[#30106F]/20 blur-[130px]" />
+        <div className="absolute bottom-[-180px] left-[35%] h-[380px] w-[380px] rounded-full bg-[#30106F]/[0.06] blur-[130px]" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(89,33,199,0.10),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(89,33,199,0.06),transparent_55%)]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl">
         {/* Header */}
         <div className="text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#8C52FF]">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#5921C7]">
             Adroiit Technovations
           </p>
 
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            <span className="bg-gradient-to-r from-[#8C52FF] via-[#B69AFF] to-purple-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5921C7] via-[#713BE0] to-[#8C52FF] bg-clip-text text-transparent">
               Certificate Verified
             </span>
           </h1>
 
-          <p className="mt-3 text-sm text-gray-300">
+          <p className="mt-3 text-sm text-[#756B86]">
             Official Certificate Verification Record
           </p>
         </div>
@@ -289,24 +289,24 @@ export default async function CertificateVerificationPage({
         <div
           className={`mt-5 overflow-hidden rounded-3xl border ${
             isValid
-              ? "border-emerald-400/20"
-              : "border-red-400/20"
-          } bg-white/[0.03]`}
+              ? "border-emerald-200"
+              : "border-red-200"
+          } bg-white shadow-xl shadow-[#30106F]/[0.06]`}
         >
           {/* Verification Status */}
           <div
             className={`p-6 sm:p-5 ${
               isValid
-                ? "bg-emerald-400/[0.04]"
-                : "bg-red-400/[0.04]"
+                ? "bg-emerald-50"
+                : "bg-red-50"
             }`}
           >
             <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
               <div
                 className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${
                   isValid
-                    ? "bg-emerald-400/10 text-emerald-400"
-                    : "bg-red-400/10 text-red-400"
+                    ? "bg-emerald-100 text-emerald-600"
+                    : "bg-red-100 text-red-600"
                 }`}
               >
                 {isValid ? (
@@ -320,8 +320,8 @@ export default async function CertificateVerificationPage({
                 <p
                   className={`text-xl font-semibold ${
                     isValid
-                      ? "text-emerald-400"
-                      : "text-red-400"
+                      ? "text-emerald-700"
+                      : "text-red-700"
                   }`}
                 >
                   {isValid
@@ -329,7 +329,7 @@ export default async function CertificateVerificationPage({
                     : "Certificate has been Revoked"}
                 </p>
 
-                <p className="mt-1 text-sm text-white/45">
+                <p className="mt-1 text-sm text-[#756B86]">
                   {isValid
                     ? "This certificate matches an official record in the Adroiit Technovations verification system."
                     : "This certificate exists in the system but is no longer considered valid."}
@@ -342,20 +342,20 @@ export default async function CertificateVerificationPage({
           <div className="grid gap-5 p-6 sm:p-8">
             {/* Certificate ID */}
             <div>
-              <p className="text-xs uppercase tracking-[0.15em] text-white/30">
+              <p className="text-xs uppercase tracking-[0.15em] text-[#93899F]">
                 Certificate ID
               </p>
 
-              <p className="mt-2 break-all font-mono text-sm text-white/80">
+              <p className="mt-2 break-all font-mono text-sm text-[#514762]">
                 {certificateData.certificate_id}
               </p>
             </div>
 
-            <div className="h-px bg-white/10" />
+            <div className="h-px bg-[#EAE5F2]" />
 
             {/* Certificate Details */}
             <div>
-              <h2 className="text-base font-semibold">
+              <h2 className="text-base font-semibold text-[#211536]">
                 Certificate Information
               </h2>
 
@@ -414,10 +414,10 @@ export default async function CertificateVerificationPage({
             {/* Assessment Result */}
             {certificateData.score_applicable && (
               <>
-                <div className="h-px bg-white/10" />
+                <div className="h-px bg-[#EAE5F2]" />
 
                 <div>
-                  <h2 className="text-base font-semibold">
+                  <h2 className="text-base font-semibold text-[#211536]">
                     Assessment Result
                   </h2>
 
@@ -460,8 +460,8 @@ export default async function CertificateVerificationPage({
           </div>
 
           {/* Verification Footer */}
-          <div className="border-t border-white/10 bg-black/20 p-6 text-center">
-            <div className="flex items-center justify-center gap-2 text-emerald-400">
+          <div className="border-t border-[#EAE5F2] bg-[#FAF9FC] p-6 text-center">
+            <div className="flex items-center justify-center gap-2 text-emerald-600">
               <CheckCircle2 className="h-4 w-4" />
 
               <span className="text-s font-medium">
@@ -469,7 +469,7 @@ export default async function CertificateVerificationPage({
               </span>
             </div>
 
-            <p className="mx-auto mt-2 max-w-4xl text-xs leading-5 text-white/30">
+            <p className="mx-auto mt-2 max-w-4xl text-xs leading-5 text-[#93899F]">
               This verification page confirms that the certificate ID has a record
               currently stored in the Adroiit Technovations' Certificate Verification System.
             </p>
@@ -513,16 +513,16 @@ function Detail({
 }) {
   return (
     <div className="flex gap-3">
-      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#5921C7]/10 text-[#8C52FF]">
+      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#5921C7]/10 text-[#713BE0]">
         {icon}
       </div>
 
       <div className="min-w-0">
-        <p className="text-xs uppercase tracking-wider text-white/30">
+        <p className="text-xs uppercase tracking-wider text-[#93899F]">
           {label}
         </p>
 
-        <p className="mt-1 break-words text-sm leading-6 text-white/75">
+        <p className="mt-1 break-words text-sm leading-6 text-[#514762]">
           {value}
         </p>
       </div>
@@ -542,12 +542,12 @@ function ScoreBox({
   value: string;
 }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
-      <p className="text-xs text-white/35">
+    <div className="rounded-2xl border border-[#EAE5F2] bg-[#FAF9FC] p-5">
+      <p className="text-xs text-[#93899F]">
         {label}
       </p>
 
-      <p className="mt-2 text-lg font-semibold text-white">
+      <p className="mt-2 text-lg font-semibold text-[#211536]">
         {value}
       </p>
     </div>
@@ -561,34 +561,34 @@ function ScoreBox({
 function InvalidCertificate() {
   return (
     <main
-      className={`${bricolage.className} relative flex min-h-screen items-center justify-center overflow-hidden bg-[#05030A] px-4 text-white`}
+      className={`${bricolage.className} relative flex min-h-screen items-center justify-center overflow-hidden bg-[#FAF9FC] px-4 text-[#211536]`}
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#5921C7]/20 blur-[140px]" />
+        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#5921C7]/10 blur-[140px]" />
         <div className="absolute -right-40 bottom-[-100px] h-[400px] w-[400px] rounded-full bg-[#8C52FF]/10 blur-[140px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(89,33,199,0.10),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(89,33,199,0.06),transparent_55%)]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-xl rounded-3xl border border-white/10 bg-[#100B1C]/80 p-8 text-center shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-red-400/10 text-red-400">
+      <div className="relative z-10 w-full max-w-xl rounded-3xl border border-[#EAE5F2] bg-white p-8 text-center shadow-[0_20px_80px_rgba(48,16,111,0.08)] backdrop-blur-xl sm:p-10">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-red-500">
           <ShieldAlert className="h-8 w-8" />
         </div>
 
-        <p className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-[#8C52FF]">
+        <p className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-[#5921C7]">
           Adroiit Technovations
         </p>
 
-        <h1 className="mt-3 text-3xl font-semibold">
+        <h1 className="mt-3 text-3xl font-semibold text-[#211536]">
           Certificate Not Found
         </h1>
 
-        <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-white/45">
+        <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-[#756B86]">
           The certificate ID entered doesn't match any record from the official certificate records of Adroiit Technovations.
         </p>
 
         <a
           href="/verify"
-          className="mt-7 inline-flex h-11 items-center justify-center rounded-xl bg-[#5921C7] px-5 text-sm font-semibold text-white transition hover:bg-[#6d2ee3]"
+          className="mt-7 inline-flex h-11 items-center justify-center rounded-xl bg-[#30106f] px-5 text-sm font-semibold text-white transition hover:bg-[#4d259e]"
         >
           Verify Another Certificate
         </a>
@@ -604,35 +604,35 @@ function InvalidCertificate() {
 function RateLimited() {
   return (
     <main
-      className={`${bricolage.className} relative flex min-h-screen items-center justify-center overflow-hidden bg-[#05030A] px-4 text-white`}
+      className={`${bricolage.className} relative flex min-h-screen items-center justify-center overflow-hidden bg-[#FAF9FC] px-4 text-[#211536]`}
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#5921C7]/20 blur-[140px]" />
+        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#5921C7]/10 blur-[140px]" />
         <div className="absolute -right-40 bottom-[-100px] h-[400px] w-[400px] rounded-full bg-[#8C52FF]/10 blur-[140px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(89,33,199,0.10),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(89,33,199,0.06),transparent_55%)]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-xl rounded-3xl border border-amber-400/20 bg-[#100B1C]/80 p-8 text-center shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-400/10 text-amber-400">
+      <div className="relative z-10 w-full max-w-xl rounded-3xl border border-amber-200 bg-white p-8 text-center shadow-[0_20px_80px_rgba(48,16,111,0.08)] backdrop-blur-xl sm:p-10">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-amber-600">
           <ShieldAlert className="h-8 w-8" />
         </div>
 
-        <p className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-[#8C52FF]">
+        <p className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-[#5921C7]">
           Adroiit Technovations
         </p>
 
-        <h1 className="mt-3 text-3xl font-semibold">
+        <h1 className="mt-3 text-3xl font-semibold text-[#211536]">
           Too Many Verification Requests
         </h1>
 
-        <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-white/45">
+        <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-[#756B86]">
           You have reached the certificate verification request limit.
           Please wait a minute before trying again.
         </p>
 
         <a
           href="/verify"
-          className="mt-7 inline-flex h-11 items-center justify-center rounded-xl bg-[#5921C7] px-5 text-sm font-semibold text-white transition hover:bg-[#6d2ee3]"
+          className="mt-7 inline-flex h-11 items-center justify-center rounded-xl bg-[#30106f] px-5 text-sm font-semibold text-white transition hover:bg-[#4d259e]"
         >
           Return to Verification
         </a>
@@ -648,35 +648,36 @@ function RateLimited() {
 function VerificationUnavailable() {
   return (
     <main
-      className={`${bricolage.className} relative flex min-h-screen items-center justify-center overflow-hidden bg-[#05030A] px-4 text-white`}
+      className={`${bricolage.className} relative flex min-h-screen items-center justify-center overflow-hidden bg-[#FAF9FC] px-4 text-[#211536]`}
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#5921C7]/20 blur-[140px]" />
+        <div className="absolute -left-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#5921C7]/10 blur-[140px]" />
         <div className="absolute -right-40 bottom-[-100px] h-[400px] w-[400px] rounded-full bg-[#8C52FF]/10 blur-[140px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(89,33,199,0.10),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(89,33,199,0.06),transparent_55%)]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-xl rounded-3xl border border-white/10 bg-[#100B1C]/80 p-8 text-center shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-400/10 text-amber-400">
+      <div className="relative z-10 w-full max-w-xl rounded-3xl border border-[#EAE5F2] bg-white p-8 text-center shadow-[0_20px_80px_rgba(48,16,111,0.08)] backdrop-blur-xl sm:p-10">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-50 text-amber-600">
           <ShieldAlert className="h-8 w-8" />
         </div>
 
-        <p className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-[#8C52FF]">
+        <p className="mt-6 text-sm font-medium uppercase text-[#5921C7]">
           Adroiit Technovations
         </p>
 
-        <h1 className="mt-3 text-3xl font-semibold">
+        <h1 className="mt-3 text-[25px] font-bold text-[#30106f]">
           Verification Temporarily Unavailable
         </h1>
 
-        <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-white/45">
+        <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-gray-700">
           We couldn't complete the certificate verification right now.
+          <br></br>
           Please try again shortly.
         </p>
 
         <a
           href="/verify"
-          className="mt-7 inline-flex h-11 items-center justify-center rounded-xl bg-[#5921C7] px-5 text-sm font-semibold text-white transition hover:bg-[#6d2ee3]"
+          className="mt-7 inline-flex h-11 items-center justify-center rounded-xl bg-[#30106f] px-5 text-sm font-semibold text-white transition hover:bg-[#4d259e]"
         >
           Try Again
         </a>
