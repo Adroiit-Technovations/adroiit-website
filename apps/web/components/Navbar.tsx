@@ -114,7 +114,7 @@ export default function Navbar() {
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/15
+              hover:bg-[#451e92]
               whitespace-nowrap
             "
           >
@@ -132,7 +132,7 @@ export default function Navbar() {
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/15
+              hover:bg-[#451e92]
               whitespace-nowrap
             "
           >
@@ -158,7 +158,7 @@ export default function Navbar() {
                 hover:text-white
                 transition-colors
                 rounded-full
-                hover:bg-white/15
+                hover:bg-[#451e92]
                 whitespace-nowrap
               "
             >
@@ -377,7 +377,7 @@ export default function Navbar() {
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/15
+              hover:bg-[#451e92]
               whitespace-nowrap
             "
           >
@@ -395,7 +395,7 @@ export default function Navbar() {
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/15
+              hover:bg-[#451e92]
               whitespace-nowrap
             "
           >
@@ -413,7 +413,7 @@ export default function Navbar() {
               hover:text-white
               transition-colors
               rounded-full
-              hover:bg-white/15
+              hover:bg-[#451e92]
               whitespace-nowrap
             "
           >
@@ -434,9 +434,9 @@ export default function Navbar() {
               text-sm
               font-semibold
               bg-white
-              text-[#5921c7]
+              text-[#3e1b86]
               rounded-full
-              hover:bg-[#30106f]
+              hover:bg-[#451e92]
               hover:text-white
               transition-all
               duration-300
@@ -588,10 +588,10 @@ export default function Navbar() {
                 px-6
                 py-3
                 bg-white
-                text-[#5921c7]
+                text-[#3e1b86]
                 font-bold
                 rounded-full
-                hover:bg-[#30106f]
+                hover:bg-[#451e92]
                 hover:text-white
                 transition-all
                 duration-300

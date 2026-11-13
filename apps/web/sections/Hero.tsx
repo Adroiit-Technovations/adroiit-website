@@ -181,8 +181,8 @@ export default function ModernHero() {
               className="order-5 lg:order-none mt-4 lg:mt-6 pt-8 border-t border-purple-100 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full items-center text-center lg:text-left lg:items-start"
             >
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-[#21163b]`}>
-                  10+
+                <h4 className={`${bricolage.className} text-2xl font-bold text-[#3e1b86]`}>
+                  15+
                 </h4>
                 <p className="text-xs text-gray-600 mt-0.5">
                   Sessions Conducted
@@ -190,7 +190,7 @@ export default function ModernHero() {
               </div>
 
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-[#21163b]`}>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-[#3e1b86]`}>
                   700+
                 </h4>
                 <p className="text-xs text-gray-600 mt-0.5">
@@ -199,8 +199,8 @@ export default function ModernHero() {
               </div>
 
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-[#21163b]`}>
-                  15+
+                <h4 className={`${bricolage.className} text-2xl font-bold text-[#3e1b86]`}>
+                  20+
                 </h4>
                 <p className="text-xs text-gray-600 mt-0.5">
                   Projects Completed
@@ -208,7 +208,7 @@ export default function ModernHero() {
               </div>
 
               <div className="flex flex-col items-center lg:items-start">
-                <h4 className={`${bricolage.className} text-2xl font-bold text-[#21163b]`}>
+                <h4 className={`${bricolage.className} text-2xl font-bold text-[#3e1b86]`}>
                   10+
                 </h4>
                 <p className="text-xs text-gray-600 mt-0.5">

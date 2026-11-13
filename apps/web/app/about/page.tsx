@@ -15,9 +15,6 @@ import {
   Award,
   Zap,
   Lightbulb,
-  GraduationCap,
-  Wrench,
-  FlaskConical,
 } from "lucide-react";
 
 const bricolage = Bricolage_Grotesque({
@@ -60,33 +57,6 @@ const coreValues = [
     description:
       "We believe the best ideas emerge when dynamic minds work together through teamwork, shared knowledge and open communication.",
     icon: Handshake,
-  },
-];
-
-const pillars = [
-  {
-    number: "01",
-    title: "Education",
-    subtitle: "Learn by doing.",
-    description:
-      "Making STEAM and technology education meaningful through experiential learning approach.",
-    icon: GraduationCap,
-  },
-  {
-    number: "02",
-    title: "Technology",
-    subtitle: "Build with purpose.",
-    description:
-      "Transforming ideas into reality through engineering products and innovative solutions.",
-    icon: Wrench,
-  },
-  {
-    number: "03",
-    title: "Research & Innovation",
-    subtitle: "Explore what is possible.",
-    description:
-      "Encouraging curiosity, experimentation and continuous innovation to solve challenges and create new possibilities.",
-    icon: FlaskConical,
   },
 ];
 
@@ -157,15 +127,15 @@ const fadeUp = {
 export default function About() {
   return (
     <div
-      className={`${bricolage.className} min-h-screen overflow-hidden bg-[#080611] text-white`}
+      className={`${bricolage.className} min-h-screen overflow-hidden bg-[#f5f3fa] text-[#171024]`}
     >
       <Navbar />
 
       <main>
         {/* ==================================================
-            SECTION 01 — DARK HERO
+            SECTION 01 — LIGHT HERO
         ================================================== */}
-        <section className="relative overflow-hidden border-b border-white/[0.08] bg-[#080611] px-5 pb-24 pt-35 sm:px-8 sm:pb-21 sm:pt-38 lg:px-16">
+        <section className="relative overflow-hidden border-b border-[#171024]/[0.08] bg-[#f5f3fa] px-5 pb-24 pt-35 sm:px-8 sm:pb-21 sm:pt-38 lg:px-16">
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute -right-40 top-0 h-[600px] w-[600px] rounded-full bg-[#5921c7]/25 blur-[150px]" />
             <div className="absolute -left-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[#30106f]/30 blur-[130px]" />
@@ -174,7 +144,7 @@ export default function About() {
               className="absolute inset-0 opacity-[0.035]"
               style={{
                 backgroundImage:
-                  "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+                  "linear-gradient(rgba(48,16,111,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(48,16,111,0.5) 1px, transparent 1px)",
                 backgroundSize: "70px 70px",
               }}
             />
@@ -192,7 +162,7 @@ export default function About() {
             >
               <motion.div variants={fadeUp}>
                 <div className="mb-5 flex items-center justify-center gap-3">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.3em] text-gray-200">
+                  <span className="text-[13px] font-bold uppercase tracking-[0.3em] text-gray-700">
                     About Adroiit Technovations
                   </span>
                 </div>
@@ -203,7 +173,7 @@ export default function About() {
                 className="mb-3 max-w-[950px] text-[28px] font-extrabold leading-[0.98] tracking-[-0.075em] sm:text-[68px] lg:text-[35px]"
               >
                 We ignite{" "}
-                <span className="bg-gradient-to-r from-[#8c52ff] via-[#a87ffb] to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">
                   curiosity
                 </span>{" "}
                 in young minds.
@@ -214,7 +184,7 @@ export default function About() {
                 className="max-w-[950px] text-[28px] font-extrabold leading-[0.98] tracking-[-0.075em] sm:text-[68px] lg:text-[35px]"
               >
                 We bring{" "}
-                <span className="bg-gradient-to-r from-[#8c52ff] via-[#a87ffb] to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">
                   technology
                 </span>{" "}
                 to life.
@@ -222,7 +192,7 @@ export default function About() {
 
               <motion.div
                 variants={fadeUp}
-                className="mt-5 max-w-[1000px] space-y-4 text-[15px] leading-8 text-gray-200 text-[17px] sm:leading-9"
+                className="mt-5 max-w-[1000px] space-y-4 text-[15px] leading-8 text-gray-900 text-[18px] sm:leading-9"
               >
                 <p>
                   Founded in 2024 by a team of Mechatronics Engineers driven by
@@ -243,7 +213,7 @@ export default function About() {
                   startups.
                 </p>
 
-                <p className="font-semibold italic text-white">
+                <p className="font-semibold italic text-[#30106f]">
                   We don't just teach technology. We build it.
                 </p>
               </motion.div>
@@ -254,7 +224,7 @@ export default function About() {
               >
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-3 rounded-full bg-[#5921c7] px-7 py-4 text-sm font-bold transition-all duration-300 hover:bg-[#713be0] hover:shadow-[0_0_35px_rgba(140,82,255,0.3)]"
+                  className="group inline-flex items-center gap-3 rounded-full bg-[#5921c7] px-7 py-4 text-sm font-bold text-white transition-all duration-300 hover:bg-[#713be0] hover:shadow-[0_0_35px_rgba(140,82,255,0.3)]"
                 >
                   Get in Touch
                   <ArrowUpRight
@@ -268,108 +238,9 @@ export default function About() {
         </section>
 
         {/* ==================================================
-            SECTION 02 — LIGHT INTRODUCTION
+            SECTION 02 — DARK MISSION & VISION
         ================================================== */}
-        <section
-          id="who-we-are"
-          className="relative scroll-mt-24 bg-[#f5f3fa] px-5 py-10 text-[#171024] sm:px-8 lg:px-16 lg:py-10"
-        >
-          <div className="mx-auto max-w-[1250px]">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeUp}
-              className="grid gap-12 md:grid-cols-[0.7fr_1.3fr] md:items-center"
-            >
-              <div>
-                <p className="text-[13px] font-bold uppercase tracking-[0.3em] text-gray-900">
-                  OUR KEY PILLARS
-                </p>
-
-                <h2 className="mt-4 text-3xl font-extrabold leading-[1.02] tracking-[-0.065em] sm:text-3xl">
-                  <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
-                    We always thrive to be the extraordinary.
-                  </span>
-                </h2>
-              </div>
-
-              <div className="border-l-2 border-[#8c52ff]/30 pl-7 sm:pl-13">
-                <p className="text-xl leading-relaxed text-gray-900 sm:text-[17px] sm:leading-relaxed">
-                  At Adroiit Technovations, we believe education should be
-                  experiential. We inculcate hands-on, technology-driven
-                  learning with traditional learning to nurture curiosity
-                  and empower young minds.
-                  Driven by the passion for technology and innovation, we strive 
-                  to transform ideas into innovative solutions to shape a smarter and
-                  better tomorrow.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* THREE PILLARS */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.12,
-                    delayChildren: 0.1,
-                  },
-                },
-              }}
-              className="relative mt-16 grid w-full grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5 lg:mt-8"
-            >
-              <div className="pointer-events-none absolute -inset-8 rounded-[2rem] bg-gradient-to-r from-[#8c52ff]/10 via-transparent to-[#5921c7]/10 blur-3xl" />
-
-              {pillars.map((pillar) => {
-                const Icon = pillar.icon;
-
-                return (
-                  <motion.div
-                    key={pillar.number}
-                    variants={{
-                      hidden: { opacity: 0, y: 22 },
-                      visible: {
-                        opacity: 1,
-                        y: 0,
-                        transition: { duration: 0.6, ease: "easeOut" },
-                      },
-                    }}
-                    whileHover={{ y: -5 }}
-                    className="group relative flex min-h-[205px] flex-col items-center rounded-[1.4rem] border border-[#5921c7]/10 bg-white px-5 py-6 text-center shadow-[0_12px_35px_rgba(48,16,111,0.06)] transition-all duration-300 hover:border-[#8c52ff]/50 hover:bg-white sm:min-h-[220px] sm:px-5 sm:py-7"
-                  >
-                    <div className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#8c52ff]/[0.07] blur-2xl transition-all duration-500 group-hover:bg-[#8c52ff]/20" />
-
-                    <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-[#5921c7]/10 text-[#713be0] transition-colors duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
-                      <Icon size={22} strokeWidth={1.7} />
-                    </div>
-
-                    <p className="relative mt-4 text-[12px] font-bold uppercase tracking-[0.2em] text-[#713be0]">
-                      {pillar.subtitle}
-                    </p>
-
-                    <h3 className="relative mt-1 text-lg font-bold tracking-tight text-[#171024] sm:text-xl">
-                      {pillar.title}
-                    </h3>
-
-                    <p className="relative mt-2 max-w-[300px] text-[12px] leading-5 text-gray-600 text-[14px]">
-                      {pillar.description}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ==================================================
-            SECTION 03 — DARK MISSION & VISION
-        ================================================== */}
-        <section className="relative overflow-hidden bg-[#0b0813] px-5 py-10 text-white sm:px-8 lg:px-16 lg:py-10">
+        <section className="relative overflow-hidden bg-[#30106f] px-5 py-10 text-white sm:px-8 lg:px-16 lg:py-10">
           <div className="pointer-events-none absolute -left-40 top-1/4 h-[400px] w-[400px] rounded-full bg-[#8c52ff]/15 blur-[130px]" />
           <div className="pointer-events-none absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[#30106f]/25 blur-[130px]" />
 
@@ -404,7 +275,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.7 }}
-                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.035] p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-[#8c52ff]/40 hover:bg-white/[0.06] sm:p-12"
+                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#3e1b86] p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-[#8c52ff]/40 hover:bg-white/[0.06] sm:p-12"
               >
                 <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#8c52ff]/[0.10] blur-[70px]" />
 
@@ -439,7 +310,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
-                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.035] p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-[#8c52ff]/40 hover:bg-white/[0.06] sm:p-12"
+                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#3e1b86] p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-[#8c52ff]/40 hover:bg-white/[0.06] sm:p-12"
               >
                 <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#5921c7]/[0.12] blur-[70px]" />
 
@@ -473,7 +344,7 @@ export default function About() {
         </section>
 
         {/* ==================================================
-            SECTION 04 — LIGHT CORE VALUES
+            SECTION 03 — LIGHT CORE VALUES
         ================================================== */}
         <section className="relative overflow-hidden bg-[#f5f3fa] px-5 py-10 text-[#171024] sm:px-8 lg:px-16 lg:py-10">
           <div className="pointer-events-none absolute -right-40 top-10 h-[400px] w-[400px] rounded-full bg-[#8c52ff]/10 blur-[130px]" />
@@ -545,11 +416,11 @@ export default function About() {
         </section>
 
         {/* ==================================================
-            SECTION 05 — DARK TECHNOLOGY DOMAINS
+            SECTION 04 — DARK TECHNOLOGY DOMAINS
         ================================================== */}
         <section
           id="technology-domains"
-          className="relative overflow-hidden bg-[#080611] px-5 py-10 text-white sm:px-8 lg:px-16 lg:py-10"
+          className="relative overflow-hidden bg-[#30106f] px-5 py-10 text-white sm:px-8 lg:px-16 lg:py-10"
         >
           <div className="pointer-events-none absolute -left-40 top-20 h-[450px] w-[450px] rounded-full bg-[#5921c7]/20 blur-[150px]" />
           <div className="pointer-events-none absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#30106f]/25 blur-[150px]" />
@@ -592,7 +463,7 @@ export default function About() {
                     duration: 0.55,
                     delay: (index % 3) * 0.1,
                   }}
-                  className="group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-white/[0.09] bg-white/[0.035] p-5 transition-all duration-500 hover:-translate-y-1 hover:border-[#8c52ff]/50 hover:bg-[#5921c7]/[0.10] sm:p-6"
+                  className="group relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.5rem] border border-white/[0.09] bg-[#3e1b86] p-5 transition-all duration-500 hover:-translate-y-1 hover:border-[#8c52ff]/50 hover:bg-[#5921c7]/[0.10] sm:p-6"
                 >
                   <div className="relative mb-6 h-44 w-full overflow-hidden rounded-[1.1rem] border border-white/10 bg-[#171024]">
                     <div
@@ -621,7 +492,7 @@ export default function About() {
         </section>
 
         {/* ==================================================
-            SECTION 06 — LIGHT CLOSING CTA
+            SECTION 05 — LIGHT CLOSING CTA
         ================================================== */}
         <section className="relative overflow-hidden bg-[#f5f3fa] px-5 py-10 text-[#171024] sm:px-8 lg:px-16 lg:py-10">
           <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#8c52ff]/10 blur-[130px]" />
