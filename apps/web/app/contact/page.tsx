@@ -155,7 +155,7 @@ export default function ContactPage() {
           </p>
 
           <h1 className="text-3xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-3xl">
-            <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#b18aff] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#30106f] via-[#5921c7] to-[#30106f] bg-clip-text text-transparent">
               Let's Start a Conversation.
             </span>
           </h1>
@@ -180,7 +180,7 @@ export default function ContactPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5921c7]">
                 Send an Enquiry
               </p>
-              <h2 className="mt-2 text-2xl font-bold text-gray-900 sm:text-xl">
+              <h2 className="mt-2 text-2xl font-bold text-[#30106f] sm:text-xl">
                 Tell us about your needs.
               </h2>
               <p className="mt-1.5 text-sm leading-6 text-gray-500">
@@ -451,7 +451,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="group flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#5921c7] to-[#8c52ff] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#5921c7]/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#5921c7]/30 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="group flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#481f9b] to-[#5921c7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#5921c7]/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#5921c7]/30 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {isPending ? "Sending Message..." : "Send Message"}
                   {!isPending && (
@@ -488,7 +488,7 @@ export default function ContactPage() {
                 Contact Information
               </p>
 
-              <h2 className="mt-2 text-xl font-bold text-gray-900">
+              <h2 className="mt-2 text-xl font-bold text-[#30106f]">
                 Let's Connect.
               </h2>
 
@@ -503,11 +503,11 @@ export default function ContactPage() {
                 href="tel:+918870002908"
                 className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3 transition-all duration-300 hover:border-[#8c52ff]/40 hover:bg-purple-50"
               >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#5921c7] transition-colors group-hover:bg-[#5921c7]/15">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#30106f] transition-colors group-hover:bg-[#5921c7]/15">
                   <Phone size={17} />
                 </div>
 
-                <p className="min-w-0 flex-1 text-sm font-semibold text-gray-800">
+                <p className="min-w-0 flex-1 text-sm font-semibold text-[#30106f]">
                   +91 8870002908
                 </p>
 
@@ -521,11 +521,11 @@ export default function ContactPage() {
                 href="mailto:info@adroiittechnovations.in"
                 className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3 transition-all duration-300 hover:border-[#8c52ff]/40 hover:bg-purple-50"
               >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#5921c7] transition-colors group-hover:bg-[#5921c7]/15">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#30106f] transition-colors group-hover:bg-[#5921c7]/15">
                   <Mail size={17} />
                 </div>
 
-                <p className="min-w-0 flex-1 break-all text-sm font-semibold text-gray-800">
+                <p className="min-w-0 flex-1 break-all text-sm font-semibold text-[#30106f]">
                   info@adroiittechnovations.in
                 </p>
 
@@ -536,22 +536,22 @@ export default function ContactPage() {
               </a>
 
               <div className="flex items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#5921c7]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#30106f]">
                   <MapPin size={17} />
                 </div>
 
-                <p className="min-w-0 flex-1 text-sm font-semibold leading-5 text-gray-800">
+                <p className="min-w-0 flex-1 text-sm font-semibold leading-5 text-[#30106f]">
                   15A, Pavendhar Street, Near Amalorpavam Primary Campus, <br />
                   Thamizh Thai Nagar, Uppalam, Puducherry - 605004
                 </p>
               </div>
 
               <div className="flex items-center gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-[#5921c7]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#5921c7]/10 text-text-[#30106f]">
                   <Clock size={17} />
                 </div>
 
-                <p className="min-w-0 flex-1 text-sm font-semibold text-gray-800">
+                <p className="min-w-0 flex-1 text-sm font-semibold text-[#30106f]">
                   Monday - Saturday: 10.00 A.M. - 6.00 P.M.
                 </p>
               </div>
@@ -560,7 +560,7 @@ export default function ContactPage() {
             {/* MAP */}
             <div className="mt-4">
               <div className="mb-2 flex items-center justify-between gap-3">
-                <h3 className="text-sm font-bold text-gray-900">
+                <h3 className="text-sm font-bold text-[#30106f]">
                   Find Our Location
                 </h3>
 
