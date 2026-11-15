@@ -90,6 +90,13 @@ const fadeIn: Variants = {
 };
 
 // ============================================================
+// EDITABLE SECTION TITLE SIZE (PIXELS)
+// Change this value to update the main section titles across the page.
+// ============================================================
+
+const SECTION_TITLE_SIZE = 30;
+
+// ============================================================
 // REUSABLE SECTION HEADING
 // ============================================================
 
@@ -106,6 +113,10 @@ function SectionHeading({
   description: string;
   light?: boolean;
 }) {
+  const titleGradient = light
+    ? "bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7]"
+    : "bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#8c52ff]";
+
   return (
     <div className="mx-auto mb-14 max-w-[850px] text-center">
       <motion.p
@@ -123,10 +134,11 @@ function SectionHeading({
         whileInView="visible"
         viewport={{ once: true }}
         variants={titleVariants}
-        className="bg-gradient-to-r from-[#8c52ff] via-[#a981ff] to-[#5921c7] bg-clip-text text-[30px] font-black leading-tight tracking-tight text-transparent sm:text-[38px] lg:text-[42px]"
+        style={{ fontSize: `${SECTION_TITLE_SIZE}px` }}
+        className={`${titleGradient} bg-clip-text font-black leading-tight tracking-tight text-transparent`}
       >
         {title}{" "}
-        <span className="bg-gradient-to-r from-[#8c52ff] via-[#a981ff] to-[#5921c7] bg-clip-text text-transparent">
+        <span className={`${titleGradient} bg-clip-text text-transparent`}>
           {highlight}
         </span>
       </motion.h2>
@@ -501,10 +513,10 @@ export default function STEMLabPage() {
     >
       {/* ====================================================== */}
       {/* 1. HERO + EDUCATIONAL STANDARDS */}
-      {/* CONTINUOUS DARK THEME */}
+      {/* LIGHT THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#090909] pb-8 pt-28 text-white md:pb-10 md:pt-34">
+      <section className="relative z-10 overflow-hidden bg-[#faf9fc] pb-8 pt-35 text-[#17131f] md:pb-10 md:pt-35">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -right-40 -top-40 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/[0.12] blur-[150px]" />
           <div className="absolute -left-40 bottom-0 h-[350px] w-[350px] rounded-full bg-[#5921c7]/[0.10] blur-[140px]" />
@@ -515,23 +527,28 @@ export default function STEMLabPage() {
             {/* HERO CONTENT */}
 
             <div className="flex w-full flex-col items-start">
-              <motion.h1
-                initial="hidden"
-                animate="visible"
-                variants={titleVariants}
-                className="bg-gradient-to-r from-[#8c52ff] via-[#a981ff] to-[#5921c7] bg-clip-text text-[32px] font-black leading-[1.12] tracking-tight text-transparent sm:text-[40px] lg:text-[36px] xl:text-[30px]"
-              >
-                STEAM Tinkering and Innovation Lab (TIL)
-              </motion.h1>
-
               <motion.p
                 initial="hidden"
                 animate="visible"
                 variants={descVariants}
-                className="mt-2 text-[11px] font-bold uppercase tracking-[0.12em] text-white sm:text-[13px] sm:tracking-[0.14em]"
+                className="mb-3 text-[11px] font-bold uppercase tracking-[0.12em] text-gray-700 sm:text-[13px] sm:tracking-[0.14em]"
               >
-                A holistic space for experiential learning and innovation
+                ESTABLISH A STATE-OF-THE-ART EXPLORATION HUB 
               </motion.p>
+
+              <motion.h1
+                initial="hidden"
+                animate="visible"
+                variants={titleVariants}
+                className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-[32px] font-black leading-[1.12] tracking-tight text-transparent sm:text-[40px] lg:text-[36px] xl:text-[30px]"
+              >
+                STEAM Tinkering and Innovation Lab (TIL)<br></br>
+                <span className="text-[#30106f] lg:order-none text-2xl text-3xl lg:text-[22px] font-extrabold leading-[1.1] tracking-tight bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent`">
+                  A holistic space for experiential learning and innovation.
+                </span>{" "}
+               
+              </motion.h1>
+
 
               <motion.div
                 initial={{ width: 0 }}
@@ -550,7 +567,7 @@ export default function STEMLabPage() {
                 variants={descVariants}
                 className="mt-5 space-y-5"
               >
-                <p className="text-justify text-[15px] font-medium leading-[29px] text-gray-300 sm:text-[18px] sm:leading-[28px]">
+                <p className="text-justify text-[15px] font-medium leading-[29px] text-gray-900 sm:text-[17px] sm:leading-[28px]">
                   STEAM Tinkering and Innovation Lab (TIL) is a dynamic and
                   collaborative space where learning meets exploration and
                   creativity meets technology. It is designed to foster
@@ -580,7 +597,7 @@ export default function STEMLabPage() {
 
                 <Link
                   href="#lab-packages"
-                  className="group inline-flex items-center gap-3 rounded-full border border-[#8c52ff]/50 bg-white/[0.04] px-6 py-3 text-[14px] font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#a981ff] hover:bg-[#5921c7]/20"
+                  className="group inline-flex items-center gap-3 rounded-full border border-[#8c52ff]/40 bg-white px-6 py-3 text-[14px] font-bold text-[#5921c7] transition-all duration-300 hover:-translate-y-1 hover:border-[#a981ff] hover:bg-[#5921c7]/20"
                 >
                   Explore Packages
                   <ArrowRight
@@ -599,7 +616,7 @@ export default function STEMLabPage() {
               variants={fadeIn}
               className="relative w-full"
             >
-              <div className="relative aspect-[18/10] w-full overflow-hidden rounded-[28px] border border-white/[0.10] bg-[#15121f] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:rounded-[32px]">
+              <div className="relative aspect-[18/10] w-full overflow-hidden rounded-[28px] border border-[#e9e4f1] bg-[#eeeaf5] shadow-[0_20px_60px_rgba(35,15,70,0.10)] sm:rounded-[32px]">
                 <Image
                   src="/stem-til2.png"
                   alt="Students working in the STEAM Tinkering and Innovation Lab"
@@ -614,7 +631,7 @@ export default function STEMLabPage() {
 
           {/* EDUCATIONAL STANDARDS */}
 
-          <div className="relative mt-10 border-t border-white/[0.10] pt-10 md:mt-10 md:pt-5">
+          <div className="relative mt-10 border-t border-[#e9e4f1] pt-10 md:mt-10 md:pt-5">
             <div className="grid items-center gap-8 lg:grid-cols-[0.95fr_2.7fr] lg:gap-10">
               {/* STANDARDS INTRO */}
 
@@ -624,7 +641,7 @@ export default function STEMLabPage() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={titleVariants}
-                  className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#a981ff]"
+                  className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#30106f]"
                 >
                   OUR CURRICULUM ALIGNS WITH
                 </motion.p>
@@ -634,7 +651,7 @@ export default function STEMLabPage() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={titleVariants}
-                  className="bg-gradient-to-r from-[#8c52ff] via-[#a981ff] to-[#5921c7] bg-clip-text text-[25px] font-black leading-tight text-transparent sm:text-[22px]"
+                  className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-[25px] font-black leading-tight text-transparent sm:text-[22px]"
                 >
                   Educational Standards
                 </motion.h2>
@@ -644,7 +661,7 @@ export default function STEMLabPage() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={descVariants}
-                  className="mt-3 text-[12px] leading-[23px] text-gray-200 sm:text-[12px] sm:leading-[18px]"
+                  className="mt-3 text-[12px] leading-[23px] text-gray-900 sm:text-[13px] sm:leading-[18px]"
                 >
                   We ensure our curriculum and methodology align with relevant
                   educational frameworks and institutional requirements.
@@ -662,17 +679,17 @@ export default function STEMLabPage() {
                     whileInView="visible"
                     variants={fadeUp}
                     viewport={{ once: true }}
-                    className="group flex min-h-[150px] flex-col rounded-[20px] border border-white/[0.09] bg-[#15121f] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#8c52ff]/50 hover:bg-[#1d172b] hover:shadow-[0_12px_35px_rgba(89,33,199,0.15)] sm:min-h-[158px] sm:p-5"
+                    className="group flex min-h-[150px] flex-col rounded-[20px] border border-[#e9e4f1] bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#8c52ff]/50 hover:bg-[#f7f3ff] hover:shadow-[0_12px_35px_rgba(89,33,199,0.15)] sm:min-h-[158px] sm:p-5"
                   >
-                    <div className="mb-1 flex h-9 w-9 items-center justify-center rounded-lg text-[#b18aff] transition-all group-hover:bg-[#5921c7]/20">
+                    <div className="mb-1 flex h-9 w-9 items-center justify-center rounded-lg text-[#5921c7] transition-all group-hover:bg-[#5921c7]/20">
                       {std.icon}
                     </div>
 
-                    <h3 className="mb-1 text-[16px] font-black text-[#b18aff] sm:text-[15px]">
+                    <h3 className="mb-1 text-[16px] font-black text-[#5921c7] sm:text-[15px]">
                       {std.name}
                     </h3>
 
-                    <p className="text-[9px] font-semibold uppercase leading-[15px] text-gray-300 sm:text-[10px] sm:leading-[14px]">
+                    <p className="text-[9px] font-semibold uppercase leading-[15px] text-gray-900 sm:text-[10px] sm:leading-[14px]">
                       {std.full}
                     </p>
                   </motion.div>
@@ -685,10 +702,10 @@ export default function STEMLabPage() {
 
       {/* ====================================================== */}
       {/* 2. WHY STEAM TIL */}
-      {/* LIGHT THEME */}
+      {/* DARK THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#faf9fc] py-20 text-[#17131f] md:py-10">
+      <section className="relative z-10 overflow-hidden bg-[#30106f] py-20 text-white md:py-10">
         <div className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-[#8c52ff]/[0.07] blur-[130px]" />
         <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[#5921c7]/[0.06] blur-[130px]" />
 
@@ -698,7 +715,6 @@ export default function STEMLabPage() {
             title="Why STEAM Tinkering and"
             highlight="Innovation Lab?"
             description="A STEAM Tinkering and Innovation Lab provides students with opportunities to connect classroom concepts with real-world applications, develop practical skills and prepare for a technology-driven future."
-            light
           />
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
@@ -710,26 +726,26 @@ export default function STEMLabPage() {
                 whileInView="visible"
                 variants={fadeUp}
                 viewport={{ once: true, amount: 0.2 }}
-                className="group relative flex flex-col items-center overflow-hidden rounded-3xl border border-[#e9e4f1] bg-white p-5 text-center transition-all duration-300 hover:-translate-y-2 hover:border-[#8c52ff]/50 hover:shadow-[0_18px_45px_rgba(89,33,199,0.12)] sm:p-6"
+                className="group relative flex flex-col items-center overflow-hidden rounded-3xl border border-white/[0.10] bg-[#3e1b86] p-5 text-center transition-all duration-300 hover:-translate-y-2 hover:border-[#b99aff]/60 hover:shadow-[0_18px_45px_rgba(89,33,199,0.12)] sm:p-6"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#5921c7]/[0.07] text-[#5921c7] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#8c52ff]/20 text-[#b18aff] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
                   {item.icon}
                 </div>
 
-                <h3 className="mb-3 text-[30px] font-black text-[#5921c7] transition-colors group-hover:text-[#8c52ff]">
+                <h3 className="mb-3 text-[30px] font-black text-[#b18aff] transition-colors group-hover:text-[#8c52ff]">
                   {item.number}
                 </h3>
 
                 <div className="mb-4 h-[4px] w-8 rounded-full bg-[#8c52ff]/60" />
 
-                <p className="text-[11px] font-medium leading-[21px] text-gray-600 sm:text-[12px] sm:leading-[23px]">
+                <p className="text-[11px] font-medium leading-[21px] text-gray-300 sm:text-[12px] sm:leading-[23px]">
                   {item.text}
                 </p>
               </motion.div>
             ))}
           </div>
 
-          <p className="mx-auto mt-8 max-w-[850px] text-center text-[10px] leading-[20px] text-gray-500">
+          <p className="mx-auto mt-8 max-w-[850px] text-center text-[10px] leading-[20px] text-gray-400">
             The statistics above are indicative educational and workforce
             context figures. Please verify the original research sources before
             using them in formal institutional proposals or publications.
@@ -739,10 +755,10 @@ export default function STEMLabPage() {
 
       {/* ====================================================== */}
       {/* 3. OBJECTIVES + OUR METHODOLOGY */}
-      {/* COMBINED DARK THEME */}
+      {/* LIGHT THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#090909] py-20 text-white md:py-28">
+      <section className="relative z-10 overflow-hidden bg-[#faf9fc] py-20 text-[#17131f] md:py-28">
         <div className="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-[#8c52ff]/10 blur-[140px]" />
         <div className="pointer-events-none absolute -left-40 bottom-0 h-96 w-96 rounded-full bg-[#5921c7]/[0.12] blur-[140px]" />
 
@@ -752,13 +768,14 @@ export default function STEMLabPage() {
             title="From Curiosity to"
             highlight="Creation"
             description="Our STEAM Tinkering and Innovation Lab is designed to transform the way students learn. By combining experiential learning, interdisciplinary exploration and practical application, we help learners develop the confidence and capabilities to turn ideas into meaningful innovations."
+            light
           />
 
           {/* OBJECTIVES */}
 
           <div className="mb-20">
             <div className="mb-8 flex flex-col items-center text-center">
-              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#a981ff]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#8c52ff]">
                 WHAT WE AIM TO ACHIEVE
               </p>
 
@@ -766,7 +783,7 @@ export default function STEMLabPage() {
                 Building Skills Beyond the Classroom
               </h3>
 
-              <p className="mt-3 max-w-[720px] text-[13px] leading-[26px] text-gray-400 sm:text-[14px]">
+              <p className="mt-3 max-w-[720px] text-[13px] leading-[26px] text-gray-600 sm:text-[14px]">
                 Every learning experience is structured to nurture essential
                 capabilities that help students understand, create,
                 collaborate and solve real-world challenges.
@@ -783,16 +800,16 @@ export default function STEMLabPage() {
                   variants={fadeUp}
                   viewport={{ once: true, amount: 0.2 }}
                   whileHover={{ y: -7 }}
-                  className="group relative flex min-h-[210px] flex-col overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#15121f] p-6 transition-all duration-300 hover:border-[#8c52ff]/50 hover:shadow-[0_18px_45px_rgba(89,33,199,0.18)]"
+                  className="group relative flex min-h-[210px] flex-col overflow-hidden rounded-[24px] border border-[#e9e4f1] bg-white p-6 transition-all duration-300 hover:border-[#8c52ff]/50 hover:shadow-[0_18px_45px_rgba(89,33,199,0.18)]"
                 >
                   <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#8c52ff]/[0.04] blur-2xl transition-all duration-500 group-hover:bg-[#8c52ff]/15" />
 
                   <div className="relative z-10 mb-7 flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#8c52ff]/25 bg-[#5921c7]/20 text-[#b18aff] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#8c52ff]/25 bg-[#5921c7]/20 text-[#5921c7] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
                       {obj.icon}
                     </div>
 
-                    <span className="text-[28px] font-black tracking-tight text-white/[0.10] transition-colors group-hover:text-[#8c52ff]/40">
+                    <span className="text-[28px] font-black tracking-tight text-[#5921c7]/10 transition-colors group-hover:text-[#8c52ff]/40">
                       0{i + 1}
                     </span>
                   </div>
@@ -800,7 +817,7 @@ export default function STEMLabPage() {
                   <div className="relative z-10 mt-auto">
                     <div className="mb-4 h-[3px] w-9 rounded-full bg-gradient-to-r from-[#5921c7] to-[#a981ff] transition-all duration-300 group-hover:w-16" />
 
-                    <p className="text-[13px] font-bold leading-[24px] text-gray-300 transition-colors group-hover:text-white">
+                    <p className="text-[13px] font-bold leading-[24px] text-gray-700 transition-colors group-hover:text-[#17131f]">
                       {obj.text}
                     </p>
                   </div>
@@ -811,9 +828,9 @@ export default function STEMLabPage() {
 
           {/* METHODOLOGY */}
 
-          <div className="border-t border-white/[0.10] pt-16">
+          <div className="border-t border-[#e9e4f1] pt-16">
             <div className="mx-auto mb-12 max-w-[800px] text-center">
-              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#a981ff]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#8c52ff]">
                 HOW STUDENTS LEARN
               </p>
 
@@ -821,7 +838,7 @@ export default function STEMLabPage() {
                 Explore, Experiment, Build & Innovate
               </h3>
 
-              <p className="mt-4 text-[13px] leading-[26px] text-gray-400 sm:text-[14px] sm:leading-[28px]">
+              <p className="mt-4 text-[13px] leading-[26px] text-gray-600 sm:text-[14px] sm:leading-[28px]">
                 Our learning methodology takes students through a structured
                 journey, moving from understanding concepts to creating
                 practical solutions through hands-on experiences.
@@ -838,22 +855,22 @@ export default function STEMLabPage() {
                   variants={fadeUp}
                   viewport={{ once: true, amount: 0.2 }}
                   whileHover={{ y: -7 }}
-                  className="group relative flex min-h-[300px] flex-col overflow-hidden rounded-[28px] border border-white/[0.08] bg-[#15121f] p-7 transition-all duration-300 hover:border-[#8c52ff]/50 hover:shadow-[0_20px_55px_rgba(89,33,199,0.18)]"
+                  className="group relative flex min-h-[300px] flex-col overflow-hidden rounded-[28px] border border-[#e9e4f1] bg-white p-7 transition-all duration-300 hover:border-[#8c52ff]/50 hover:shadow-[0_20px_55px_rgba(89,33,199,0.18)]"
                 >
                   <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-[#8c52ff]/[0.04] blur-2xl transition-all duration-500 group-hover:bg-[#8c52ff]/15" />
 
                   <div className="relative z-10 mb-8 flex items-center justify-between">
-                    <div className="flex h-[62px] w-[62px] items-center justify-center rounded-[20px] border border-[#8c52ff]/20 bg-[#5921c7]/20 text-[#b18aff] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
+                    <div className="flex h-[62px] w-[62px] items-center justify-center rounded-[20px] border border-[#8c52ff]/20 bg-[#5921c7]/20 text-[#5921c7] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
                       {step.icon}
                     </div>
 
-                    <span className="text-[38px] font-black leading-none text-white/[0.10] transition-colors group-hover:text-[#8c52ff]/40">
+                    <span className="text-[38px] font-black leading-none text-[#5921c7]/10 transition-colors group-hover:text-[#8c52ff]/40">
                       {step.number}
                     </span>
                   </div>
 
                   <div className="relative z-10 mt-auto">
-                    <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#a981ff]">
+                    <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#8c52ff]">
                       STEP {step.number}
                     </p>
 
@@ -861,7 +878,7 @@ export default function STEMLabPage() {
                       {step.title}
                     </h4>
 
-                    <p className="text-[13px] leading-[26px] text-gray-400">
+                    <p className="text-[13px] leading-[26px] text-gray-600">
                       {step.description}
                     </p>
 
@@ -876,10 +893,10 @@ export default function STEMLabPage() {
 
       {/* ====================================================== */}
       {/* 4. DOMAINS OF FOCUS */}
-      {/* LIGHT THEME */}
+      {/* DARK THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#faf9fc] py-20 text-[#17131f] md:py-28">
+      <section className="relative z-10 overflow-hidden bg-[#30106f] py-20 text-white md:py-28">
         <div className="pointer-events-none absolute -left-40 top-20 h-[450px] w-[450px] rounded-full bg-[#5921c7]/[0.07] blur-[150px]" />
 
         <div className="relative mx-auto max-w-[1400px] px-6">
@@ -888,7 +905,6 @@ export default function STEMLabPage() {
             title="Domains Students Will"
             highlight="Explore"
             description="Students will explore a diverse range of future-focused STEAM fields designed for progressive learning, building stronger foundations and fostering innovation."
-            light
           />
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -901,9 +917,9 @@ export default function STEMLabPage() {
                 variants={fadeUp}
                 viewport={{ once: true, amount: 0.15 }}
                 whileHover={{ y: -7 }}
-                className="group relative overflow-hidden rounded-3xl border border-[#e9e4f1] bg-white p-4 shadow-[0_10px_35px_rgba(35,15,70,0.035)] transition-all duration-300 hover:border-[#8c52ff]/50 hover:shadow-[0_15px_40px_rgba(89,33,199,0.12)]"
+                className="group relative overflow-hidden rounded-3xl border border-white/[0.10] bg-[#3e1b86] p-4 shadow-[0_10px_35px_rgba(35,15,70,0.035)] transition-all duration-300 hover:border-[#b99aff]/60 hover:shadow-[0_15px_40px_rgba(89,33,199,0.12)]"
               >
-                <div className="relative mb-5 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#eeeaf5]">
+                <div className="relative mb-5 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#30106f]">
                   <Image
                     src={domain.image}
                     alt={domain.title}
@@ -921,7 +937,7 @@ export default function STEMLabPage() {
 
                   <div className="mb-4 h-[4px] w-9 rounded-full bg-[#8c52ff]/60 transition-all duration-300 group-hover:w-14" />
 
-                  <p className="text-[12px] leading-[25px] text-gray-600 sm:text-[13px] sm:leading-[27px]">
+                  <p className="text-[12px] leading-[25px] text-gray-300 sm:text-[13px] sm:leading-[27px]">
                     {domain.desc}
                   </p>
                 </div>
@@ -933,10 +949,10 @@ export default function STEMLabPage() {
 
       {/* ====================================================== */}
       {/* 5. WHY ADROIIT + INSTITUTIONAL PARTNERSHIP */}
-      {/* COMBINED DARK THEME */}
+      {/* LIGHT THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] py-20 text-white md:py-28">
+      <section className="relative z-10 overflow-hidden bg-[#faf9fc] py-20 text-[#17131f] md:py-28">
         <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/15 blur-[150px]" />
         <div className="pointer-events-none absolute -left-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/[0.08] blur-[150px]" />
 
@@ -950,7 +966,7 @@ export default function STEMLabPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={titleVariants}
-                className="mb-4 text-[11px] font-bold uppercase tracking-[0.25em] text-[#a981ff] sm:text-[12px]"
+                className="mb-4 text-[11px] font-bold uppercase tracking-[0.25em] text-[#8c52ff] sm:text-[12px]"
               >
                 THE ADROIIT ADVANTAGE
               </motion.p>
@@ -960,9 +976,10 @@ export default function STEMLabPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={titleVariants}
-                className="text-[32px] font-black leading-tight tracking-tight sm:text-[40px] lg:text-[46px]"
+                style={{ fontSize: `${SECTION_TITLE_SIZE}px` }}
+                className="font-black leading-tight tracking-tight"
               >
-                <span className="bg-gradient-to-r from-[#8c52ff] via-[#a981ff] to-[#5921c7] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
                   More Than a Lab.
                   <br />
                   A Foundation for Innovation.
@@ -974,7 +991,7 @@ export default function STEMLabPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={descVariants}
-                className="mt-6 text-[14px] leading-[29px] text-gray-400 sm:text-[16px] sm:leading-[32px]"
+                className="mt-6 text-[14px] leading-[29px] text-gray-600 sm:text-[16px] sm:leading-[32px]"
               >
                 Adroiit Technovations works with educational institutions to
                 create future-ready STEAM learning environments. From
@@ -994,11 +1011,11 @@ export default function STEMLabPage() {
                     viewport={{ once: true }}
                     className="flex items-start gap-4"
                   >
-                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#8c52ff]/25 bg-[#5921c7]/20 text-[#b18aff]">
+                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#8c52ff]/25 bg-[#5921c7]/20 text-[#5921c7]">
                       {item.icon}
                     </div>
 
-                    <p className="text-[13px] leading-[26px] text-gray-300 sm:text-[14px] sm:leading-[28px]">
+                    <p className="text-[13px] leading-[26px] text-gray-700 sm:text-[14px] sm:leading-[28px]">
                       {item.text}
                     </p>
                   </motion.div>
@@ -1007,7 +1024,7 @@ export default function STEMLabPage() {
 
               <Link
                 href="/contact"
-                className="group mt-9 inline-flex items-center gap-3 rounded-full border border-[#8c52ff]/40 px-7 py-4 text-[14px] font-bold text-white transition-all hover:border-[#a981ff] hover:bg-[#5921c7]/20"
+                className="group mt-9 inline-flex items-center gap-3 rounded-full border border-[#8c52ff]/40 px-7 py-4 text-[14px] font-bold text-[#17131f] transition-all hover:border-[#a981ff] hover:bg-[#5921c7]/20"
               >
                 Plan Your STEAM Lab
                 <ArrowRight
@@ -1028,10 +1045,10 @@ export default function STEMLabPage() {
             >
               <div className="absolute -inset-5 rounded-[35px] bg-gradient-to-br from-[#5921c7]/20 to-[#8c52ff]/[0.06] blur-2xl" />
 
-              <div className="relative overflow-hidden rounded-[30px] border border-white/[0.09] bg-[#15121f] p-7 shadow-[0_15px_50px_rgba(0,0,0,0.25)] sm:p-9">
+              <div className="relative overflow-hidden rounded-[30px] border border-[#e9e4f1] bg-white p-7 shadow-[0_15px_50px_rgba(0,0,0,0.25)] sm:p-9">
                 <div className="mb-8 flex items-center justify-between">
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#a981ff]">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#8c52ff]">
                       THE BIGGER PICTURE
                     </p>
                     <h3 className="mt-2 bg-gradient-to-r from-[#8c52ff] via-[#a981ff] to-[#5921c7] bg-clip-text text-[24px] font-black text-transparent">
@@ -1039,7 +1056,7 @@ export default function STEMLabPage() {
                     </h3>
                   </div>
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#8c52ff]/25 bg-[#5921c7]/20 text-[#b18aff]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#8c52ff]/25 bg-[#5921c7]/20 text-[#5921c7]">
                     <Idea size={23} />
                   </div>
                 </div>
@@ -1053,9 +1070,9 @@ export default function STEMLabPage() {
                       whileInView="visible"
                       variants={fadeUp}
                       viewport={{ once: true }}
-                      className="flex items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.035] p-4 transition-all hover:border-[#8c52ff]/35 hover:bg-white/[0.06]"
+                      className="flex items-center gap-3 rounded-2xl border border-[#e9e4f1] bg-[#faf9fc] p-4 transition-all hover:border-[#8c52ff]/35 hover:bg-[#f3edff]"
                     >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#5921c7]/25 text-[#b18aff]">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#5921c7]/25 text-[#5921c7]">
                         {item.icon}
                       </div>
 
@@ -1063,7 +1080,7 @@ export default function STEMLabPage() {
                         <h4 className="bg-gradient-to-r from-[#8c52ff] via-[#a981ff] to-[#5921c7] bg-clip-text text-[13px] font-bold text-transparent">
                           {item.title}
                         </h4>
-                        <p className="mt-1 text-[11px] leading-[19px] text-gray-400">
+                        <p className="mt-1 text-[11px] leading-[19px] text-gray-600">
                           {item.desc}
                         </p>
                       </div>
@@ -1074,10 +1091,10 @@ export default function STEMLabPage() {
                 <div className="my-8 h-px w-full bg-white/[0.10]" />
 
                 <div className="mb-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#a981ff]">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8c52ff]">
                     WHY INSTITUTIONS CHOOSE US
                   </p>
-                  <h4 className="mt-2 text-[18px] font-black text-white">
+                  <h4 className="mt-2 text-[18px] font-black text-[#17131f]">
                     Designed Around Your Institution
                   </h4>
                 </div>
@@ -1091,34 +1108,34 @@ export default function STEMLabPage() {
                       whileInView="visible"
                       variants={fadeUp}
                       viewport={{ once: true }}
-                      className="flex items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4 transition-all hover:border-[#8c52ff]/30 hover:bg-white/[0.05]"
+                      className="flex items-start gap-3 rounded-2xl border border-[#e9e4f1] bg-[#faf9fc] p-4 transition-all hover:border-[#8c52ff]/30 hover:bg-[#f3edff]"
                     >
-                      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#8c52ff]/20 bg-[#5921c7]/20 text-[#b18aff]">
+                      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#8c52ff]/20 bg-[#5921c7]/20 text-[#5921c7]">
                         {item.icon}
                       </div>
 
                       <div>
-                        <h5 className="text-[13px] font-bold leading-[21px] text-white">
+                        <h5 className="text-[13px] font-bold leading-[21px] text-[#17131f]">
                           {item.title}
                         </h5>
-                        <p className="mt-1 text-[11px] leading-[21px] text-gray-400">
+                        <p className="mt-1 text-[11px] leading-[21px] text-gray-600">
                           {item.description}
                         </p>
                       </div>
 
                       <CheckCircle2
                         size={16}
-                        className="mt-1 ml-auto shrink-0 text-[#a981ff]"
+                        className="mt-1 ml-auto shrink-0 text-[#8c52ff]"
                       />
                     </motion.div>
                   ))}
                 </div>
 
                 <div className="mt-7 rounded-2xl border border-[#8c52ff]/25 bg-gradient-to-r from-[#5921c7]/20 to-[#8c52ff]/[0.08] p-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#b18aff]">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#5921c7]">
                     THE OUTCOME WE WORK TOWARDS
                   </p>
-                  <p className="mt-2 text-[18px] font-bold leading-[29px] text-white">
+                  <p className="mt-2 text-[18px] font-bold leading-[29px] text-[#17131f]">
                     A learning environment where curiosity becomes capability.
                   </p>
                 </div>
@@ -1135,7 +1152,7 @@ export default function STEMLabPage() {
 
       <section
         id="lab-packages"
-        className="relative z-10 scroll-mt-24 overflow-hidden bg-[#090909] py-20 text-white md:py-28"
+        className="relative z-10 scroll-mt-24 overflow-hidden bg-[#30106f] py-20 text-white md:py-28"
       >
         <div className="pointer-events-none absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/15 blur-[150px]" />
         <div className="pointer-events-none absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[150px]" />
@@ -1160,8 +1177,8 @@ export default function STEMLabPage() {
                 whileHover={{ y: -7 }}
                 className={`group relative flex flex-col overflow-hidden rounded-[28px] border p-7 transition-all duration-300 hover:shadow-[0_22px_60px_rgba(89,33,199,0.20)] sm:p-8 ${
                   pkg.featured
-                    ? "border-[#8c52ff]/60 bg-gradient-to-b from-[#211735] to-[#15121f] shadow-[0_15px_50px_rgba(89,33,199,0.16)]"
-                    : "border-white/[0.09] bg-[#15121f] hover:border-[#8c52ff]/50"
+                    ? "border-[#8c52ff]/60 bg-gradient-to-b from-[#4b258e] to-[#3e1b86] shadow-[0_15px_50px_rgba(89,33,199,0.16)]"
+                    : "border-white/[0.10] bg-[#3e1b86] hover:border-[#8c52ff]/50"
                 }`}
               >
                 {pkg.featured && (
@@ -1188,7 +1205,7 @@ export default function STEMLabPage() {
                   {pkg.name}
                 </h3>
 
-                <p className="mt-4 min-h-[105px] text-[13px] leading-[27px] text-gray-400 sm:text-[14px]">
+                <p className="mt-4 min-h-[105px] text-[13px] leading-[27px] text-gray-200 sm:text-[14px]">
                   {pkg.description}
                 </p>
 
@@ -1202,7 +1219,7 @@ export default function STEMLabPage() {
                   {pkg.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-3 text-[12px] leading-[22px] text-gray-300 sm:text-[13px]"
+                      className="flex items-start gap-3 text-[12px] leading-[22px] text-gray-200 sm:text-[13px]"
                     >
                       <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#8c52ff]/20 text-[#b18aff]">
                         <CheckCircle2 size={13} />
@@ -1212,7 +1229,7 @@ export default function STEMLabPage() {
                   ))}
                 </ul>
 
-                <div className="mt-8 rounded-2xl border border-[#8c52ff]/20 bg-white/[0.035] p-4">
+                <div className="mt-8 rounded-2xl border border-[#8c52ff]/25 bg-[#3e1b86] p-4">
                   <p className="text-[9px] font-bold uppercase tracking-[0.17em] text-[#a981ff]">
                     IDEAL FOR
                   </p>
@@ -1248,7 +1265,75 @@ export default function STEMLabPage() {
       </section>
 
       {/* ====================================================== */}
-      {/* 7. FINAL CTA */}
+      {/* 7. FREQUENTLY ASKED QUESTIONS */}
+      {/* DARK THEME */}
+      {/* ====================================================== */}
+
+      <section className="relative z-10 overflow-hidden bg-[#30106f] px-6 py-20 text-white md:py-28">
+        <div className="pointer-events-none absolute -right-40 top-0 h-[420px] w-[420px] rounded-full bg-[#8c52ff]/10 blur-[145px]" />
+        <div className="pointer-events-none absolute -left-40 bottom-0 h-[380px] w-[380px] rounded-full bg-[#5921c7]/15 blur-[140px]" />
+
+        <div className="relative mx-auto max-w-[1050px]">
+          <SectionHeading
+            eyebrow="FREQUENTLY ASKED QUESTIONS"
+            title="Everything You Need to"
+            highlight="Know"
+            description="Find answers to common questions about our STEAM Tinkering and Innovation Lab and how it can support your institution."
+          />
+
+          <div className="mx-auto max-w-[900px] space-y-4">
+            {[
+              {
+                question: "What is a STEAM Tinkering and Innovation Lab?",
+                answer: "A STEAM Tinkering and Innovation Lab is a practical learning environment where students explore Science, Technology, Engineering, Arts and Mathematics through hands-on activities, experimentation, design and project development.",
+              },
+              {
+                question: "Which technology domains can students explore?",
+                answer: "Students can explore electronics and circuits, 3D design and modelling, 3D printing, embedded systems, robotics, Internet of Things, drone technology and artificial intelligence, depending on the selected lab package and learning plan.",
+              },
+              {
+                question: "Can the lab be customised for our institution?",
+                answer: "Yes. Lab infrastructure, equipment, learning resources and technology domains can be planned around your institution's requirements, available space, student strength and learning objectives.",
+              },
+              {
+                question: "Is the curriculum aligned with educational frameworks?",
+                answer: "Our learning approach is designed with reference to NEP 2020, NCF 2023, NCERT and CBSE requirements. The specific curriculum plan can be discussed based on your institution's academic needs.",
+              },
+              {
+                question: "Do you provide implementation and ongoing support?",
+                answer: "Yes. Adroiit can support institutions with lab planning, infrastructure, curriculum and learning resources, implementation guidance, maintenance and continued support based on the agreed partnership scope.",
+              },
+              {
+                question: "How can our school enquire about setting up a STEAM Lab?",
+                answer: "You can contact our team through the Book a Demo or Enquire links on this page. We can discuss your institution's requirements and recommend a suitable lab solution.",
+              },
+            ].map((faq, index) => (
+              <motion.details
+                key={faq.question}
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeUp}
+                custom={index}
+                viewport={{ once: true, amount: 0.15 }}
+                className="group rounded-2xl border border-white/10 bg-[#3e1b86] p-5 transition-colors duration-300 open:border-[#b18aff]/50 sm:p-6"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-[14px] font-bold leading-6 text-white marker:content-none sm:text-[16px]">
+                  <span>{faq.question}</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#b18aff]/30 text-[#b18aff] transition-transform duration-300 group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-4 max-w-[800px] pr-10 text-[13px] leading-[26px] text-gray-300 sm:text-[14px] sm:leading-[28px]">
+                  {faq.answer}
+                </p>
+              </motion.details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================== */}
+      {/* 8. FINAL CTA */}
       {/* LIGHT THEME */}
       {/* ====================================================== */}
 
@@ -1267,7 +1352,10 @@ export default function STEMLabPage() {
             BUILD THE FUTURE WITH US
           </p>
 
-          <h2 className="mb-6 bg-gradient-to-r from-[#8c52ff] via-[#a981ff] to-[#5921c7] bg-clip-text text-[32px] font-black leading-tight tracking-tight text-transparent sm:text-[42px] md:text-[50px]">
+          <h2
+            style={{ fontSize: `${SECTION_TITLE_SIZE}px` }}
+            className="mb-6 bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text font-black leading-tight tracking-tight text-transparent"
+          >
             Transform Your School into a Future-Ready Innovation Hub
           </h2>
 
