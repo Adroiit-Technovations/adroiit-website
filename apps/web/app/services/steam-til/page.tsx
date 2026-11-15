@@ -724,7 +724,8 @@ export default function STEMLabPage() {
         >
           <SectionHeading
             eyebrow="THE NEED FOR STEAM EDUCATION"
-            title="Why STEAM Tinkering and Innovation Lab?"
+            title="Why STEAM Tinkering and Innovation"
+            highlight="Lab?"
             description="A STEAM Tinkering and Innovation Lab provides students with opportunities to connect classroom concepts with real-world applications, develop practical skills and prepare for a technology-driven future."
           />
 
@@ -837,66 +838,65 @@ export default function STEMLabPage() {
           className="relative mx-auto w-full px-6"
           style={{ maxWidth: `${SECTION_4_CONTENT_WIDTH}px` }}
         >
-          
-            <div className="mx-auto mb-12 max-w-[800px] text-center">
-              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-purple-300">
-                HOW STUDENTS LEARN
-              </p>
+          <div className="mx-auto mb-12 max-w-[800px] text-center">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-purple-300">
+              HOW STUDENTS LEARN
+            </p>
 
-              <h3 className="mt-3 text-[27px] font-black text-white sm:text-[32px]">
-                Explore, Experiment, Build & Innovate
-              </h3>
+            <h3 className="mt-3 text-[27px] font-black text-white sm:text-[32px]">
+              Explore, Experiment, Build & Innovate
+            </h3>
 
-              <p className="mt-4 text-[13px] leading-[26px] text-gray-300 sm:text-[14px] sm:leading-[28px]">
-                Our learning methodology takes students through a structured
-                journey, moving from understanding concepts to creating
-                practical solutions through hands-on experiences.
-              </p>
-            </div>
-
-            <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {methodology.map((step, i) => (
-                <motion.div
-                  key={step.title}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  variants={fadeUp}
-                  viewport={{ once: true, amount: 0.2 }}
-                  whileHover={{ y: -7 }}
-                  className="group relative flex min-h-[300px] flex-col overflow-hidden rounded-[28px] border border-white/[0.10] bg-[#3e1b86] p-7 transition-all duration-300 hover:border-[#8c52ff]/50 hover:shadow-[0_20px_55px_rgba(89,33,199,0.18)]"
-                >
-                  <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-[#8c52ff]/[0.04] blur-2xl transition-all duration-500 group-hover:bg-[#8c52ff]/15" />
-
-                  <div className="relative z-10 mb-8 flex items-center justify-between">
-                    <div className="flex h-[62px] w-[62px] items-center justify-center rounded-[20px] border border-[#8c52ff]/20 bg-[#5921c7]/30 text-[#b18aff] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
-                      {step.icon}
-                    </div>
-
-                    <span className="text-[38px] font-black leading-none text-white/10 transition-colors group-hover:text-[#8c52ff]/40">
-                      {step.number}
-                    </span>
-                  </div>
-
-                  <div className="relative z-10 mt-auto">
-                    <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-purple-300">
-                      STEP {step.number}
-                    </p>
-
-                    <h4 className="mb-3 text-[23px] font-black text-white">
-                      {step.title}
-                    </h4>
-
-                    <p className="text-[13px] leading-[26px] text-gray-300">
-                      {step.description}
-                    </p>
-
-                    <div className="mt-6 h-[4px] w-9 rounded-full bg-gradient-to-r from-[#5921c7] to-[#8c52ff] transition-all duration-300 group-hover:w-16" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            <p className="mt-4 text-[13px] leading-[26px] text-gray-300 sm:text-[14px] sm:leading-[28px]">
+              Our learning methodology takes students through a structured
+              journey, moving from understanding concepts to creating
+              practical solutions through hands-on experiences.
+            </p>
           </div>
+
+          <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {methodology.map((step, i) => (
+              <motion.div
+                key={step.title}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeUp}
+                viewport={{ once: true, amount: 0.2 }}
+                whileHover={{ y: -7 }}
+                className="group relative flex min-h-[300px] flex-col overflow-hidden rounded-[28px] border border-white/[0.10] bg-[#3e1b86] p-7 transition-all duration-300 hover:border-[#8c52ff]/50 hover:shadow-[0_20px_55px_rgba(89,33,199,0.18)]"
+              >
+                <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-[#8c52ff]/[0.04] blur-2xl transition-all duration-500 group-hover:bg-[#8c52ff]/15" />
+
+                <div className="relative z-10 mb-8 flex items-center justify-between">
+                  <div className="flex h-[62px] w-[62px] items-center justify-center rounded-[20px] border border-[#8c52ff]/20 bg-[#5921c7]/30 text-[#b18aff] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
+                    {step.icon}
+                  </div>
+
+                  <span className="text-[38px] font-black leading-none text-white/10 transition-colors group-hover:text-[#8c52ff]/40">
+                    {step.number}
+                  </span>
+                </div>
+
+                <div className="relative z-10 mt-auto">
+                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-purple-300">
+                    STEP {step.number}
+                  </p>
+
+                  <h4 className="mb-3 text-[23px] font-black text-white">
+                    {step.title}
+                  </h4>
+
+                  <p className="text-[13px] leading-[26px] text-gray-300">
+                    {step.description}
+                  </p>
+
+                  <div className="mt-6 h-[4px] w-9 rounded-full bg-gradient-to-r from-[#5921c7] to-[#8c52ff] transition-all duration-300 group-hover:w-16" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ====================================================== */}
