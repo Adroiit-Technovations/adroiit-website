@@ -1,14 +1,16 @@
 
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   Lightbulb,
   Zap,
   Users,
   MessageCircle,
-  IndianRupee,
   BrainCircuit,
   BookOpen,
   FileText,
@@ -27,13 +29,7 @@ import {
   School,
   Rocket,
   CheckCircle2,
-  Boxes,
   FlaskConical,
-  Handshake,
-  Layers3,
-  Building2,
-  ClipboardCheck,
-  Lightbulb as Idea,
   Cpu,
 } from "lucide-react";
 import Link from "next/link";
@@ -99,15 +95,15 @@ const SECTION_TITLE_SIZE = 30;
 // EDITABLE SECTION CONTENT WIDTHS (PIXELS)
 // ============================================================
 
-const SECTION_1_CONTENT_WIDTH = 1290; // Hero + Educational Standards
-const SECTION_2_CONTENT_WIDTH = 1290; // Why STEAM TIL
-const SECTION_3_CONTENT_WIDTH = 1200; // Our Goals with STEAM TIL
-const SECTION_4_CONTENT_WIDTH = 1200; // How Students Learn
-const SECTION_5_CONTENT_WIDTH = 1200; // Domains of Focus
-const SECTION_6_CONTENT_WIDTH = 1200; // Why Adroiit + Institutional Partnership
-const SECTION_7_CONTENT_WIDTH = 1200; // Three STEAM Lab Packages
-const SECTION_8_CONTENT_WIDTH = 1200; // Frequently Asked Questions
-const SECTION_9_CONTENT_WIDTH = 1200; // Final CTA
+const SECTION_1_CONTENT_WIDTH = 1290;
+const SECTION_2_CONTENT_WIDTH = 1290;
+const SECTION_3_CONTENT_WIDTH = 1290;
+const SECTION_4_CONTENT_WIDTH = 1200;
+const SECTION_5_CONTENT_WIDTH = 1200;
+const SECTION_6_CONTENT_WIDTH = 1200;
+const SECTION_7_CONTENT_WIDTH = 1200;
+const SECTION_8_CONTENT_WIDTH = 1200;
+const SECTION_9_CONTENT_WIDTH = 1200;
 
 // ============================================================
 // REUSABLE SECTION HEADING
@@ -137,7 +133,7 @@ function SectionHeading({
         whileInView="visible"
         viewport={{ once: true }}
         variants={titleVariants}
-        className={`mb-4 text-[13px] font-bold uppercase tracking-[0.25em] sm:text-[12px] ${
+        className={`mb-4 text-[12px] font-bold uppercase tracking-[0.25em] sm:text-[13px] ${
           light ? "text-gray-700" : "text-purple-300"
         }`}
       >
@@ -176,6 +172,67 @@ function SectionHeading({
 // ============================================================
 
 export default function STEMLabPage() {
+  // ============================================================
+  // FAQ PAGINATION
+  // ============================================================
+
+  const [faqPage, setFaqPage] = useState(0);
+
+  const FAQS_PER_PAGE = 5;
+
+  const faqItems = [
+    {
+      question: "Who can benefit from STEAM TIL program?",
+      answer:
+        "The STEAM TIL curriculum is exclusively designed for the students of Grade 6 to 9, with STEAM concepts and activities tailored to their age and academic capabilities.",
+    },
+    {
+      question: "Why STEAM TIL primarily focuses on Grade 6 to 9 and not lower grades?",
+      answer:
+        "The initial grade i.e. Grade 6, offers the ideal stage for introducing structured technical concepts, as students develop stronger logical reasoning, abstract thinking and problem-solving abilities.",
+    },
+    {
+      question: "Is the curriculum structured grade-wise?",
+      answer:
+        "Yes! We follow a structured and progressive curriculum where concepts, activities and projects advanced according to students' grade levels and learning abilities.",
+    },
+    {
+      question: "Do students need prior technical knowledge or programming experience?",
+      answer:
+        "No. The program starts with the foundations, understanding the fundamental concepts and gradually introduces emerging technologies, making the learning journey beginner-friendly.",
+    },
+    {
+      question: "Can the program be integrated into the regular school timetable?",
+      answer:
+        "Absolutely! Our STEAM TIL program is designed to fit seamlessly into the school's existing timetable, tailored to academic requirements and institutional preferences.",
+    },
+    {
+      question: "Will Adroiit Technovations provide full-time dedicated instructors?",
+      answer:
+        "Proficient and dedicated STEAM instructor allocation can be arranged based on the selected package and institutional preferences.",
+    },
+    {
+      question: "Does Adroiit Technovations offer teacher orientation and training?",
+      answer:
+        "Yes! We provide comprehensive teacher orientation and hands-on training to familiarize educators with the STEAM curriculum, learning kits, tools and teaching methodologies for effective program delivery.",
+    },
+    {
+      question: "Does Adroiit Technovations provide STEAM kits and learning materials?",
+      answer:
+        "Yes! We provide interactive, technology-integrated STEAM kits, electronic components, tools and other necessary learning resources based on the selected package.",
+    },
+    {
+      question: "Will the school receive regular progress updates?",
+      answer:
+        "Yes! We can provide periodic updates on program implementation, student participation, hands-on activities and other learning developments.",
+    },
+    {
+      question: "Are the STEAM TIL packages customizable?",
+      answer:
+        "Yes! We offer flexible and cost-effective packages that can be tailored according to the institution's requirements, student strength, infrastructure and budget.",
+    },
+  ];
+
   // ============================================================
   // STEM STATISTICS
   // ============================================================
@@ -320,52 +377,40 @@ export default function STEMLabPage() {
 
   const whyChooseItems = [
     {
-      icon: <Library size={25} />,
-      title: "Structured Curriculum & Course Materials",
+      icon: <FlaskConical size={25} />,
+      title: "Experiential & Hands-On Learning Approach",
       description:
-        "Well-designed, grade-appropriate curriculum aligned with practical, hands-on learning outcomes.",
+        "We emphasize hands-on learning through practical activities, creative exploration, experimentation and real-world problem-solving experiences.",
     },
     {
-      icon: <IndianRupee size={25} />,
-      title: "Customizable & Cost Effective Solutions",
+      icon: <BookOpen size={25} />,
+      title: "Structured & Progressive Curriculum",
       description:
-        "Premium lab setups tailored to institutional needs while ensuring optimal cost efficiency.",
+        "Well-designed, grade-wise learning journey that strengthens conceptual understanding and practical skills progressively.",
     },
     {
-      icon: <ShieldCheck size={25} />,
-      title: "High Quality & Standardized Procurement",
+      icon: <Cpu size={25} />,
+      title: "Interactive & Innovative STEAM Kits",
       description:
-        "Reliable sourcing of industry-grade equipment with consistent quality standards.",
-    },
-    {
-      icon: <Lightbulb size={25} />,
-      title: "Interactive & Innovative DIY Kits",
-      description:
-        "Engaging, hands-on kits that encourage experiential learning and creativity.",
-    },
-    {
-      icon: <Zap size={25} />,
-      title: "Progressive & Future-focused Learning",
-      description:
-        "Curriculum designed to keep pace with emerging technologies and industry trends.",
+        "Engaging, hands-on learning kits designed to transform complex concepts into exciting practical experiences.",
     },
     {
       icon: <Wrench size={25} />,
       title: "Regular Maintenance & Upgrades",
       description:
-        "Continuous support with timely maintenance and technology updates.",
+        "Consistent kit maintenance, technical assistance and upgrades to keep learning resources relevant and functional.",
     },
     {
       icon: <GraduationCap size={25} />,
-      title: "Efficient & Dedicated Instructors",
+      title: "Proficient & Dedicated STEAM Instructors",
       description:
-        "Trained instructors and expert mentors ensure effective learning and student engagement.",
+        "Skilled, full-time instructors who bring strong technical expertise, impactful practical knowledge and passion for teaching.",
     },
     {
       icon: <Headphones size={25} />,
-      title: "Friendly & Dedicated Support Team",
+      title: "Friendly & Reliable Support Team",
       description:
-        "Responsive support system for smooth implementation and ongoing assistance.",
+        "A dedicated and responsive support team committed to ensuring seamless implementation, timely assistance and long-term program success.",
     },
   ];
 
@@ -401,52 +446,6 @@ export default function STEMLabPage() {
       description:
         "Learners use their knowledge and creativity to develop solutions, improve ideas and present their innovations.",
       number: "04",
-    },
-  ];
-
-  // ============================================================
-  // INSTITUTIONAL PARTNERSHIP
-  // ============================================================
-
-  const partnershipPoints = [
-    {
-      icon: <Building2 size={19} />,
-      text: "Lab solutions tailored to institutional requirements",
-    },
-    {
-      icon: <Layers3 size={19} />,
-      text: "Integration of multiple STEAM learning domains",
-    },
-    {
-      icon: <Handshake size={19} />,
-      text: "Implementation and continued support partnership",
-    },
-    {
-      icon: <ClipboardCheck size={19} />,
-      text: "Structured learning resources and practical activities",
-    },
-  ];
-
-  const ecosystemItems = [
-    {
-      icon: <BookOpen size={20} />,
-      title: "Curriculum",
-      desc: "Structured concepts and learning resources",
-    },
-    {
-      icon: <Boxes size={20} />,
-      title: "Infrastructure",
-      desc: "Tools, equipment and practical learning kits",
-    },
-    {
-      icon: <MonitorSmartphone size={20} />,
-      title: "Technology",
-      desc: "Exposure to emerging STEAM domains",
-    },
-    {
-      icon: <Users size={20} />,
-      title: "Mentorship",
-      desc: "Guidance and support for student learning",
     },
   ];
 
@@ -554,7 +553,7 @@ export default function STEMLabPage() {
                 className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-[32px] font-black leading-[1.12] tracking-tight text-transparent sm:text-[40px] lg:text-[36px] xl:text-[30px]"
               >
                 STEAM Tinkering and Innovation Lab (TIL)<br></br>
-                <span className="bg-clip-text text-[22px] text-[#542ead]">
+                <span className="bg-clip-text text-[22px] text-[#8560db]">
                   A holistic space for experiential learning and innovation.
                 </span>{" "}
               </motion.h1>
@@ -726,7 +725,9 @@ export default function STEMLabPage() {
             eyebrow="THE NEED FOR STEAM EDUCATION"
             title="Why STEAM Tinkering and Innovation"
             highlight="Lab?"
-            description="A STEAM Tinkering and Innovation Lab provides students with opportunities to connect classroom concepts with real-world applications, develop practical skills and prepare for a technology-driven future."
+            description="Emerging technologies such as Robotics, Artificial Intelligence, Internet of Things, etc.
+            are playing a pivotal role in the rapidly evolving industrial revolution. STEAM TIL enables students to experience
+            these technologies in the most practical, fun and interactive manner."
           />
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
@@ -814,7 +815,7 @@ export default function STEMLabPage() {
                   <div className="relative z-10 mt-1">
                     <div className="mb-4 h-[3px] w-9 rounded-full bg-gradient-to-r from-[#5921c7] to-[#a981ff] transition-all duration-300 group-hover:w-16" />
 
-                    <p className="text-[13px] font-bold leading-[24px] text-gray-700 transition-colors group-hover:text-[#17131f]">
+                    <p className="text-[15px] font-semibold leading-[24px] text-gray-900 transition-colors group-hover:text-[#17131f]">
                       {obj.text}
                     </p>
                   </div>
@@ -838,16 +839,16 @@ export default function STEMLabPage() {
           className="relative mx-auto w-full px-6"
           style={{ maxWidth: `${SECTION_4_CONTENT_WIDTH}px` }}
         >
-          <div className="mx-auto mb-12 max-w-[800px] text-center">
-            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-purple-300">
+          <div className="mx-auto mb-6 max-w-[800px] text-center">
+            <p className="text-[13px] font-bold uppercase tracking-[0.22em] text-purple-300">
               HOW STUDENTS LEARN
             </p>
 
-            <h3 className="mt-3 text-[27px] font-black text-white sm:text-[32px]">
-              Explore, Experiment, Build & Innovate
+            <h3 className="mt-3 text-[27px] font-black text-white sm:text-[30px]">
+              Our Four Pillar Mantras
             </h3>
 
-            <p className="mt-4 text-[13px] leading-[26px] text-gray-300 sm:text-[14px] sm:leading-[28px]">
+            <p className="mt-3 text-[13px] leading-[26px] text-gray-300 text-[16px] leading-[28px]">
               Our learning methodology takes students through a structured
               journey, moving from understanding concepts to creating
               practical solutions through hands-on experiences.
@@ -913,8 +914,8 @@ export default function STEMLabPage() {
         >
           <SectionHeading
             eyebrow="EXPLORE THE POSSIBILITIES"
-            title="Domains Students Will"
-            highlight="Explore"
+            title="Domains Students Will Explore"
+            highlight=""
             description="Students will explore a diverse range of future-focused STEAM fields designed for progressive learning, building stronger foundations and fostering innovation."
             light
           />
@@ -949,7 +950,7 @@ export default function STEMLabPage() {
 
                   <div className="mb-4 h-[4px] w-9 rounded-full bg-[#8c52ff]/60 transition-all duration-300 group-hover:w-14" />
 
-                  <p className="text-[12px] leading-[25px] text-gray-600 sm:text-[13px] sm:leading-[27px]">
+                  <p className="text-[12px] leading-[22px] text-gray-800 sm:text-[14px] sm:leading-[22px]">
                     {domain.desc}
                   </p>
                 </div>
@@ -960,7 +961,7 @@ export default function STEMLabPage() {
       </section>
 
       {/* ====================================================== */}
-      {/* 6. WHY ADROIIT + INSTITUTIONAL PARTNERSHIP */}
+      {/* 6. WHY ADROIIT TECHNOVATIONS IS THE BEST CHOICE */}
       {/* DARK THEME */}
       {/* ====================================================== */}
 
@@ -972,188 +973,80 @@ export default function STEMLabPage() {
           className="relative mx-auto w-full px-6"
           style={{ maxWidth: `${SECTION_6_CONTENT_WIDTH}px` }}
         >
-          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
-            {/* LEFT: ADROIIT ADVANTAGE */}
+          {/* SECTION HEADING */}
 
-            <div>
-              <motion.p
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={titleVariants}
-                className="mb-4 text-[11px] font-bold uppercase tracking-[0.25em] text-purple-300 sm:text-[12px]"
-              >
-                THE ADROIIT ADVANTAGE
-              </motion.p>
-
-              <motion.h2
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={titleVariants}
-                style={{ fontSize: `${SECTION_TITLE_SIZE}px` }}
-                className="font-black leading-tight tracking-tight text-white"
-              >
-                More Than a Lab.
-                <br />
-                A Foundation for Innovation.
-              </motion.h2>
-
-              <motion.p
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={descVariants}
-                className="mt-6 text-[14px] leading-[29px] text-gray-300 sm:text-[16px] sm:leading-[32px]"
-              >
-                Adroiit Technovations works with educational institutions to
-                create future-ready STEAM learning environments. From
-                curriculum and infrastructure to technology, mentorship and
-                continued support, we bring together the essential elements
-                required to make practical learning meaningful and sustainable.
-              </motion.p>
-
-              <div className="mt-8 space-y-4">
-                {partnershipPoints.map((item, i) => (
-                  <motion.div
-                    key={item.text}
-                    custom={i}
-                    initial="hidden"
-                    whileInView="visible"
-                    variants={fadeUp}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-4"
-                  >
-                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#8c52ff]/25 bg-[#5921c7]/30 text-[#b18aff]">
-                      {item.icon}
-                    </div>
-
-                    <p className="text-[13px] leading-[26px] text-gray-200 sm:text-[14px] sm:leading-[28px]">
-                      {item.text}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-
-              <Link
-                href="/contact"
-                className="group mt-9 inline-flex items-center gap-3 rounded-full border border-[#8c52ff]/40 px-7 py-4 text-[14px] font-bold text-white transition-all hover:border-[#a981ff] hover:bg-[#5921c7]/30"
-              >
-                Plan Your STEAM Lab
-                <ArrowRight
-                  size={18}
-                  className="transition-transform group-hover:translate-x-1"
-                />
-              </Link>
-            </div>
-
-            {/* RIGHT: LEARNING ECOSYSTEM */}
-
-            <motion.div
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="relative mb-8 text-center"
+          >
+            <motion.p
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={fadeIn}
-              className="relative"
+              variants={titleVariants}
+              className="mb-4 text-[11px] font-bold uppercase tracking-[0.25em] text-purple-300 sm:text-[13px]"
             >
-              <div className="absolute -inset-5 rounded-[35px] bg-gradient-to-br from-[#5921c7]/20 to-[#8c52ff]/[0.06] blur-2xl" />
+              WHY ADROIIT TECHNOVATIONS IS THE BEST CHOICE
+            </motion.p>
 
-              <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#3e1b86] p-7 shadow-[0_15px_50px_rgba(0,0,0,0.25)] sm:p-9">
-                <div className="mb-8 flex items-center justify-between">
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-purple-300">
-                      THE BIGGER PICTURE
-                    </p>
-                    <h3 className="mt-2 text-[24px] font-black text-white">
-                      A Complete Learning Ecosystem
-                    </h3>
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={titleVariants}
+              style={{ fontSize: `${SECTION_TITLE_SIZE}px` }}
+              className="font-black leading-tight tracking-tight text-white"
+            >
+              One Partner . Complete Ecosystem
+            </motion.h2>
+
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={descVariants}
+              className="mx-auto mt-3 max-w-[800px] text-[12px] leading-[23px] text-gray-300 sm:text-[16px] sm:leading-[25px]"
+            >
+              We bring together the most practical curriculum, best resources, standardized equipment and
+              people to create a meaningful hands-on learning experience.
+            </motion.p>
+          </motion.div>
+
+          {/* WHY CHOOSE ADROIIT CARDS */}
+
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {whyChooseItems.map((item, i) => (
+              <motion.div
+                key={item.title}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeUp}
+                viewport={{ once: true, amount: 0.1 }}
+                className="group relative flex min-h-[170px] flex-col rounded-2xl border border-white/10 bg-[#3e1b86] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#8c52ff]/45 hover:bg-[#35127a] hover:shadow-[0_12px_30px_rgba(0,0,0,0.16)]"
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#8c52ff]/20 bg-[#5921c7]/30 text-[#c4a8ff] transition-colors group-hover:bg-[#5921c7]/50">
+                    {item.icon}
                   </div>
-
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#8c52ff]/25 bg-[#5921c7]/30 text-[#b18aff]">
-                    <Idea size={23} />
-                  </div>
+                  <CheckCircle2
+                    size={17}
+                    className="text-[#b18aff] opacity-70 transition-opacity group-hover:opacity-100"
+                  />
                 </div>
 
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  {ecosystemItems.map((item, i) => (
-                    <motion.div
-                      key={item.title}
-                      custom={i}
-                      initial="hidden"
-                      whileInView="visible"
-                      variants={fadeUp}
-                      viewport={{ once: true }}
-                      className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#30106f] p-4 transition-all hover:border-[#8c52ff]/35 hover:bg-[#3e1b86]"
-                    >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#5921c7]/40 text-[#c4a8ff]">
-                        {item.icon}
-                      </div>
-
-                      <div>
-                        <h4 className="text-[13px] font-bold text-white">
-                          {item.title}
-                        </h4>
-                        <p className="mt-1 text-[11px] leading-[19px] text-gray-300">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                <div className="my-8 h-px w-full bg-white/[0.10]" />
-
-                <div className="mb-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-purple-300">
-                    WHY INSTITUTIONS CHOOSE US
-                  </p>
-                  <h4 className="mt-2 text-[18px] font-black text-white">
-                    Designed Around Your Institution
-                  </h4>
-                </div>
-
-                <div className="space-y-3">
-                  {whyChooseItems.map((item, i) => (
-                    <motion.div
-                      key={item.title}
-                      custom={i}
-                      initial="hidden"
-                      whileInView="visible"
-                      variants={fadeUp}
-                      viewport={{ once: true }}
-                      className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[#30106f] p-4 transition-all hover:border-[#8c52ff]/30 hover:bg-[#3e1b86]"
-                    >
-                      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#8c52ff]/20 bg-[#5921c7]/30 text-[#b18aff]">
-                        {item.icon}
-                      </div>
-
-                      <div>
-                        <h5 className="text-[13px] font-bold leading-[21px] text-white">
-                          {item.title}
-                        </h5>
-                        <p className="mt-1 text-[11px] leading-[21px] text-gray-300">
-                          {item.description}
-                        </p>
-                      </div>
-
-                      <CheckCircle2
-                        size={16}
-                        className="mt-1 ml-auto shrink-0 text-[#b18aff]"
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-
-                <div className="mt-7 rounded-2xl border border-[#8c52ff]/25 bg-gradient-to-r from-[#5921c7]/30 to-[#8c52ff]/[0.12] p-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#c4a8ff]">
-                    THE OUTCOME WE WORK TOWARDS
-                  </p>
-                  <p className="mt-2 text-[18px] font-bold leading-[29px] text-white">
-                    A learning environment where curiosity becomes capability.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+                <h4 className="text-[13px] font-bold leading-[21px] text-white sm:text-[14px]">
+                  {item.title}
+                </h4>
+                <p className="mt-2 text-[11px] leading-[21px] text-gray-300 sm:text-[12px]">
+                  {item.description}
+                </p>
+                <div className="absolute bottom-0 left-4 right-4 h-[2px] origin-left scale-x-0 rounded-full bg-gradient-to-r from-[#5921c7] to-[#8c52ff] transition-transform duration-300 group-hover:scale-x-100" />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -1302,58 +1195,56 @@ export default function STEMLabPage() {
           />
 
           <div className="mx-auto max-w-[900px] space-y-4">
-            {[
-              {
-                question: "What is a STEAM Tinkering and Innovation Lab?",
-                answer:
-                  "A STEAM Tinkering and Innovation Lab is a practical learning environment where students explore Science, Technology, Engineering, Arts and Mathematics through hands-on activities, experimentation, design and project development.",
-              },
-              {
-                question: "Which technology domains can students explore?",
-                answer:
-                  "Students can explore electronics and circuits, 3D design and modelling, 3D printing, embedded systems, robotics, Internet of Things, drone technology and artificial intelligence, depending on the selected lab package and learning plan.",
-              },
-              {
-                question: "Can the lab be customised for our institution?",
-                answer:
-                  "Yes. Lab infrastructure, equipment, learning resources and technology domains can be planned around your institution's requirements, available space, student strength and learning objectives.",
-              },
-              {
-                question: "Is the curriculum aligned with educational frameworks?",
-                answer:
-                  "Our learning approach is designed with reference to NEP 2020, NCF 2023, NCERT and CBSE requirements. The specific curriculum plan can be discussed based on your institution's academic needs.",
-              },
-              {
-                question: "Do you provide implementation and ongoing support?",
-                answer:
-                  "Yes. Adroiit can support institutions with lab planning, infrastructure, curriculum and learning resources, implementation guidance, maintenance and continued support based on the agreed partnership scope.",
-              },
-              {
-                question: "How can our school enquire about setting up a STEAM Lab?",
-                answer:
-                  "You can contact our team through the Book a Demo or Enquire links on this page. We can discuss your institution's requirements and recommend a suitable lab solution.",
-              },
-            ].map((faq, index) => (
-              <motion.details
-                key={faq.question}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                custom={index}
-                viewport={{ once: true, amount: 0.15 }}
-                className="group rounded-2xl border border-white/10 bg-[#3e1b86] p-5 transition-colors duration-300 open:border-[#b18aff]/50 sm:p-6"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-[14px] font-bold leading-6 text-white marker:content-none sm:text-[16px]">
-                  <span>{faq.question}</span>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#b18aff]/30 text-[#b18aff] transition-transform duration-300 group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-4 max-w-[800px] pr-10 text-[13px] leading-[26px] text-gray-300 sm:text-[14px] sm:leading-[28px]">
-                  {faq.answer}
-                </p>
-              </motion.details>
-            ))}
+            {faqItems
+              .slice(
+                faqPage * FAQS_PER_PAGE,
+                (faqPage + 1) * FAQS_PER_PAGE
+              )
+              .map((faq, index) => (
+                <motion.details
+                  key={faq.question}
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={fadeUp}
+                  custom={index}
+                  viewport={{ once: true, amount: 0.15 }}
+                  className="group rounded-2xl border border-white/10 bg-[#3e1b86] p-5 transition-colors duration-300 open:border-[#b18aff]/50 sm:p-6"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-5 text-[14px] font-bold leading-6 text-white marker:content-none sm:text-[16px]">
+                    <span>{faq.question}</span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#b18aff]/30 text-[#b18aff] transition-transform duration-300 group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-4 max-w-[800px] pr-10 text-[13px] leading-[26px] text-gray-100 sm:text-[15px] sm:leading-[28px]">
+                    {faq.answer}
+                  </p>
+                </motion.details>
+              ))}
+          </div>
+
+          {/* FAQ NAVIGATION ARROWS */}
+
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => setFaqPage(0)}
+              disabled={faqPage === 0}
+              aria-label="Previous FAQs"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b18aff]/40 bg-[#3e1b86] text-white transition-all duration-300 hover:border-[#b18aff] hover:bg-[#5921c7] disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-[#b18aff]/40 disabled:hover:bg-[#3e1b86]"
+            >
+              <ChevronLeft size={22} />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setFaqPage(1)}
+              disabled={faqPage === 1}
+              aria-label="Next FAQs"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#b18aff]/40 bg-[#3e1b86] text-white transition-all duration-300 hover:border-[#b18aff] hover:bg-[#5921c7] disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-[#b18aff]/40 disabled:hover:bg-[#3e1b86]"
+            >
+              <ChevronRight size={22} />
+            </button>
           </div>
         </div>
       </section>
