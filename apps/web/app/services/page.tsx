@@ -113,11 +113,11 @@ const serviceCategories: ServiceCategory[] = [
     links: [
       {
         name: "SPM Manufacturing",
-        href: "/services/custom-machinery-fabrication",
+        href: "/services/spm-manufacturing",
       },
       {
         name: "FDM 3D Printing",
-        href: "/services/3d-printing",
+        href: "/services/fdm-3d-printing",
       },
       {
         name: "Mechanical CAD",

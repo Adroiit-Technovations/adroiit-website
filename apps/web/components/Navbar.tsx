@@ -320,7 +320,7 @@ export default function Navbar() {
                   <ul className="space-y-1 text-sm text-purple-100/90">
                     <li>
                       <Link
-                        href="/services/custom-machinery-fabrication"
+                        href="/services/spm-manufacturing"
                         className="
                           hover:text-white
                           transition-colors
@@ -334,7 +334,7 @@ export default function Navbar() {
 
                     <li>
                       <Link
-                        href="/services/3d-printing"
+                        href="/services/fdm-3d-printing"
                         className="
                           hover:text-white
                           font-medium

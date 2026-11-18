@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -153,40 +154,6 @@ const steps = [
 ];
 
 // ============================================================
-// DOMAINS WE WORK ON
-// ============================================================
-
-const domains = [
-  {
-    number: "01",
-    title: "Embedded Systems",
-    subtitle: "INTELLIGENT HARDWARE DEVELOPMENT",
-    description:
-      "We develop embedded solutions that combine microcontrollers, electronic circuits, sensors and actuators to build intelligent and application-specific systems.",
-    image: "/cpf/embedded-systems.jpg",
-    imageAlt: "Embedded systems development and microcontroller hardware",
-  },
-  {
-    number: "02",
-    title: "Internet of Things",
-    subtitle: "CONNECTED & SMART SOLUTIONS",
-    description:
-      "We design IoT-based solutions that connect physical devices with digital platforms, enabling remote monitoring, automation and intelligent data-driven operations.",
-    image: "/cpf/iot.jpg",
-    imageAlt: "Internet of Things connected devices and smart automation",
-  },
-  {
-    number: "03",
-    title: "PLC",
-    subtitle: "INDUSTRIAL AUTOMATION",
-    description:
-      "We develop PLC-based automation solutions for industrial applications, integrating control systems, electrical components and machine-level automation.",
-    image: "/cpf/plc.jpg",
-    imageAlt: "PLC industrial automation and control systems",
-  },
-];
-
-// ============================================================
 // WHY CHOOSE US
 // ============================================================
 
@@ -288,15 +255,15 @@ export default function CustomMachineryPage() {
 
   return (
     <div
-      className={`${bricolage.className} relative min-h-screen overflow-hidden bg-[#050505] text-white`}
+      className={`${bricolage.className} relative min-h-screen overflow-hidden bg-white text-[#17121f]`}
     >
       {/* ====================================================== */}
-      {/* HERO + OUR EXPERTISE - DARK THEME */}
+      {/* HERO + OUR EXPERTISE - LIGHT THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] pb-20 pt-35 md:pb-10">
+      <section className="relative z-10 overflow-hidden bg-white pb-20 pt-35 text-[#17121f] md:pb-10">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -right-40 -top-32 h-[500px] w-[500px] rounded-full bg-[#5921c7]/20 blur-[150px]" />
+          <div className="absolute -right-40 -top-32 h-[500px] w-[500px] rounded-full bg-[#5921c7]/10 blur-[150px]" />
 
           <div className="absolute -left-40 top-[350px] h-[400px] w-[400px] rounded-full bg-[#8c52ff]/10 blur-[150px]" />
 
@@ -304,7 +271,7 @@ export default function CustomMachineryPage() {
             className="absolute inset-0 opacity-[0.035]"
             style={{
               backgroundImage:
-                "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+                "linear-gradient(#5921c7 1px, transparent 1px), linear-gradient(90deg, #5921c7 1px, transparent 1px)",
               backgroundSize: "55px 55px",
             }}
           />
@@ -323,23 +290,17 @@ export default function CustomMachineryPage() {
               custom={0}
               className="flex flex-col items-start"
             >
-              {/* Plain Text Eyebrow */}
-
-              <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#c4a9ff] sm:text-sm">
+              <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-gray-700 sm:text-sm">
                 ENGINEERING MANUFACTURING & PRODUCT DEVELOPMENT
               </p>
 
-              {/* Heading */}
-
-              <h1 className="mb-5 text-4xl font-black leading-[1.3] tracking-tight sm:text-5xl lg:text-[30px]">
+              <h1 className="mb-5 text-4xl font-black leading-[1.3] tracking-tight text-[#17121f] sm:text-5xl lg:text-[30px]">
                 Special Purpose Machinery (SPM){" "}
                 <br />
-                <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#5921c7] bg-clip-text text-transparent">
-                  Build Smart Machines & Devices with Us.{" "}
+                <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
+                  Build Smart Machines & Devices with Us.
                 </span>
               </h1>
-
-              {/* Accent Line */}
 
               <motion.div
                 initial={{ width: 0 }}
@@ -349,20 +310,16 @@ export default function CustomMachineryPage() {
                   delay: 0.3,
                   ease: "easeOut",
                 }}
-                className="mb-5 h-0.5 rounded-full bg-gradient-to-r from-[#5921c7] to-[#b18aff]"
+                className="mb-5 h-0.5 rounded-full bg-gradient-to-r from-[#5921c7] to-[#8c52ff]"
               />
 
-              {/* Description */}
-
-              <p className="mb-9 max-w-xl text-justify text-[16px] leading-7 text-white">
+              <p className="mb-9 max-w-xl text-justify text-[16px] leading-7 text-gray-700">
                 We design and develop custom machinery upon client
                 requirements, bridging the gap between complex engineering
                 and functional reality. Our team manages every phase:
                 conceptual design, precision sourcing, high-standard
                 production, and long-term maintenance.
               </p>
-
-              {/* CTA */}
 
               <div className="flex flex-wrap items-center gap-4">
                 <a
@@ -381,7 +338,7 @@ export default function CustomMachineryPage() {
               </div>
             </motion.div>
 
-            {/* Right Image - Clean Image Without Overlays */}
+            {/* Right Image */}
 
             <motion.div
               initial="hidden"
@@ -389,7 +346,7 @@ export default function CustomMachineryPage() {
               variants={fadeIn}
               className="relative mx-auto w-full max-w-[620px]"
             >
-              <div className="relative aspect-[8/5] overflow-hidden rounded-[30px]">
+              <div className="relative aspect-[8/5] overflow-hidden rounded-[30px] shadow-[0_20px_60px_rgba(48,16,111,0.12)]">
                 <Image
                   src="/cpf/cpf-hero.jpg"
                   alt="Custom Machinery and Product Fabrication"
@@ -402,9 +359,9 @@ export default function CustomMachineryPage() {
             </motion.div>
           </div>
 
-          {/* Our Expertise - Integrated Into Hero Section */}
+          {/* OUR EXPERTISE */}
 
-          <div className="mt-5 border-t border-white/[0.10] pt-5">
+          <div className="mt-12 border-t border-gray-200 pt-8">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_3fr] lg:items-center lg:gap-10">
               {/* Expertise Heading */}
 
@@ -414,19 +371,18 @@ export default function CustomMachineryPage() {
                 variants={fadeUp}
                 viewport={{ once: true }}
               >
-                <p className="mb-1 text-xs font-bold uppercase tracking-[0.25em] text-white">
+                <p className="mb-1 text-xs font-bold uppercase tracking-[0.25em] text-gray-700">
                   WHAT WE DO
                 </p>
 
-                <h2 className="text-3xl font-black tracking-tight text-white sm:text-3xl">
-                  {" "}
-                  <span className="bg-gradient-to-r from-[#8c52ff] to-[#b18aff] bg-clip-text text-transparent">
+                <h2 className="text-3xl font-black tracking-tight sm:text-3xl">
+                  <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
                     Our Expertise
                   </span>
                 </h2>
               </motion.div>
 
-              {/* Expertise Cards - Single Horizontal Row */}
+              {/* Expertise Cards */}
 
               <motion.div
                 variants={staggerContainer}
@@ -439,26 +395,26 @@ export default function CustomMachineryPage() {
                   <motion.div
                     key={area.title}
                     variants={itemVariants}
-                    className="group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#111111] p-5 transition-all duration-300 hover:-translate-y-2 hover:border-[#8c52ff]/50 hover:bg-[#15121c] hover:shadow-[0_15px_40px_rgba(89,33,199,0.15)]"
+                    className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-[#faf9fc] p-5 transition-all duration-300 hover:-translate-y-2 hover:border-[#8c52ff]/50 hover:bg-white hover:shadow-[0_15px_40px_rgba(89,33,199,0.12)]"
                   >
-                    <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#8c52ff]/0 blur-3xl transition-all duration-500 group-hover:bg-[#8c52ff]/20" />
+                    <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#8c52ff]/0 blur-3xl transition-all duration-500 group-hover:bg-[#8c52ff]/15" />
 
                     <div className="relative z-10">
-                      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#5921c7]/15 text-[#a981ff] transition-all duration-300 group-hover:border-[#8c52ff]/50 group-hover:bg-[#5921c7] group-hover:text-white">
+                      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#5921c7]/10 text-[#5921c7] transition-all duration-300 group-hover:border-[#8c52ff]/50 group-hover:bg-[#5921c7] group-hover:text-white">
                         {area.icon}
                       </div>
 
-                      <p className="mb-2 text-[9px] font-bold tracking-[0.16em] text-[#a981ff]">
+                      <p className="mb-2 text-[9px] font-bold tracking-[0.16em] text-[#5921c7]">
                         {area.subtitle}
                       </p>
 
-                      <h3 className="mb-3 text-base font-bold leading-tight text-white">
+                      <h3 className="mb-3 text-base font-bold leading-tight text-[#21172f]">
                         {area.title}
                       </h3>
 
                       <div className="mb-4 h-px w-10 bg-[#8c52ff]/50 transition-all duration-300 group-hover:w-16" />
 
-                      <p className="text-[10px] font-bold tracking-wider text-gray-400">
+                      <p className="text-[10px] font-bold tracking-wider text-gray-600">
                         {area.desc}
                       </p>
                     </div>
@@ -471,100 +427,11 @@ export default function CustomMachineryPage() {
       </section>
 
       {/* ====================================================== */}
-      {/* DOMAINS WE WORK ON - LIGHT THEME */}
-      {/* ====================================================== */}
-
-      <section className="relative z-10 overflow-hidden bg-white py-20 text-[#17121f] md:py-10">
-        <div className="pointer-events-none absolute -right-40 top-20 h-96 w-96 rounded-full bg-[#8c52ff]/10 blur-[130px]" />
-
-        <div className="relative mx-auto max-w-[1300px] px-5 sm:px-6 lg:px-8">
-          {/* Heading */}
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeUp}
-            viewport={{ once: true }}
-            className="mx-auto mb-6 max-w-3xl text-center"
-          >
-            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.25em] text-[#5921c7]">
-              OUR TECHNICAL DOMAINS
-            </p>
-
-            <h2 className="text-3xl font-black leading-tight tracking-tight text-[#17121f] sm:text-4xl md:text-3xl">
-              Domains We{" "}
-              <span className="bg-gradient-to-r from-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
-                Work On
-              </span>
-            </h2>
-
-            <p className="mx-auto mt-2 max-w-2xl leading-8 text-gray-900 text-[16px]">
-              Beyond mechanical engineering, we work across electronics,
-              embedded technologies and industrial automation to develop
-              intelligent and integrated engineering solutions.
-            </p>
-          </motion.div>
-
-          {/* Domain Cards */}
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid gap-8 lg:grid-cols-3"
-          >
-            {domains.map((domain) => (
-              <motion.article
-                key={domain.number}
-                variants={itemVariants}
-                className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-gray-200 bg-[#faf9fc] transition-all duration-300 hover:-translate-y-2 hover:border-[#8c52ff]/50 hover:bg-white hover:shadow-[0_20px_55px_rgba(48,16,111,0.12)]"
-              >
-                {/* Domain Image */}
-
-                <div className="relative aspect-[4/2] overflow-hidden bg-[#100b1b]">
-                  <Image
-                    src={domain.image}
-                    alt={domain.imageAlt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-
-                  <span className="absolute bottom-5 right-5 text-5xl font-black text-white/30">
-                    {domain.number}
-                  </span>
-                </div>
-
-                {/* Domain Content */}
-
-                <div className="flex flex-1 flex-col p-7 sm:p-8">
-                  <p className="mb-3 text-[10px] font-black tracking-[0.18em] text-[#8c52ff]">
-                    {domain.subtitle}
-                  </p>
-
-                  <h3 className="text-2xl font-black text-[#21172f]">
-                    {domain.title}
-                  </h3>
-
-                  <p className="mt-4 text-sm leading-7 text-gray-600">
-                    {domain.description}
-                  </p>
-                </div>
-              </motion.article>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ====================================================== */}
       {/* DEVELOPMENT LIFECYCLE - DARK THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] py-20 md:py-10">
-        <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#5921c7]/10 blur-[140px]" />
+      <section className="relative z-10 overflow-hidden bg-[#30106f] py-20 text-white md:py-10">
+        <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#8c52ff]/20 blur-[140px]" />
 
         <div className="relative mx-auto max-w-[1300px] px-5 sm:px-6 lg:px-8">
           {/* Section Heading */}
@@ -576,18 +443,18 @@ export default function CustomMachineryPage() {
             viewport={{ once: true }}
             className="mx-auto mb-6 max-w-3xl text-center"
           >
-            <p className="mb-2 text-[13px] font-bold uppercase tracking-[0.25em] text-[#a981ff]">
+            <p className="mb-2 text-[13px] font-bold uppercase tracking-[0.25em] text-purple-300">
               HOW WE WORK
             </p>
 
             <h2 className="mb-2 text-3xl font-black tracking-tight text-white sm:text-4xl md:text-3xl">
               Our Development{" "}
-              <span className="bg-gradient-to-r from-[#8c52ff] to-[#b18aff] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#b18aff] to-[#ffffff] bg-clip-text text-transparent">
                 Lifecycle
               </span>
             </h2>
 
-            <p className="text-sm leading-7 text-gray-200 sm:text-base">
+            <p className="text-sm leading-7 text-purple-100 sm:text-base">
               We follow a rigorous engineering workflow to ensure your custom
               machinery is delivered with peak performance and reliability.
             </p>
@@ -606,29 +473,29 @@ export default function CustomMachineryPage() {
               <motion.div
                 key={step.number}
                 variants={itemVariants}
-                className="group relative rounded-3xl border border-white/[0.07] bg-gradient-to-b from-[#15121c] to-[#0b0b0b] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#8c52ff]/50 hover:shadow-[0_15px_40px_rgba(89,33,199,0.12)]"
+                className="group relative rounded-3xl border border-white/[0.10] bg-[#3e1b86] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#b18aff]/60 hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)]"
               >
                 <div className="mb-8 flex items-center justify-between">
-                  <span className="text-4xl font-black tracking-tight text-white/[0.08] transition-colors duration-300 group-hover:text-[#8c52ff]/30">
+                  <span className="text-4xl font-black tracking-tight text-white/20 transition-colors duration-300 group-hover:text-purple-300/50">
                     {step.number}
                   </span>
 
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#5921c7]/15 text-[#a981ff] transition-all duration-300 group-hover:bg-[#5921c7] group-hover:text-white">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-purple-300/20 bg-white/10 text-purple-200 transition-all duration-300 group-hover:bg-[#8c52ff] group-hover:text-white">
                     {step.icon}
                   </div>
                 </div>
 
-                <h3 className="mb-4 text-xl font-bold leading-tight text-white transition-colors group-hover:text-[#b18aff]">
+                <h3 className="mb-4 text-xl font-bold leading-tight text-white transition-colors group-hover:text-purple-200">
                   {step.title}
                 </h3>
 
-                <p className="text-sm leading-7 text-gray-400">
+                <p className="text-sm leading-7 text-purple-100/75">
                   {step.desc}
                 </p>
 
                 <div className="mt-7 flex items-center gap-2">
-                  <div className="h-1 w-8 rounded-full bg-[#8c52ff]" />
-                  <div className="h-1 w-3 rounded-full bg-[#8c52ff]/30" />
+                  <div className="h-1 w-8 rounded-full bg-[#b18aff]" />
+                  <div className="h-1 w-3 rounded-full bg-purple-300/30" />
                 </div>
               </motion.div>
             ))}
@@ -653,18 +520,18 @@ export default function CustomMachineryPage() {
             viewport={{ once: true }}
             className="mb-6 text-center"
           >
-            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.25em] text-[#5921c7]">
+            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.25em] text-gray-700">
               THE ADROIIT ADVANTAGE
             </p>
 
             <h2 className="mb-2 text-3xl font-black tracking-tight text-[#17121f] sm:text-4xl md:text-3xl">
               Why Choose Our{" "}
-              <span className="bg-gradient-to-r from-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
                 Fabrication Service?
               </span>
             </h2>
 
-            <p className="mx-auto max-w-2xl text-sm leading-7 text-gray-900 sm:text-base">
+            <p className="mx-auto max-w-2xl text-sm leading-7 text-gray-700 sm:text-base">
               We combine mechatronics expertise with industrial production
               capabilities to deliver results that exceed expectations.
             </p>
@@ -710,8 +577,8 @@ export default function CustomMachineryPage() {
       {/* FAQ SECTION - DARK THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] px-5 py-20 text-white sm:px-6 md:py-10 lg:px-8">
-        <div className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-[#8c52ff]/10 blur-[130px]" />
+      <section className="relative z-10 overflow-hidden bg-[#30106f] px-5 py-20 text-white sm:px-6 md:py-10 lg:px-8">
+        <div className="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-[#8c52ff]/20 blur-[130px]" />
 
         <div className="relative mx-auto max-w-[1100px]">
           {/* FAQ Heading */}
@@ -723,18 +590,18 @@ export default function CustomMachineryPage() {
             viewport={{ once: true }}
             className="mx-auto mb-6 max-w-3xl text-center"
           >
-            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.25em] text-[#a981ff]">
+            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.25em] text-purple-300">
               GOT QUESTIONS?
             </p>
 
             <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl md:text-3xl">
               Frequently Asked{" "}
-              <span className="bg-gradient-to-r from-[#8c52ff] to-[#b18aff] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#b18aff] to-white bg-clip-text text-transparent">
                 Questions
               </span>
             </h2>
 
-            <p className="mx-auto mt-2 max-w-2xl text-sm leading-7 text-gray-200 sm:text-base">
+            <p className="mx-auto mt-2 max-w-2xl text-sm leading-7 text-purple-100 sm:text-base">
               Find answers to common questions about our custom machinery,
               product development and engineering services.
             </p>
@@ -758,8 +625,8 @@ export default function CustomMachineryPage() {
                   variants={itemVariants}
                   className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
                     isOpen
-                      ? "border-[#8c52ff]/50 bg-[#15121c] shadow-[0_10px_35px_rgba(89,33,199,0.12)]"
-                      : "border-white/[0.10] bg-[#111111] hover:border-[#8c52ff]/40"
+                      ? "border-purple-300/50 bg-[#3e1b86] shadow-[0_10px_35px_rgba(0,0,0,0.15)]"
+                      : "border-white/[0.12] bg-[#3e1b86]/70 hover:border-purple-300/40"
                   }`}
                 >
                   <button
@@ -771,7 +638,7 @@ export default function CustomMachineryPage() {
                     <div className="flex items-center gap-4">
                       <span
                         className={`hidden text-sm font-black sm:block ${
-                          isOpen ? "text-[#a981ff]" : "text-white/20"
+                          isOpen ? "text-purple-300" : "text-white/30"
                         }`}
                       >
                         {String(index + 1).padStart(2, "0")}
@@ -779,7 +646,7 @@ export default function CustomMachineryPage() {
 
                       <span
                         className={`text-sm font-bold leading-6 sm:text-base ${
-                          isOpen ? "text-[#b18aff]" : "text-white"
+                          isOpen ? "text-purple-200" : "text-white"
                         }`}
                       >
                         {faq.question}
@@ -789,8 +656,8 @@ export default function CustomMachineryPage() {
                     <span
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                         isOpen
-                          ? "rotate-180 bg-[#5921c7] text-white"
-                          : "bg-[#5921c7]/20 text-[#a981ff]"
+                          ? "rotate-180 bg-[#8c52ff] text-white"
+                          : "bg-white/10 text-purple-200"
                       }`}
                     >
                       <ChevronDown size={19} />
@@ -805,8 +672,8 @@ export default function CustomMachineryPage() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div className="border-t border-white/[0.08] px-5 pb-6 pt-5 sm:pl-[4.25rem] sm:pr-7">
-                        <p className="text-sm leading-7 text-gray-400">
+                      <div className="border-t border-white/[0.10] px-5 pb-6 pt-5 sm:pl-[4.25rem] sm:pr-7">
+                        <p className="text-sm leading-7 text-purple-100/75">
                           {faq.answer}
                         </p>
                       </div>
@@ -820,7 +687,7 @@ export default function CustomMachineryPage() {
       </section>
 
       {/* ====================================================== */}
-      {/* FINAL CTA - LIGHT THEME, PLAIN SECTION */}
+      {/* FINAL CTA - LIGHT THEME */}
       {/* ====================================================== */}
 
       <section className="relative z-10 overflow-hidden bg-[#f7f6fa] px-5 py-20 text-[#17121f] sm:px-6 md:py-10 lg:px-8">
@@ -834,20 +701,18 @@ export default function CustomMachineryPage() {
           className="relative mx-auto max-w-[1300px] text-center"
         >
           <div className="mx-auto max-w-3xl">
-            {/* Plain Text Eyebrow */}
-
-            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.25em] text-[#5921c7]">
+            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.25em] text-gray-700">
               LET'S ENGINEER SOMETHING GREAT
             </p>
 
             <h2 className="mb-2 text-3xl font-black leading-tight tracking-tight text-[#17121f] sm:text-4xl md:text-3xl">
               Ready to Build Your{" "}
-              <span className="bg-gradient-to-r from-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
                 Custom Product?
               </span>
             </h2>
 
-            <p className="mx-auto mb-4 max-w-2xl text-sm leading-8 text-gray-900 sm:text-base">
+            <p className="mx-auto mb-4 max-w-2xl text-sm leading-8 text-gray-700 sm:text-base">
               Connect with our engineering team today to transform your
               technical requirement into a fully functional product.
             </p>

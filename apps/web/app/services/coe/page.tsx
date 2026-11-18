@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 
 import {
@@ -389,19 +390,64 @@ const outcomes = [
 
 ];
 
+
+const faqs = [
+  {
+    question: "What is a Center of Excellence (CoE)?",
+    answer:
+      "A Center of Excellence is a dedicated technology and innovation environment where students and faculty can explore emerging technologies, gain practical experience, develop projects and strengthen institutional innovation capabilities.",
+  },
+  {
+    question: "Which technology domains can be included in a CoE?",
+    answer:
+      "Depending on institutional objectives, a CoE can focus on domains such as Robotics, Embedded Systems and IoT, Industrial Automation, and Drone Technology. The domains can be planned around the institution's requirements.",
+  },
+  {
+    question: "Does Adroiit support the complete laboratory setup?",
+    answer:
+      "Yes. Support can cover laboratory planning, infrastructure setup, procurement assistance, installation, configuration and functional testing.",
+  },
+  {
+    question: "Do you provide training for faculty and students?",
+    answer:
+      "Yes. We provide faculty orientation and structured student training, along with practical guidance and mentorship to help institutions make effective use of the CoE.",
+  },
+  {
+    question: "Can the CoE be customised for our institution?",
+    answer:
+      "Yes. The domains, equipment, learning pathways and implementation approach can be planned according to your institution's academic goals, available infrastructure and long-term vision.",
+  },
+  {
+    question: "Will students get opportunities to work on projects?",
+    answer:
+      "The CoE is designed to support practical exercises, project development, demonstrations and innovation activities, helping students apply concepts to working solutions.",
+  },
+  {
+    question: "How is a Center of Excellence implemented?",
+    answer:
+      "The process begins with understanding institutional requirements, followed by ecosystem design, establishment of the infrastructure, and activation through training, projects and ongoing support.",
+  },
+  {
+    question: "How can our institution get started?",
+    answer:
+      "Contact Adroiit Technovations to discuss your institution's objectives. Our team can understand your requirements and help plan a suitable Center of Excellence.",
+  },
+];
+
 export default function CoEPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
 
     <div className={`${bricolage.className} overflow-x-hidden bg-white text-[#17151c]`}>
 
-      {/* SECTION 01 — HERO | DARK */}
+      {/* SECTION 01 — HERO | LIGHT */}
 
-      <section className="relative isolate overflow-hidden bg-[#090711] px-6 pb-20 pt-35 text-white md:pb-28 md:pt-35">
+      <section className="relative isolate overflow-hidden bg-[#f8f7fb] px-6 pb-20 pt-35 text-[#17151c] md:pb-28 md:pt-35">
 
-        <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#8c52ff]/20 blur-[120px]" />
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#8c52ff]/10 blur-[120px]" />
 
-        <div className="pointer-events-none absolute -bottom-48 -left-40 h-[450px] w-[450px] rounded-full bg-[#5921c7]/20 blur-[110px]" />
+        <div className="pointer-events-none absolute -bottom-48 -left-40 h-[450px] w-[450px] rounded-full bg-[#5921c7]/10 blur-[110px]" />
 
         <div className="pointer-events-none absolute inset-0 opacity-[0.035] [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] [background-size:55px_55px]" />
 
@@ -423,15 +469,15 @@ export default function CoEPage() {
 
             <div className="flex flex-col items-start">
 
-              <motion.p custom={0} variants={fadeUp} className="mb-4 text-[13px] font-bold uppercase tracking-[0.18em] text-[#c4aaff]">
+              <motion.p custom={0} variants={fadeUp} className="mb-4 text-[13px] font-bold uppercase tracking-[0.18em] text-gray-700">
                 Education · Research · Innovation
               </motion.p>
 
-              <motion.h1 custom={1} variants={fadeUp} className="max-w-2xl text-[32px] font-extrabold leading-[1.12] tracking-tight text-white">
+              <motion.h1 custom={1} variants={fadeUp} className="max-w-2xl text-[32px] font-extrabold leading-[1.12] tracking-tight text-[#211a2c]">
 
                 Center of Excellence (CoE)
 
-                <span className="mt-2 block bg-gradient-to-r from-[#8c52ff] via-[#a77bff] to-[#d0baff] bg-clip-text text-transparent">
+                <span className="mt-2 block bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
 
                   Space for Exploration, Research and Innovation. 
 
@@ -441,19 +487,19 @@ export default function CoEPage() {
 
               <motion.div custom={2} variants={fadeUp} className="my-4 h-0.5 w-20 rounded-full bg-gradient-to-r from-[#8c52ff] to-[#b18aff]" />
 
-              <motion.p custom={3} variants={fadeUp} className="max-w-xl text-[18px] font-semibold leading-relaxed text-[#f1edf8]">
+              <motion.p custom={3} variants={fadeUp} className="max-w-xl text-[18px] font-semibold leading-relaxed text-gray-700">
 
                 Building future-ready innovation ecosystems.
 
               </motion.p>
 
-              <motion.p custom={4} variants={fadeUp} className="mt-5 max-w-xl text-[15px] leading-8 text-[#b7b1c1] md:text-[16px]">
+              <motion.p custom={4} variants={fadeUp} className="mt-5 max-w-xl text-[15px] leading-8 text-gray-600 md:text-[16px]">
 
                 Adroiit Technovations partners with institutions to establish state-of-the-art Centers of Excellence that empower students with industry-relevant skills and advanced laboratory infrastructure.
 
               </motion.p>
 
-              <motion.p custom={5} variants={fadeUp} className="mt-4 max-w-xl text-[15px] leading-8 text-[#b7b1c1] md:text-[16px]">
+              <motion.p custom={5} variants={fadeUp} className="mt-4 max-w-xl text-[15px] leading-8 text-gray-600 md:text-[16px]">
 
                 We transform traditional learning environments into innovation-driven ecosystems where students gain real-world exposure, work on impactful projects and develop strong technical competencies.
 
@@ -477,9 +523,9 @@ export default function CoEPage() {
 
               <div className="relative aspect-[16/10] w-full">
 
-                <div className="absolute -inset-4 rounded-[35px] bg-[#8c52ff]/20 blur-2xl" />
+                <div className="absolute -inset-4 rounded-[35px] bg-[#8c52ff]/10 blur-2xl" />
 
-                <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-white/10 bg-[#111111] shadow-2xl">
+                <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-[#e9e3f1] bg-white shadow-2xl">
 
                   <Image
 
@@ -509,13 +555,13 @@ export default function CoEPage() {
 
       </section>
 
-      {/* SECTION 02 — DOMAINS | LIGHT */}
+      {/* SECTION 02 — DOMAINS | DARK */}
 
-      <section className="relative isolate overflow-hidden bg-[#f8f7fb] px-6 py-10 text-[#17151c] md:py-10">
+      <section className="relative isolate overflow-hidden bg-[#30106f] px-6 py-10 text-white md:py-10">
 
-        <div className="pointer-events-none absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/[0.07] blur-[140px]" />
+        <div className="pointer-events-none absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[140px]" />
 
-        <div className="pointer-events-none absolute -bottom-48 right-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/[0.07] blur-[140px]" />
+        <div className="pointer-events-none absolute -bottom-48 right-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[140px]" />
 
         <div className="relative z-10 mx-auto max-w-[1240px]">
 
@@ -523,15 +569,15 @@ export default function CoEPage() {
 
             <div className="max-w-2xl">
 
-              <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-600">Technology domains we offer</motion.p>
+              <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-purple-300">Technology domains we offer</motion.p>
 
-              <motion.h2 custom={1} variants={fadeUp} className="mt-3 text-[30px] font-extrabold leading-tight tracking-tight text-[#211a2c]">
+              <motion.h2 custom={1} variants={fadeUp} className="mt-3 text-[30px] font-extrabold leading-tight tracking-tight text-white">
 
-                <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">Our Center of Excellence (CoE)</span>
+                <span className="text-white">Our Center of Excellence (CoE)</span>
 
               </motion.h2>
 
-              <motion.p custom={2} variants={fadeUp} className="mx-auto mt-3 max-w-2xl text-[15px] leading-7 text-gray-900 md:text-[16px]">
+              <motion.p custom={2} variants={fadeUp} className="mx-auto mt-3 max-w-2xl text-[15px] leading-7 text-white/70 md:text-[16px]">
 
                 Specialized technology centers tailored to your institution&apos;s goals, connecting academic learning with practical technology applications.
 
@@ -545,9 +591,9 @@ export default function CoEPage() {
 
             {domains.map((domain, i) => (
 
-              <motion.article key={domain.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={cardVariants} whileHover={{ y: -7 }} className="group overflow-hidden rounded-[1.5rem] border border-[#e9e3f1] bg-white p-2 shadow-sm transition-all duration-500 hover:border-[#b99bff] hover:shadow-[0_18px_45px_-25px_rgba(89,33,199,0.3)]">
+              <motion.article key={domain.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={cardVariants} whileHover={{ y: -7 }} className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#3e1b86] p-2 shadow-sm transition-all duration-500 hover:border-[#b99bff] hover:shadow-[0_18px_45px_-25px_rgba(89,33,199,0.3)]">
 
-                <div className="relative aspect-[5/4] overflow-hidden rounded-[1.1rem] bg-[#eee8f8]">
+                <div className="relative aspect-[5/4] overflow-hidden rounded-[1.1rem] bg-[#3e1b86]">
 
                   <Image src={domain.image} alt={domain.title} fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
 
@@ -557,17 +603,17 @@ export default function CoEPage() {
 
                 <div className="px-3 pb-4 pt-4">
 
-                  <h3 className="mb-3 text-[18px] font-bold leading-tight text-[#282130]">{domain.title}</h3>
+                  <h3 className="mb-3 text-[18px] font-bold leading-tight text-white">{domain.title}</h3>
 
-                  <div className="mb-3 flex items-center gap-2 text-[#5921c7]">
+                  <div className="mb-3 flex items-center gap-2 text-purple-300">
 
                     {domain.icon}
 
-                    <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#7d55c5]">{domain.category}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-purple-300">{domain.category}</span>
 
                   </div>
 
-                  <p className="text-[13px] leading-7 text-[#77717f]">{domain.desc}</p>
+                  <p className="text-[13px] leading-7 text-white/70">{domain.desc}</p>
 
                 </div>
 
@@ -581,9 +627,9 @@ export default function CoEPage() {
 
       </section>
 
-      {/* SECTION 03 — COE ECOSYSTEM | DARK */}
+      {/* SECTION 03 — COE ECOSYSTEM | LIGHT */}
 
-      <section className="relative isolate overflow-hidden bg-[#100b1b] px-6 py-10 text-white md:py-10">
+      <section className="relative isolate overflow-hidden bg-white px-6 py-10 text-[#17151c] md:py-10">
 
         <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[130px]" />
 
@@ -591,21 +637,21 @@ export default function CoEPage() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}>
 
-            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#b99bff]">More than a laboratory</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-700">More than a laboratory</motion.p>
 
-            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold leading-tight tracking-tight text-white">
+            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold leading-tight tracking-tight text-[#17151c]">
 
               An Ecosystem for <span className="bg-gradient-to-r from-[#a77bff] to-[#d3bfff] bg-clip-text text-transparent">Learning & Innovation</span>
 
             </motion.h2>
 
-            <motion.p custom={2} variants={fadeUp} className="mt-6 text-[15px] leading-8 text-[#b7b1c1] md:text-[16px]">
+            <motion.p custom={2} variants={fadeUp} className="mt-6 text-[15px] leading-8 text-gray-600 md:text-[16px]">
 
               A Center of Excellence brings infrastructure, mentorship and applied learning together in one collaborative environment. It gives students and faculty a place to explore technologies, test ideas and develop solutions.
 
             </motion.p>
 
-            <motion.p custom={3} variants={fadeUp} className="mt-4 text-[15px] leading-8 text-[#b7b1c1] md:text-[16px]">
+            <motion.p custom={3} variants={fadeUp} className="mt-4 text-[15px] leading-8 text-gray-600 md:text-[16px]">
 
               Our approach connects the laboratory with the academic ecosystem through structured training, guided projects and ongoing technical support.
 
@@ -627,13 +673,13 @@ export default function CoEPage() {
 
             ].map((item, i) => (
 
-              <motion.div key={item.title} custom={i} variants={fadeUp} whileHover={{ y: -5 }} className="rounded-2xl border border-white/10 bg-white/[0.045] p-6 transition-all duration-300 hover:border-[#8c52ff]/50 hover:bg-white/[0.075]">
+              <motion.div key={item.title} custom={i} variants={fadeUp} whileHover={{ y: -5 }} className="rounded-2xl border border-[#e9e3f1] bg-[#fbfaff] p-6 transition-all duration-300 hover:border-[#8c52ff]/50 hover:bg-white/[0.075]">
 
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#5921c7] text-white shadow-lg shadow-[#5921c7]/20">{item.icon}</div>
 
-                <h3 className="text-[17px] font-bold text-white">{item.title}</h3>
+                <h3 className="text-[17px] font-bold text-[#17151c]">{item.title}</h3>
 
-                <p className="mt-3 text-[13px] leading-7 text-[#b7b1c1]">{item.desc}</p>
+                <p className="mt-3 text-[13px] leading-7 text-gray-600">{item.desc}</p>
 
               </motion.div>
 
@@ -645,25 +691,25 @@ export default function CoEPage() {
 
       </section>
 
-      {/* SECTION 04 — IMPLEMENTATION SUPPORT | LIGHT */}
+      {/* SECTION 04 — IMPLEMENTATION SUPPORT | DARK */}
 
-      <section className="relative isolate overflow-hidden bg-white px-6 py-10 text-[#17151c] md:py-10">
+      <section className="relative isolate overflow-hidden bg-[#30106f] px-6 py-10 text-white md:py-10">
 
-        <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/[0.07] blur-[130px]" />
+        <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[130px]" />
 
         <div className="relative z-10 mx-auto max-w-[1240px]">
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="mx-auto mb-14 max-w-3xl text-center">
 
-            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-600">Complete implementation</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-purple-300">Complete implementation</motion.p>
 
-            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold tracking-tight text-[#211a2c]">
+            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold tracking-tight text-white">
 
-              End-to-End <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">Implementation Support</span>
+              End-to-End <span className="text-white">Implementation Support</span>
 
             </motion.h2>
 
-            <motion.p custom={2} variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#77717f] md:text-[16px]">
+            <motion.p custom={2} variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-white/70 md:text-[16px]">
 
               We support the complete journey, from planning and infrastructure development to faculty enablement and continuous student mentorship.
 
@@ -675,17 +721,17 @@ export default function CoEPage() {
 
             {supportServices.map((service, i) => (
 
-              <motion.article key={service.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={cardVariants} whileHover={{ y: -6 }} className="group relative overflow-hidden rounded-[1.5rem] border border-[#e9e3f1] bg-[#fbfaff] p-7 transition-all duration-300 hover:border-[#b99bff] hover:bg-white hover:shadow-[0_18px_45px_-25px_rgba(89,33,199,0.25)]">
+              <motion.article key={service.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={cardVariants} whileHover={{ y: -6 }} className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#3e1b86] p-7 transition-all duration-300 hover:border-[#b99bff] hover:bg-[#4c2892] hover:shadow-[0_18px_45px_-25px_rgba(89,33,199,0.25)]">
 
-                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#8c52ff]/[0.07] transition-transform duration-500 group-hover:scale-150" />
+                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#8c52ff]/10 transition-transform duration-500 group-hover:scale-150" />
 
                 <div className="relative z-10">
 
                   <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#5921c7] to-[#8c52ff] text-white shadow-lg shadow-[#5921c7]/20 transition-transform duration-300 group-hover:scale-110">{service.icon}</div>
 
-                  <h3 className="text-[17px] font-bold text-[#282130] transition-colors group-hover:text-[#5921c7]">{service.title}</h3>
+                  <h3 className="text-[17px] font-bold text-white transition-colors group-hover:text-[#5921c7]">{service.title}</h3>
 
-                  <p className="mt-3 text-[13px] leading-7 text-[#77717f]">{service.desc}</p>
+                  <p className="mt-3 text-[13px] leading-7 text-white/70">{service.desc}</p>
 
                   <div className="mt-6 h-1 w-9 rounded-full bg-[#8c52ff]/40 transition-all duration-300 group-hover:w-14 group-hover:bg-[#8c52ff]" />
 
@@ -701,25 +747,25 @@ export default function CoEPage() {
 
       </section>
 
-      {/* SECTION 05 — IMPLEMENTATION JOURNEY | DARK */}
+      {/* SECTION 05 — IMPLEMENTATION JOURNEY | LIGHT */}
 
-      <section className="relative isolate overflow-hidden bg-[#090711] px-6 py-10 text-white md:py-10">
+      <section className="relative isolate overflow-hidden bg-[#f8f7fb] px-6 py-10 text-[#17151c] md:py-10">
 
-        <div className="pointer-events-none absolute -left-40 top-10 h-[420px] w-[420px] rounded-full bg-[#5921c7]/20 blur-[130px]" />
+        <div className="pointer-events-none absolute -left-40 top-10 h-[420px] w-[420px] rounded-full bg-[#5921c7]/[0.06] blur-[130px]" />
 
         <div className="relative z-10 mx-auto max-w-[1240px]">
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="mx-auto mb-14 max-w-3xl text-center">
 
-            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#b99bff]">A structured approach</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-700">A structured approach</motion.p>
 
-            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold tracking-tight text-white">
+            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold tracking-tight text-[#17151c]">
 
-              How We Establish Your <span className="bg-gradient-to-r from-[#8c52ff] to-[#c2a5ff] bg-clip-text text-transparent">CoE</span>
+              How We Establish Your <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">CoE</span>
 
             </motion.h2>
 
-            <motion.p custom={2} variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#b7b1c1] md:text-[16px]">
+            <motion.p custom={2} variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-gray-600 md:text-[16px]">
 
               A collaborative implementation journey that aligns the CoE with your institution&apos;s objectives and operating environment.
 
@@ -731,21 +777,21 @@ export default function CoEPage() {
 
             {implementationSteps.map((step, i) => (
 
-              <motion.article key={step.number} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={cardVariants} className="relative rounded-2xl border border-white/10 bg-white/[0.045] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#8c52ff]/50 hover:bg-white/[0.075]">
+              <motion.article key={step.number} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={cardVariants} className="relative rounded-2xl border border-[#e9e3f1] bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-[#8c52ff]/50 hover:bg-white/[0.075]">
 
                 <div className="mb-6 flex items-center justify-between">
 
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#5921c7] text-white shadow-lg shadow-[#5921c7]/20">{step.icon}</div>
 
-                  <span className="text-[30px] font-extrabold text-white/20">{step.number}</span>
+                  <span className="text-[30px] font-extrabold text-[#17151c]/20">{step.number}</span>
 
                 </div>
 
-                <h3 className="text-[18px] font-bold text-white">{step.title}</h3>
+                <h3 className="text-[18px] font-bold text-[#17151c]">{step.title}</h3>
 
-                <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#b99bff]">{step.subtitle}</p>
+                <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-700">{step.subtitle}</p>
 
-                <p className="mt-4 text-[13px] leading-7 text-[#b7b1c1]">{step.desc}</p>
+                <p className="mt-4 text-[13px] leading-7 text-gray-600">{step.desc}</p>
 
               </motion.article>
 
@@ -757,25 +803,25 @@ export default function CoEPage() {
 
       </section>
 
-      {/* SECTION 06 — OUTCOMES | LIGHT */}
+      {/* SECTION 06 — OUTCOMES | DARK */}
 
-      <section className="relative isolate overflow-hidden bg-[#f8f7fb] px-6 py-10 text-[#17151c] md:py-10">
+      <section className="relative isolate overflow-hidden bg-[#30106f] px-6 py-10 text-white md:py-10">
 
-        <div className="pointer-events-none absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/[0.06] blur-[140px]" />
+        <div className="pointer-events-none absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[140px]" />
 
         <div className="relative z-10 mx-auto grid max-w-[1240px] items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]">
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}>
 
-            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-600">Institutional impact</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-purple-300">Institutional impact</motion.p>
 
-            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold leading-tight tracking-tight text-[#211a2c]">
+            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold leading-tight tracking-tight text-white">
 
-              Building Skills That Extend <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">Beyond the Classroom</span>
+              Building Skills That Extend <span className="text-white">Beyond the Classroom</span>
 
             </motion.h2>
 
-            <motion.p custom={2} variants={fadeUp} className="mt-6 text-[15px] leading-8 text-[#77717f] md:text-[16px]">
+            <motion.p custom={2} variants={fadeUp} className="mt-6 text-[15px] leading-8 text-white/70 md:text-[16px]">
 
               A well-supported CoE can strengthen the connection between academic concepts and practical application. Students gain opportunities to work with technology, collaborate on projects and demonstrate what they learn.
 
@@ -783,19 +829,19 @@ export default function CoEPage() {
 
           </motion.div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="rounded-[2rem] border border-[#e9e3f1] bg-white p-7 shadow-sm sm:p-9">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="rounded-[2rem] border border-white/10 bg-[#3e1b86] p-7 shadow-sm sm:p-9">
 
-            <motion.h3 custom={0} variants={fadeUp} className="mb-7 text-[18px] font-bold text-[#282130]">What the ecosystem can help students develop</motion.h3>
+            <motion.h3 custom={0} variants={fadeUp} className="mb-7 text-[18px] font-bold text-white">What the ecosystem can help students develop</motion.h3>
 
             <div className="space-y-4">
 
               {outcomes.map((outcome, i) => (
 
-                <motion.div key={outcome} custom={i} variants={fadeUp} className="flex items-start gap-4 border-b border-[#eee8f4] pb-4 last:border-0 last:pb-0">
+                <motion.div key={outcome} custom={i} variants={fadeUp} className="flex items-start gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
 
-                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#8c52ff]/10 text-[#5921c7]"><CheckCircle2 size={15} /></div>
+                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-purple-300"><CheckCircle2 size={15} /></div>
 
-                  <p className="text-[13px] leading-7 text-[#5f5968]">{outcome}</p>
+                  <p className="text-[13px] leading-7 text-white/75">{outcome}</p>
 
                 </motion.div>
 
@@ -809,25 +855,25 @@ export default function CoEPage() {
 
       </section>
 
-      {/* SECTION 07 — HIGHLIGHTS | DARK */}
+      {/* SECTION 07 — HIGHLIGHTS | LIGHT */}
 
-      <section className="relative isolate overflow-hidden bg-[#100b1b] px-6 py-10 text-white md:py-10">
+      <section className="relative isolate overflow-hidden bg-white px-6 py-10 text-[#17151c] md:py-10">
 
-        <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[130px]" />
+        <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/[0.07] blur-[130px]" />
 
         <div className="relative z-10 mx-auto max-w-[1240px]">
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="mb-14 text-center">
 
-            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#b99bff]">Why establish a CoE</motion.p>
+            <motion.p custom={0} variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-700">Why establish a CoE</motion.p>
 
-            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold tracking-tight text-white">
+            <motion.h2 custom={1} variants={fadeUp} className="mt-4 text-[32px] font-extrabold tracking-tight text-[#17151c]">
 
-              CoE <span className="bg-gradient-to-r from-[#8c52ff] to-[#c2a5ff] bg-clip-text text-transparent">Highlights</span>
+              CoE <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">Highlights</span>
 
             </motion.h2>
 
-            <motion.p custom={2} variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#b7b1c1] md:text-[16px]">
+            <motion.p custom={2} variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-gray-600 md:text-[16px]">
 
               Delivering long-term institutional value through practical exposure, technical capability and a culture of continuous innovation.
 
@@ -839,13 +885,13 @@ export default function CoEPage() {
 
             {highlights.map((item, i) => (
 
-              <motion.article key={item.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={cardVariants} className="group flex min-h-[205px] flex-col items-center justify-center rounded-[1.4rem] border border-white/10 bg-white/[0.035] p-5 text-center transition-all duration-500 hover:-translate-y-2 hover:border-[#8c52ff]/50 hover:bg-[#8c52ff]/[0.08] sm:p-6">
+              <motion.article key={item.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={cardVariants} className="group flex min-h-[205px] flex-col items-center justify-center rounded-[1.4rem] border border-[#e9e3f1] bg-[#fbfaff] p-5 text-center transition-all duration-500 hover:-translate-y-2 hover:border-[#8c52ff]/50 hover:bg-[#8c52ff]/[0.08] sm:p-6">
 
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#8c52ff]/10 text-[#c4aaff] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#5921c7] group-hover:text-white">{item.icon}</div>
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#8c52ff]/[0.07] text-[#5921c7] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#5921c7] group-hover:text-white">{item.icon}</div>
 
-                <h3 className="text-[12px] font-bold leading-relaxed text-[#eeeaf5] transition-colors group-hover:text-white sm:text-[13px]">{item.title}</h3>
+                <h3 className="text-[12px] font-bold leading-relaxed text-[#282130] transition-colors group-hover:text-[#5921c7] sm:text-[13px]">{item.title}</h3>
 
-                <p className="mt-3 text-[11px] leading-5 text-[#a9a2b4]">{item.desc}</p>
+                <p className="mt-3 text-[11px] leading-5 text-gray-600">{item.desc}</p>
 
               </motion.article>
 
@@ -857,7 +903,67 @@ export default function CoEPage() {
 
       </section>
 
-      {/* SECTION 08 — CTA | LIGHT */}
+      {/* SECTION 08 — FAQs | DARK */}
+      <section className="relative isolate overflow-hidden bg-[#30106f] px-6 py-14 text-white md:py-16">
+        <div className="pointer-events-none absolute -right-40 top-0 h-[420px] w-[420px] rounded-full bg-[#8c52ff]/10 blur-[130px]" />
+        <div className="relative z-10 mx-auto max-w-[1000px]">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+            className="mx-auto mb-10 max-w-3xl text-center"
+          >
+            <motion.p variants={fadeUp} className="text-[13px] font-bold uppercase tracking-[0.2em] text-purple-300">
+              Frequently asked questions
+            </motion.p>
+            <motion.h2 variants={fadeUp} className="mt-4 text-[30px] font-extrabold tracking-tight text-white sm:text-[34px]">
+              Everything you need to know about a <span className="text-purple-300">CoE</span>
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-white/70">
+              Find answers to common questions about planning, establishing and activating a Center of Excellence.
+            </motion.p>
+          </motion.div>
+
+          <div className="space-y-3">
+            {faqs.map((faq, index) => {
+              const isOpen = openFaq === index;
+              return (
+                <motion.article
+                  key={faq.question}
+                  custom={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
+                  variants={cardVariants}
+                  className="overflow-hidden rounded-2xl border border-white/10 bg-[#3e1b86] transition-colors hover:border-[#b99bff]/50"
+                >
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
+                    className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-7"
+                  >
+                    <span className="text-[14px] font-bold leading-6 text-white sm:text-[15px]">{faq.question}</span>
+                    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-purple-300 transition-transform duration-300 ${isOpen ? "rotate-45 bg-white/10" : ""}`}>
+                      <span className="text-xl leading-none">+</span>
+                    </span>
+                  </button>
+                  <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                    <div className="overflow-hidden">
+                      <p className="border-t border-white/10 px-5 pb-5 pt-4 text-[13px] leading-7 text-white/70 sm:px-7">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+{/* SECTION 09 — CTA | LIGHT */}
 
       <section className="relative isolate overflow-hidden bg-white px-6 py-10 md:py-10">
 
@@ -868,7 +974,7 @@ export default function CoEPage() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants} className="relative z-10 mx-auto max-w-[900px] text-center">
           <motion.p variants={fadeUp} className="mb-4 text-[13px] font-bold uppercase tracking-[0.22em] text-gray-600">Let&apos;s build the future together</motion.p>
           <motion.h2 variants={fadeUp} className="mx-auto max-w-3xl text-[32px] font-extrabold leading-tight tracking-tight text-[#211a2c]">
-            Build Your Institution&apos;s <span className="bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">Innovation Hub</span>
+            Build Your Institution&apos;s <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">Innovation Hub</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="mx-auto mb-8 mt-5 max-w-2xl text-[14px] leading-8 text-[#716a7c] md:text-[16px]">
             Collaborate with Adroiit Technovations to establish a Center of Excellence and provide your students with the tools, knowledge and mentorship to explore and lead in emerging technologies.

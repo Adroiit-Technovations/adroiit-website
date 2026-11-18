@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
@@ -21,6 +22,7 @@ import {
   CircuitBoard,
   BrainCircuit,
   Presentation,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -91,13 +93,15 @@ function SectionHeading({
   light?: boolean;
 }) {
   return (
-    <div className="mx-auto mb-7 max-w-3xl text-center">
+    <div className="mx-auto mb-10 max-w-3xl text-center">
       <motion.p
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={titleVariants}
-        className={`mb-4 text-[10px] font-bold uppercase tracking-[0.25em] sm:text-[13px] ${light ? "text-[#5921c7]" : "text-[#a981ff]"}`}
+        className={`mb-4 text-[10px] font-bold uppercase tracking-[0.25em] sm:text-[13px] ${
+          light ? "text-gray-700" : "text-purple-300"
+        }`}
       >
         {eyebrow}
       </motion.p>
@@ -107,14 +111,11 @@ function SectionHeading({
         whileInView="visible"
         viewport={{ once: true }}
         variants={titleVariants}
-        className={`text-[30px] font-black leading-tight tracking-tight sm:text-[36px] lg:text-[32px] ${
-          light ? "text-[#17131f]" : "text-white"
+        className={`text-[30px] font-black leading-tight tracking-tight sm:text-[36px] lg:text-[38px] ${
+          light ? "text-transparent bg-clip-text bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7]" : "text-white"
         }`}
       >
-        {title}{" "}
-        <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#5921c7] bg-clip-text text-transparent">
-          {highlight}
-        </span>
+        {title} {highlight}
       </motion.h2>
 
       <motion.p
@@ -122,8 +123,8 @@ function SectionHeading({
         whileInView="visible"
         viewport={{ once: true }}
         variants={descVariants}
-        className={`mx-auto mt-2 max-w-2xl text-[14px] leading-8 sm:text-[16px] ${
-          light ? "text-gray-900" : "text-gray-400"
+        className={`mx-auto mt-4 max-w-2xl text-[14px] leading-8 sm:text-[16px] ${
+          light ? "text-gray-700" : "text-gray-300"
         }`}
       >
         {description}
@@ -137,6 +138,8 @@ function SectionHeading({
 // ============================================================
 
 export default function TechnicalWorkshopsPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
   // ============================================================
   // WORKSHOP DOMAINS
   // ============================================================
@@ -322,24 +325,61 @@ export default function TechnicalWorkshopsPage() {
     "Coordination with the institution for effective execution",
   ];
 
+  // ============================================================
+  // FREQUENTLY ASKED QUESTIONS
+  // ============================================================
+
+  const faqs = [
+    {
+      question: "Who can participate in the technical workshops?",
+      answer:
+        "Our technical workshops are designed primarily for college students who want to gain practical exposure to engineering tools, emerging technologies and industry-relevant technical domains. Workshop topics can be discussed based on the student group and institutional requirements.",
+    },
+    {
+      question: "What technical domains are covered in the workshops?",
+      answer:
+        "Our workshop domains include 3D Design & Modelling, 3D Printing, Embedded Systems, Internet of Things (IoT), Robotics, Drone Technology, PCB Designing and Artificial Intelligence.",
+    },
+    {
+      question: "Are the workshops practical or theory-based?",
+      answer:
+        "Our workshops combine conceptual foundations with trainer-led demonstrations and hands-on implementation. Students get opportunities to apply what they learn through practical exercises, guided activities and project-oriented tasks.",
+    },
+    {
+      question: "Can the workshop be customized for our institution?",
+      answer:
+        "Yes. We work with institutions to discuss suitable workshop topics, student groups, technical requirements and delivery formats. The workshop plan can be structured around the institution's learning priorities.",
+    },
+    {
+      question: "Will students receive certificates?",
+      answer:
+        "Certification and skill validation can be included as part of the workshop plan, depending on the programme structure and the applicable completion requirements.",
+    },
+    {
+      question: "How can our college host a technical workshop?",
+      answer:
+        "Colleges can contact Adroiit Technovations through the contact page to discuss their requirements. Our team can coordinate with the institution to explore suitable topics, duration and delivery arrangements.",
+    },
+  ];
+
   return (
     <div
-      className={`${bricolage.className} relative min-h-screen overflow-hidden bg-[#050505] text-white`}
+      className={`${bricolage.className} relative min-h-screen overflow-hidden bg-white text-[#17131f]`}
     >
       {/* ====================================================== */}
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION — LIGHT THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden pb-20 pt-35 md:pb-28 md:pt-35">
+      <section className="relative z-10 overflow-hidden bg-white pb-16 pt-28 md:pb-24 md:pt-35">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -right-40 -top-32 h-[520px] w-[520px] rounded-full bg-[#5921c7]/20 blur-[150px]" />
-          <div className="absolute -left-40 top-[400px] h-[420px] w-[420px] rounded-full bg-[#8c52ff]/10 blur-[150px]" />
+          <div className="absolute -right-40 -top-32 h-[520px] w-[520px] rounded-full bg-[#8c52ff]/15 blur-[150px]" />
+          <div className="absolute -left-40 top-[400px] h-[420px] w-[420px] rounded-full bg-[#5921c7]/10 blur-[150px]" />
 
           <div
             className="absolute inset-0 opacity-[0.035]"
             style={{
               backgroundImage:
-                "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+                "linear-gradient(#5921c7 1px, transparent 1px), linear-gradient(90deg, #5921c7 1px, transparent 1px)",
               backgroundSize: "55px 55px",
             }}
           />
@@ -355,7 +395,7 @@ export default function TechnicalWorkshopsPage() {
                 animate="visible"
                 variants={fadeUp}
                 custom={0}
-                className="mb-4 text-[10px] uppercase font-bold tracking-[0.18em] text-[#c4a9ff] text-[13px]"
+                className="mb-4 text-[13px] font-bold uppercase tracking-[0.18em] text-gray-700"
               >
                 Education and Innovation
               </motion.p>
@@ -364,12 +404,11 @@ export default function TechnicalWorkshopsPage() {
                 initial="hidden"
                 animate="visible"
                 variants={titleVariants}
-                className="mb-6 text-[36px] font-black leading-[1.1] tracking-tight sm:text-[48px] lg:text-[32px]"
+                className="mb-6 text-[36px] font-black leading-[1.1] tracking-tight text-[#17131f] sm:text-[48px] lg:text-[42px]"
               >
                 Industry & Skill Development focused
                 <br />
-               
-                <span className="bg-gradient-to-r from-[#8c52ff] via-[#b18aff] to-[#5921c7] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
                   Technical Workshops
                 </span>
               </motion.h1>
@@ -385,7 +424,7 @@ export default function TechnicalWorkshopsPage() {
                 <div className="relative aspect-[16/10] w-full">
                   <div className="absolute -inset-4 rounded-[35px] bg-[#8c52ff]/20 blur-2xl" />
 
-                  <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-white/10 bg-[#111111] shadow-2xl">
+                  <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-[#5921c7]/10 bg-[#f7f6fa] shadow-2xl">
                     <Image
                       src="/services/technical-workshop2.png"
                       alt="Technical workshop conducted by Adroiit Technovations"
@@ -394,7 +433,6 @@ export default function TechnicalWorkshopsPage() {
                       sizes="100vw"
                       className="object-cover"
                     />
-
                   </div>
                 </div>
               </motion.div>
@@ -407,7 +445,7 @@ export default function TechnicalWorkshopsPage() {
                   delay: 0.3,
                   ease: "easeOut",
                 }}
-                className="mb-5 h-0.5 rounded-full bg-gradient-to-r from-[#5921c7] to-[#b18aff]"
+                className="mb-5 h-0.5 rounded-full bg-gradient-to-r from-[#5921c7] to-[#8c52ff]"
               />
 
               <motion.div
@@ -416,13 +454,13 @@ export default function TechnicalWorkshopsPage() {
                 variants={descVariants}
                 className="space-y-5"
               >
-                <p className="text-justify leading-7 text-white text-[18px]">
+                <p className="text-justify text-[16px] leading-8 text-gray-700 sm:text-[18px]">
                   Adroiit Technovations aims to bridge the gap between academic
                   knowledge and industrial requirements by providing practical
                   exposure to cutting-edge technologies through workshops.
                 </p>
 
-                <p className="text-justify leading-7 text-white text-[18px]">
+                <p className="text-justify text-[16px] leading-8 text-gray-700 sm:text-[18px]">
                   Designed specifically for college students, our technical
                   workshops provide opportunities to explore emerging
                   technological domains, develop practical skills and
@@ -448,7 +486,6 @@ export default function TechnicalWorkshopsPage() {
                     className="transition-transform group-hover:translate-x-1"
                   />
                 </Link>
-
               </motion.div>
             </div>
 
@@ -461,9 +498,9 @@ export default function TechnicalWorkshopsPage() {
               className="relative hidden w-full lg:block"
             >
               <div className="relative mx-auto aspect-[16/10] w-full max-w-[650px]">
-                <div className="absolute -inset-5 rounded-[40px] bg-gradient-to-br from-[#5921c7]/30 to-[#8c52ff]/5 blur-2xl" />
+                <div className="absolute -inset-5 rounded-[40px] bg-gradient-to-br from-[#5921c7]/25 to-[#8c52ff]/10 blur-2xl" />
 
-                <div className="relative h-full w-full overflow-hidden rounded-[32px] border border-white/10 bg-[#111111] shadow-[0_25px_80px_rgba(0,0,0,0.5)]">
+                <div className="relative h-full w-full overflow-hidden rounded-[32px] border border-[#5921c7]/10 bg-[#f7f6fa] shadow-[0_25px_80px_rgba(89,33,199,0.12)]">
                   <Image
                     src="/services/technical-workshop2.png"
                     alt="Technical workshop conducted by Adroiit Technovations"
@@ -472,9 +509,7 @@ export default function TechnicalWorkshopsPage() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 hover:scale-105"
                   />
-
                 </div>
-
               </div>
             </motion.div>
           </div>
@@ -482,14 +517,14 @@ export default function TechnicalWorkshopsPage() {
       </section>
 
       {/* ====================================================== */}
-      {/* 3. WORKSHOP DOMAINS */}
+      {/* 2. WORKSHOP DOMAINS — DARK THEME */}
       {/* ====================================================== */}
 
       <section
         id="workshops"
-        className="relative z-10 overflow-hidden bg-white py-10 text-[#17131f] md:py-10"
+        className="relative z-10 overflow-hidden bg-[#30106f] py-12 text-white md:py-16"
       >
-        <div className="pointer-events-none absolute -left-40 top-20 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/10 blur-[150px]" />
+        <div className="pointer-events-none absolute -left-40 top-20 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/15 blur-[150px]" />
 
         <div className="relative mx-auto max-w-[1300px] px-6">
           <SectionHeading
@@ -497,10 +532,9 @@ export default function TechnicalWorkshopsPage() {
             title="Explore Our"
             highlight="Workshop Domains"
             description="Specialized technical tracks designed to introduce students to modern engineering tools, emerging technologies and practical applications."
-            light
           />
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {workshopList.map((workshop, i) => (
               <motion.div
                 key={workshop.title}
@@ -510,31 +544,31 @@ export default function TechnicalWorkshopsPage() {
                 variants={fadeUp}
                 viewport={{ once: true, amount: 0.15 }}
                 whileHover={{ y: -7 }}
-                className="group relative flex flex-col overflow-hidden rounded-[26px] border border-gray-200 bg-[#faf9fc] p-3 transition-all duration-300 hover:border-[#8c52ff]/50 hover:bg-white hover:shadow-[0_15px_40px_rgba(89,33,199,0.12)]"
+                className="group relative flex flex-col overflow-hidden rounded-[26px] border border-white/10 bg-[#3e1b86] p-3 transition-all duration-300 hover:border-[#b18aff]/50 hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)]"
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[19px] bg-[#1a1a1a]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[19px] bg-[#30106f]">
                   <Image
                     src={workshop.image}
                     alt={workshop.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
 
                 <div className="flex flex-1 flex-col px-3 pb-4 pt-5">
-                  <div className="mb-3 flex items-center gap-2 text-[#5921c7]">
+                  <div className="mb-3 flex items-center gap-2 text-purple-300">
                     {workshop.icon}
-                    <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#5921c7]">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-300">
                       {workshop.category}
                     </span>
                   </div>
 
-                  <h3 className="mb-3 text-[16px] font-bold leading-snug text-[#21182d] transition-colors group-hover:text-[#5921c7]">
+                  <h3 className="mb-3 text-[16px] font-bold leading-snug text-white transition-colors group-hover:text-purple-200">
                     {workshop.title}
                   </h3>
 
-                  <p className="text-[12px] leading-7 text-gray-600">
+                  <p className="text-[12px] leading-7 text-gray-300">
                     {workshop.desc}
                   </p>
                 </div>
@@ -545,10 +579,10 @@ export default function TechnicalWorkshopsPage() {
       </section>
 
       {/* ====================================================== */}
-      {/* 4. LEARNING APPROACH */}
+      {/* 3. LEARNING APPROACH — LIGHT THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] py-10 text-white md:py-10">
+      <section className="relative z-10 overflow-hidden bg-white py-12 text-[#17131f] md:py-16">
         <div className="pointer-events-none absolute -right-40 top-10 h-96 w-96 rounded-full bg-[#8c52ff]/10 blur-[130px]" />
 
         <div className="relative mx-auto max-w-[1300px] px-6">
@@ -557,6 +591,7 @@ export default function TechnicalWorkshopsPage() {
             title="From Concepts to"
             highlight="Practical Application"
             description="Our workshop approach connects technical understanding with guided demonstrations and practical activities, helping students engage with the subject beyond theory."
+            light
           />
 
           <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -570,23 +605,23 @@ export default function TechnicalWorkshopsPage() {
                 whileInView="visible"
                 variants={fadeUp}
                 viewport={{ once: true, amount: 0.2 }}
-                className="relative rounded-[28px] border border-white/[0.07] bg-[#111111] p-7 shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-[#8c52ff]/40 hover:bg-[#15121c] hover:shadow-[0_20px_55px_rgba(89,33,199,0.10)]"
+                className="relative rounded-[28px] border border-gray-200 bg-[#f7f5fb] p-7 shadow-[0_12px_40px_rgba(89,33,199,0.04)] transition-all duration-300 hover:-translate-y-2 hover:border-[#8c52ff]/40 hover:bg-white hover:shadow-[0_20px_55px_rgba(89,33,199,0.10)]"
               >
                 <div className="relative z-10 mb-7 flex items-center justify-between">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#5921c7]/15 text-[#b18aff]">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#5921c7]/10 text-[#5921c7]">
                     {step.icon}
                   </div>
 
-                  <span className="text-[30px] font-black text-white/15">
+                  <span className="text-[30px] font-black text-[#5921c7]/15">
                     {step.number}
                   </span>
                 </div>
 
-                <h3 className="mb-3 text-[18px] font-black text-[#d1bcff]">
+                <h3 className="mb-3 text-[18px] font-black text-[#5921c7]">
                   {step.title}
                 </h3>
 
-                <p className="text-[14px] leading-7 text-gray-200">
+                <p className="text-[14px] leading-7 text-gray-700">
                   {step.description}
                 </p>
 
@@ -598,11 +633,11 @@ export default function TechnicalWorkshopsPage() {
       </section>
 
       {/* ====================================================== */}
-      {/* 5. STUDENT OUTCOMES */}
+      {/* 4. STUDENT OUTCOMES — DARK THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-white py-10 text-[#17131f] md:py-10">
-        <div className="pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-[#5921c7]/15 blur-[140px]" />
+      <section className="relative z-10 overflow-hidden bg-[#30106f] py-12 text-white md:py-16">
+        <div className="pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-[#8c52ff]/15 blur-[140px]" />
 
         <div className="relative mx-auto max-w-[1300px] px-6">
           <SectionHeading
@@ -610,7 +645,6 @@ export default function TechnicalWorkshopsPage() {
             title="Skills Students Can"
             highlight="Build"
             description="Technical workshops provide opportunities to develop capabilities that support academic learning, technical exploration and professional growth."
-            light
           />
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -622,18 +656,18 @@ export default function TechnicalWorkshopsPage() {
                 whileInView="visible"
                 variants={fadeUp}
                 viewport={{ once: true, amount: 0.2 }}
-                className="group flex gap-5 rounded-[26px] border border-gray-200 bg-[#faf9fc] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8c52ff]/40 hover:bg-white"
+                className="group flex gap-5 rounded-[26px] border border-white/10 bg-[#3e1b86] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#b18aff]/40 hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#8c52ff]/20 bg-[#5921c7]/[0.07] text-[#5921c7] transition-all group-hover:bg-[#5921c7] group-hover:text-white">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#b18aff]/20 bg-[#5921c7]/30 text-purple-200 transition-all group-hover:bg-[#8c52ff] group-hover:text-white">
                   {item.icon}
                 </div>
 
                 <div>
-                  <h3 className="mb-2 text-[16px] font-bold text-[#21182d] transition-colors group-hover:text-[#5921c7]">
+                  <h3 className="mb-2 text-[16px] font-bold text-white transition-colors group-hover:text-purple-200">
                     {item.title}
                   </h3>
 
-                  <p className="text-[12px] leading-7 text-gray-600 sm:text-[13px]">
+                  <p className="text-[12px] leading-7 text-gray-300 sm:text-[13px]">
                     {item.description}
                   </p>
                 </div>
@@ -644,11 +678,11 @@ export default function TechnicalWorkshopsPage() {
       </section>
 
       {/* ====================================================== */}
-      {/* 7. INSTITUTIONAL COLLABORATION */}
+      {/* 5. INSTITUTIONAL COLLABORATION — LIGHT THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] py-10 md:py-10">
-        <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/15 blur-[150px]" />
+      <section className="relative z-10 overflow-hidden bg-white py-12 md:py-16">
+        <div className="pointer-events-none absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-[#5921c7]/10 blur-[150px]" />
 
         <div className="relative mx-auto max-w-[1300px] px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -658,7 +692,7 @@ export default function TechnicalWorkshopsPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={titleVariants}
-                className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-[#a981ff] sm:text-[13px]"
+                className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-gray-700 sm:text-[13px]"
               >
                 FOR COLLEGES & INSTITUTIONS
               </motion.p>
@@ -668,12 +702,12 @@ export default function TechnicalWorkshopsPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={titleVariants}
-                className="text-[30px] font-black leading-tight tracking-tight text-white sm:text-[36px] lg:text-[32px]"
+                className="text-[30px] font-black leading-tight tracking-tight text-[#17131f] sm:text-[36px] lg:text-[38px]"
               >
                 Bring Practical
                 <br />
                 Technology Learning to{" "}
-                <span className="bg-gradient-to-r from-[#8c52ff] to-[#b18aff] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
                   Your Campus
                 </span>
               </motion.h2>
@@ -683,7 +717,7 @@ export default function TechnicalWorkshopsPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={descVariants}
-                className="mt-6 text-[14px] leading-8 text-gray-200 sm:text-[16px]"
+                className="mt-6 text-[14px] leading-8 text-gray-700 sm:text-[16px]"
               >
                 Every institution has different learning priorities, student
                 groups and technical requirements. Adroiit Technovations works
@@ -704,9 +738,9 @@ export default function TechnicalWorkshopsPage() {
                   >
                     <CheckCircle2
                       size={19}
-                      className="mt-1 shrink-0 text-[#a981ff]"
+                      className="mt-1 shrink-0 text-[#5921c7]"
                     />
-                    <p className="text-[14px] leading-7 text-gray-300">
+                    <p className="text-[14px] leading-7 text-gray-700">
                       {benefit}
                     </p>
                   </motion.div>
@@ -715,7 +749,7 @@ export default function TechnicalWorkshopsPage() {
 
               <Link
                 href="/contact"
-                className="group mt-9 inline-flex items-center gap-3 rounded-full border border-[#8c52ff]/40 px-7 py-4 text-[14px] font-bold text-white transition-all hover:bg-[#5921c7]/20"
+                className="group mt-9 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#5921c7] to-[#8c52ff] px-7 py-4 text-[14px] font-bold text-white shadow-[0_8px_30px_rgba(89,33,199,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(89,33,199,0.3)]"
               >
                 Discuss Your Requirements
                 <ArrowRight
@@ -725,6 +759,8 @@ export default function TechnicalWorkshopsPage() {
               </Link>
             </div>
 
+            {/* WHY COLLABORATE CARD */}
+
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -732,16 +768,16 @@ export default function TechnicalWorkshopsPage() {
               variants={fadeIn}
               className="relative"
             >
-              <div className="absolute -inset-5 rounded-[35px] bg-gradient-to-br from-[#5921c7]/25 to-[#8c52ff]/5 blur-2xl" />
+              <div className="absolute -inset-5 rounded-[35px] bg-gradient-to-br from-[#5921c7]/15 to-[#8c52ff]/5 blur-2xl" />
 
-              <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#111111] p-7 sm:p-9">
+              <div className="relative overflow-hidden rounded-[30px] border border-gray-200 bg-[#f7f5fb] p-7 shadow-[0_20px_60px_rgba(89,33,199,0.08)] sm:p-9">
                 <div className="mb-8 flex items-center justify-between">
                   <div>
-                    <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#a981ff]">
+                    <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#5921c7]">
                       REASON TO CHOOSE US
                     </p>
 
-                    <h3 className="mt-2 text-[18px] font-black text-white">
+                    <h3 className="mt-2 text-[20px] font-black text-[#21182d]">
                       Why Collaborate with Us?
                     </h3>
                   </div>
@@ -756,21 +792,21 @@ export default function TechnicalWorkshopsPage() {
                       whileInView="visible"
                       variants={fadeUp}
                       viewport={{ once: true }}
-                      className="flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4 transition-all hover:border-[#8c52ff]/30 hover:bg-[#8c52ff]/[0.06]"
+                      className="flex items-center gap-4 rounded-2xl border border-gray-200 bg-white p-4 transition-all hover:border-[#8c52ff]/40 hover:shadow-[0_8px_25px_rgba(89,33,199,0.06)]"
                     >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#5921c7]/20 text-[#b18aff]">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#5921c7]/10 text-[#5921c7]">
                         {item.icon}
                       </div>
 
                       <div>
-                        <h4 className="text-[14px] font-bold text-white">
+                        <h4 className="text-[14px] font-bold text-[#21182d]">
                           {item.title}
                         </h4>
                       </div>
 
                       <CheckCircle2
                         size={17}
-                        className="ml-auto shrink-0 text-[#8c52ff]"
+                        className="ml-auto shrink-0 text-[#5921c7]"
                       />
                     </motion.div>
                   ))}
@@ -782,10 +818,120 @@ export default function TechnicalWorkshopsPage() {
       </section>
 
       {/* ====================================================== */}
-      {/* 8. FINAL CTA - LIGHT THEME, PLAIN SECTION */}
+      {/* 6. FREQUENTLY ASKED QUESTIONS — DARK THEME */}
       {/* ====================================================== */}
 
-      <section className="relative z-10 overflow-hidden bg-[#f7f6fa] px-6 py-20 text-[#17131f] md:py-10">
+      <section
+        id="faqs"
+        className="relative z-10 overflow-hidden bg-[#30106f] py-12 text-white md:py-16"
+      >
+        <div className="pointer-events-none absolute -left-40 top-10 h-[450px] w-[450px] rounded-full bg-[#8c52ff]/15 blur-[150px]" />
+        <div className="pointer-events-none absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[#5921c7]/20 blur-[150px]" />
+
+        <div className="relative mx-auto max-w-[1000px] px-6">
+          <SectionHeading
+            eyebrow="GOT QUESTIONS?"
+            title="Frequently Asked"
+            highlight="Questions"
+            description="Find answers to common questions about our technical workshops, learning approach and institutional collaborations."
+          />
+
+          <div className="mx-auto max-w-[850px] space-y-4">
+            {faqs.map((faq, index) => {
+              const isOpen = openFaq === index;
+
+              return (
+                <motion.div
+                  key={faq.question}
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={fadeUp}
+                  custom={index}
+                  viewport={{ once: true, amount: 0.15 }}
+                  className={`overflow-hidden rounded-[20px] border transition-all duration-300 ${
+                    isOpen
+                      ? "border-[#a981ff]/50 bg-[#3e1b86] shadow-[0_12px_35px_rgba(0,0,0,0.12)]"
+                      : "border-white/10 bg-[#3e1b86]/70 hover:border-[#a981ff]/30"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left sm:px-7"
+                  >
+                    <span className="flex items-start gap-4">
+                      <span className="mt-0.5 text-[13px] font-bold text-purple-300">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <span className="text-[15px] font-bold leading-7 text-white sm:text-[16px]">
+                        {faq.question}
+                      </span>
+                    </span>
+
+                    <span
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-purple-300/20 bg-[#5921c7]/30 text-purple-200 transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      <ChevronDown size={19} />
+                    </span>
+                  </button>
+
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="border-t border-white/10 px-6 pb-6 pt-4 sm:px-7">
+                        <p className="pl-8 text-[13px] leading-8 text-gray-300 sm:text-[14px]">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeUp}
+            viewport={{ once: true }}
+            className="mt-10 text-center"
+          >
+            <p className="text-[14px] text-gray-300">
+              Have more questions about our technical workshops?
+            </p>
+
+            <Link
+              href="/contact"
+              className="group mt-4 inline-flex items-center gap-2 text-[14px] font-bold text-purple-200 transition-colors hover:text-white"
+            >
+              Talk to Our Team
+              <ArrowRight
+                size={17}
+                className="transition-transform group-hover:translate-x-1"
+              />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ====================================================== */}
+      {/* 7. FINAL CTA — LIGHT THEME */}
+      {/* ====================================================== */}
+
+      <section className="relative z-10 overflow-hidden bg-[#f7f6fa] px-6 py-16 text-[#17131f] md:py-20">
+        <div className="pointer-events-none absolute -left-40 top-0 h-[350px] w-[350px] rounded-full bg-[#8c52ff]/10 blur-[130px]" />
+        <div className="pointer-events-none absolute -right-40 bottom-0 h-[350px] w-[350px] rounded-full bg-[#5921c7]/10 blur-[130px]" />
+
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -794,19 +940,19 @@ export default function TechnicalWorkshopsPage() {
           className="relative mx-auto max-w-[1300px] text-center"
         >
           <div className="mx-auto max-w-3xl">
-            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.25em] text-[#5921c7]">
+            <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.25em] text-gray-700">
               LET'S BUILD TECHNICAL EXCELLENCE
             </p>
 
-            <h2 className="mb-2 text-[30px] font-black leading-tight tracking-tight text-[#17131f] sm:text-[36px] md:text-[32px]">
+            <h2 className="mb-4 text-[30px] font-black leading-tight tracking-tight text-[#17131f] sm:text-[36px] md:text-[40px]">
               Empower Your Students with
-              <br></br>
-              <span className="bg-gradient-to-r from-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
+              <br />
+              <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
                 Future-ready Technical Skills
               </span>
             </h2>
 
-            <p className="mx-auto mb-4 max-w-3xl text-[14px] leading-8 text-gray-900 sm:text-[16px]">
+            <p className="mx-auto mb-7 max-w-3xl text-[14px] leading-8 text-gray-700 sm:text-[16px]">
               Partner with Adroiit Technovations to bring engaging,
               industry-focused technical workshops to your institution.
               Let's create meaningful learning experiences for your students.
