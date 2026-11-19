@@ -36,11 +36,11 @@ const services = [
     link: "/services/csl",
   },
   {
-    title: "STEAM Workshops & Bootcamps",
+    title: "STEAM Workshops",
     description:
       "Intensive learning programs that nurture critical thinking, problem-solving, and technical skills beyond the standard academic curriculum.",
     image: "/services/stem-bootcamp.png",
-    link: "/services/steam-workshops-bootcamps",
+    link: "/services/steam-workshops",
   },
   {
     title: "Center of Excellence (CoE)",

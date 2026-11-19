@@ -120,7 +120,7 @@ export default function ContactPage() {
 
   return (
     <section
-      className={`${bricolage.className} relative isolate min-h-screen overflow-hidden bg-[#faf9fd] px-4 py-35 text-gray-900 sm:px-6 md:py-34`}
+      className={`${bricolage.className} relative isolate min-h-screen overflow-hidden bg-[#faf9fd] px-6 py-35 text-gray-900 sm:px-6 md:py-34`}
     >
       {/* BACKGROUND EFFECTS */}
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -148,22 +148,20 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-10 max-w-3xl text-left md:mb-5"
+          className="mb-10 max-w-5xl text-left md:mb-5"
         >
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#5921c7] sm:text-sm">
-            Get in Touch
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-gray-600 sm:text-sm">
+            Contact Us
           </p>
 
-          <h1 className="text-3xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-3xl">
+          <h1 className="text-[24px] font-extrabold leading-[1.12] tracking-tight sm:text-3xl lg:text-[28px]">
             <span className="bg-gradient-to-r from-[#30106f] via-[#5921c7] to-[#30106f] bg-clip-text text-transparent">
-              Let's Start a Conversation.
+              Let's Build the Together!
             </span>
           </h1>
 
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-            Have a question, an idea, or a project in mind? We'd love to hear
-            from you. Tell us what you're looking for, and let's explore how
-            we can create something meaningful together.
+          <p className="mt-3 max-w-7xl text-sm leading-7 text-gray-800 sm:text-base sm:leading-8">
+            Have questions about our programs or you have any requirements, our team is here to help!
           </p>
         </motion.div>
 
@@ -489,7 +487,7 @@ export default function ContactPage() {
               </p>
 
               <h2 className="mt-2 text-xl font-bold text-[#30106f]">
-                Let's Connect.
+                Reach Out.
               </h2>
 
               <p className="mt-1.5 text-sm leading-6 text-gray-500">
@@ -541,7 +539,7 @@ export default function ContactPage() {
                 </div>
 
                 <p className="min-w-0 flex-1 text-sm font-semibold leading-5 text-[#30106f]">
-                  15A, Pavendhar Street, Near Amalorpavam Primary Campus, <br />
+                  15A, Pavendhar Street, Near Amalorpavam Primary Campus,
                   Thamizh Thai Nagar, Uppalam, Puducherry - 605004
                 </p>
               </div>
@@ -561,7 +559,7 @@ export default function ContactPage() {
             <div className="mt-4">
               <div className="mb-2 flex items-center justify-between gap-3">
                 <h3 className="text-sm font-bold text-[#30106f]">
-                  Find Our Location
+                  Our Location
                 </h3>
 
                 <a
