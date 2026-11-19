@@ -241,7 +241,7 @@ export default function Navbar() {
 
                     <li>
                       <Link
-                        href="/services/steam-workshops-bootcamps"
+                        href="/services/steam-workshops"
                         className="
                           hover:text-white
                           transition-colors
@@ -249,7 +249,7 @@ export default function Navbar() {
                           py-0.5
                         "
                       >
-                        STEAM Workshops & Bootcamps
+                        STEAM Workshops
                       </Link>
                     </li>
                   </ul>

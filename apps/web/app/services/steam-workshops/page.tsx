@@ -4,6 +4,7 @@ import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
 import type { ReactNode } from "react";
 import {
+  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
@@ -12,7 +13,6 @@ import {
   Lightbulb,
   Microscope,
   Rocket,
-  School,
   Trophy,
   Wrench,
   Zap,
@@ -57,55 +57,55 @@ const item: Variants = {
 const workshopDomains = [
   {
     image: "/stem-workshop/electronics.jpg",
-    title: "Electronics & Circuits",
+    title: "Electronics & Circuits Building",
     description:
-      "Builds understanding of electronic components and circuit design through practical learning.",
+      "Explore the fundamentals of electricity, electronic components and how electronic devices work by connecting components and building circuits.",
   },
   {
     image: "/stem-workshop/3d-printing.png",
     title: "3D Modelling & Printing",
     description:
-      "Introduces digital design and rapid prototyping using 3D modelling and 3D printing technologies.",
+      "Discover how to create 3D digital designs, understand dimensions and transform virtual models into physical objects using 3D printing technology.",
   },
   {
     image: "/stem-workshop/embedded-systems.jpg",
     title: "Embedded Systems",
     description:
-      "Focuses on creating smart devices by combining programming with electronic hardware.",
+      "Understand how microcontrollers interact with electronic components, sensors, actuators and explore the development of programmable electronic systems.",
   },
   {
     image: "/stem-workshop/robotics.jpg",
     title: "Robotics",
     description:
-      "Enables students to design and program robots to perform practical, real-world tasks.",
+      "Discover robot construction, mechanical movements, motor control, sensor integration, programming of robots to navigate in environments and perform automated tasks.",
   },
   {
     image: "/stem-workshop/drone.jpg",
     title: "Drone Technology",
     description:
-      "Provides exposure to drone technology, operations and its applications in the real world.",
+      "Explore the science of flight, flight controllers, propulsion systems, drone components, operations, stability, navigation and applications across different industries.",
   },
   {
     image: "/stem-workshop/ai.jpg",
     title: "Artificial Intelligence",
     description:
-      "Introduces intelligent systems and fundamental AI concepts for building smart applications.",
+      "Introduces AI fundamentals, machine learning, computer vision and explore how intelligent systems recognise information, make predictions and solve problems.",
   },
 ];
 
 const bootcampProgrammes = [
   {
     image: "/services/junior-robochamp3.jpg",
-    level: "Foundation to advanced learning",
+    level: "MASTER THE FOUNDATION OF ROBOTICS",
     title: "Junior RoboChamp",
     description:
-      "A hands-on foundation programme where students explore electronics, microcontroller programming, sensor and actuator interfacing, and robotics through exciting real-world projects.",
+      "A hands-on robotics programme that strenghtens the foundation in electronics, gradually diving into embedded systems - sensor and actuator interfacing and ",
     topics: ["Electronics", "Arduino", "Sensors and actuators", "Robotics"],
     audience: "Young technology explorers",
   },
   {
     image: "/services/ultimate-tech-mastery6.png",
-    level: "Multi-domain technology programme",
+    level: "MULTIPLE TECH EXPLORATION",
     title: "Ultimate Tech-Mastery",
     description:
       "An advanced technology programme covering electronics, embedded systems, robotics, IoT and 3D printing to build real-world innovation skills.",
@@ -117,10 +117,10 @@ const bootcampProgrammes = [
 const learningStages = [
   {
     number: "01",
-    title: "Discover & Understand",
+    title: "Explore",
     subtitle: "Build curiosity",
     description:
-      "Students explore scientific principles, engineering concepts and the technology behind each topic.",
+      "Discover new concepts and spark curiosity through exploration.",
     icon: BookOpen,
   },
   {
@@ -128,57 +128,57 @@ const learningStages = [
     title: "Experiment",
     subtitle: "Learn by doing",
     description:
-      "They interact with tools, components and materials to test ideas, investigate outcomes and understand concepts.",
+      "Understand concepts through hands-on activities and practical experiments.",
     icon: Microscope,
   },
   {
     number: "03",
-    title: "Build & Create",
+    title: "Build",
     subtitle: "Turn ideas into reality",
     description:
-      "Students apply what they learn by programming, assembling and developing practical models and technology projects.",
+      "Transform innovative ideas into functional projects and prototypes.",
     icon: Wrench,
   },
   {
     number: "04",
-    title: "Innovate & Present",
-    subtitle: "Share their innovation",
+    title: "Innovate",
+    subtitle: "Improve the idea",
     description:
-      "They improve projects, solve challenges and demonstrate working solutions while communicating their ideas.",
+      "Refine creations through creative thinking, testing and problem-solving.",
     icon: Rocket,
   },
 ];
 
 const workshopHighlights = [
   {
-    title: "Activity-driven Learning",
+    title: "Curriculum Connected Learning",
     description:
-      "Students learn through practical activities, hands-on exercises and guided experimentation that encourage active participation.",
+      "Connects classroom concepts with practical applications, reinforcing academic understanding through real-world technology experiences.",
     icon: Wrench,
+  },
+  {
+    title: "Hands-on Approach",
+    description:
+      "Move beyond theoretical learning through interactive activities that encourage students to explore, experiment, build and innovate.",
+    icon: Trophy,
+  },
+  {
+    title: "Strengthens STEAM Understanding",
+    description:
+      "Integrates Science, Technology, Engineering, Arts and Mathematics to develop inter-disciplinary thinking, creativity and problem-solving skills.",
+    icon: Lightbulb,
   },
   {
     title: "Real Components & Tools",
     description:
-      "Gain hands-on exposure to electronic components, technology kits, tools and equipment used in real-world engineering projects.",
+      "Gives students practical exposure to actual electronic components, engineering tools, development boards and technology kits.",
     icon: Cpu,
   },
   {
     title: "Engaging Live Demonstrations",
     description:
-      "Explore exciting live demonstrations that transform abstract scientific and technical concepts into visible, interactive experiences.",
+      "Breaks down complex technologies into simpler analogies through interactive demonstrations that spark curiosity and make advanced concepts easier to understand.",
     icon: Zap,
-  },
-  {
-    title: "Strengthens STEAM Understanding",
-    description:
-      "Connect science, technology, engineering, arts and mathematics with practical applications to develop a deeper understanding of concepts.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Project & Competition Readiness",
-    description:
-      "Develop technical confidence, creative thinking and problem-solving abilities through practical projects and technology challenges.",
-    icon: Trophy,
   },
   {
     title: "Career Awareness",
@@ -229,44 +229,54 @@ const galleryImages = [
 
 const workshopFAQs = [
   {
-    question: "Who can participate in the STEAM workshops and bootcamps?",
+    question: "How does the STEAM workshops benefit the students?",
     answer:
-      "Our workshops and bootcamps are designed for school students and young learners. The topics, activities and level of technical depth can be adapted to suit the age group and learning requirements of the institution.",
+      "Through our STEAM workshops, students enhance their STEAM concepts understanding, develop practical skills, creativity, crictical thinking and problem-solving abilities through engaging activities, experiments and projects.",
   },
   {
-    question: "What is the difference between a STEAM workshop and a bootcamp?",
+    question: "Which grades can participate in the workshops?",
     answer:
-      "A workshop is a short-format experience that introduces selected concepts through demonstrations and guided activities. A bootcamp is a structured, multi-session programme that gives students more time to develop technical skills and complete practical projects.",
+      "Our workshops are designed for the students from Grade 6 to 12, with activities and technical complexity adapted to their age, grade level and learning capabilities.",
   },
   {
-    question: "Which domains are covered in the programmes?",
+    question: "Do students require prior technical knowledge to participate?",
     answer:
-      "Depending on the programme, students can explore electronics and circuits, 3D modelling and printing, embedded systems, robotics, drone technology and artificial intelligence.",
+      "No. Our workshops are designed for complete beginners, introducing the foundational concepts through simple explanations, guided demonstrations and step-by-step hands-on activities, enabling them to learn, experiment and build projects confidently.",
   },
   {
-    question: "Do students get hands-on experience with real components and tools?",
+    question: "Will students build actual working projects?",
     answer:
-      "Yes. Our learning experiences emphasise practical activities using electronic components, technology kits, tools and equipment, supported by mentor-led demonstrations and guidance.",
+      "Absolutely! Students will actively engage in designing, assembling, programming and testing of the projects they have build, depending on the workshop domain.",
   },
   {
-    question: "Can the workshops be conducted at our school or institution?",
+    question: "What is the duration of each workshop?",
     answer:
-      "Yes. We offer flexible engagement models, including workshops, bootcamps, institutional programmes and customised STEAM initiatives. The delivery format can be planned around your institution's objectives and facilities.",
+      "Workshops can range from short introductory sessions to half-day, full-day and multi-day sessions, depending on the selected topic and learning objectives.",
   },
   {
-    question: "Can the programme be customised for different age groups?",
+    question: "Can workshops be customized according to our school's requirements?",
     answer:
-      "Yes. Topics, activity complexity and project outcomes can be tailored to the students' age, prior exposure, available time and the institution's learning objectives.",
+      "Yes! We customize workshop themes, durations and activities based on your school's academic objectives, available infrastructure, student age-groups and learning priorities.",
   },
   {
-    question: "Will students build projects during the sessions?",
+    question: "Does the school need to provide any equipment or materials?",
     answer:
-      "Practical making and project development are central to our approach. Depending on the format, students experiment with concepts, assemble or programme solutions, and demonstrate what they have created.",
+      "No. Adroiit Technovations will arrange the required equipment, kits, tools and learning materials. Schools generally need to provide a suitable classroom or activity space.",
   },
   {
-    question: "How can our institution collaborate with Adroiit Technovations?",
+    question: "Will students receive certificates to the participating students?",
     answer:
-      "You can contact our team with your institution's requirements. We will discuss the intended student group, learning objectives, preferred format and schedule to plan a suitable STEAM experience.",
+      "Yes! Participation certificates to the students and Acknowlegement certificates to the school and the participating staff members of the school will be provided upon the successful completion of the workshop.",
+  },
+  {
+    question: "When can the workshops be scheduled?",
+    answer:
+      "Workshops can be scheduled during regular school hours, activity periods, special programs, science days or other mutually agreed school events.",
+  },
+  {
+    question: "Will the school receive any documentations or reports?",
+    answer:
+      "Yes! Schools will receive workshop report which includes summaries, activity details, participation information and photographs of the workshop conducted.",
   },
 ];
 
@@ -303,7 +313,7 @@ function SectionHeading({
         className={`mt-3 text-[30px] font-black leading-[1.12] tracking-tight ${
           light
             ? "text-white"
-            : "bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent"
+            : "bg-gradient-to-r from-[#30106f] via-[#8c52ff] to-[#30106f] bg-clip-text text-transparent"
         }`}
       >
         {title}
@@ -334,7 +344,7 @@ function IconTile({
       className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${
         light
           ? "bg-[#8c52ff]/20 text-[#c4a8ff]"
-          : "bg-[#5921c7]/10 text-[#5921c7]"
+          : "bg-[#5020b0] text-[#ffffff]"
       }`}
     >
       <Icon size={23} />
@@ -344,53 +354,97 @@ function IconTile({
 
 function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const questionsPerPage = 5;
+  const totalPages = Math.ceil(workshopFAQs.length / questionsPerPage);
+
+  const visibleFAQs = workshopFAQs.slice(
+    currentPage * questionsPerPage,
+    (currentPage + 1) * questionsPerPage
+  );
+
+  const goToPreviousPage = () => {
+    setCurrentPage((page) => Math.max(0, page - 1));
+    setOpenIndex(null);
+  };
+
+  const goToNextPage = () => {
+    setCurrentPage((page) => Math.min(totalPages - 1, page + 1));
+    setOpenIndex(null);
+  };
 
   return (
-    <div className="space-y-3">
-      {workshopFAQs.map((faq, index) => {
-        const isOpen = openIndex === index;
+    <div>
+      <div className="space-y-3">
+        {visibleFAQs.map((faq, index) => {
+          const faqIndex = currentPage * questionsPerPage + index;
+          const isOpen = openIndex === faqIndex;
 
-        return (
-          <motion.article
-            key={faq.question}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={item}
-            className="overflow-hidden rounded-2xl border border-white/10 bg-[#3e1b86] transition-colors hover:border-purple-300/40"
-          >
-            <button
-              type="button"
-              aria-expanded={isOpen}
-              onClick={() => setOpenIndex(isOpen ? null : index)}
-              className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-7"
+          return (
+            <motion.article
+              key={faq.question}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={item}
+              className="overflow-hidden rounded-2xl border border-white/10 bg-[#3e1b86] transition-colors hover:border-purple-300/40"
             >
-              <span className="text-[15px] font-bold leading-6 text-white sm:text-base">
-                {faq.question}
-              </span>
+              <button
+                type="button"
+                aria-expanded={isOpen}
+                onClick={() => setOpenIndex(isOpen ? null : faqIndex)}
+                className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-7"
+              >
+                <span className="text-[15px] font-semibold leading-6 text-white sm:text-base">
+                  {faq.question}
+                </span>
 
-              <ChevronDown
-                size={20}
-                className={`shrink-0 text-purple-300 transition-transform duration-300 ${
-                  isOpen ? "rotate-180" : ""
+                <ChevronDown
+                  size={20}
+                  className={`shrink-0 text-purple-300 transition-transform duration-300 ${
+                    isOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              <div
+                className={`grid transition-all duration-300 ${
+                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                 }`}
-              />
-            </button>
-
-            <div
-              className={`grid transition-all duration-300 ${
-                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-              }`}
-            >
-              <div className="overflow-hidden">
-                <p className="px-5 pb-5 text-sm leading-7 text-white/70 sm:px-7 sm:pb-6">
-                  {faq.answer}
-                </p>
+              >
+                <div className="overflow-hidden">
+                  <p className="px-5 pb-5 text-sm leading-7 text-gray-200 sm:px-7 sm:pb-6">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.article>
-        );
-      })}
+            </motion.article>
+          );
+        })}
+      </div>
+
+      <div className="mt-5 flex items-center justify-center gap-4">
+        <button
+          type="button"
+          aria-label="Previous questions"
+          onClick={goToPreviousPage}
+          disabled={currentPage === 0}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-purple-300 hover:bg-[#3e1b86] disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          <ArrowLeft size={18} />
+        </button>
+
+        <button
+          type="button"
+          aria-label="Next questions"
+          onClick={goToNextPage}
+          disabled={currentPage === totalPages - 1}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-purple-300 hover:bg-[#3e1b86] disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          <ArrowRight size={18} />
+        </button>
+      </div>
     </div>
   );
 }
@@ -405,7 +459,7 @@ function ExperienceGallery() {
         <SectionHeading
           eyebrow="Inside our STEAM experiences"
           title="Learning that comes to life."
-          description="A glimpse into the activities, technologies and hands-on experiences that inspire students to explore, experiment and create."
+          description="A glimpse into the activities, technologies and hands-on experiences that inspire students to explore, experiment, build and innovate."
         />
       </div>
 
@@ -436,9 +490,6 @@ function ExperienceGallery() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#f7f5fb] to-transparent sm:w-20" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#f7f5fb] to-transparent sm:w-20" />
-
       <style jsx>{`
         .gallery-track {
           animation: gallery-scroll 65s linear infinite;
@@ -451,10 +502,10 @@ function ExperienceGallery() {
 
         @keyframes gallery-scroll {
           from {
-            transform: translateX(-50%);
+            transform: translateX(0);
           }
           to {
-            transform: translateX(0);
+            transform: translateX(-50%);
           }
         }
 
@@ -507,7 +558,7 @@ export default function STEAMWorkshopsBootcampsPage() {
               variants={item}
               className="mt-3 max-w-3xl text-[24px] font-black leading-[1.3] text-[#3e1b86] tracking-tight sm:text-[30px] md:text-[30px]"
             >
-              STEAM Workshops and Bootcamps
+              Interactive STEAM Workshops
               <br />
               <span className="bg-gradient-to-r from-[#5921c7] via-[#8c52ff] to-[#5921c7] bg-clip-text text-transparent">
                 Inspiring Minds . Fueling Makers
@@ -524,8 +575,8 @@ export default function STEAMWorkshopsBootcampsPage() {
               className="max-w-2xl text-[17px] leading-8 text-gray-900"
             >
               Empower your students with future-ready skills through
-              hands-on STEAM workshops and bootcamps. Designed to complement
-              academic learning, our programs bring technology, everyday STEAM
+              hands-on STEAM workshops. Designed to complement
+              academic learning, our workshops bring technology, everyday STEAM
               concepts, creativity and problem-solving activities into the classroom.
             </motion.p>
 
@@ -533,11 +584,10 @@ export default function STEAMWorkshopsBootcampsPage() {
               variants={item}
               className="mt-4 max-w-2xl text-[17px] leading-8 text-gray-900"
             >
-              Through our structured,
-              practical programs, we urge to help schools enrich their academic
-              curriculum, strengthen experiential learning, encourage innovation
-              and provide students with meangingful exposure for their impactful
-              futures.
+              Through our structured, practical workshops, we urge to help schools 
+              enrich their academic curriculum, strengthen experiential learning, 
+              encourage innovation and provide students with meangingful exposure 
+              for their impactful futures.
             </motion.p>
 
             <motion.div
@@ -642,7 +692,7 @@ export default function STEAMWorkshopsBootcampsPage() {
                     {stage.subtitle}
                   </p>
 
-                  <p className="mt-3 text-[14px] leading-7 text-gray-200">
+                  <p className="mt-1 text-[14px] leading-6 text-gray-200">
                     {stage.description}
                   </p>
                 </motion.div>
@@ -652,143 +702,22 @@ export default function STEAMWorkshopsBootcampsPage() {
         </div>
       </section>
 
-      {/* WORKSHOP VS BOOTCAMP — LIGHT */}
-      <section className="relative overflow-hidden bg-[#f7f5fb] px-6 py-16 text-[#17121f] md:py-10">
-        <div className="pointer-events-none absolute -right-36 top-0 h-80 w-80 rounded-full bg-[#5921c7]/20 blur-[120px]" />
-
-        <div className="relative mx-auto max-w-[1000px]">
-          <SectionHeading
-            eyebrow="Two ways to experience STEAM"
-            title="From a spark of curiosity to deeper technical capability."
-            description="Choose an engaging introduction to a topic or a structured journey that gives students time to build stronger technical skills."
-          />
-
-          <div className="grid gap-5 lg:grid-cols-2">
-            <motion.article
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={item}
-              className="rounded-[26px] border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 hover:border-[#8c52ff]/40 hover:shadow-lg sm:p-8"
-            >
-              <div className="flex items-center gap-4">
-                <IconTile icon={Microscope} light />
-
-                <h3 className="text-[22px] font-black text-[#30106f]">
-                  STEAM Workshops
-                </h3>
-              </div>
-
-              <p className="mt-6 text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#5921c7]">
-                Short-duration exploration
-              </p>
-
-              <p className="mt-4 text-sm leading-7 text-gray-600">
-                Engaging, activity-driven sessions that introduce students to
-                STEAM concepts and technologies through experiments,
-                demonstrations, guided activities and hands-on making.
-              </p>
-
-              <ul className="mt-5 space-y-3">
-                {[
-                  "Focused sessions around selected STEAM themes",
-                  "Interactive demonstrations and practical activities",
-                  "Suitable for school events, clubs and special programmes",
-                ].map((point) => (
-                  <li
-                    key={point}
-                    className="flex items-start gap-3 text-sm text-gray-600"
-                  >
-                    <CheckCircle2
-                      size={17}
-                      className="mt-0.5 shrink-0 text-[#5921c7]"
-                    />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#workshops"
-                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-[#5921c7]/20 bg-[#5921c7] px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#8c52ff]"
-              >
-                Explore Workshop Domains
-                <ArrowRight size={16} />
-              </a>
-            </motion.article>
-
-            <motion.article
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={item}
-              className="rounded-[26px] border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 hover:border-[#8c52ff]/40 hover:shadow-lg sm:p-8"
-            >
-              <div className="flex items-center gap-4">
-                <IconTile icon={Rocket} />
-
-                <h3 className="text-[22px] font-black text-[#30106f]">
-                  STEAM Bootcamps
-                </h3>
-              </div>
-
-              <p className="mt-6 text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#5921c7]">
-                in-depth learning programmes
-              </p>
-
-              <p className="mt-4 text-sm leading-7 text-gray-600">
-                Progressive, mentor-facilitated programmes that give students
-                more time to understand concepts, work with technology kits,
-                develop technical skills and complete practical projects.
-              </p>
-
-              <ul className="mt-5 space-y-3">
-                {[
-                  "Structured learning paths and progressive stages",
-                  "Guided programming, assembly and project development",
-                  "Opportunities to improve and demonstrate working builds",
-                ].map((point) => (
-                  <li
-                    key={point}
-                    className="flex items-start gap-3 text-sm text-gray-600"
-                  >
-                    <CheckCircle2
-                      size={17}
-                      className="mt-0.5 shrink-0 text-[#5921c7]"
-                    />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#programmes"
-                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-[#5921c7]/20 bg-[#5921c7] px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#8c52ff]"
-              >
-                Explore Bootcamp Programmes
-                <ArrowRight size={16} />
-              </a>
-            </motion.article>
-          </div>
-        </div>
-      </section>
-
-      {/* WORKSHOP DOMAINS — DARK */}
+      {/* WORKSHOP DOMAINS — LIGHT */}
       <section
         id="workshops"
-        className="bg-[#30106f] px-6 py-10 text-white md:py-10"
+        className="bg-[#f7f5fb] px-6 py-10 text-[#17121f] md:py-10"
       >
-        <div className="mx-auto max-w-[1100px]">
-          <div className="mb-10 text-center">
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.22em] text-purple-300">
+        <div className="mx-auto max-w-[950px]">
+          <div className="mb-6 text-center">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-gray-700">
               Explore the possibilities
             </p>
 
-            <h2 className="mt-4 text-[30px] font-black leading-tight tracking-tight text-white">
-              Our Workshop <span className="text-purple-300">Domains</span>
+            <h2 className="mt-3 text-[30px] font-black leading-tight tracking-tight bg-gradient-to-r from-[#30106f] via-[#8c52ff] to-[#30106f] bg-clip-text text-transparent">
+              Our Interactive Workshops
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-white/70">
+            <p className="mx-auto mt-3 max-w-2xl text-[15px] leading-7 text-gray-600">
               A diverse range of technical experiences introducing students
               to the concepts, tools and possibilities of modern STEAM fields.
             </p>
@@ -806,7 +735,7 @@ export default function STEAMWorkshopsBootcampsPage() {
                 key={domain.title}
                 variants={item}
                 whileHover={{ y: -5 }}
-                className="group overflow-hidden rounded-[20px] border border-white/10 bg-[#3e1b86] shadow-sm transition-all duration-300 hover:border-purple-300/50 hover:shadow-xl"
+                className="group overflow-hidden rounded-[20px] border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:border-[#8c52ff]/50 hover:shadow-xl"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <Image
@@ -819,104 +748,13 @@ export default function STEAMWorkshopsBootcampsPage() {
                 </div>
 
                 <div className="p-5">
-                  <h3 className="text-[17px] font-black text-white transition-colors group-hover:text-purple-200">
+                  <h3 className="text-[17px] font-bold text-[#5921c7] transition-colors group-hover:text-[#8c52ff]">
                     {domain.title}
                   </h3>
 
-                  <p className="mt-2 text-[13px] leading-6 text-white/70">
+                  <p className="mt-2 text-[14px] leading-6 text-gray-800">
                     {domain.description}
                   </p>
-                </div>
-              </motion.article>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* BOOTCAMP PROGRAMMES — LIGHT */}
-      <section
-        id="programmes"
-        className="relative overflow-hidden bg-[#f7f5fb] px-6 py-10 text-[#17121f] md:py-10"
-      >
-        <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#5921c7]/20 blur-[130px]" />
-
-        <div className="relative mx-auto max-w-[900px]">
-          <SectionHeading
-            eyebrow="Our programmes"
-            title="Choose your path to becoming an innovator."
-            description="Comprehensive learning paths designed to introduce students to technology and progressively develop their practical skills."
-          />
-
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.08 }}
-            className="mx-auto grid max-w-[1100px] gap-5 lg:grid-cols-2"
-          >
-            {bootcampProgrammes.map((programme) => (
-              <motion.article
-                key={programme.title}
-                variants={item}
-                whileHover={{ y: -5 }}
-                className="group overflow-hidden rounded-[22px] border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:border-[#8c52ff]/50 hover:shadow-[0_20px_60px_rgba(89,33,199,0.16)]"
-              >
-                <div className="relative aspect-[16/8] overflow-hidden">
-                  <Image
-                    src={programme.image}
-                    alt={programme.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-
-                <div className="p-5 sm:p-6">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.17em] text-[#5921c7]">
-                    {programme.level}
-                  </p>
-
-                  <h3 className="mt-2 text-[23px] font-black text-[#21172f]">
-                    {programme.title}
-                  </h3>
-
-                  <p className="mt-4 text-[13px] leading-6 text-gray-600">
-                    {programme.description}
-                  </p>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {programme.topics.map((topic) => (
-                      <span
-                        key={topic}
-                        className="rounded-full border border-[#8c52ff]/20 bg-[#5921c7]/15 px-3 py-1.5 text-[11px] font-semibold text-[#5921c7]"
-                      >
-                        {topic}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 flex flex-col gap-4 border-t border-gray-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.17em] text-gray-500">
-                        Learning focus
-                      </p>
-
-                      <p className="mt-1 text-sm font-semibold text-[#21172f]">
-                        {programme.audience}
-                      </p>
-                    </div>
-
-                    <Link
-                      href="/contact"
-                      className="group/link inline-flex items-center gap-2 text-sm font-bold text-[#5921c7] transition-all hover:text-[#8c52ff]"
-                    >
-                      Enquire now
-                      <ArrowRight
-                        size={16}
-                        className="transition-transform group-hover/link:translate-x-1"
-                      />
-                    </Link>
-                  </div>
                 </div>
               </motion.article>
             ))}
@@ -930,7 +768,7 @@ export default function STEAMWorkshopsBootcampsPage() {
           <SectionHeading
             light
             eyebrow="The Adroiit experience"
-            title="What makes our workshops engaging?"
+            title="What makes our workshops unique?"
             description="We make technical learning approachable, engaging and meaningful through experiences that put students at the centre of learning."
           />
 
@@ -949,11 +787,11 @@ export default function STEAMWorkshopsBootcampsPage() {
               >
                 <IconTile icon={highlight.icon} />
 
-                <h3 className="mt-5 text-[17px] font-black text-white transition-colors group-hover:text-purple-200">
+                <h3 className="mt-4 text-[17px] font-black text-white transition-colors group-hover:text-purple-200">
                   {highlight.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-white/70">
+                <p className="mt-2 text-sm leading-7 text-gray-300">
                   {highlight.description}
                 </p>
               </motion.div>
@@ -971,8 +809,8 @@ export default function STEAMWorkshopsBootcampsPage() {
           <SectionHeading
             light
             eyebrow="Frequently asked questions"
-            title="Everything you need to know about our STEAM experiences."
-            description="Find answers to common questions about our workshops, bootcamps and institutional programmes."
+            title="Everything you need to know about our STEAM workshops"
+            description="Find answers to common questions about our workshops."
           />
 
           <FAQAccordion />
@@ -980,7 +818,7 @@ export default function STEAMWorkshopsBootcampsPage() {
       </section>
 
       {/* FINAL CTA — LIGHT */}
-      <section className="relative isolate overflow-hidden bg-white px-6 py-10 text-[#17121f] md:py-10">
+      <section className="relative isolate overflow-hidden bg-white px-6 py-5 text-[#17121f] md:py-5">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(140,82,255,0.10),transparent_65%)]" />
 
         <div className="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-[#5921c7]/10 blur-[100px]" />
@@ -994,25 +832,22 @@ export default function STEAMWorkshopsBootcampsPage() {
           variants={fadeUp}
           className="relative mx-auto max-w-4xl text-center"
         >
-          <span className="mt-6 block text-[13px] font-extrabold uppercase tracking-[0.22em] text-[#5921c7]">
-            Start something extraordinary
+          <span className="mt-6 block text-[13px] font-semibold uppercase tracking-[0.22em] text-gray-600">
+            Give your students the opportunity to explore, experiment, build and innovate.
           </span>
 
-          <h2 className="mt-4 text-[30px] font-black leading-tight tracking-tight text-[#21172f]">
-            Ready to inspire the{" "}
-            <span className="block bg-gradient-to-r from-[#5921c7] to-[#8c52ff] bg-clip-text text-transparent">
-              next generation of innovators?
+          <h2 className="mt-4 text-[30px] font-black leading-tight tracking-tight text-[#30106f]">
+            <span className=" bg-gradient-to-r from-[#30106f] via-[#8c52ff] to-[#30106f] bg-clip-text text-transparent">
+              Let us ignite spark of curiosity.
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-8 text-gray-600">
-            Give your students the opportunity to explore, experiment and
-            create. Partner with Adroiit Technovations to bring interactive
-            STEAM workshops and structured, mentor-guided bootcamps to your
-            institution.
+          <p className="mx-auto mt-3 max-w-2xl text-[15px] leading-8 text-gray-900">
+            Partner with Adroiit Technovations to bring interactive
+            STEAM workshops to your institution.
           </p>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#5921c7]/20 px-7 py-4 text-sm font-bold text-[#5921c7] transition-all hover:border-[#8c52ff] hover:bg-[#5921c7]/5 sm:w-auto"
@@ -1020,11 +855,6 @@ export default function STEAMWorkshopsBootcampsPage() {
               Talk to Our Team
               <ArrowUpRight size={16} />
             </Link>
-          </div>
-
-          <div className="mt-7 inline-flex items-center gap-2 text-xs font-semibold text-gray-500">
-            <CheckCircle2 size={14} className="text-[#8c52ff]" />
-            Let's plan a learning experience for your students
           </div>
         </motion.div>
       </section>

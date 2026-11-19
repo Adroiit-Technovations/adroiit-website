@@ -74,8 +74,8 @@ const serviceCategories: ServiceCategory[] = [
         href: "/services/csl",
       },
       {
-        name: "STEAM Workshops & Bootcamps",
-        href: "/services/steam-workshops-bootcamps",
+        name: "STEAM Workshops",
+        href: "/services/steam-workshops",
       },
     ],
   },

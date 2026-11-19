@@ -59,7 +59,7 @@ const indianCities = [
 const services = [
   "STEAM Tinkering and Innovation Lab (TIL)",
   "Composite Skill Lab (CSL)",
-  "STEAM Workshops & Bootcamps",
+  "STEAM Workshops",
   "Center of Excellence (CoE)",
   "Value Added Courses",
   "Technical Workshop",
