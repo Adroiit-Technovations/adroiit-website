@@ -557,7 +557,7 @@ export default function STEAMWorkshopsBootcampsPage() {
 
             <motion.h1
               variants={item}
-              className="mt-3 max-w-3xl text-[24px] font-black leading-[1.3] text-[#3e1b86] tracking-tight sm:text-[30px] md:text-[30px]"
+              className="mt-3 max-w-3xl text-[24px] font-black leading-[1.3] text-[#3e1b86] tracking-tight sm:text-[32px] md:text-[30px]"
             >
               Interactive STEAM Workshops
               <br />
@@ -869,7 +869,7 @@ export default function STEAMWorkshopsBootcampsPage() {
           <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#5921c7]/20 px-7 py-4 text-sm font-bold text-[#5921c7] transition-all hover:border-[#8c52ff] hover:bg-[#5921c7]/5 sm:w-auto"
+              className="bg-gradient-to-r from-[#481f9b] to-[#5921c7] hover:opacity-90 transition px-7 py-3.5 rounded-4xl font-semibold text-sm text-white flex items-center justify-center gap-2 group shadow-lg shadow-purple-900/30"
             >
               Talk to Our Team
               <ArrowUpRight size={16} />
