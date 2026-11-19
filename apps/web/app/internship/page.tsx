@@ -286,11 +286,11 @@ const heroImages = [
     alt: "Hands-on technology learning",
   },
   {
-    src: "/internship/gallery1.jpg",
+    src: "/internship/gallery2.jpeg",
     alt: "Students collaborating on projects",
   },
   {
-    src: "/internship/gallery2.jpeg",
+    src: "/internship/gallery5.jpeg",
     alt: "Practical innovation and experimentation",
   },
 ];
@@ -498,20 +498,20 @@ export default function InternshipPage() {
       {/* HERO SECTION - LIGHT */}
       {/* ================================================== */}
 
-      <section className="relative pt-28 md:pt-32 pb-16 md:pb-20 px-6 overflow-hidden bg-[#faf9fd] text-[#1c1530]">
+      <section className="relative pt-35 md:pt-35 pb-16 md:pb-20 px-6 overflow-hidden bg-[#faf9fd] text-[#1c1530]">
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-purple-200/40 blur-[110px] pointer-events-none" />
 
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-purple-100/50 blur-[100px] pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10 max-w-[1240px] mx-auto">
           <motion.p
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             custom={0}
-            className="text-[#8c52ff] text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-5"
+            className="text-gray-600 text-[11px] sm:text-[13px] font-semibold tracking-[0.12em] uppercase mb-1"
           >
-            CAREERS START WITH CURIOSITY
+            Explore your potential and shape your future. 
           </motion.p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-[auto_auto] gap-8 lg:gap-x-10 lg:gap-y-0 items-center">
@@ -526,20 +526,20 @@ export default function InternshipPage() {
               <motion.h1
                 variants={fadeUp}
                 custom={1}
-                className="text-3xl sm:text-4xl lg:text-[30px] font-extrabold leading-[1.12] tracking-tight text-[#30106f]"
+                className="text-3xl sm:text-4xl lg:text-[26px] font-extrabold leading-[1.3] tracking-tight text-[#30106f]"
               >
-                Don&apos;t Just Learn. Enhance Your Skills
+                Build Skills . Gain Experience . Grow Your Career
                 <br />
 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5921c7] to-[#8c52ff]">
-                  Build the Future.
+                <span className="text-transparent text-[24px] font-bold bg-clip-text bg-gradient-to-r from-[#5921c7] to-[#8c52ff]">
+                  Turn Your Knowledge into Real-World Experience.  
                 </span>
               </motion.h1>
 
               <motion.div
                 variants={fadeUp}
                 custom={2}
-                className="w-16 h-1 bg-[#8c52ff] rounded-full my-6"
+                className="w-20 h-1 bg-[#7240d6] rounded-full my-3"
               />
             </motion.div>
 
@@ -602,23 +602,24 @@ export default function InternshipPage() {
               <motion.p
                 variants={fadeUp}
                 custom={3}
-                className="text-gray-700 text-sm md:text-base leading-relaxed"
+                className="mt-2 text-gray-900 text-sm md:text-base leading-relaxed"
               >
-                Join Adroiit Technovations to gain hands-on experience in
-                cutting-edge technologies, real-world projects and
-                industry-driven innovation. At Adroiit Technovations, our
-                internship program is designed to bridge the gap between
-                academic learning and real-world application.
+                  Kickstart your professional journey with immersive internship
+                  programmes in engineering, technology, innovation and business.
+                  At Adroiit Technovations, gain hands-on exposure through
+                  real-world projects, work with industry-relevant tools and 
+                  technologies and collaborate with experienced professionals.
               </motion.p>
 
               <motion.p
                 variants={fadeUp}
                 custom={4}
-                className="mt-4 text-gray-600 text-[15px] leading-relaxed"
+                className="mt-3 text-gray-800 text-[16px] leading-relaxed"
               >
-                Whether you&apos;re passionate about engineering,
-                innovation or business strategy, we provide a platform to
-                learn, build and grow.
+                Develop technical expertise, strengthen problem-solving abilities
+                  and gain practical insights into professional work environments.
+                  Discover your potential, transform your knowledgge into practical 
+                  skills and build the confidence to take on tomorrow's challenges.
               </motion.p>
 
               {/* HERO BUTTONS */}

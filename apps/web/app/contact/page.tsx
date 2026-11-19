@@ -154,9 +154,9 @@ export default function ContactPage() {
             Contact Us
           </p>
 
-          <h1 className="text-[24px] font-extrabold leading-[1.12] tracking-tight sm:text-3xl lg:text-[28px]">
+          <h1 className="text-[26px] font-extrabold leading-[1.12] tracking-tight sm:text-3xl lg:text-[28px]">
             <span className="bg-gradient-to-r from-[#30106f] via-[#5921c7] to-[#30106f] bg-clip-text text-transparent">
-              Let's Build the Together!
+              Let's Build the Future Together!
             </span>
           </h1>
 
@@ -175,10 +175,10 @@ export default function ContactPage() {
             className="flex h-full min-w-0 flex-col rounded-2xl border border-purple-100 bg-white/95 p-5 shadow-[0_25px_80px_rgba(48,16,111,0.07)] backdrop-blur-xl sm:p-6 lg:p-7"
           >
             <div className="mb-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5921c7]">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#5921c7]">
                 Send an Enquiry
               </p>
-              <h2 className="mt-2 text-2xl font-bold text-[#30106f] sm:text-xl">
+              <h2 className="mt-2 text-xl font-bold text-[#30106f] sm:text-xl">
                 Tell us about your needs.
               </h2>
               <p className="mt-1.5 text-sm leading-6 text-gray-500">
@@ -482,7 +482,7 @@ export default function ContactPage() {
           >
             {/* HEADING */}
             <div className="mb-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5921c7]">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#5921c7]">
                 Contact Information
               </p>
 
