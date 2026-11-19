@@ -509,7 +509,7 @@ export default function InternshipPage() {
             animate="visible"
             variants={fadeUp}
             custom={0}
-            className="text-gray-600 text-[11px] sm:text-[13px] font-semibold tracking-[0.12em] uppercase mb-1"
+            className="text-gray-600 text-[13px] sm:text-[13px] font-semibold tracking-[0.12em] uppercase mb-3"
           >
             Explore your potential and shape your future. 
           </motion.p>
@@ -526,7 +526,7 @@ export default function InternshipPage() {
               <motion.h1
                 variants={fadeUp}
                 custom={1}
-                className="text-3xl sm:text-4xl lg:text-[26px] font-extrabold leading-[1.3] tracking-tight text-[#30106f]"
+                className="text-[26px] sm:text-4xl lg:text-[26px] font-extrabold leading-[1.2] tracking-tight text-[#30106f]"
               >
                 Build Skills . Gain Experience . Grow Your Career
                 <br />
@@ -602,7 +602,7 @@ export default function InternshipPage() {
               <motion.p
                 variants={fadeUp}
                 custom={3}
-                className="mt-2 text-gray-900 text-sm md:text-base leading-relaxed"
+                className="mt-2 text-gray-900 text-[16px] leading-relaxed"
               >
                   Kickstart your professional journey with immersive internship
                   programmes in engineering, technology, innovation and business.
@@ -614,7 +614,7 @@ export default function InternshipPage() {
               <motion.p
                 variants={fadeUp}
                 custom={4}
-                className="mt-3 text-gray-800 text-[16px] leading-relaxed"
+                className="mt-3 text-gray-900 text-[16px] leading-relaxed"
               >
                 Develop technical expertise, strengthen problem-solving abilities
                   and gain practical insights into professional work environments.
@@ -679,7 +679,7 @@ export default function InternshipPage() {
       {/* ================================================== */}
 
       <section
-        className="py-16 md:py-8 px-6 text-white"
+        className="py-10 md:py-10 px-6 text-white"
         style={{ backgroundColor: DARK_SECTION }}
       >
         <div className="max-w-6xl mx-auto">
