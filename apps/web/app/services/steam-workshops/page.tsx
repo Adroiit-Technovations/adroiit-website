@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, type Variants } from "framer-motion";
@@ -56,37 +57,37 @@ const item: Variants = {
 
 const workshopDomains = [
   {
-    image: "/stem-workshop/electronics.jpg",
+    image: "/steam-workshop/electronics.jpg",
     title: "Electronics & Circuits Building",
     description:
       "Explore the fundamentals of electricity, electronic components and how electronic devices work by connecting components and building circuits.",
   },
   {
-    image: "/stem-workshop/3d-printing.png",
+    image: "/steam-workshop/3d-printing.png",
     title: "3D Modelling & Printing",
     description:
       "Discover how to create 3D digital designs, understand dimensions and transform virtual models into physical objects using 3D printing technology.",
   },
   {
-    image: "/stem-workshop/embedded-systems.jpg",
+    image: "/steam-workshop/embedded-systems.jpg",
     title: "Embedded Systems",
     description:
       "Understand how microcontrollers interact with electronic components, sensors, actuators and explore the development of programmable electronic systems.",
   },
   {
-    image: "/stem-workshop/robotics.jpg",
+    image: "/steam-workshop/robotics.jpg",
     title: "Robotics",
     description:
       "Discover robot construction, mechanical movements, motor control, sensor integration, programming of robots to navigate in environments and perform automated tasks.",
   },
   {
-    image: "/stem-workshop/drone.jpg",
+    image: "/steam-workshop/drone.jpg",
     title: "Drone Technology",
     description:
       "Explore the science of flight, flight controllers, propulsion systems, drone components, operations, stability, navigation and applications across different industries.",
   },
   {
-    image: "/stem-workshop/ai.jpg",
+    image: "/steam-workshop/ai.jpg",
     title: "Artificial Intelligence",
     description:
       "Introduces AI fundamentals, machine learning, computer vision and explore how intelligent systems recognise information, make predictions and solve problems.",
@@ -302,7 +303,7 @@ function SectionHeading({
       className={`${centered ? "mx-auto text-center" : ""} mb-10 max-w-7xl`}
     >
       <p
-        className={`text-[13px] font-bold uppercase tracking-[0.15em] ${
+        className={`text-[13px] font-semibold uppercase tracking-[0.12em] ${
           light ? "text-purple-300" : "text-gray-700"
         }`}
       >
@@ -310,7 +311,7 @@ function SectionHeading({
       </p>
 
       <h2
-        className={`mt-3 text-[30px] font-black leading-[1.12] tracking-tight ${
+        className={`mt-3 text-2xl sm:text-[28px] font-bold leading-[1.12] tracking-tight ${
           light
             ? "text-white"
             : "bg-gradient-to-r from-[#30106f] via-[#8c52ff] to-[#30106f] bg-clip-text text-transparent"
@@ -549,7 +550,7 @@ export default function STEAMWorkshopsBootcampsPage() {
           >
             <motion.p
               variants={item}
-              className="text-[13px] font-bold uppercase tracking-[0.2em] text-gray-700"
+              className="text-[13px] font-bold uppercase tracking-[0.12em] text-gray-700"
             >
               SPARK CURIOSITY AND DRIVE INNOVATION THROUGH
             </motion.p>
@@ -569,6 +570,23 @@ export default function STEAMWorkshopsBootcampsPage() {
               variants={item}
               className="my-4 h-1 w-25 rounded-full bg-gradient-to-r from-[#5921c7] to-[#c4a8ff]"
             />
+
+            {/* MOBILE HERO IMAGE — BELOW GRADIENT LINE */}
+            <motion.div
+              variants={item}
+              className="relative mx-auto mb-5 w-full max-w-[800px] lg:hidden"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[20px]">
+                <Image
+                  src="/projects/dsc-9.jpeg"
+                  alt="Students exploring STEAM through hands-on workshop activities"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
 
             <motion.p
               variants={item}
@@ -618,6 +636,7 @@ export default function STEAMWorkshopsBootcampsPage() {
             </motion.div>
           </motion.div>
 
+          {/* DESKTOP HERO IMAGE — RIGHT COLUMN */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -626,7 +645,7 @@ export default function STEAMWorkshopsBootcampsPage() {
               ease: "easeOut",
               delay: 0.2,
             }}
-            className="relative mx-auto w-full max-w-[800px] lg:ml-auto"
+            className="relative mx-auto hidden w-full max-w-[800px] lg:ml-auto lg:block"
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-[20px]">
               <Image
@@ -688,7 +707,7 @@ export default function STEAMWorkshopsBootcampsPage() {
                     {stage.title}
                   </h3>
 
-                  <p className="mt-1 text-[12px] font-bold uppercase tracking-[0.14em] text-purple-300">
+                  <p className="mt-1 text-[12px] font-bold uppercase tracking-[0.12em] text-purple-300">
                     {stage.subtitle}
                   </p>
 
@@ -709,11 +728,11 @@ export default function STEAMWorkshopsBootcampsPage() {
       >
         <div className="mx-auto max-w-[950px]">
           <div className="mb-6 text-center">
-            <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-gray-700">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.12em] text-gray-600">
               Explore the possibilities
             </p>
 
-            <h2 className="mt-3 text-[30px] font-black leading-tight tracking-tight bg-gradient-to-r from-[#30106f] via-[#8c52ff] to-[#30106f] bg-clip-text text-transparent">
+            <h2 className="mt-3 text-2xl sm:text-[28px] font-bold leading-tight tracking-tight bg-gradient-to-r from-[#30106f] via-[#8c52ff] to-[#30106f] bg-clip-text text-transparent">
               Our Interactive Workshops
             </h2>
 
@@ -787,7 +806,7 @@ export default function STEAMWorkshopsBootcampsPage() {
               >
                 <IconTile icon={highlight.icon} />
 
-                <h3 className="mt-4 text-[17px] font-black text-white transition-colors group-hover:text-purple-200">
+                <h3 className="mt-4 text-[17px] font-bold text-white transition-colors group-hover:text-purple-200">
                   {highlight.title}
                 </h3>
 
@@ -832,11 +851,11 @@ export default function STEAMWorkshopsBootcampsPage() {
           variants={fadeUp}
           className="relative mx-auto max-w-4xl text-center"
         >
-          <span className="mt-6 block text-[13px] font-semibold uppercase tracking-[0.22em] text-gray-600">
+          <span className="mt-6 block text-[13px] font-semibold uppercase tracking-[0.12em] text-gray-600">
             Give your students the opportunity to explore, experiment, build and innovate.
           </span>
 
-          <h2 className="mt-4 text-[30px] font-black leading-tight tracking-tight text-[#30106f]">
+          <h2 className="mt-4 text-2xl sm:text-[30px] font-bold leading-tight tracking-tight text-[#30106f]">
             <span className=" bg-gradient-to-r from-[#30106f] via-[#8c52ff] to-[#30106f] bg-clip-text text-transparent">
               Let us ignite spark of curiosity.
             </span>
