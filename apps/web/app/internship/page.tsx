@@ -53,7 +53,7 @@ const DARK_CARD = "#3e1b86";
 // CUSTOMISABLE SECTION TITLE SIZE
 // ============================================================
 
-const SECTION_TITLE_SIZE_PX = 30;
+const SECTION_TITLE_SIZE_PX = 28;
 
 // ============================================================
 // ANIMATIONS
@@ -345,22 +345,27 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl mx-auto text-center mb-8">
-      <p className="text-[#8c52ff] text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-3">
+      <p
+        className={`text-[11px] sm:text-[13px] font-semibold tracking-[0.2em] uppercase mb-3 ${
+          light ? "text-purple-300" : "text-gray-600"
+        }`}
+      >
         {eyebrow}
       </p>
 
       <h2
-        style={{ fontSize: `${SECTION_TITLE_SIZE_PX}px` }}
-        className={`font-bold tracking-tight leading-tight ${
-          light ? "text-white" : "text-[#1c1530]"
+        className={`text-2xl sm:text-[28px] font-bold tracking-tight leading-tight ${
+          light
+            ? "text-white"
+            : "text-transparent bg-clip-text bg-gradient-to-r from-[#30106f] via-[#8c52ff] to-[#30106f]"
         }`}
       >
         {title}
       </h2>
 
       <p
-        className={`mt-3 text-sm md:text-[15px] leading-relaxed ${
-          light ? "text-gray-300" : "text-gray-700"
+        className={`mt-3 text-[13px] sm:text-[15px] leading-relaxed ${
+          light ? "text-gray-200" : "text-gray-800"
         }`}
       >
         {description}
@@ -1213,18 +1218,18 @@ export default function InternshipPage() {
           transition={{ duration: 0.7 }}
           className="relative z-10 max-w-3xl mx-auto text-center"
         >
-          <p className="text-[#8c52ff] text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-4">
+          <p className="text-gray-600 text-[11px] sm:text-[13px] font-bold tracking-[0.2em] uppercase mb-4">
             YOUR NEXT CHAPTER STARTS HERE
           </p>
 
-          <h2 className="text-2xl md:text-2xl font-bold text-[#30106f] leading-tight tracking-tight">
+          <h2 className="text-2xl sm:text-[28px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#30106f] via-[#8c52ff] to-[#30106f] leading-tight tracking-tight">
             Ready to Turn Your Ideas Into{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5921c7] to-[#8c52ff]">
               Reality?
             </span>
           </h2>
 
-          <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-4 text-[13px] sm:text-[15px] text-gray-800 leading-relaxed max-w-2xl mx-auto">
             Every great innovation begins with curiosity. Bring your
             ideas, explore new technologies and take the first step
             towards creating something meaningful with Adroiit
